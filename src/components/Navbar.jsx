@@ -19,7 +19,6 @@ const Navbar = () => {
             </li>
             <li tabIndex={0}>
               <a className="justify-between">
-                Parent
                 <svg
                   className="fill-current"
                   xmlns="http://www.w3.org/2000/svg"
