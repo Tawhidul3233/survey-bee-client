@@ -19,7 +19,7 @@ const Banner = () => {
                     <p className='my-10'> A global leader in survey software. 20 million questions answered daily. </p>
                </div>
                <div>
-                    <button className='btn btn:md btn-info rounded-none '>Get Started</button>
+                    <button className='btn btn:md btn-success rounded-none '>Get Started</button>
                </div>
           </div>
      );
