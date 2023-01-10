@@ -7,9 +7,11 @@ import { router } from "./routes/Routes";
 const App = () => {
   return (
 
+
     <>
       <RouterProvider router={router} />
     </>
+
 
   );
 };
