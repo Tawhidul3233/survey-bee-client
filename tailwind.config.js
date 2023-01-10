@@ -6,7 +6,7 @@ module.exports = {
   daisyui:{
     themes: [
       {
-        doctortheme:{
+        surveyBee:{
           primary: '#00BF6F',
           secondary: '#19ffAE',
           accent: "#334256",
