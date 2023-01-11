@@ -15,7 +15,7 @@
 
 
 # ***Workflows (please write your installed packages and your components)
-### Tawhid - banner
+### Tawhid - banner, Register and login page.
 ### tuhin - footer
 ### Oliullah - react icon is installed, navbar
 ### Tonmoy - error page
