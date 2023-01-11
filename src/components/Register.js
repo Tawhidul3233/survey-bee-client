@@ -17,7 +17,7 @@ const Register = () => {
                     <div className=' col-span-3'>
                          <div>
                               <div className=' mt-20 ml-10 w-2/3'>
-                                   <p className=' text-[34px] font-semibold text-left'> Let's get started <br /> with a silmple few steps</p>
+                                   <p className=' text-[34px] font-semibold text-left'> Let's started <br /> with a silmple few steps</p>
                               </div>
                               <form className=' mt-10 ml-10 '>
                                    <div className="form-control w-3/4 ">
