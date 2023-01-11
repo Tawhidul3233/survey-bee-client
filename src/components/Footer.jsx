@@ -1,5 +1,5 @@
 import React from "react";
-import sponsor from "../assets/images/icon/images.png";
+// import sponsor from "../assets/images/icon/images.png";
 const Footer = () => {
   return (
     <div>
@@ -29,9 +29,7 @@ const Footer = () => {
             <li>Cookies Princes</li>
           </ul>
         </div>
-        <div>
-          <img src={sponsor} alt="" />
-        </div>
+        <div>{/* <img src={sponsor} alt="" /> */}</div>
       </section>
     </div>
   );
