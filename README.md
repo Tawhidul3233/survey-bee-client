@@ -11,7 +11,7 @@
 
 ### Before pushing your change to your branch ===> run this command | git checkout <yourbranchname> ---> git pull origin main (you have to get all materials that exist in our main repo)
 
-### Then run | git checkout <yourbranchname> ---> git add . ---> git commit -m "your message" ---> git push origin <yourbranchname>
+### Then run | git checkout <yourbranchname> ---> To add a particular file, use the following command: $ git add path/to/file ---> git commit -m "your message" ---> git push origin <yourbranchname>
 
 
 # ***Workflows (please write your installed packages and your components)
