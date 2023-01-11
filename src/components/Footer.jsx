@@ -17,7 +17,7 @@ const Footer = () => {
         </select>
 
         <div className="mt-2">
-          <ul className="list-disc flex gap-6 text-xs">
+          <ul className="list-disc md:flex gap-6 text-xs">
             <li className="list-none">About Momentive</li>
             <li>Careers</li>
             <li>Developers</li>
@@ -30,7 +30,7 @@ const Footer = () => {
             <li>Cookies Princes</li>
           </ul>
         </div>
-        <div className="flex mt-4">
+        <div className=" md:flex md:gap-2 mt-4">
           <img className="w-28 h-10" src={sponsor} alt="" />
           <img className="w-28 h-10" src={sponsor1} alt="" />
         </div>
