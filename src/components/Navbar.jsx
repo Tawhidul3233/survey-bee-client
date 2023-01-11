@@ -143,10 +143,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-x-3 hidden md:flex">
-        <Link to="/" className="text-xl text-black">
+        <Link to="/login" className="text-xl text-black">
           Log in
         </Link>
-        <Link to="/" className="btn btn-secondary normal-case lg:text-xl">
+        <Link to="/Register" className="btn btn-secondary normal-case lg:text-xl">
           Sign up free
         </Link>
       </div>
