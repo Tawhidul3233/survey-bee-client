@@ -1,8 +1,9 @@
 import React from "react";
-// import sponsor from "../assets/images/icon/images.png";
+import sponsor from "../assets/images/icon/images.png";
+import sponsor1 from "../assets/images/icon/sponsor1.png";
 const Footer = () => {
   return (
-    <div>
+    <div className="p-10 bg-slate-100">
       <section className="ml-12 ">
         <select
           id="countries"
@@ -29,7 +30,10 @@ const Footer = () => {
             <li>Cookies Princes</li>
           </ul>
         </div>
-        <div>{/* <img src={sponsor} alt="" /> */}</div>
+        <div className="flex mt-4">
+          <img className="w-28 h-10" src={sponsor} alt="" />
+          <img className="w-28 h-10" src={sponsor1} alt="" />
+        </div>
       </section>
     </div>
   );

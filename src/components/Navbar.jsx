@@ -542,6 +542,7 @@ const Navbar = () => {
         </Link>
         <Link
           to="/register"
+
           className="btn btn-secondary normal-case lg:text-xl"
         >
           Sign up free
