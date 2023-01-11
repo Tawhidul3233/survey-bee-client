@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   return (
@@ -144,7 +146,10 @@ const Navbar = () => {
         <Link to="/login" className="text-xl text-black">
           Log in
         </Link>
-        <Link to="/Register" className="btn btn-secondary normal-case lg:text-xl">
+        <Link
+          to="/Register"
+          className="btn btn-secondary normal-case lg:text-xl"
+        >
           Sign up free
         </Link>
       </div>
