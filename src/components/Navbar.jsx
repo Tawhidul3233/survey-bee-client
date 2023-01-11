@@ -1,14 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { RxCross2 } from "react-icons/rx";
+import { useState } from "react";
+// import { useEffect } from "react";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isSolutionOpen, setIsSolutionOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+
   return (
-    <div className="navbar bg-base-100 lg:px-16 lg:pt-4">
+    <div className="navbar bg-base-100 lg:px-16 lg:pt-4 shadow-md">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
-            <GiHamburgerMenu className="text-5xl" />
+          <label
+            // tabIndex={0}
+            className="lg:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? (
+              <RxCross2 className="text-5xl" />
+            ) : (
+              <GiHamburgerMenu className="text-5xl" />
+            )}
           </label>
           {/* <ul
             tabIndex={0}
@@ -71,8 +87,16 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden md:hidden lg:flex mx-auto">
         <ul className="menu menu-horizontal px-1">
-          <li tabIndex={0}>
-            <a>
+          <li>
+            <p
+              onClick={() =>
+                setIsProductsOpen(
+                  !isProductsOpen,
+                  setIsSolutionOpen(false),
+                  setIsResourcesOpen(false)
+                )
+              }
+            >
               Products
               <svg
                 className="fill-current"
@@ -83,18 +107,144 @@ const Navbar = () => {
               >
                 <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
               </svg>
-            </a>
-            <ul className="p-2">
-              <li>
-                <a>Submenu 1</a>
-              </li>
-              <li>
-                <a>Submenu 2</a>
-              </li>
-            </ul>
+            </p>
+            {isProductsOpen && (
+              <ul
+                className="w-[70vw] flex justify-between flex-row
+            fixed left-[15%] top-20 z-50 bg-[#FFFFFF] nav-subdiv-shadow mx-auto
+            border-0 rounded-none
+            "
+              >
+                <div className="flex flex-col w-1/3 px-4 py-4">
+                  <div className="border-b-[1px] border-gray-800 w-full mx-4">
+                    <span>
+                      <small>Surveys</small>
+                    </span>
+                  </div>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      SurveyBee
+                    </span>
+                    <span>
+                      Create & send surveys with the world's leading online
+                      survey software
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Enterprise
+                    </span>
+                    <span>
+                      Empower your organization with our secure survey platform
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Integrations & Plug-ins
+                    </span>
+                    <span>Bring survey insights into your business apps</span>
+                  </Link>
+                </div>
+                <div className="flex flex-col w-1/3 px-4 py-4">
+                  <div className="border-b-[1px] border-gray-800 w-full mx-4">
+                    <span>
+                      <small>Surveys</small>
+                    </span>
+                  </div>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      SurveyBee
+                    </span>
+                    <span>
+                      Create & send surveys with the world's leading online
+                      survey software
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Enterprise
+                    </span>
+                    <span>
+                      Empower your organization with our secure survey platform
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Integrations & Plug-ins
+                    </span>
+                    <span>Bring survey insights into your business apps</span>
+                  </Link>
+                </div>
+                <div className="flex flex-col w-1/3 px-4 py-4">
+                  <div className="border-b-[1px] border-gray-800 w-full mx-4">
+                    <span>
+                      <small>Surveys</small>
+                    </span>
+                  </div>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      SurveyBee
+                    </span>
+                    <span>
+                      Create & send surveys with the world's leading online
+                      survey software
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Enterprise
+                    </span>
+                    <span>
+                      Empower your organization with our secure survey platform
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Integrations & Plug-ins
+                    </span>
+                    <span>Bring survey insights into your business apps</span>
+                  </Link>
+                </div>
+              </ul>
+            )}
           </li>
-          <li tabIndex={0}>
-            <a>
+          <li>
+            <p
+              onClick={() =>
+                setIsSolutionOpen(
+                  !isSolutionOpen,
+                  setIsProductsOpen(false),
+                  setIsResourcesOpen(false)
+                )
+              }
+            >
               Solutions
               <svg
                 className="fill-current"
@@ -105,18 +255,144 @@ const Navbar = () => {
               >
                 <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
               </svg>
-            </a>
-            <ul className="p-2">
-              <li>
-                <a>Submenu 1</a>
-              </li>
-              <li>
-                <a>Submenu 2</a>
-              </li>
-            </ul>
+            </p>
+            {isSolutionOpen && (
+              <ul
+                className="w-[70vw] flex justify-between flex-row
+            fixed left-[15%] top-20 z-50 bg-[#FFFFFF] nav-subdiv-shadow mx-auto
+            border-0 rounded-none
+            "
+              >
+                <div className="flex flex-col w-1/3 px-4 py-4">
+                  <div className="border-b-[1px] border-gray-800 w-full mx-4">
+                    <span>
+                      <small>Surveys</small>
+                    </span>
+                  </div>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      SurveyBee
+                    </span>
+                    <span>
+                      Create & send surveys with the world's leading online
+                      survey software
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Enterprise
+                    </span>
+                    <span>
+                      Empower your organization with our secure survey platform
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Integrations & Plug-ins
+                    </span>
+                    <span>Bring survey insights into your business apps</span>
+                  </Link>
+                </div>
+                <div className="flex flex-col w-1/3 px-4 py-4">
+                  <div className="border-b-[1px] border-gray-800 w-full mx-4">
+                    <span>
+                      <small>Surveys</small>
+                    </span>
+                  </div>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      SurveyBee
+                    </span>
+                    <span>
+                      Create & send surveys with the world's leading online
+                      survey software
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Enterprise
+                    </span>
+                    <span>
+                      Empower your organization with our secure survey platform
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Integrations & Plug-ins
+                    </span>
+                    <span>Bring survey insights into your business apps</span>
+                  </Link>
+                </div>
+                <div className="flex flex-col w-1/3 px-4 py-4">
+                  <div className="border-b-[1px] border-gray-800 w-full mx-4">
+                    <span>
+                      <small>Surveys</small>
+                    </span>
+                  </div>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      SurveyBee
+                    </span>
+                    <span>
+                      Create & send surveys with the world's leading online
+                      survey software
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Enterprise
+                    </span>
+                    <span>
+                      Empower your organization with our secure survey platform
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Integrations & Plug-ins
+                    </span>
+                    <span>Bring survey insights into your business appss</span>
+                  </Link>
+                </div>
+              </ul>
+            )}
           </li>
           <li tabIndex={0}>
-            <a>
+            <p
+              onClick={() =>
+                setIsResourcesOpen(
+                  !isResourcesOpen,
+                  setIsProductsOpen(false),
+                  setIsSolutionOpen(false)
+                )
+              }
+            >
               Resources
               <svg
                 className="fill-current"
@@ -127,26 +403,147 @@ const Navbar = () => {
               >
                 <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
               </svg>
-            </a>
-            <ul className="p-2">
-              <li>
-                <a>Submenu 1</a>
-              </li>
-              <li>
-                <a>Submenu 2</a>
-              </li>
-            </ul>
+            </p>
+            {isResourcesOpen && (
+              <ul
+                className="w-[70vw] flex justify-between flex-row
+            fixed left-[15%] top-20 z-50 bg-[#FFFFFF] nav-subdiv-shadow mx-auto
+            border-0 rounded-none
+            "
+              >
+                <div className="flex flex-col w-1/3 px-4 py-4">
+                  <div className="border-b-[1px] border-gray-800 w-full mx-4">
+                    <span>
+                      <small>Surveys</small>
+                    </span>
+                  </div>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      SurveyBee
+                    </span>
+                    <span>
+                      Create & send surveys with the world's leading online
+                      survey software
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Enterprise
+                    </span>
+                    <span>
+                      Empower your organization with our secure survey platform
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Integrations & Plug-ins
+                    </span>
+                    <span>Bring survey insights into your business apps</span>
+                  </Link>
+                </div>
+                <div className="flex flex-col w-1/3 px-4 py-4">
+                  <div className="border-b-[1px] border-gray-800 w-full mx-4">
+                    <span>
+                      <small>Surveys</small>
+                    </span>
+                  </div>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      SurveyBee
+                    </span>
+                    <span>
+                      Create & send surveys with the world's leading online
+                      survey software
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Enterprise
+                    </span>
+                    <span>
+                      Empower your organization with our secure survey platform
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Integrations & Plug-ins
+                    </span>
+                    <span>Bring survey insights into your business apps</span>
+                  </Link>
+                </div>
+                <div className="flex flex-col w-1/3 px-4 py-4">
+                  <div className="border-b-[1px] border-gray-800 w-full mx-4">
+                    <span>
+                      <small>Surveys</small>
+                    </span>
+                  </div>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      SurveyBee
+                    </span>
+                    <span>
+                      Create & send surveys with the world's leading online
+                      survey software
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Enterprise
+                    </span>
+                    <span>
+                      Empower your organization with our secure survey platform
+                    </span>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                  >
+                    <span className="font-semibold text-xl text-secondary block">
+                      Integrations & Plug-ins
+                    </span>
+                    <span>Bring survey insights into your business appsss</span>
+                  </Link>
+                </div>
+              </ul>
+            )}
           </li>
           <li>
-            <a>Plans & Pricing</a>
+            <Link to="/">Plans & Pricing</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end gap-x-3 hidden md:flex">
-        <Link to="/" className="text-xl text-black">
+        <Link to="/login" className="text-xl text-black">
           Log in
         </Link>
-        <Link to="/" className="btn btn-secondary normal-case lg:text-xl">
+        <Link
+          to="/register"
+          className="btn btn-secondary normal-case lg:text-xl"
+        >
           Sign up free
         </Link>
       </div>
