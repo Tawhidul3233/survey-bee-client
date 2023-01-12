@@ -1,7 +1,7 @@
 import React from 'react';
-import './Section.css';
+import './ImageSection.css';
 
-const Section = () => {
+const ImageSection = () => {
     return (
         <div className='mb-8'>
             <div className="hero banner" style={{ backgroundImage: `url("https://i.ibb.co/YPJZwF3/SL-112119-25250-41.jpg")` }}>
@@ -27,4 +27,4 @@ const Section = () => {
     );
 };
 
-export default Section;
+export default ImageSection;
