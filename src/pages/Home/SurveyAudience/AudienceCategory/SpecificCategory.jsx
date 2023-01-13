@@ -1,22 +1,22 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SpecificCategory = ({ category }) => {
   const [isClicked, setIsClicked] = useState(false);
-  const handleClick = (id) => {
+  const handleClick = () => {
     setIsClicked(!isClicked);
-    console.log(id);
   };
   return (
     <div>
-      <button
-        onClick={() => handleClick(category.id)}
+      <Link
+        onClick={handleClick}
         className={`bg-white py-2 px-6 rounded ${
           isClicked ? "bg-blue-500 text-white" : ""
         } `}
       >
         {category.CategoryName}
-      </button>
+      </Link>
     </div>
   );
 };
