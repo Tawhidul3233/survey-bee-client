@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
-// add my file
+
 const Navbar = () => {
   return (
     <div className="navbar bg-base-100 lg:px-16 lg:pt-4">
