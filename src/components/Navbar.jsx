@@ -507,12 +507,12 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-x-3 hidden md:flex">
-        <Link to="/login" className="text-xl text-black">
+        <Link to="/login" className="text-xl text-black font-semibold">
           Log in
         </Link>
         <Link
           to="/register"
-          className="btn btn-secondary normal-case lg:text-xl"
+          className="btn btn-success normal-case lg:text-xl font-semibold"
         >
           Sign up free
         </Link>
