@@ -8,7 +8,7 @@ module.exports = {
       {
         surveyBee:{
           primary: '#00BF6F',
-          secondary: '#19ffAE',
+          secondary: '#007FAA',
           accent: "#334256",
           neutral: "#904451",
           "base-100": "#FFFFFF",

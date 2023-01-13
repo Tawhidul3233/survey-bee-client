@@ -1,6 +1,6 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
-
+// add and check now 
 const Banner = () => {
      return (
           <div className=' text-center my-20'>
