@@ -38,7 +38,7 @@ const Login = () => {
                               </form>
                               <div className='mt-16 ml-10 text-left'>
                                    <p className='font-[14px] text-[#BDBDBD]'> By singin up, you agree to our Terms of service. </p>
-                                   <p className='font-[14px] text-[#BDBDBD]'>If you new user? <span className='text-[#00C38B] text[14px] font-semibold underline'> <a href=" "> Create Account</a> </span> </p>
+                                   <p className='font-[14px] text-[#BDBDBD]'>If you new user? <span className='text-[#00C38B] text[14px] font-semibold underline'> <a href="Register"> Create Account</a> </span> </p>
                               </div>
                          </div>
                     </div>
