@@ -3,6 +3,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const SpecificCategory = ({ category }) => {
+  const { CategoryName, card } = category;
+  console.log(card);
+
   const [isClicked, setIsClicked] = useState(false);
   const handleClick = () => {
     setIsClicked(!isClicked);
@@ -15,7 +18,7 @@ const SpecificCategory = ({ category }) => {
           isClicked ? "bg-blue-500 text-white" : ""
         } `}
       >
-        {category.CategoryName}
+        {CategoryName}
       </Link>
     </div>
   );
