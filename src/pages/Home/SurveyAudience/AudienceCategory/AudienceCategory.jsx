@@ -1,6 +1,6 @@
 import React from "react";
-
-import SpecificCategory from "./SpecificCategory";
+import { useState } from "react";
+import CardItem from "./CardItem";
 
 const categorys = [
   {
@@ -150,16 +150,38 @@ const categorys = [
 ];
 
 const AudienceCategory = () => {
+  const [selectedCategoryId, setSelectedCategoryId] = useState();
+  //   const [activeAudience, setActiveAudience] = useState();
+
+  const handleClick = (id) => {
+    setSelectedCategoryId(id);
+  };
+
+  const selectedCategory = categorys.find((c) => c.id === selectedCategoryId);
+  const selectedCards = selectedCategory ? selectedCategory.card : [];
+
   return (
     <div className="">
       <div className="flex gap-4 justify-between mx-8 my-4">
         {categorys.map((category) => (
-          <SpecificCategory
+          <button
+            onClick={() => handleClick(category.id)}
+            className={`bg-white py-2 px-6 rounded ${
+              selectedCategoryId === category.id ? "bg-blue-500 text-white" : ""
+            }`}
             key={category.id}
-            category={category}
-          ></SpecificCategory>
+          >
+            {category.CategoryName}
+          </button>
         ))}
       </div>
+      <section className="w-full mx-auto">
+        <div className="grid grid-cols-3 gap-4">
+          {selectedCards.map((card) => (
+            <CardItem key={card.id} card={card}></CardItem>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };
