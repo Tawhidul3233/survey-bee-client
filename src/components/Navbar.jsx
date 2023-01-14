@@ -11,12 +11,12 @@ import { signOut } from "firebase/auth";
 import { setUserLogOutState } from "../features/userSlice";
 import { toast } from "react-hot-toast";
 
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isSolutionOpen, setIsSolutionOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  const [isEmailOpen, setEmailOpen] = useState(false);
   const dispatch = useDispatch();
 
   const activeUser = useSelector(user);
@@ -26,14 +26,20 @@ const Navbar = () => {
 
   const handleLogOut = () => {
     signOut(auth)
-    .then(() => {
-      dispatch(setUserLogOutState())
-      toast.success('successfully logged out!')
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  }
+      .then(() => {
+        dispatch(setUserLogOutState());
+        toast.success("successfully logged out!", {
+          style: {
+            borderRadius: "6px",
+            background: "#333",
+            color: "#fff",
+          },
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -589,16 +595,25 @@ const Navbar = () => {
           ) : (
             <>
               <button
-                to="/login"
-                className="h-14 font-semibold hover:border-b-4 border-b-4 border-gray-800 hover:border-white text-white"
+                onClick={() => setEmailOpen(!isEmailOpen)}
+                className={`h-14 font-semibold hover:border-b-4 border-b-4 border-gray-800 hover:border-white text-white ${
+                  isEmailOpen ? "border-white" : undefined
+                }`}
               >
                 {activeUser?.user?.email}
               </button>
-              <ul className="w-60 fixed right-2 top-20 z-50 bg-[#dfdfdf] p-4 rounded-sm shadow-sm border border-base-100">
-                <div>
-                  <button onClick={handleLogOut}>Sign out</button>
-                </div>
-              </ul>
+              {isEmailOpen && (
+                <ul className="w-60 fixed right-2 top-20 z-50 bg-gray-900 text-white py-4 rounded-sm shadow-sm border border-secondary">
+                  <div>
+                    <button
+                      onClick={handleLogOut}
+                      className="hover:bg-base-200 hover:text-black w-full text-left px-4 py-2"
+                    >
+                      Sign out
+                    </button>
+                  </div>
+                </ul>
+              )}
             </>
           )}
         </div>

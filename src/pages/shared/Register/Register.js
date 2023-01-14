@@ -23,8 +23,8 @@ const Register = () => {
         //     userEmail: result?.user?.email,
         //   })
         // );
-        toast.success("successfully registered!");
-        return navigate('/');
+        toast.success("Successfully logged in!");
+        return navigate("/");
       })
       .catch((err) => {
         console.log(err);
