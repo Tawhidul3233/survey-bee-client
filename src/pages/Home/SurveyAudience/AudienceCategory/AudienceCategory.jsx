@@ -150,7 +150,7 @@ const categorys = [
 ];
 
 const AudienceCategory = () => {
-  const [selectedCategoryId, setSelectedCategoryId] = useState();
+  const [selectedCategoryId, setSelectedCategoryId] = useState(1);
   //   const [activeAudience, setActiveAudience] = useState();
 
   const handleClick = (id) => {
@@ -176,7 +176,10 @@ const AudienceCategory = () => {
         ))}
       </div>
       <section className="w-full mx-auto">
-        <div className="grid grid-cols-3 gap-4">
+        <div
+          className="grid grid-cols-3 gap-4"
+          //   style={{ display: selectedCategoryId === id ? "block" : "none" }}
+        >
           {selectedCards.map((card) => (
             <CardItem key={card.id} card={card}></CardItem>
           ))}
