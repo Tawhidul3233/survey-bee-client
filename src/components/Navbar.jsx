@@ -20,9 +20,8 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   const activeUser = useSelector(user);
-  // // console.log(useSelector(user));
-  //   console.log(activeUser?.user)
   console.log(activeUser);
+
 
   const handleLogOut = () => {
     signOut(auth)

@@ -1,52 +1,45 @@
-import React, { useEffect } from "react";
-import { auth, provider } from "../../../firebase/firebase";
-import { useDispatch } from "react-redux";
-import { setActiveUser, setUserLoading } from "../../../features/userSlice";
-import { onAuthStateChanged, signInWithPopup } from "firebase/auth";
+import React from "react";
+import { auth } from "../../../firebase/firebase";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import { toast } from "react-hot-toast";
-import { useLocation, useNavigate } from "react-router-dom";
+import { saveUserToDB } from "../../../api/saveUserToDB";
+import GoogleLogin from "../../../components/Navbar/GoogleLogin";
+import { useForm } from "react-hook-form";
 
 const Register = () => {
-  const dispatch = useDispatch();
-  // const userName = useSelector(selectUserName);
-  // const userEmail = useSelector(selectUserEmail);
-  // const [userLoading, setUserLoading] = useState(true);
-  const navigate = useNavigate();
-  // const location = useLocation();
+  const { register, handleSubmit } = useForm();
 
-  const handleUserGoogleLogin = () => {
-    signInWithPopup(auth, provider)
+  // create user with email and password
+  const handleUserRegister = (data) => {
+    console.log(data);
+    createUserWithEmailAndPassword(auth, data?.email, data?.password)
       .then((result) => {
-        // dispatch(
-        //   setActiveUser({
-        //     userName: result?.user?.displayName,
-        //     userEmail: result?.user?.email,
-        //   })
-        // );
-        toast.success("Successfully logged in!");
-        return navigate("/");
+        toast.success("successfully registered!");
+        // console.log(result.user);
+        const userInfo = {
+          displayName: data.fullname,
+        };
+
+        // update user name
+        updateProfile(auth.currentUser, userInfo)
+          .then(() => {
+            saveUserToDB(data?.fullname, data?.email)
+              .then(() => {})
+              .catch((err) => console.log(err));
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      dispatch(
-        setActiveUser({
-          user: currentUser,
-        })
-      );
-      dispatch(
-        setUserLoading({
-          userLoading: false,
-        })
-      );
-    });
-    // setUserLoading(false);
-    return () => unsubscribe();
-  }, [dispatch]);
+  
 
   return (
     <div>
@@ -82,14 +75,22 @@ const Register = () => {
                 Let's started <br /> with a silmple few steps
               </p>
             </div>
-            <form className=" mt-5 ml-10 ">
+            <form
+              className=" mt-5 ml-10"
+              onSubmit={handleSubmit(handleUserRegister)}
+            >
               <div className="form-control w-5/6 md:w-3/4 ">
                 <label className="label">
                   <p className="label-text ">
                     Email<span className="text-[#E33D5F]">*</span>
                   </p>
                 </label>
-                <input type="text" className="input w-full " /> <hr />
+                <input
+                  {...register("email")}
+                  type="text"
+                  className="input w-full "
+                />{" "}
+                <hr />
               </div>
               <div className="form-control w-5/6 md:w-3/4 ">
                 <label className="label">
@@ -97,7 +98,12 @@ const Register = () => {
                     Full name<span className="text-[#E33D5F]">*</span>
                   </p>
                 </label>
-                <input type="text" className="input w-full " /> <hr />
+                <input
+                  {...register("fullname")}
+                  type="text"
+                  className="input w-full "
+                />{" "}
+                <hr />
               </div>
               <div className="form-control w-5/6 md:w-3/4 ">
                 <label className="label">
@@ -105,7 +111,12 @@ const Register = () => {
                     Password<span className="text-[#E33D5F]">*</span>
                   </p>
                 </label>
-                <input type="text" className="input w-full " /> <hr />
+                <input
+                  {...register("password")}
+                  type="text"
+                  className="input w-full "
+                />{" "}
+                <hr />
               </div>
               <div className="mt-5 w-5/6 md:w-3/4">
                 <button className=" bg-[#00C38B] w-full py-5 rounded-lg text-white ">
@@ -127,12 +138,7 @@ const Register = () => {
               </p>
             </div>
             <div className="my-5 ml-10">
-              <button
-                onClick={handleUserGoogleLogin}
-                className="btn btn-primary text-white"
-              >
-                Continue With google
-              </button>
+              <GoogleLogin />
             </div>
           </div>
         </div>
