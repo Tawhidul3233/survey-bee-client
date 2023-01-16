@@ -1,23 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// cosnt [userName, setUserName] = useState(null);
-// const initialState = {
-//   userName: null,
-//   userEmail: null,
-// };
 const initialState = {
   user: null,
-  userLoading: true
+  userLoading: false
 };
 
 const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    // setActiveUser: (state, action) => {
-    //   state.userName = action.payload.userName;
-    //   state.userEmail = action.payload.userEmail;
-    // },
     setActiveUser: (state, action) => {
       state.user = action.payload.user;
     },
