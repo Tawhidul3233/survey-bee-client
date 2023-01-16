@@ -22,6 +22,6 @@
 
 - h1=>text-3xl
 
-### Oliullah - react icon is installed, navbar
+### Oliullah - react icon is installed, navbar, firebase installed
 
 ### Tonmoy - error page
