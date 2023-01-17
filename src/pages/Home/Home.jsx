@@ -1,3 +1,6 @@
+
+
+
 import React from 'react';
 import Banner from '../../components/Banner';
 import Faq from '../../components/Faq';
@@ -7,15 +10,20 @@ import SurveyAudience from './SurveyAudience/SurveyAudience';
 
 
 
+
 const Home = () => {
   
   return (
     <div>
+
+      
+
       <Banner />
       <SurveyAudience />
       <Subscription />
       <ImageSection/>
       <Faq/>
+
     </div>
   );
 };
