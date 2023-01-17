@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
+import { MdKeyboardArrowUp } from "react-icons/md";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import { CgArrowLongRight } from "react-icons/cg";
 import { useState } from "react";
 import { user } from "../features/userSlice";
@@ -20,8 +22,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   const activeUser = useSelector(user);
-  console.log(activeUser);
-
+  // console.log(activeUser);
 
   const handleLogOut = () => {
     signOut(auth)
@@ -42,9 +43,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* {userLoading ? (
-        <p>Loading...</p>
-      ) : ( */}
       <div
         className={`navbar ${
           activeUser?.user?.email ? "bg-gray-800" : "bg-base-100 text-black"
@@ -53,7 +51,7 @@ const Navbar = () => {
         <div className="navbar-start">
           <div className="dropdown">
             <label
-              // tabIndex={0}
+              tabIndex={0}
               className="lg:hidden"
               onClick={() => setIsOpen(!isOpen)}
             >
@@ -63,39 +61,188 @@ const Navbar = () => {
                 <GiHamburgerMenu className="text-5xl" />
               )}
             </label>
-            {/* <ul
-            tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-          >
-          parent
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li tabIndex={0}>
-              <a className="justify-between">
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                </svg>
-              </a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Plans & Pricing</a>
-            </li>
-          </ul> */}
+            <div>
+              {isOpen && (
+                <>
+                  <ul
+                    tabIndex={0}
+                    className={`menu menu-compact dropdown-content bg-[#e0e5e5] overflow-y-scroll mt-2 p-2 shadow w-screen md:w-[85vw] pt-3 transition ease-in-out duration-[20ms] min-h-screen ${
+                      isOpen ? "ml-[-8px]" : "ml-[-600px]"
+                    }`}
+                  >
+                    <li tabIndex={0} className="rounded-sm w-full mx-0 px-0">
+                      <p
+                        onClick={() =>
+                          setIsProductsOpen(
+                            !isProductsOpen,
+                            setIsSolutionOpen(false),
+                            setIsResourcesOpen(false)
+                          )
+                        }
+                        className={`justify-between hover:text-base-100 rounded-b-none w-full ${
+                          isOpen ? " hover:bg-[#808B91]" : undefined
+                        }`}
+                      >
+                        <span className="font-semibold">Products</span>
+                        <span>
+                          {isProductsOpen ? (
+                            <MdKeyboardArrowUp className="text-3xl" />
+                          ) : (
+                            <MdKeyboardArrowDown className="text-3xl" />
+                          )}
+                        </span>
+                      </p>
+                      {isProductsOpen && (
+                        <ul className="w-[97%] fixed top-14 left-2 z-50 bg-[#808B91] rounded-none text-base-100">
+                          <div
+                            className=" flex justify-between flex-col
+                            border-0 rounded-none
+                            "
+                          >
+                            <div className="flex flex-col w-full px-4 py-2">
+                              <span className="w-full mx-3">
+                                <small>Surveys</small>
+                              </span>
+                              <Link
+                                to="/"
+                                className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                              >
+                                <span className="font-semibold text-xl text-secondary block">
+                                  SurveyBee
+                                </span>
+                                <span>
+                                  Create & send surveys with the world's leading
+                                  online survey software
+                                </span>
+                              </Link>
+                              <Link
+                                to="/"
+                                className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                              >
+                                <span className="font-semibold text-xl text-secondary block">
+                                  Enterprise
+                                </span>
+                                <span>
+                                  Empower your organization with our secure
+                                  survey platform
+                                </span>
+                              </Link>
+                              <Link
+                                to="/"
+                                className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                              >
+                                <span className="font-semibold text-xl text-secondary block">
+                                  Integrations & Plug-ins
+                                </span>
+                                <span>
+                                  Bring survey insights into your business apps
+                                </span>
+                              </Link>
+                            </div>
+                            <div className="flex flex-col w-full px-4 py-2">
+                              <span className="w-full mx-3">
+                                <small>Specialized products</small>
+                              </span>
+                              <Link
+                                to="/"
+                                className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                              >
+                                <span className="font-semibold text-xl text-secondary block">
+                                  Audience
+                                </span>
+                                <span>
+                                  Collect survey responses from our global
+                                  consumer panel
+                                </span>
+                              </Link>
+                              <Link
+                                to="/"
+                                className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                              >
+                                <span className="font-semibold text-xl text-secondary block">
+                                  CX
+                                </span>
+                                <span>
+                                  Understand & improve customer experience
+                                  (NPS®)
+                                </span>
+                              </Link>
+                              <Link
+                                to="/"
+                                className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                              >
+                                <span className="font-semibold text-xl text-secondary block">
+                                  Engage
+                                </span>
+                                <span>
+                                  Understand & increase employee engagement
+                                </span>
+                              </Link>
+                            </div>
+                            <div className="flex flex-col w-full px-4 py-2">
+                              <span className="w-full mx-3">
+                                <small>Yout State</small>
+                              </span>
+                              <Link
+                                to="/"
+                                className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                              >
+                                <span className="font-semibold text-xl text-secondary block">
+                                  TechValidate
+                                </span>
+                                <span>
+                                  Create marketing content from customer
+                                  feedback
+                                </span>
+                              </Link>
+                              <Link
+                                to="/"
+                                className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                              >
+                                <span className="font-semibold text-xl text-secondary block">
+                                  Apply
+                                </span>
+                                <span>
+                                  Collect, review & manage applications online
+                                </span>
+                              </Link>
+                              <Link
+                                to="/"
+                                className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                              >
+                                <span className="font-semibold text-xl text-secondary block">
+                                  Wufoo
+                                </span>
+                                <span>
+                                  Gather data & payments with online forms
+                                </span>
+                              </Link>
+                              <Link
+                                to="/"
+                                className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
+                              >
+                                <span className="font-semibold text-xl text-secondary block">
+                                  GetFeedback
+                                </span>
+                                <span>Customer feedback for Salesforce</span>
+                              </Link>
+                              <Link className="pl-24 py-2 flex items-center justify-end gap-x-1 text-primary">
+                                <span className="hover:underline">
+                                  View all products
+                                </span>{" "}
+                                <span className="">
+                                  <CgArrowLongRight />
+                                </span>
+                              </Link>
+                            </div>
+                          </div>
+                        </ul>
+                      )}
+                    </li>
+                  </ul>
+                </>
+              )}
+            </div>
           </div>
           <Link
             to="/"
@@ -617,7 +764,6 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {/* )} */}
     </>
   );
 };
