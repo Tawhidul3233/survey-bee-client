@@ -1,18 +1,29 @@
-import React from "react";
-import Banner from "../../components/Banner";
-import MainContainer from "../../components/ExpertWrittenTemplate/MainContainer";
-import Faq from "../../components/Faq";
-import ImageSection from "../../components/ImageSection/ImageSection";
-import SurveyAudience from "../../components/SurveyAudience/SurveyAudience";
+
+
+
+import React from 'react';
+import Banner from '../../components/Banner';
+import Faq from '../../components/Faq';
+import ImageSection from '../../components/ImageSection/ImageSection';
+import Subscription from '../../components/Subscription/Subscription';
+import SurveyAudience from './SurveyAudience/SurveyAudience';
+
+
+
 
 const Home = () => {
+  
   return (
     <div>
-      <Banner> </Banner>
+
+      
+
+      <Banner />
       <SurveyAudience />
-      <ImageSection />
-      <MainContainer />
-      <Faq></Faq>
+      <Subscription />
+      <ImageSection/>
+      <Faq/>
+
     </div>
   );
 };
