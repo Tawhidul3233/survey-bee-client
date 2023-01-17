@@ -6,7 +6,7 @@ const CardItem = ({ card }) => {
     <div>
       <a
         style={{ backgroundImage: `url(${img})` }}
-        href="#"
+        href="/card"
         className="relative block overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat"
       >
         <div class="relative bg-black bg-opacity-40 p-8 pt-40 text-white">
