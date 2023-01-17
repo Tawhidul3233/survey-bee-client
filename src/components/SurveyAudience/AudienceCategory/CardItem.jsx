@@ -9,10 +9,10 @@ const CardItem = ({ card }) => {
         href="/card"
         className="relative block overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat"
       >
-        <div class="relative bg-black bg-opacity-40 p-8 pt-40 text-white">
-          <h3 class="text-2xl font-bold">{title}</h3>
+        <div ClassName="relative bg-black bg-opacity-40 p-8 pt-40 text-white">
+          <h3 ClassName="text-2xl font-bold">{title}</h3>
 
-          <p class="text-sm">{desc}</p>
+          <p ClassName="text-sm">{desc}</p>
         </div>
       </a>
     </div>
