@@ -4,6 +4,7 @@ import CardItem from "./CardItem";
 
 const categorys = [
   {
+    id: 1,
     CategoryName: "Employees",
     card: [
       {
@@ -39,6 +40,7 @@ const categorys = [
     ],
   },
   {
+    id: 2,
     CategoryName: "Customers",
     card: [
       {
@@ -74,6 +76,7 @@ const categorys = [
     ],
   },
   {
+    id: 3,
     CategoryName: "Target Markets",
     card: [
       {
@@ -109,6 +112,7 @@ const categorys = [
     ],
   },
   {
+    id: 4,
     CategoryName: "Other",
     card: [
       {
