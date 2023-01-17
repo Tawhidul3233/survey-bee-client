@@ -18,7 +18,7 @@
 
 ### Tawhid - banner, Register and login page.
 
-### tuhin - footer,who is our suvey audience
+### tuhin - footer,who is our suvey audience,installed tanstackquery
 
 - h1=>text-3xl
 
