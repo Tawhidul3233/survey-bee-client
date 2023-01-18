@@ -5,7 +5,7 @@ const AudienceCategory = ({ categorys, handleClick, selectedCategoryId }) => {
 
   return (
     <div className="">
-      <div className="flex flex-col gap-4 justify-between mx-8 my-4">
+      <div className="flex flex-col md:flex-row gap-4 justify-between mx-8 my-4">
         {categorys.map((category) => (
           <button
             key={category._id}
