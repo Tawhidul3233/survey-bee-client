@@ -25,7 +25,12 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/survey-Audience/:title",
+        path: "/survey-Audience/:title/:id",
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/specificSurveyAudience/${params.title}/${params.id}`
+          ),
+
         element: <SurveyAudience />,
       },
     ],

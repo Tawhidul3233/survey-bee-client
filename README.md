@@ -25,3 +25,7 @@
 ### Oliullah - react icon is installed, navbar, firebase installed
 
 ### Tonmoy - error page,ImageSeaction,Testimonial,Feedback sections
+
+### website live link
+
+- https://peppy-caramel-490c35.netlify.app/

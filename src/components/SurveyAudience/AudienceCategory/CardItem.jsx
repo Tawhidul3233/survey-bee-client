@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CardItem = ({ card }) => {
+const CardItem = ({ card, selectedCategoryId }) => {
+  console.log(selectedCategoryId);
   const { img, title, desc } = card;
   return (
     <div>
       <Link
         style={{ backgroundImage: `url(${img})` }}
-        to={`/survey-Audience/${title}`}
+        to={`/survey-Audience/${title}/${selectedCategoryId}`}
         className="relative block overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat"
       >
         <div className="relative bg-black bg-opacity-40 p-8 pt-40 text-white">
