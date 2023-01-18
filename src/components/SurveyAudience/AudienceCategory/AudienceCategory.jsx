@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useState } from "react";
 import CardItem from "./CardItem";
@@ -152,6 +153,22 @@ const categorys = [
 const AudienceCategory = () => {
   const [selectedCategoryId, setSelectedCategoryId] = useState(1);
   //   const [activeAudience, setActiveAudience] = useState();
+
+  // const {
+  //   isLoading,
+  //   error,
+  //   data: categorys,
+  // } = useQuery({
+  //   queryKey: ["Audience"],
+  //   queryFn: () =>
+  //     fetch("https://api.github.com/repos/tannerlinsley/react-query").then(
+  //       (res) => res.json()
+  //     ),
+  // });
+
+  // if (isLoading) return "Loading...";
+
+  // if (error) return "An error has occurred: " + error.message;
 
   const handleClick = (id) => {
     setSelectedCategoryId(id);
