@@ -28,7 +28,7 @@ const SurveyAudience = () => {
     : categorys[0].card;
 
   return (
-    <div className="my-4 bg-slate-100 w-3/4 mx-auto p-5">
+    <div className="my-4 bg-slate-100 w-full mx-auto md:w-3/4 md:mx-auto p-5">
       <h1 className="font-semibold text-center text-3xl">
         Who is Our survey Audience?
       </h1>
@@ -38,9 +38,13 @@ const SurveyAudience = () => {
         categorys={categorys}
       />
       <section>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3  gap-4">
           {selectedCards.map((card) => (
-            <CardItem key={card.id} card={card}></CardItem>
+            <CardItem
+              key={card.id}
+              card={card}
+              selectedCategoryId={selectedCategoryId}
+            ></CardItem>
           ))}
         </div>
       </section>
