@@ -17,7 +17,7 @@ const GoogleLogin = () => {
         saveUserToDB(result.user.displayName, result.user.email)
           .then((data) => {
             console.log(data);
-            return navigate("/");
+            return navigate("/dashboard");
           })
           .catch((err) => {
             console.log(err);
