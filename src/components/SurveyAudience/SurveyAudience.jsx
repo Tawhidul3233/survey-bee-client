@@ -12,7 +12,7 @@ const SurveyAudience = () => {
   } = useQuery({
     queryKey: ["Audience"],
     queryFn: () =>
-      fetch("http://localhost:5000/surveyAudience").then((res) => res.json()),
+      fetch("https://survey-bee-server.vercel.app/surveyAudience").then((res) => res.json()),
   });
 
   if (isLoading) return "Loading...";

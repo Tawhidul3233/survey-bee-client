@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
         path: "/survey-Audience/:title/:id",
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/specificSurveyAudience/${params.title}/${params.id}`
+            `https://survey-bee-server.vercel.app/specificSurveyAudience/${params.title}/${params.id}`
           ),
 
         element: <SurveyAudience />,
