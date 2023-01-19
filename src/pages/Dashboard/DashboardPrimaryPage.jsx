@@ -28,7 +28,7 @@ const DashboardPrimaryPage = () => {
     queryFn: async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/users/${currentUser?.email}`
+          `https://survey-bee-server.vercel.app/users/${currentUser?.email}`
         );
         // console.log(response?.data)
         return response?.data;
@@ -53,7 +53,7 @@ const DashboardPrimaryPage = () => {
       // console.log(data);
 
       const response = await axios.patch(
-        `http://localhost:5000/users/${dbUser?._id}`,
+        `https://survey-bee-server.vercel.app/users/${dbUser?._id}`,
         {
           firstName,
           lastName,
