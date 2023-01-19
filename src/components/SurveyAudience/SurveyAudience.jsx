@@ -28,7 +28,7 @@ const SurveyAudience = () => {
     : categorys[0].card;
 
   return (
-    <div className="my-4 bg-slate-100 w-full mx-auto md:w-3/4 md:mx-auto p-5">
+    <div className="my-4 bg-slate-100 rounded-md w-full mx-auto md:w-3/4 md:mx-auto p-5">
       <h1 className="font-semibold text-center text-3xl">
         Who is Our survey Audience?
       </h1>
