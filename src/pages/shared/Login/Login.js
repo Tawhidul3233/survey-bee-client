@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import GoogleLogin from "../../../components/Navbar/GoogleLogin";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -13,7 +14,7 @@ const Login = () => {
     signInWithEmailAndPassword(auth, data?.email, data?.password)
       .then(() => {
         toast.success("loggedin successful!");
-        navigate("/");
+        return navigate("/dashboard");
       })
       .catch((err) => {
         toast.warn(err.message);
@@ -106,6 +107,9 @@ const Login = () => {
                   <a href="/Register"> Create Account</a>{" "}
                 </span>{" "}
               </p>
+            </div>
+            <div className="my-5 ml-10 text-left">
+              <GoogleLogin />
             </div>
           </div>
         </div>

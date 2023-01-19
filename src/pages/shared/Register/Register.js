@@ -1,20 +1,19 @@
 import React from "react";
 import { auth } from "../../../firebase/firebase";
-import {
-  createUserWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { toast } from "react-hot-toast";
 import { saveUserToDB } from "../../../api/saveUserToDB";
 import GoogleLogin from "../../../components/Navbar/GoogleLogin";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
 
   // create user with email and password
   const handleUserRegister = (data) => {
-    console.log(data);
+    // console.log(data);
     createUserWithEmailAndPassword(auth, data?.email, data?.password)
       .then((result) => {
         toast.success("successfully registered!");
@@ -33,13 +32,12 @@ const Register = () => {
           .catch((err) => {
             console.log(err);
           });
+        return navigate("/dashboard");
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
-  
 
   return (
     <div>
