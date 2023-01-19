@@ -72,7 +72,7 @@ const Faq = () => {
                     >
                          <summary class="flex items-center justify-between cursor-pointer">
                               <h2 class="text-lg font-medium text-gray-900">                          
-                                   3. Why should you conduct a customer survey with market research questions?
+                                   3. Why should you conduct a customer survey with market research-questions?
                               </h2>
 
                               <span

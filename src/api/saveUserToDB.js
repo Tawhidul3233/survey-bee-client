@@ -4,7 +4,7 @@ import axios from "axios";
 export const saveUserToDB = async (userName, email) => {
   try {
     const user = { userName, email };
-    const data = await axios.put("http://localhost:5000/users", user);
+    const data = await axios.put("https://survey-bee-server.vercel.app/users", user);
     return data;
     
   } catch (error) {

@@ -1,6 +1,5 @@
 import React from 'react';
-import symbol1 from '../../../assets/images/symbol/Symbol-1.png';
-import symbol2 from '../../../assets/images/symbol/Symbol-2.png';
+
 import FeedbackDetails from './FeedbackDetails';
 const Feedback = () => {
 
@@ -8,14 +7,14 @@ const Feedback = () => {
         {
             _id:1,
             des:'Get a platform that can grow and it change along with it your survey needs over time. Browse our plans to learn more about specific features.',
-            img:symbol1,
+            img:'https://i.ibb.co/C98vCj7/Symbol-1.png',
             title:'Momentive Solutions',
             btn:'Visit Momentive'
         },
         {
             _id:2,
             des:'Manage your company data with advanced security and control, so you can enable your teams to share and collaborate safely.',
-            img:symbol2,
+            img:'https://i.ibb.co/Wv355Pj/Symbol-2.png',
             title:'Get Feedback',
             btn:'Visit GetFeedback'
         }

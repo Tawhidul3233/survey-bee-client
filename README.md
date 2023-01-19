@@ -1,3 +1,5 @@
+Firebase Live Link: https://surveybee-8c91a.web.app/
+
 # Instruction (Must Read)
 
 # \*\*\*Most Important thing is we have to know the update of each other. And If we do not know about the update features of our website and try to push then must will be conflict in our code. So, if we want to avoid the conflict we must have to be active as well as inform our update after 30 minutes to each others in our group(CODE WITH HOPE).
@@ -18,10 +20,14 @@
 
 ### Tawhid - banner, Register and login page.
 
-### tuhin - footer,who is our suvey audience
+### tuhin - footer,who is our suvey audience,installed tanstackquery
 
 - h1=>text-3xl
 
 ### Oliullah - react icon is installed, navbar, firebase installed
 
-### Tonmoy - error page
+### Tonmoy - error page,ImageSeaction,Testimonial,Feedback sections
+
+### website live link
+
+Netlify Live Link: https://peppy-caramel-490c35.netlify.app/
