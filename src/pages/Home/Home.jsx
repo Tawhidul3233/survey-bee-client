@@ -5,6 +5,8 @@ import Faq from "../../components/Faq";
 import ImageSection from "../../components/ImageSection/ImageSection";
 import Subscription from "../../components/Subscription/Subscription";
 import SurveyAudience from "../../components/SurveyAudience/SurveyAudience";
+import Feedback from "./Feedback/Feedback";
+import Testimonial from "./Testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -14,6 +16,8 @@ const Home = () => {
       <Subscription />
       <ImageSection />
       <MainContainer />
+      <Testimonial />
+      <Feedback />
       <Faq />
     </div>
   );
