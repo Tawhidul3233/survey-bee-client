@@ -57,11 +57,12 @@ const TalkToUs = () => {
                               </label>
                               <select className="select select-bordered">
                                    <option disabled selected>Pick one</option>
-                                   <option>Star Wars</option>
-                                   <option>Harry Potter</option>
-                                   <option>Lord of the Rings</option>
-                                   <option>Planet of the Apes</option>
-                                   <option>Star Trek</option>
+                                   <option>Bangladesh</option>
+                                   <option>India</option>
+                                   <option>Pakistan</option>
+                                   <option>USA</option>
+                                   <option>UK</option>
+                                   <option>Others</option>
                               </select>
                          </div>
                          <div className="form-control w-full  ">
@@ -70,11 +71,10 @@ const TalkToUs = () => {
                               </label>
                               <select className="select select-bordered">
                                    <option disabled selected>Pick one</option>
-                                   <option>Star Wars</option>
-                                   <option>Harry Potter</option>
-                                   <option>Lord of the Rings</option>
-                                   <option>Planet of the Apes</option>
-                                   <option>Star Trek</option>
+                                   <option>Education</option>
+                                   <option>Government</option>
+                                   <option>Membership</option>
+                                   <option>Others</option>
                               </select>
                          </div>
                     </div>
