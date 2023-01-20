@@ -46,8 +46,9 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`navbar ${activeUser?.user?.email ? "bg-gray-800" : "bg-base-100 text-black"
-          } lg:px-16 shadow-md sticky top-0 z-50 lg:pt-4`}
+        className={`navbar ${
+          activeUser?.user?.email ? "bg-gray-800" : "bg-base-100 text-black"
+        } lg:px-16 shadow-md sticky top-0 z-50 lg:pt-4`}
       >
         <div className="navbar-start">
           {/* mobile view starts here*/}
