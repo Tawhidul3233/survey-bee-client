@@ -15,12 +15,12 @@ const Home = () => {
       <SurveyAudience />
       <Subscription />
       <ImageSection />
-      <Faq />
-      
+     
       <MainContainer />
       <Testimonial />
       <Feedback />
       
+      <Faq />
     </div>
   );
 };
