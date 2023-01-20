@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
 import UserProfileUpgradeModal from "../../components/Dashboard/UserProfileUpgradeModal";
 import SurveyCreateButton from "../../components/Dashboard/SurveyCreateButton";
+import Loading from "../../components/Shared/Loading";
 
 const DashboardPrimaryPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -40,7 +41,9 @@ const DashboardPrimaryPage = () => {
     },
   });
 
-  if (isLoading) return "Loading...";
+  if (isLoading) {
+    return <Loading />
+  }
 
   if (error) {
     return "Please check your internet!!!";
