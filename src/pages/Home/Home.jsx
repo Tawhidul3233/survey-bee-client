@@ -5,6 +5,7 @@ import Faq from "../../components/Faq";
 import ImageSection from "../../components/ImageSection/ImageSection";
 import Subscription from "../../components/Subscription/Subscription";
 import SurveyAudience from "../../components/SurveyAudience/SurveyAudience";
+import Contact from "./Contact/Contact";
 import Feedback from "./Feedback/Feedback";
 import Testimonial from "./Testimonial/Testimonial";
 
@@ -16,11 +17,10 @@ const Home = () => {
       <Subscription />
       <ImageSection />
       <Faq />
-      
       <MainContainer />
       <Testimonial />
       <Feedback />
-      
+      <Contact/>
     </div>
   );
 };
