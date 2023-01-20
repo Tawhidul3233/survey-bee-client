@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
         element: <SurveyAudience />,
       },
       {
-        path: "/pricing",
+        path: "/plans-pricing",
         element: <Pricing></Pricing>
       }
     ],
