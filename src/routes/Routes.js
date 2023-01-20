@@ -5,6 +5,7 @@ import ApplyPage from "../pages/ApplyPage/ApplyPage";
 import CreateASurvey from "../pages/Dashboard/CreateASurvey";
 import DashboardPrimaryPage from "../pages/Dashboard/DashboardPrimaryPage";
 import Home from "../pages/Home/Home";
+import Pricing from "../pages/Pricing/Pricing";
 import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
 import Login from "../pages/shared/Login/Login";
 import Register from "../pages/shared/Register/Register";
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
 
         element: <SurveyAudience />,
       },
+      {
+        path: "/pricing",
+        element: <Pricing></Pricing>
+      }
     ],
   },
   {
