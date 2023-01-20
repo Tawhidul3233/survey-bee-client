@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../layouts/Dashboard/Dashboard";
 import Main from "../layouts/Main/Main";
+import ApplyPage from "../pages/ApplyPage/ApplyPage";
 import CreateASurvey from "../pages/Dashboard/CreateASurvey";
 import DashboardPrimaryPage from "../pages/Dashboard/DashboardPrimaryPage";
 import Home from "../pages/Home/Home";
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/apply",
+        element: <ApplyPage> </ApplyPage>,
       },
       {
         path: "/survey-Audience/:title/:id",

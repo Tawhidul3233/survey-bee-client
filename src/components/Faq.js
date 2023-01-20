@@ -75,7 +75,7 @@ const Faq = () => {
                                    3. Why should you conduct a customer survey with market research-questions?
                               </h2>
 
-                              <span
+                              <spanj
                                    class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
                               >
                                    <svg
@@ -90,7 +90,7 @@ const Faq = () => {
                                              clip-rule="evenodd"
                                         />
                                    </svg>
-                              </span>
+                              </spanj>
                          </summary>
 
                          <p class="mt-4 leading-relaxed text-gray-700">
