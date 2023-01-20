@@ -50,7 +50,7 @@ const MainContainer = () => {
         survey types, all designed to get you accurate results you can rely on.
       </p>
 
-      <div className="flex flex-row">
+      <div className="  md:flex md:flex-row">
         <div className="basis-1/4 mx-5">
           <Sidebar
             hadleSearch={hadleSearch}

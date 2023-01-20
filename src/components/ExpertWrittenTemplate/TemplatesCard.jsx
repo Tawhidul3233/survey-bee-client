@@ -45,7 +45,7 @@ const templateCard = [
 ];
 const TemplatesCard = () => {
   return (
-    <div className="my-10 grid grid-cols-4 gap-2">
+    <div className="mt-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4.  gap-4">
       {templateCard.map((card) => (
         <Link
           style={{
@@ -54,12 +54,10 @@ const TemplatesCard = () => {
           }}
           to={`/${card.name}`}
           key={card.id}
-          className="relative block overflow-hidden "
+          className="w-62 h-56 "
         >
-          <div className="relative p-8 pt-40 text-white ">
-            <div className=" flex items-center">
-              <h3 className="text-2xl font-bold block ">{card.name}</h3>
-            </div>
+          <div className=" text-white rounded">
+            <h3 className="text-xl font-bold  mt-20 p-4 ">{card.name}</h3>
           </div>
         </Link>
       ))}
