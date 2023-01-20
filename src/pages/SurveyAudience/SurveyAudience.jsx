@@ -6,7 +6,7 @@ const SurveyAudience = () => {
   console.log(card);
   return (
     <>
-      <div className="my-3">
+      <div className="my-3 text-center">
         <h1>welcome to joy bangla project</h1>
       </div>
     </>
