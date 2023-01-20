@@ -1041,7 +1041,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/"
+                to="/plans-pricing"
                 className={`${activeUser?.user?.email ? "text-white" : "text-black"
                   }`}
               >
