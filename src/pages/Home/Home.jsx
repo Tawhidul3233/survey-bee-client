@@ -16,11 +16,11 @@ const Home = () => {
       <SurveyAudience />
       <Subscription />
       <ImageSection />
-      <Faq />
       <MainContainer />
       <Testimonial />
       <Feedback />
       <Contact/>
+      <Faq />
     </div>
   );
 };

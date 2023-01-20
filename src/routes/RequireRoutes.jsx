@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate, useLocation } from "react-router-dom";
+import Loading from "../components/Shared/Loading";
 import { user } from "../features/userSlice";
 
 const RequireRoutes = ({ children }) => {
@@ -10,7 +11,7 @@ const RequireRoutes = ({ children }) => {
   const location = useLocation();
 
   if (userLoading) {
-    return <h2>Loading...</h2>;
+    return <Loading />
   }
 
   if (existingUser?.email) {
