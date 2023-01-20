@@ -1,6 +1,44 @@
 import React from "react";
-
+import Sidebar from "./Leftbar";
+import TemplatesCard from "./TemplatesCard";
+const templateCategories = [
+  {
+    id: 1,
+    name: "Customers",
+  },
+  {
+    id: 2,
+    name: "Education",
+  },
+  {
+    id: 3,
+    name: "Employees",
+  },
+  {
+    id: 4,
+    name: "Events",
+  },
+  {
+    id: 5,
+    name: "Healthcare",
+  },
+  {
+    id: 6,
+    name: "Market Research",
+  },
+  {
+    id: 7,
+    name: "Nonprofit",
+  },
+  {
+    id: 8,
+    name: "Other",
+  },
+];
 const MainContainer = () => {
+  const hadleSearch = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="">
       <h1 className="text-2xl text-center capitalize font-semibold">
@@ -13,14 +51,15 @@ const MainContainer = () => {
       </p>
 
       <div className="flex flex-row">
-        <div className="basis-1/4 mx-5 bg-gray-600">
-          <div className="grid justify-center">
-            <h1>side bar</h1>
-          </div>
+        <div className="basis-1/4 mx-5">
+          <Sidebar
+            hadleSearch={hadleSearch}
+            templateCategories={templateCategories}
+          />
         </div>
-        <div className="basis-3/4 mx-5 bg-gray-600">
+        <div className="basis-3/4 mx-5 ">
           <div className="grid justify-center">
-            <h1>template</h1>
+            <TemplatesCard />
           </div>
         </div>
       </div>
