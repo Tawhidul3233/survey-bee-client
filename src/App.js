@@ -12,12 +12,12 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // dispatch(
+    //   setUserLoading({
+    //     userLoading: true,
+    //   })
+    // );
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      dispatch(
-        setUserLoading({
-          userLoading: true,
-        })
-      );
       dispatch(
         setActiveUser({
           user: currentUser,

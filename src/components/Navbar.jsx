@@ -24,6 +24,7 @@ const Navbar = () => {
 
   const activeUser = useSelector(user);
   // console.log(activeUser);
+  const { user: existingUser } = activeUser;
 
   const handleLogOut = () => {
     signOut(auth)
@@ -50,6 +51,7 @@ const Navbar = () => {
         } lg:px-16 shadow-md sticky top-0 z-50 lg:pt-4`}
       >
         <div className="navbar-start">
+          {/* mobile view starts here*/}
           <div className="dropdown">
             <label
               tabIndex={0}
@@ -568,6 +570,7 @@ const Navbar = () => {
             />
             <h3>SurveyBee</h3>
           </Link>
+          {/* mobile view ends here*/}
         </div>
         <div className="navbar-center lg:hidden">
           <Link
@@ -584,7 +587,32 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden md:hidden lg:flex mx-auto">
           <ul className="menu menu-horizontal px-1">
-            <li tabIndex={0}>
+            {/* for dashboard */}
+            <li className="">
+              <Link
+                to="/dashboard"
+                className={`${
+                  !activeUser?.user?.email ? "hidden" : "text-white"
+                }`}
+              >
+                Dashboard
+              </Link>
+            </li>
+            <li className="">
+              <Link
+                to="/dashboard"
+                className={`${
+                  !activeUser?.user?.email ? "hidden" : "text-white"
+                }`}
+              >
+                My Surveys
+              </Link>
+            </li>
+            {/* for dashboard */}
+            <li
+              tabIndex={0}
+              className={`${activeUser?.user?.email ? "hidden" : undefined}`}
+            >
               <p
                 onClick={() =>
                   setIsProductsOpen(
@@ -612,8 +640,8 @@ const Navbar = () => {
                 <ul className="w-[70vw] fixed left-[15%] top-20 z-50 bg-[#FFFFFF] nav-subdiv-shadow">
                   <div
                     className=" flex justify-between flex-row
-        border-0 rounded-none
-        "
+                    border-0 rounded-none
+                    "
                   >
                     <div className="flex flex-col w-1/3 px-4 py-4">
                       <div className="border-b-[1px] border-gray-800 w-full mx-4">
@@ -755,7 +783,10 @@ const Navbar = () => {
                 </ul>
               )}
             </li>
-            <li tabIndex={0}>
+            <li
+              tabIndex={0}
+              className={`${activeUser?.user?.email ? "hidden" : undefined}`}
+            >
               <p
                 onClick={() =>
                   setIsSolutionOpen(
@@ -931,7 +962,10 @@ const Navbar = () => {
                 </ul>
               )}
             </li>
-            <li tabIndex={0}>
+            <li
+              tabIndex={0}
+              className={`${activeUser?.user?.email ? "hidden" : undefined}`}
+            >
               <p
                 onClick={() =>
                   setIsResourcesOpen(

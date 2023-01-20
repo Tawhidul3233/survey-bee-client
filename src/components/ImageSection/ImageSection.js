@@ -18,7 +18,7 @@ const ImageSection = () => {
       panel of more than 175 million respondents from across the globe.
       </h5>
       </div>
-      <button className="btn bg-white btn-primary text-black">Learn More</button>
+      <button className="btn bg-white btn-success text-black normal-case">Learn More</button>
     </div>
   </div>
 </div>
