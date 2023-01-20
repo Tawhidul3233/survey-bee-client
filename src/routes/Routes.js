@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../layouts/Dashboard/Dashboard";
 import Main from "../layouts/Main/Main";
+import CreateASurvey from "../pages/Dashboard/CreateASurvey";
 import DashboardPrimaryPage from "../pages/Dashboard/DashboardPrimaryPage";
 import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <DashboardPrimaryPage />,
+      },
+      {
+        path: "/dashboard/createasurvey",
+        element: <CreateASurvey />,
       },
     ],
   },

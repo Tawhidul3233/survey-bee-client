@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
+import UserProfileUpgradeModal from "../../components/Dashboard/UserProfileUpgradeModal";
+import SurveyCreateButton from "../../components/Dashboard/SurveyCreateButton";
 
 const DashboardPrimaryPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -40,8 +42,10 @@ const DashboardPrimaryPage = () => {
 
   if (isLoading) return "Loading...";
 
-  if (error) return "An error has occurred: " + error.message;
-  console.log(dbUser);
+  if (error) {
+    return "Please check your internet!!!";
+  }
+  // console.log(dbUser);
 
   const handleUpdateProfile = async (data) => {
     setFirstName(data?.firstName);
@@ -75,8 +79,9 @@ const DashboardPrimaryPage = () => {
 
   return (
     <div className="min-h-screen">
-      <h2 className="md:px-2 lg:px-10 py-3 text-2xl">
-        Welcome back,{" "}
+      {/* user greet and modal starts */}
+      <div className="md:px-2 lg:px-10 py-3 text-2xl">
+        Welcome back,
         <label
           htmlFor="displayNameModal"
           className="hover:underline cursor-pointer"
@@ -88,133 +93,20 @@ const DashboardPrimaryPage = () => {
         {/* Put this part before </body> tag */}
         <input type="checkbox" id="displayNameModal" className="modal-toggle" />
         {!firstName && (
-          <div className="modal pt-10">
-            <div className="modal-box relative w-11/12 max-w-5xl">
-              <label
-                htmlFor="displayNameModal"
-                className="btn btn-sm btn-circle absolute right-2 top-2"
-              >
-                ✕
-              </label>
-              <h3 className="text-3xl font-semibold text-center">
-                Tell us about yourself so we can personalize your experience
-              </h3>
-              <form onSubmit={handleSubmit(handleUpdateProfile)}>
-                <div className="pt-4 pb-6 bg-gray-900 flex px-4 my-8">
-                  <div className="w-full">
-                    <div className="w-full lg:flex justify-between gap-x-10 my-4">
-                      <div className="form-control w-full lg:w-1/2">
-                        <label className="label">
-                          <span className="label-text text-white text-xl">
-                            First Name
-                          </span>
-                        </label>
-                        <input
-                          className="border border-info rounded-sm px-3 py-1 text-[1rem]"
-                          placeholder="Enter your first name"
-                          {...register("firstName", { required: true })}
-                          aria-invalid={errors.firstName ? "true" : "false"}
-                          type="text"
-                        />
-                        {errors.firstName?.type === "required" && (
-                          <p role="alert" className="text-red-600 text-[.9rem]">
-                            First name is required
-                          </p>
-                        )}
-                      </div>
-                      <div className="form-control w-full lg:w-1/2">
-                        <label className="label">
-                          <span className="label-text text-white text-xl">
-                            Last Name
-                          </span>
-                        </label>
-                        <input
-                          className="border border-info rounded-sm px-3 py-1 text-[1rem]"
-                          placeholder="Enter your last name"
-                          {...register("lastName", { required: true })}
-                          aria-invalid={errors.lastName ? "true" : "false"}
-                          type="text"
-                        />
-                        {errors.lastName?.type === "required" && (
-                          <p role="alert" className="text-red-600 text-[.9rem]">
-                            Last name is required
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                    <div className="w-full lg:flex justify-between gap-x-10 my-4">
-                      <div className="form-control w-full lg:w-1/2">
-                        <label className="label">
-                          <span className="label-text text-white text-xl">
-                            Job Role
-                          </span>
-                        </label>
-                        <select
-                          {...register("jobRole", { required: true })}
-                          className="border border-info rounded-sm px-3 py-2 text-[1rem]"
-                        >
-                          {/* {
-                                slots.map((slot, i) => <option
-                                    value={slot}
-                                    key={i}
-                                >{slot}</option>)
-                            } */}
-                          <option value="">Select One</option>
-                          <option value="A">Option A</option>
-                          <option value="B">Option B</option>
-                        </select>
-                        {errors.jobRole?.type === "required" && (
-                          <p role="alert" className="text-red-600 text-[.9rem]">
-                            Job role is required
-                          </p>
-                        )}
-                      </div>
-                      <div className="form-control w-full lg:w-1/2">
-                        <label className="label">
-                          <span className="label-text text-white text-xl">
-                            Job Level
-                          </span>
-                        </label>
-                        <select
-                          {...register("jobLevel", { required: true })}
-                          className="border border-info rounded-sm px-3 py-2 text-[1rem]"
-                        >
-                          {/* {
-                                slots.map((slot, i) => <option
-                                    value={slot}
-                                    key={i}
-                                >{slot}</option>)
-                            } */}
-                          <option value="">Select One</option>
-                          <option value="A">Option A</option>
-                          <option value="B">Option B</option>
-                        </select>
-                        {errors.jobLevel?.type === "required" && (
-                          <p role="alert" className="text-red-600 text-[.9rem]">
-                            Job level is required
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="modal-action">
-                  <label
-                    htmlFor="displayNameModal"
-                    className={`w-full lg:w-1/3`}
-                  >
-                    <input
-                      type="submit"
-                      className="btn btn-info w-full normal-case"
-                      value="Submit"
-                    />
-                  </label>
-                </div>
-              </form>
-            </div>
-          </div>
+          <UserProfileUpgradeModal
+            register={register}
+            errors={errors}
+            handleSubmit={handleSubmit}
+            handleUpdateProfile={handleUpdateProfile}
+          />
         )}
-      </h2>
+      </div>
+      {/* user greet and modal ends */}
+
+      {/* survey buttons starts */}
+      <SurveyCreateButton />
+
+      {/* survey buttons ends */}
     </div>
   );
 };
