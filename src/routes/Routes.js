@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main/Main";
 import Home from "../pages/Home/Home";
+import Pricing from "../pages/Pricing/Pricing";
 import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
 import Login from "../pages/shared/Login/Login";
 import Register from "../pages/shared/Register/Register";
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
 
         element: <SurveyAudience />,
       },
+      {
+        path: "/pricing",
+        element: <Pricing></Pricing>
+      }
     ],
   },
 ]);
