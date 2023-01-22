@@ -4,6 +4,7 @@ import Main from "../layouts/Main/Main";
 import ApplyPage from "../pages/ApplyPage/ApplyPage";
 import CreateASurvey from "../pages/Dashboard/CreateASurvey";
 import DashboardPrimaryPage from "../pages/Dashboard/DashboardPrimaryPage";
+import SurveyCreateForm from "../pages/Dashboard/SurveyCreateForm";
 import Home from "../pages/Home/Home";
 import Pricing from "../pages/Pricing/Pricing";
 import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
@@ -45,8 +46,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/plans-pricing",
-        element: <Pricing></Pricing>
-      }
+        element: <Pricing></Pricing>,
+      },
     ],
   },
   {
@@ -65,6 +66,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/createasurvey",
         element: <CreateASurvey />,
+      },
+      {
+        path: "/dashboard/createsurveyquestions",
+        element: <SurveyCreateForm />
       },
     ],
   },
