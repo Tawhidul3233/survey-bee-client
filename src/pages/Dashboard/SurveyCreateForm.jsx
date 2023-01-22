@@ -1,28 +1,106 @@
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
+import { useSelector } from "react-redux";
+import UserCreateSurveyQuestions from "../../components/Dashboard/UserCreateSurveyQuestions";
+import Loading from "../../components/Shared/Loading";
+import { user } from "../../features/userSlice";
 
-const questionsType = ["Text"];
+const questionsType = ["Textbox", "Comment Box"];
 
 const SurveyCreateForm = () => {
-  const {
-    register,
-    handleSubmit,
-  } = useForm();
+  const activeUser = useSelector(user);
+  const { user: existingUser } = activeUser;
+  const { email } = existingUser;
+  const { register, handleSubmit } = useForm();
 
-  const handleCreateSurveyQuestions = data => {
-    console.log(data)
+  // get user created questions
+  // get user from db
+  const {
+    data: userCreatedQuestion,
+    isLoading,
+    error,
+    refetch,
+  } = useQuery({
+    queryKey: ["userCreatedQuestions"],
+    queryFn: async () => {
+      try {
+        const response = await axios.get(
+          `https://survey-bee-server.vercel.app/userCreatedSurveyQuestions/${email}`
+        );
+        // console.log(response?.data)
+        return response?.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
+
+  // send backend for save user questions
+  const handleCreateSurveyQuestions = async (data) => {
+    // console.log(data);
+    const questions = data?.questions;
+    const questionType = data?.questionsType;
+    try {
+      const response = await axios.put(
+        "https://survey-bee-server.vercel.app/userCreatedSurveyQuestions",
+        {
+          id: userCreatedQuestion?.[0]?._id,
+          questions,
+          questionType,
+        }
+      );
+      // console.log(response.data);
+      if (response?.data?.acknowledged) {
+        refetch();
+      }
+    } catch (error) {
+      console.log(error);
+      toast.warn(error?.message);
+    }
+  };
+
+  if (isLoading) {
+    return <Loading />;
   }
+
+  if (error) {
+    console.log(error);
+  }
+
+  console.log(userCreatedQuestion);
+  // const lastSurveyTitle = userCreatedQuestion.pop();
+  // console.log(lastSurveyTitle);
 
   return (
     <div className="min-h-screen">
-      <div className="px-20 py-20">
-        <h2 className="text-2xl text-primary font-extrabold">Survey Title</h2>
-        <div className="border border-black w-full h-auto mt-10">
-          <div className="flex w-full items-center h-full px-10 py-8 gap-x-1">
-            <h2 className="text-3xl w-20 font-extrabold">Q1</h2>
-            <form className="flex" onSubmit={handleSubmit(handleCreateSurveyQuestions)}>
+      <div className="px-20 pt-24">
+        <UserCreateSurveyQuestions userCreatedQuestion={userCreatedQuestion} />
+      </div>
+      <div className="px-20 pt-10 pb-28">
+        <h2 className="text-2xl text-primary font-extrabold">
+          {userCreatedQuestion[0]?.surveyTitle}
+        </h2>
+        <form
+          // className="border border-black w-full h-auto mt-10"
+          onSubmit={handleSubmit(handleCreateSurveyQuestions)}
+        >
+          <div className="flex w-full items-center h-full px-10 py-8 gap-x-1 border border-black mt-10">
+            <input
+              type="text"
+              readOnly
+              className="text-3xl w-12 outline-none border-none font-extrabold"
+              value={`Q${
+                userCreatedQuestion[0]?.questionsAndTypes?.length
+                  ? userCreatedQuestion[0]?.questionsAndTypes?.length + 1
+                  : 1
+              }`}
+            />
+            <div className="flex">
               <input
-              {...register("questions", { required: true })}
+                {...register("questions", { required: true })}
                 type="text"
                 placeholder="Enter your question"
                 className="w-[60vw] px-4 py-2 border border-gray-500 outline-primary"
@@ -37,9 +115,20 @@ const SurveyCreateForm = () => {
                   </option>
                 ))}
               </select>
-            </form>
+            </div>
           </div>
-        </div>
+          <div className="flex justify-center my-10">
+            {isLoading ? (
+              <span>Loading...</span>
+            ) : (
+              <input
+                type="submit"
+                className="btn btn-primary text-base-100 px-20"
+                value="+ New Question"
+              />
+            )}
+          </div>
+        </form>
       </div>
     </div>
   );

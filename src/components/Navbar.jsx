@@ -606,7 +606,7 @@ const Navbar = () => {
             </li>
             <li className="">
               <Link
-                to="/dashboard"
+                to="/dashboard/createsurveyquestions"
                 className={`${
                   !activeUser?.user?.email ? "hidden" : "text-white"
                 }`}
