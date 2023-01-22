@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
 import CreateASurveyModal from "../../components/Dashboard/CreateASurveyModal";
 
 const CreateASurvey = () => {
   const [userSurveyTitle, setUserSurveyTitle] = useState("");
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
@@ -14,6 +16,9 @@ const CreateASurvey = () => {
   const handleCreateASurvey = (data) => {
     console.log(data);
     setUserSurveyTitle(data?.surveyTitle);
+    if (data?.surveyTitle) {
+      return navigate("/dashboard/createsurveyquestions");
+    }
   };
 
   return (
