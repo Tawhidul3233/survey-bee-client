@@ -42,14 +42,15 @@ const DashboardPrimaryPage = () => {
   });
 
   if (isLoading) {
-    return <Loading />
+    return <Loading />;
   }
 
-  if (error) {
-    return "Please check your internet!!!";
-  }
+  // if (errors) {
+  //   return "Please check your internet!!!";
+  // }
   // console.log(dbUser);
 
+  // update user profile
   const handleUpdateProfile = async (data) => {
     setFirstName(data?.firstName);
     try {
@@ -82,34 +83,46 @@ const DashboardPrimaryPage = () => {
 
   return (
     <div className="min-h-screen">
-      {/* user greet and modal starts */}
-      <div className="md:px-2 lg:px-10 py-3 text-2xl">
-        Welcome back,
-        <label
-          htmlFor="displayNameModal"
-          className="hover:underline cursor-pointer"
-        >
-          <span className="text-secondary" onClick={() => setFirstName(false)}>
-            {dbUser?.firstName || dbUser?.email}!
-          </span>
-        </label>
-        {/* Put this part before </body> tag */}
-        <input type="checkbox" id="displayNameModal" className="modal-toggle" />
-        {!firstName && (
-          <UserProfileUpgradeModal
-            register={register}
-            errors={errors}
-            handleSubmit={handleSubmit}
-            handleUpdateProfile={handleUpdateProfile}
-          />
-        )}
-      </div>
-      {/* user greet and modal ends */}
+      {error ? (
+        <p className="text-center text-2xl pt-28">Please check your internet!!!</p>
+      ) : (
+        <>
+          {/* user greet and modal starts */}
+          <div className="md:px-2 lg:px-10 py-3 text-2xl">
+            Welcome back,
+            <label
+              htmlFor="displayNameModal"
+              className="hover:underline cursor-pointer"
+            >
+              <span
+                className="text-secondary"
+                onClick={() => setFirstName(false)}
+              >
+                {dbUser?.firstName || dbUser?.email}!
+              </span>
+            </label>
+            {/* Put this part before </body> tag */}
+            <input
+              type="checkbox"
+              id="displayNameModal"
+              className="modal-toggle"
+            />
+            {!firstName && (
+              <UserProfileUpgradeModal
+                register={register}
+                errors={errors}
+                handleSubmit={handleSubmit}
+                handleUpdateProfile={handleUpdateProfile}
+              />
+            )}
+          </div>
+          {/* user greet and modal ends */}
 
-      {/* survey buttons starts */}
-      <SurveyCreateButton />
-
-      {/* survey buttons ends */}
+          {/* survey buttons starts */}
+          <SurveyCreateButton />
+          {/* survey buttons ends */}
+        </>
+      )}
     </div>
   );
 };

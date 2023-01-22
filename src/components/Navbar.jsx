@@ -60,13 +60,15 @@ const Navbar = () => {
             >
               {isOpen ? (
                 <RxCross2
-                  className={`${activeUser?.user?.email ? "text-base-100" : "text-black"
-                    } text-5xl`}
+                  className={`${
+                    activeUser?.user?.email ? "text-base-100" : "text-black"
+                  } text-5xl`}
                 />
               ) : (
                 <GiHamburgerMenu
-                  className={`${activeUser?.user?.email ? "text-base-100" : "text-black"
-                    } text-5xl`}
+                  className={`${
+                    activeUser?.user?.email ? "text-base-100" : "text-black"
+                  } text-5xl`}
                 />
               )}
             </label>
@@ -75,8 +77,9 @@ const Navbar = () => {
                 <>
                   <ul
                     tabIndex={0}
-                    className={`menu menu-compact h-full dropdown-content overflow-y-auto bg-[#e0e5e5] mt-2 p-2 shadow w-screen md:w-[85vw] pt-3 transition ease-in-out duration-[20ms] min-h-screen ${isOpen ? "ml-[-8px]" : "ml-[-600px]"
-                      }`}
+                    className={`menu menu-compact h-full dropdown-content overflow-y-auto bg-[#e0e5e5] mt-2 p-2 shadow w-screen md:w-[85vw] pt-3 transition ease-in-out duration-[20ms] min-h-screen ${
+                      isOpen ? "ml-[-8px]" : "ml-[-600px]"
+                    }`}
                   >
                     <div className="flex flex-col">
                       <li className="rounded-sm w-full mx-0 px-0">
@@ -89,8 +92,9 @@ const Navbar = () => {
                                 setIsResourcesOpen(false)
                               )
                             }
-                            className={`flex justify-between px-4 py-5 mb-0 hover:text-base-100 rounded-b-none w-full ${isOpen ? " hover:bg-[#808B91]" : undefined
-                              }`}
+                            className={`flex justify-between px-4 py-5 mb-0 hover:text-base-100 rounded-b-none w-full ${
+                              isOpen ? " hover:bg-[#808B91]" : undefined
+                            }`}
                           >
                             <span className="font-semibold text-xl">
                               Products
@@ -266,8 +270,9 @@ const Navbar = () => {
                                 setIsResourcesOpen(false)
                               )
                             }
-                            className={`flex justify-between px-4 py-5 mb-0 hover:text-base-100 rounded-b-none w-full ${isOpen ? " hover:bg-[#808B91]" : undefined
-                              }`}
+                            className={`flex justify-between px-4 py-5 mb-0 hover:text-base-100 rounded-b-none w-full ${
+                              isOpen ? " hover:bg-[#808B91]" : undefined
+                            }`}
                           >
                             <span className="font-semibold text-xl">
                               Solutions
@@ -449,8 +454,9 @@ const Navbar = () => {
                                 setIsSolutionOpen(false)
                               )
                             }
-                            className={`flex justify-between px-4 py-5 mb-0 hover:text-base-100 rounded-b-none w-full ${isOpen ? " hover:bg-[#808B91]" : undefined
-                              }`}
+                            className={`flex justify-between px-4 py-5 mb-0 hover:text-base-100 rounded-b-none w-full ${
+                              isOpen ? " hover:bg-[#808B91]" : undefined
+                            }`}
                           >
                             <span className="font-semibold text-xl">
                               Resources
@@ -579,14 +585,21 @@ const Navbar = () => {
             <h3>SurveyBee</h3>
           </Link>
         </div>
-        <div className="navbar-center hidden md:hidden lg:flex mx-auto">
+
+        {/*desktop view starts*/}
+        <div
+          className={`navbar-center hidden md:hidden lg:flex mx-auto ${
+            activeUser?.user?.email ? "navbar-start" : undefined
+          }`}
+        >
           <ul className="menu menu-horizontal px-1">
             {/* for dashboard */}
-            <li className="">
+            <li>
               <Link
                 to="/dashboard"
-                className={`${!activeUser?.user?.email ? "hidden" : "text-white"
-                  }`}
+                className={`${
+                  !activeUser?.user?.email ? "hidden" : "text-white"
+                }`}
               >
                 Dashboard
               </Link>
@@ -594,8 +607,9 @@ const Navbar = () => {
             <li className="">
               <Link
                 to="/dashboard"
-                className={`${!activeUser?.user?.email ? "hidden" : "text-white"
-                  }`}
+                className={`${
+                  !activeUser?.user?.email ? "hidden" : "text-white"
+                }`}
               >
                 My Surveys
               </Link>
@@ -613,8 +627,9 @@ const Navbar = () => {
                     setIsResourcesOpen(false)
                   )
                 }
-                className={`${activeUser?.user?.email ? "text-white" : "text-black"
-                  }`}
+                className={`${
+                  activeUser?.user?.email ? "text-white" : "text-black"
+                }`}
               >
                 Products
                 <svg
@@ -786,8 +801,9 @@ const Navbar = () => {
                     setIsResourcesOpen(false)
                   )
                 }
-                className={`${activeUser?.user?.email ? "text-white" : "text-black"
-                  }`}
+                className={`${
+                  activeUser?.user?.email ? "text-white" : "text-black"
+                }`}
               >
                 Solutions
                 <svg
@@ -964,8 +980,9 @@ const Navbar = () => {
                     setIsSolutionOpen(false)
                   )
                 }
-                className={`${activeUser?.user?.email ? "text-white" : "text-black"
-                  }`}
+                className={`${
+                  activeUser?.user?.email ? "text-white" : "text-black"
+                }`}
               >
                 Resources
                 <svg
@@ -1042,14 +1059,16 @@ const Navbar = () => {
             <li>
               <Link
                 to="/plans-pricing"
-                className={`${activeUser?.user?.email ? "text-white" : "text-black"
-                  }`}
+                className={`${
+                  activeUser?.user?.email ? "text-white" : "text-black"
+                }`}
               >
                 Plans & Pricing
               </Link>
             </li>
           </ul>
         </div>
+        {/*desktop view ends*/}
         <div className="navbar-end gap-x-3 hidden md:flex h-full">
           <AuthenticationButtons
             setEmailOpen={setEmailOpen}
