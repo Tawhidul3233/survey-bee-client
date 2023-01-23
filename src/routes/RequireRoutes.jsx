@@ -7,7 +7,7 @@ import { user } from "../features/userSlice";
 const RequireRoutes = ({ children }) => {
   const activeUser = useSelector(user);
   const { user: existingUser, userLoading } = activeUser;
-  console.log(userLoading);
+  // console.log(userLoading);
   const location = useLocation();
 
   if (userLoading) {
