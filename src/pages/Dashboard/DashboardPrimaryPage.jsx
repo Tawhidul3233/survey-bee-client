@@ -8,19 +8,46 @@ import { toast } from "react-hot-toast";
 import UserProfileUpgradeModal from "../../components/Dashboard/UserProfileUpgradeModal";
 import SurveyCreateButton from "../../components/Dashboard/SurveyCreateButton";
 import Loading from "../../components/Shared/Loading";
+import RecentSurveys from "../../components/Dashboard/RecentSurveys";
+// import DeletePermissionModal from "../../components/Dashboard/DeletePermissionModal";
+import { useEffect } from "react";
+import getUserAllSurveys from "../../api/getUserAllSurveys";
 
 const DashboardPrimaryPage = () => {
   const [firstName, setFirstName] = useState("");
+  const [isSurveyDeleted, setIsSurveyDeleted] = useState(false);
+  const [allRecentSurveys, setAllRecentSurveys] = useState([]);
   const activeUser = useSelector(user);
   const { user: currentUser } = activeUser;
   // console.log(currentUser.email);
+  const [loading, setLoading] = useState(false);
+
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
 
-  // get user from db
+  // get all recent surveys from server
+  useEffect(() => {
+    try {
+      setLoading(true);
+      getUserAllSurveys(currentUser?.email)
+        .then((data) => {
+          setAllRecentSurveys(data);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+        });
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  }, [currentUser?.email, isSurveyDeleted]);
+
+  // get user from server
   const {
     isLoading,
     error,
@@ -81,10 +108,31 @@ const DashboardPrimaryPage = () => {
     }
   };
 
+  // console.log(allRecentSurveys);
+
+  // handle survey delete
+  const handleSurveyDelete = async (surveyTargetDeletedId) => {
+    // console.log("survey delete clicekd", surveyTargetDeletedId);
+    try {
+      const response = await axios.delete(
+        `https://survey-bee-server.vercel.app/deleteSurvey/${surveyTargetDeletedId}`
+      );
+      // console.log(response?.data);
+      if (response?.data?.deletedCount > 0) {
+        toast.success("Deleted!!!");
+        setIsSurveyDeleted(true);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="min-h-screen">
       {error ? (
-        <p className="text-center text-2xl pt-28">Please check your internet!!!</p>
+        <p className="text-center text-2xl pt-28">
+          Please check your internet!!!
+        </p>
       ) : (
         <>
           {/* user greet and modal starts */}
@@ -117,6 +165,25 @@ const DashboardPrimaryPage = () => {
             )}
           </div>
           {/* user greet and modal ends */}
+
+          {/* Recent surveys starts here */}
+          {allRecentSurveys?.length ? (
+            <div className="mt-16 mb-4 lg:px-44">
+              <h2 className="text-3xl pb-3">Recent Surveys</h2>
+              {allRecentSurveys?.map((recentSurv) => (
+                <RecentSurveys
+                  key={recentSurv._id}
+                  recentSurv={recentSurv}
+                  loading={loading}
+                  handleSurveyDelete={handleSurveyDelete}
+                />
+              ))}
+            </div>
+          ) : (
+            ""
+          )}
+          {/* <DeletePermissionModal handleSurveyDelete={handleSurveyDelete} /> */}
+          {/* Recent surveys ends here */}
 
           {/* survey buttons starts */}
           <SurveyCreateButton />

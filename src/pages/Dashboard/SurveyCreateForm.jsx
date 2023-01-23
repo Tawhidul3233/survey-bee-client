@@ -43,6 +43,7 @@ const SurveyCreateForm = () => {
     // console.log(data);
     const questions = data?.questions;
     const questionType = data?.questionsType;
+    const surveyModifiedTime = new Date().toLocaleDateString();
     try {
       const response = await axios.put(
         "https://survey-bee-server.vercel.app/userCreatedSurveyQuestions",
@@ -50,6 +51,7 @@ const SurveyCreateForm = () => {
           id: userCreatedQuestion?.[0]?._id,
           questions,
           questionType,
+          surveyModifiedTime,
         }
       );
       // console.log(response.data);
@@ -84,7 +86,7 @@ const SurveyCreateForm = () => {
     // console.log("deleted target", targetId, targetQuestion, targetQType);
     try {
       const response = await axios.patch(
-        "http://localhost:5000/surveyQdelete",
+        "https://survey-bee-server.vercel.app/surveyQdelete",
         {
           targetId,
           targetQuestion,
