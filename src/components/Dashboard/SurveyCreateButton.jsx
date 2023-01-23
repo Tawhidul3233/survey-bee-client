@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const SurveyCreateButton = () => {
   return (
-    <div className="my-10 mx-auto">
+    <div className="mb-10 mt-20 mx-auto">
       <div className="flex flex-col items-center">
         <h2 className="text-2xl py-10">
           Let's get started & create your first survey!

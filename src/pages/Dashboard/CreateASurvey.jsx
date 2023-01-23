@@ -21,10 +21,15 @@ const CreateASurvey = () => {
   } = useForm();
 
   // create a survey in createASurveyModal
-  const handleCreateASurvey = async(data) => {
-    console.log(data);
+  const handleCreateASurvey = async (data) => {
+    // console.log(data);
     setUserSurveyTitle(data?.surveyTitle);
-   
+
+    // survey Create and modified time
+    const surveyCreateTime = new Date().toLocaleDateString();
+    const surveyModifiedTime = new Date().toLocaleDateString();
+    const surveyCreateTimeMl = new Date().getTime();
+
     // console.log(data);
     const surveyTitle = data?.surveyTitle;
     const surveyCategory = data?.surveyCategory;
@@ -35,6 +40,9 @@ const CreateASurvey = () => {
           email,
           surveyTitle,
           surveyCategory,
+          surveyCreateTime,
+          surveyModifiedTime,
+          surveyCreateTimeMl,
         }
       );
       // console.log(response.data);
