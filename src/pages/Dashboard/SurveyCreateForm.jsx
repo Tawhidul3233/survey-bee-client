@@ -14,7 +14,7 @@ const SurveyCreateForm = () => {
   const activeUser = useSelector(user);
   const { user: existingUser } = activeUser;
   const { email } = existingUser;
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   // get user created questions
   // get user from db
@@ -55,6 +55,7 @@ const SurveyCreateForm = () => {
       // console.log(response.data);
       if (response?.data?.acknowledged) {
         refetch();
+        reset();
       }
     } catch (error) {
       console.log(error);
@@ -70,14 +71,43 @@ const SurveyCreateForm = () => {
     console.log(error);
   }
 
-  console.log(userCreatedQuestion);
+  // console.log(userCreatedQuestion);
   // const lastSurveyTitle = userCreatedQuestion.pop();
   // console.log(lastSurveyTitle);
+
+  // handel delete user survey question
+  const handleDeleteSurveyQuestion = async (
+    targetId,
+    targetQuestion,
+    targetQType
+  ) => {
+    // console.log("deleted target", targetId, targetQuestion, targetQType);
+    try {
+      const response = await axios.patch(
+        "http://localhost:5000/surveyQdelete",
+        {
+          targetId,
+          targetQuestion,
+          targetQType,
+        }
+      );
+      // console.log(response?.data);
+      if (response?.data?.modifiedCount) {
+        refetch();
+        // toast.success("Deleted")
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="min-h-screen">
       <div className="px-20 pt-24">
-        <UserCreateSurveyQuestions userCreatedQuestion={userCreatedQuestion} />
+        <UserCreateSurveyQuestions
+          userCreatedQuestion={userCreatedQuestion}
+          handleDeleteSurveyQuestion={handleDeleteSurveyQuestion}
+        />
       </div>
       <div className="px-20 pt-10 pb-28">
         <h2 className="text-2xl text-primary font-extrabold">
@@ -119,7 +149,9 @@ const SurveyCreateForm = () => {
           </div>
           <div className="flex justify-center my-10">
             {isLoading ? (
-              <span>Loading...</span>
+              <span className="btn btn-primary text-base-100 px-20">
+                Loading...
+              </span>
             ) : (
               <input
                 type="submit"

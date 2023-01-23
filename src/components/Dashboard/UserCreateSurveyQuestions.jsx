@@ -1,18 +1,33 @@
 import React from "react";
 
-const UserCreateSurveyQuestions = ({ userCreatedQuestion }) => {
-  //   console.log(userCreatedQuestion);
+const UserCreateSurveyQuestions = ({ userCreatedQuestion, handleDeleteSurveyQuestion }) => {
+  const surveyInfo = userCreatedQuestion[0];
+  // console.log(surveyInfo);
+
+
+
+  
   return (
     <div className="flex flex-col items-start gap-y-10">
-      {userCreatedQuestion[0]?.questionsAndTypes?.map((q, i) => {
+      {surveyInfo?.questionsAndTypes?.map((q, i) => {
         return (
           <>
             {q?.questions ? (
-              <button
-                className="w-full text-start h-auto cursor-pointer flex flex-col gap-y-6 px-1 py-2 hover:bg-gray-400 rounded-sm"
-                key={q._id}
+              <div
+                className="w-full text-start h-auto cursor-pointer flex flex-col gap-y-6 px-1 py-2
+                 hover:bg-gray-400 hover:text-base-100 rounded-sm"
+                key={i}
               >
-                <span className="text-2xl">{i+1}. { q?.questions}</span>
+                <div className="flex justify-between">
+                  <span className="text-2xl">
+                    {i + 1}. {q?.questions}
+                  </span>
+                  <div>
+                    <button className="btn btn-nutral btn-sm px-6" onClick={() =>handleDeleteSurveyQuestion(surveyInfo?._id, q?.questions, q?.questionsType)}>
+                      Delete
+                    </button>
+                  </div>
+                </div>
                 {q?.questionsType === "Comment Box" ? (
                   <textarea
                     readOnly
@@ -25,7 +40,7 @@ const UserCreateSurveyQuestions = ({ userCreatedQuestion }) => {
                     className="border border-black outline-none w-3/12 py-2 px-4 cursor-pointer"
                   />
                 ) : undefined}
-              </button>
+              </div>
             ) : null}
           </>
         );
