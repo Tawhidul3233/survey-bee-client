@@ -95,8 +95,8 @@ const SurveyCreateForm = () => {
       );
       // console.log(response?.data);
       if (response?.data?.modifiedCount) {
+        toast.success("Deleted");
         refetch();
-        // toast.success("Deleted")
       }
     } catch (error) {
       console.log(error);

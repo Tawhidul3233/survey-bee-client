@@ -1,12 +1,13 @@
 import React from "react";
 
-const UserCreateSurveyQuestions = ({ userCreatedQuestion, handleDeleteSurveyQuestion }) => {
+const UserCreateSurveyQuestions = ({
+  userCreatedQuestion,
+  handleDeleteSurveyQuestion,
+}) => {
   const surveyInfo = userCreatedQuestion[0];
   // console.log(surveyInfo);
 
-
-
-  
+  // console.log(isQHover)
   return (
     <div className="flex flex-col items-start gap-y-10">
       {surveyInfo?.questionsAndTypes?.map((q, i) => {
@@ -22,11 +23,20 @@ const UserCreateSurveyQuestions = ({ userCreatedQuestion, handleDeleteSurveyQues
                   <span className="text-2xl">
                     {i + 1}. {q?.questions}
                   </span>
-                  <div>
-                    <button className="btn btn-nutral btn-sm px-6" onClick={() =>handleDeleteSurveyQuestion(surveyInfo?._id, q?.questions, q?.questionsType)}>
+                  <>
+                    <button
+                      className="btn btn-nutral btn-sm px-6"
+                      onClick={() =>
+                        handleDeleteSurveyQuestion(
+                          surveyInfo?._id,
+                          q?.questions,
+                          q?.questionsType
+                        )
+                      }
+                    >
                       Delete
                     </button>
-                  </div>
+                  </>
                 </div>
                 {q?.questionsType === "Comment Box" ? (
                   <textarea
