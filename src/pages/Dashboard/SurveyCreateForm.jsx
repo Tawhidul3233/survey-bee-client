@@ -48,7 +48,7 @@ const SurveyCreateForm = () => {
   // get edit data
   const getDataById = async (survId) => {
     const response = await axios.get(
-      `http://localhost:5000/editsurvey/${survId}`
+      `https://survey-bee-server.vercel.app/editsurvey/${survId}`
     );
     return response?.data;
   };
@@ -84,7 +84,7 @@ const SurveyCreateForm = () => {
     const surveyModifiedTime = new Date().toLocaleDateString();
     try {
       const response = await axios.put(
-        "http://localhost:5000/userCreatedSurveyQuestions",
+        "https://survey-bee-server.vercel.app/userCreatedSurveyQuestions",
         {
           id: editSurveyLoaderData?._id || userCreatedQuestion[0]?._id,
           questions,

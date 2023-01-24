@@ -74,7 +74,7 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/editsurvey/:id",
         // loader: ({ params }) =>
-        //   fetch(`http://localhost:5000/editsurvey/${params?.id}`),
+        //   fetch(`https://survey-bee-server.vercel.app/editsurvey/${params?.id}`),
         element: <SurveyCreateForm />,
       },
     ],
