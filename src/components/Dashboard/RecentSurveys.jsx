@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { AiTwotoneDelete } from "react-icons/ai";
+import { AiOutlineShareAlt, AiTwotoneDelete } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import Loading from "../Shared/Loading";
 import DeletePermissionModal from "./DeletePermissionModal";
 
@@ -71,6 +72,22 @@ const RecentSurveys = ({ recentSurv, loading, handleSurveyDelete }) => {
                 <div className="relative">
                   {isThreedotOptionsOpen && (
                     <div className="h-52 w-44 border border-gray-300 z-50 shadow-md absolute bg-base-100 left-[-56px] top-6">
+
+                      {/* The button to open plans and pricing modal */}
+                      <label
+                        htmlFor="delete_permission_modal"
+                        className="flex items-center gap-x-2 text-gray-600 hover:bg-gray-200 w-full p-2 cursor-pointer"
+                      >
+                        {/* <button > */}
+                        <span>
+                          <AiOutlineShareAlt />
+                        </span>
+                        <span>Share</span>
+                        {/* </button> */}
+                      </label>
+
+                      {/* <Link to='/plans-pricing'>Share</Link> */}
+
                       {/* The button to open modal */}
                       <label
                         htmlFor="delete_permission_modal"
