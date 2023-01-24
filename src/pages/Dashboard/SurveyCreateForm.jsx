@@ -1,9 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+// import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import UserCreateSurveyQuestions from "../../components/Dashboard/UserCreateSurveyQuestions";
 import Loading from "../../components/Shared/Loading";
 import { user } from "../../features/userSlice";
@@ -11,10 +15,43 @@ import { user } from "../../features/userSlice";
 const questionsType = ["Textbox", "Comment Box"];
 
 const SurveyCreateForm = () => {
+  // const [isLoaderLoading, setIsLoaderLoading] = useState(false);
+  const [editSurveyLoaderData, setEditSurveyLoaderData] = useState([]);
   const activeUser = useSelector(user);
   const { user: existingUser } = activeUser;
   const { email } = existingUser;
   const { register, handleSubmit, reset } = useForm();
+  // const editSurveyLoaderData = useLoaderData();
+  // console.log(editSurveyLoaderData);
+
+  const location = useLocation();
+  // console.log(location.pathname.split("/").slice(-1));
+  const id = location.pathname.split("/").slice(-1);
+
+  useEffect(() => {
+    try {
+      if (id[0].length === 24) {
+        getDataById(id)
+          .then((data) => {
+            // console.log(data);
+            setEditSurveyLoaderData(data)
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }, [id]);
+
+  // get edit data
+  const getDataById = async (survId) => {
+    const response = await axios.get(
+      `http://localhost:5000/editsurvey/${survId}`
+    );
+    return response?.data;
+  };
 
   // get user created questions
   // get user from db
@@ -41,14 +78,15 @@ const SurveyCreateForm = () => {
   // send backend for save user questions
   const handleCreateSurveyQuestions = async (data) => {
     // console.log(data);
+    // setIsLoaderLoading(true);
     const questions = data?.questions;
     const questionType = data?.questionsType;
     const surveyModifiedTime = new Date().toLocaleDateString();
     try {
       const response = await axios.put(
-        "https://survey-bee-server.vercel.app/userCreatedSurveyQuestions",
+        "http://localhost:5000/userCreatedSurveyQuestions",
         {
-          id: userCreatedQuestion?.[0]?._id,
+          id: editSurveyLoaderData?._id || userCreatedQuestion[0]?._id,
           questions,
           questionType,
           surveyModifiedTime,
@@ -58,6 +96,7 @@ const SurveyCreateForm = () => {
       if (response?.data?.acknowledged) {
         refetch();
         reset();
+        // setIsLoaderLoading(false);
       }
     } catch (error) {
       console.log(error);
@@ -84,6 +123,7 @@ const SurveyCreateForm = () => {
     targetQType
   ) => {
     // console.log("deleted target", targetId, targetQuestion, targetQType);
+    // setIsLoaderLoading(true);
     try {
       const response = await axios.patch(
         "https://survey-bee-server.vercel.app/surveyQdelete",
@@ -97,6 +137,7 @@ const SurveyCreateForm = () => {
       if (response?.data?.modifiedCount) {
         toast.success("Deleted");
         refetch();
+        // setIsLoaderLoading(false);
       }
     } catch (error) {
       console.log(error);
@@ -108,12 +149,15 @@ const SurveyCreateForm = () => {
       <div className="px-20 pt-24">
         <UserCreateSurveyQuestions
           userCreatedQuestion={userCreatedQuestion}
+          editSurveyLoaderData={editSurveyLoaderData}
           handleDeleteSurveyQuestion={handleDeleteSurveyQuestion}
+          // isLoaderLoading={isLoaderLoading}
         />
       </div>
       <div className="px-20 pt-10 pb-28">
         <h2 className="text-2xl text-primary font-extrabold">
-          {userCreatedQuestion[0]?.surveyTitle}
+          {editSurveyLoaderData?.surveyTitle ||
+            userCreatedQuestion[0]?.surveyTitle}
         </h2>
         <form
           // className="border border-black w-full h-auto mt-10"
@@ -124,11 +168,18 @@ const SurveyCreateForm = () => {
               type="text"
               readOnly
               className="text-3xl w-12 outline-none border-none font-extrabold"
-              value={`Q${
-                userCreatedQuestion[0]?.questionsAndTypes?.length
-                  ? userCreatedQuestion[0]?.questionsAndTypes?.length + 1
-                  : 1
-              }`}
+              value={
+                `Q${
+                  editSurveyLoaderData?.questionsAndTypes?.length
+                    ? editSurveyLoaderData?.questionsAndTypes?.length + 1
+                    : 1
+                }` ||
+                `Q${
+                  userCreatedQuestion[0]?.questionsAndTypes?.length
+                    ? userCreatedQuestion[0]?.questionsAndTypes?.length + 1
+                    : 1
+                }`
+              }
             />
             <div className="flex">
               <input

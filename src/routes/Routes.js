@@ -69,7 +69,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/createsurveyquestions",
-        element: <SurveyCreateForm />
+        element: <SurveyCreateForm />,
+      },
+      {
+        path: "/dashboard/editsurvey/:id",
+        // loader: ({ params }) =>
+        //   fetch(`http://localhost:5000/editsurvey/${params?.id}`),
+        element: <SurveyCreateForm />,
       },
     ],
   },
