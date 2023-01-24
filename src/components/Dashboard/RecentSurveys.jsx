@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { AiOutlineShareAlt, AiTwotoneDelete } from "react-icons/ai";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Loading from "../Shared/Loading";
 import DeletePermissionModal from "./DeletePermissionModal";
 
@@ -73,20 +73,37 @@ const RecentSurveys = ({ recentSurv, loading, handleSurveyDelete }) => {
                   {isThreedotOptionsOpen && (
                     <div className="h-52 w-44 border border-gray-300 z-50 shadow-md absolute bg-base-100 left-[-56px] top-6">
 
+
                       {/* The button to open plans and pricing modal */}
-                      <label
-                        htmlFor="delete_permission_modal"
-                        className="flex items-center gap-x-2 text-gray-600 hover:bg-gray-200 w-full p-2 cursor-pointer"
-                      >
-                        {/* <button > */}
+                      <label htmlFor="Share-modal" className="flex items-center gap-x-2 text-gray-600 hover:bg-gray-200 w-full p-2 cursor-pointer">
+                        {/* <Share button > */}
                         <span>
                           <AiOutlineShareAlt />
                         </span>
                         <span>Share</span>
-                        {/* </button> */}
                       </label>
 
-                      {/* <Link to='/plans-pricing'>Share</Link> */}
+                      {/* Put this part before </body> tag */}
+                      <input type="checkbox" id="Share-modal" className="modal-toggle" />
+                      <div className="modal">
+                        <div className="modal-box w-8/12 max-w-5xl">
+                          <label htmlFor="Share-modal" className="absolute right-6 top-4 font-bold">✕</label>
+                          <div className="flex">
+                            <div className="w-3/12">
+                              <h1>amination</h1>
+                            </div>
+                            <div className="w-7/12 mx-auto">
+                              <h1 className="text-4xl font-bold my-2">Share Your Survey</h1>
+                              <h3 className="text-2xl font-bold">Work better, together.</h3>
+                              <p className="py-4 mb-5">Easily share your survey to anyone with an email address and use permissions to choose what others can view and edit. You can give team members permission to make changes, edit, and analyze the results of your survey.</p>
+                              <div className="flex flex-col justify-end gap-3 mt-6 sm:flex-row">
+                                <button className="px-6 py-2 border border-green-500 rounded-sm dark:text-green-500">No Thanks</button>
+                                <button className="px-6 py-2 rounded-sm shadow-sm dark:bg-yellow-500 font-bold dark:text-gray-50">Take a Plan</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
                       {/* The button to open modal */}
                       <label
