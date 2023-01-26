@@ -28,11 +28,14 @@ const SurveyCreateForm = () => {
   const location = useLocation();
   // console.log(location.pathname.split("/").slice(-1));
   const id = location.pathname.split("/").slice(-1);
+  const [isAdded, setIsAdded] = useState(false);
+  // console.log(id)
+  const getID = id[0];
 
   useEffect(() => {
     try {
-      if (id[0].length === 24) {
-        getDataById(id)
+      if (getID.length === 24) {
+        getDataById(getID)
           .then((data) => {
             // console.log(data);
             setEditSurveyLoaderData(data);
@@ -44,7 +47,7 @@ const SurveyCreateForm = () => {
     } catch (error) {
       console.log(error);
     }
-  }, [id]);
+  }, [getID, isAdded]);
 
   // get edit data
   const getDataById = async (survId) => {
@@ -97,6 +100,7 @@ const SurveyCreateForm = () => {
         refetch();
         reset();
         // setIsLoaderLoading(false);
+        setIsAdded(true);
       }
     } catch (error) {
       console.log(error);
@@ -123,7 +127,7 @@ const SurveyCreateForm = () => {
     targetQType
   ) => {
     // console.log("deleted target", targetId, targetQuestion, targetQType);
-    // setIsLoaderLoading(true);
+
     try {
       const response = await axios.patch(
         "https://survey-bee-server.vercel.app/surveyQdelete",
@@ -136,8 +140,9 @@ const SurveyCreateForm = () => {
       // console.log(response?.data);
       if (response?.data?.modifiedCount) {
         toast.success("Deleted");
-        refetch();
         // setIsLoaderLoading(false);
+        setIsAdded(true);
+        refetch();
       }
     } catch (error) {
       console.log(error);

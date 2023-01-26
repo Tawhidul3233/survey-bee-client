@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import getUserAllSurveys from "../../api/getUserAllSurveys";
 import { useState } from "react";
 import Loading from "../../components/Shared/Loading";
+import SurveyCreateButton from "../../components/Dashboard/SurveyCreateButton";
 
 const mySurveyText = [
   "TITLE",
@@ -40,10 +41,13 @@ const MySurveys = () => {
       });
   }, [activeUser?.user?.email]);
 
-//   console.log(surveys);
+  //   console.log(surveys);
 
   return (
     <>
+      {surveys?.length === 0 && !surveysLoading && (
+        <p>You don't have any surveys</p>
+      )}
       {surveysLoading ? (
         <Loading />
       ) : (
@@ -52,7 +56,7 @@ const MySurveys = () => {
             <div className="w-[70vw] mx-auto">
               {surveys?.map((survey) => {
                 return (
-                  <div key={survey._id} className="overflow-x-auto mb-2">
+                  <div key={survey._id} className="overflow-x-auto pb-2">
                     <table className="table w-full">
                       <thead>
                         <tr>
@@ -94,6 +98,17 @@ const MySurveys = () => {
                   </div>
                 );
               })}
+            </div>
+            <div>
+              <SurveyCreateButton
+                className={{
+                  hidden: "hidden",
+                  mt: "mt-0",
+                  flexStart: "items-start",
+                  icon: "+",
+                  width: "w-40",
+                }}
+              />
             </div>
           </section>
         </>

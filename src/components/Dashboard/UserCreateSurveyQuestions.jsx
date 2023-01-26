@@ -6,10 +6,13 @@ const UserCreateSurveyQuestions = ({
   editSurveyLoaderData,
   // isLoaderLoading,
 }) => {
-  const surveyInfo = editSurveyLoaderData || userCreatedQuestion[0];
-  // console.log("inside show questions", surveyInfo);
+  let surveyInfo;
+  editSurveyLoaderData?.length
+    ? (surveyInfo = editSurveyLoaderData)
+    : (surveyInfo = userCreatedQuestion[0]);
 
-  // console.log(isQHover)
+  console.log(surveyInfo);
+
   return (
     <>
       <div className="flex flex-col items-start gap-y-10">
