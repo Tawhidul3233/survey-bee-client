@@ -4,6 +4,7 @@ import Main from "../layouts/Main/Main";
 import ApplyPage from "../pages/ApplyPage/ApplyPage";
 import CreateASurvey from "../pages/Dashboard/CreateASurvey";
 import DashboardPrimaryPage from "../pages/Dashboard/DashboardPrimaryPage";
+import MySurveys from "../pages/Dashboard/MySurveys";
 import SurveyCreateForm from "../pages/Dashboard/SurveyCreateForm";
 import Home from "../pages/Home/Home";
 import Pricing from "../pages/Pricing/Pricing";
@@ -70,6 +71,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/createsurveyquestions",
         element: <SurveyCreateForm />,
+      },
+      {
+        path: "/dashboard/mysurveys",
+        element: <MySurveys />,
       },
       {
         path: "/dashboard/editsurvey/:id",
