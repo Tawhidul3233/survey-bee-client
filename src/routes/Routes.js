@@ -1,8 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../layouts/Dashboard/Dashboard";
 import Main from "../layouts/Main/Main";
+import ApplyPage from "../pages/ApplyPage/ApplyPage";
+import CreateASurvey from "../pages/Dashboard/CreateASurvey";
 import DashboardPrimaryPage from "../pages/Dashboard/DashboardPrimaryPage";
 import Home from "../pages/Home/Home";
+import Pricing from "../pages/Pricing/Pricing";
 import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
 import Login from "../pages/shared/Login/Login";
 import Register from "../pages/shared/Register/Register";
@@ -28,6 +31,10 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
+        path: "/apply",
+        element: <ApplyPage> </ApplyPage>,
+      },
+      {
         path: "/survey-Audience/:title/:id",
         loader: ({ params }) =>
           fetch(
@@ -36,6 +43,10 @@ export const router = createBrowserRouter([
 
         element: <SurveyAudience />,
       },
+      {
+        path: "/plans-pricing",
+        element: <Pricing></Pricing>
+      }
     ],
   },
   {
@@ -50,6 +61,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <DashboardPrimaryPage />,
+      },
+      {
+        path: "/dashboard/createasurvey",
+        element: <CreateASurvey />,
       },
     ],
   },
