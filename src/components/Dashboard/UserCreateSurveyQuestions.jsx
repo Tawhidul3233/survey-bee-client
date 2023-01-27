@@ -11,7 +11,7 @@ const UserCreateSurveyQuestions = ({
     ? (surveyInfo = editSurveyLoaderData)
     : (surveyInfo = userCreatedQuestion[0]);
 
-  console.log(surveyInfo);
+  // console.log(surveyInfo);
 
   return (
     <>
