@@ -1,4 +1,5 @@
 import React from "react";
+import Loading from "../Shared/Loading";
 
 const UserCreateSurveyQuestions = ({
   userCreatedQuestion,
@@ -6,12 +7,14 @@ const UserCreateSurveyQuestions = ({
   editSurveyLoaderData,
   // isLoaderLoading,
 }) => {
-  let surveyInfo;
-  editSurveyLoaderData?.length
-    ? (surveyInfo = editSurveyLoaderData)
-    : (surveyInfo = userCreatedQuestion[0]);
+  // if(!editSurveyLoaderData)
+  // let surveyInfo;
+  // editSurveyLoaderData?.length
+  //   ? (surveyInfo = editSurveyLoaderData)
+  //   : (surveyInfo = userCreatedQuestion[0]);
+  const surveyInfo = editSurveyLoaderData || userCreatedQuestion[0];
 
-  // console.log(surveyInfo);
+  console.log(editSurveyLoaderData, "----------", userCreatedQuestion[0]);
 
   return (
     <>
