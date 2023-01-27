@@ -17,7 +17,7 @@ const questionsType = ["Textbox", "Comment Box"];
 
 const SurveyCreateForm = () => {
   // const [isLoaderLoading, setIsLoaderLoading] = useState(false);
-  const [editSurveyLoaderData, setEditSurveyLoaderData] = useState([]);
+  const [editSurveyLoaderData, setEditSurveyLoaderData] = useState({});
   const activeUser = useSelector(user);
   const { user: existingUser } = activeUser;
   const { email } = existingUser;
@@ -163,6 +163,8 @@ const SurveyCreateForm = () => {
   //   }`;
   // }
 
+  // console.log(editSurveyLoaderData, userCreatedQuestion[0]);
+
   return (
     <div className="min-h-screen">
       <div className="pl-20 mt-8">
@@ -173,12 +175,14 @@ const SurveyCreateForm = () => {
         <Breadcrums />
       </div>
       <div className="px-20 pt-24">
-        <UserCreateSurveyQuestions
-          userCreatedQuestion={userCreatedQuestion}
-          editSurveyLoaderData={editSurveyLoaderData}
-          handleDeleteSurveyQuestion={handleDeleteSurveyQuestion}
-          // isLoaderLoading={isLoaderLoading}
-        />
+        {(editSurveyLoaderData || userCreatedQuestion[0]) && (
+          <UserCreateSurveyQuestions
+            userCreatedQuestion={userCreatedQuestion}
+            editSurveyLoaderData={editSurveyLoaderData}
+            handleDeleteSurveyQuestion={handleDeleteSurveyQuestion}
+            // isLoaderLoading={isLoaderLoading}
+          />
+        )}
       </div>
       <div className="px-20 pt-10 pb-28">
         <h2 className="text-2xl text-primary font-extrabold">
