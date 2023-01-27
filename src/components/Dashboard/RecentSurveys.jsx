@@ -4,6 +4,7 @@ import { AiFillEdit, AiOutlineShareAlt, AiTwotoneDelete } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import DeletePermissionModal from "./DeletePermissionModal";
+import ShareModal from "./ShareModal";
 import SurveyDeleteButton from "./SurveyDeleteButton";
 
 const RecentSurveys = ({ recentSurv, loading, handleSurveyDelete }) => {
@@ -94,16 +95,17 @@ const RecentSurveys = ({ recentSurv, loading, handleSurveyDelete }) => {
 
                     {/* The button to open plans and pricing modal */}
                     <label
-                      htmlFor="delete_permission_modal"
+                      htmlFor="Share-modal"
                       className="flex items-center gap-x-2 text-gray-600 hover:bg-gray-200 w-full p-2 cursor-pointer"
                     >
-                      {/* <button > */}
+                      {/* <Share button > */}
                       <span>
                         <AiOutlineShareAlt />
                       </span>
                       <span>Share</span>
-                      {/* </button> */}
                     </label>
+
+                    <ShareModal />
 
                     {/* <Link to='/plans-pricing'>Share</Link> */}
 
