@@ -4,6 +4,7 @@ import { AiFillEdit, AiOutlineShareAlt, AiTwotoneDelete } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import DeletePermissionModal from "./DeletePermissionModal";
+import SurveyDeleteButton from "./SurveyDeleteButton";
 
 const RecentSurveys = ({ recentSurv, loading, handleSurveyDelete }) => {
   const [isThreedotOptionsOpen, setIsThreedotOptionsOpen] = useState(false);
@@ -22,8 +23,8 @@ const RecentSurveys = ({ recentSurv, loading, handleSurveyDelete }) => {
   // handle survey edit
   const handleSurveyEdit = (editSurvId) => {
     // console.log("clicked", editSurvId);
-    if(editSurvId) {
-      return navigate(`/dashboard/editsurvey/${editSurvId}`)
+    if (editSurvId) {
+      return navigate(`/dashboard/editsurvey/${editSurvId}`);
     }
   };
 
@@ -107,17 +108,18 @@ const RecentSurveys = ({ recentSurv, loading, handleSurveyDelete }) => {
                     {/* <Link to='/plans-pricing'>Share</Link> */}
 
                     {/* The button to open modal */}
-                    <label
+                    {/* <label
                       htmlFor="delete_permission_modal"
                       className="flex items-center gap-x-2 text-gray-600 hover:bg-gray-200 w-full p-2 cursor-pointer"
                     >
-                      {/* <button > */}
+               
                       <span>
                         <AiTwotoneDelete />
                       </span>
                       <span>Delete</span>
-                      {/* </button> */}
-                    </label>
+                   
+                    </label> */}
+                    <SurveyDeleteButton />
                     <>
                       <DeletePermissionModal
                         handleSurveyDelete={handleSurveyDelete}

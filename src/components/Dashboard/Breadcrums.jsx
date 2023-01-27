@@ -7,10 +7,10 @@ const Breadcrums = () => {
       <div className="text-2xl breadcrumbs">
         <ul>
           <li>
-            <Link className="text-2xl text-secondary font-bold">Design</Link>
+            <Link className="text-xl text-secondary font-bold">Design</Link>
           </li>
           <li>
-            <Link className="text-2xl text-secondary font-bold">Preview</Link>
+            <Link className="text-xl text-secondary font-bold">Preview</Link>
           </li>
         </ul>
       </div>

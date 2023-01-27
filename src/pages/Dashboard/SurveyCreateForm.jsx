@@ -149,6 +149,20 @@ const SurveyCreateForm = () => {
     }
   };
 
+  // let nextQuestionsNumber;
+  // if (
+  //   !editSurveyLoaderData?.questionsAndTypes?.length ||
+  //   !userCreatedQuestion[0]?.questionsAndTypes?.length
+  // ) {
+  //   nextQuestionsNumber = `Q${1}`;
+  // } else if (editSurveyLoaderData?.questionsAndTypes?.length) {
+  //   nextQuestionsNumber = `Q${editSurveyLoaderData?.questionsAndTypes?.length}`;
+  // } else {
+  //   nextQuestionsNumber = `Q${
+  //     userCreatedQuestion[0]?.questionsAndTypes?.length + 1
+  //   }`;
+  // }
+
   return (
     <div className="min-h-screen">
       <div className="pl-20 mt-8">
@@ -181,15 +195,21 @@ const SurveyCreateForm = () => {
               readOnly
               className="text-3xl w-12 outline-none border-none font-extrabold"
               value={
+                // `Q${
+                //   editSurveyLoaderData?.questionsAndTypes?.length
+                //     ? editSurveyLoaderData?.questionsAndTypes?.length + 1
+                //     : 1
+                // }` ||
+                // `Q${
+                //   userCreatedQuestion[0]?.questionsAndTypes?.length
+                //     ? userCreatedQuestion[0]?.questionsAndTypes?.length + 1
+                //     : 1
+                // }`
+                // nextQuestionsNumber
                 `Q${
-                  editSurveyLoaderData?.questionsAndTypes?.length
-                    ? editSurveyLoaderData?.questionsAndTypes?.length + 1
-                    : 1
-                }` ||
-                `Q${
-                  userCreatedQuestion[0]?.questionsAndTypes?.length
-                    ? userCreatedQuestion[0]?.questionsAndTypes?.length + 1
-                    : 1
+                  editSurveyLoaderData?.questionsAndTypes?.length + 1 ||
+                  userCreatedQuestion[0]?.questionsAndTypes?.length + 1 ||
+                  1
                 }`
               }
             />
