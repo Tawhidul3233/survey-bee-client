@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
+import Breadcrums from "../../components/Dashboard/Breadcrums";
 import UserCreateSurveyQuestions from "../../components/Dashboard/UserCreateSurveyQuestions";
 import Loading from "../../components/Shared/Loading";
 import { user } from "../../features/userSlice";
@@ -34,7 +35,7 @@ const SurveyCreateForm = () => {
         getDataById(id)
           .then((data) => {
             // console.log(data);
-            setEditSurveyLoaderData(data)
+            setEditSurveyLoaderData(data);
           })
           .catch((error) => {
             console.log(error);
@@ -54,7 +55,6 @@ const SurveyCreateForm = () => {
   };
 
   // get user created questions
-  // get user from db
   const {
     data: userCreatedQuestion,
     isLoading,
@@ -146,6 +146,13 @@ const SurveyCreateForm = () => {
 
   return (
     <div className="min-h-screen">
+      <div className="pl-20 mt-8">
+        <h2 className="text-2xl text-primary font-extrabold">
+          {editSurveyLoaderData?.surveyTitle ||
+            userCreatedQuestion[0]?.surveyTitle}
+        </h2>
+        <Breadcrums />
+      </div>
       <div className="px-20 pt-24">
         <UserCreateSurveyQuestions
           userCreatedQuestion={userCreatedQuestion}
