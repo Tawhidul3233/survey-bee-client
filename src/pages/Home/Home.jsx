@@ -19,8 +19,9 @@ const Home = () => {
       <MainContainer />
       <Testimonial />
       <Feedback />
-      <Contact/>
       <Faq />
+      <Contact/>
+      
     </div>
   );
 };

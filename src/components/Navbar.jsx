@@ -173,7 +173,7 @@ const Navbar = () => {
                                     </span>
                                   </Link>
                                   <Link
-                                    to="/"
+                                    to="/cx"
                                     className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
                                   >
                                     <span className="font-semibold text-xl text-secondary block">
@@ -213,7 +213,7 @@ const Navbar = () => {
                                     </span>
                                   </Link>
                                   <Link
-                                    to="/"
+                                    to="/apply"
                                     className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
                                   >
                                     <span className="font-semibold text-xl text-secondary block">
@@ -606,7 +606,7 @@ const Navbar = () => {
             </li>
             <li className="">
               <Link
-                to="/dashboard/createsurveyquestions"
+                to="/dashboard/mysurveys"
                 className={`${
                   !activeUser?.user?.email ? "hidden" : "text-white"
                 }`}
@@ -710,7 +710,7 @@ const Navbar = () => {
                         </span>
                       </Link>
                       <Link
-                        to="/"
+                        to="/cx"
                         className="hover:bg-gray-800 hover:text-base-100 px-4 py-2 rounded-sm"
                       >
                         <span className="font-semibold text-xl text-secondary block">

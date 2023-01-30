@@ -167,20 +167,26 @@ const DashboardPrimaryPage = () => {
           {/* user greet and modal ends */}
 
           {/* Recent surveys starts here */}
-          {allRecentSurveys?.length ? (
-            <div className="mt-16 mb-4 lg:px-44">
-              <h2 className="text-3xl pb-3">Recent Surveys</h2>
-              {allRecentSurveys?.map((recentSurv) => (
-                <RecentSurveys
-                  key={recentSurv._id}
-                  recentSurv={recentSurv}
-                  loading={loading}
-                  handleSurveyDelete={handleSurveyDelete}
-                />
-              ))}
-            </div>
+          {loading ? (
+            <Loading />
           ) : (
-            ""
+            <>
+              {allRecentSurveys?.length ? (
+                <div className="mt-16 mb-4 lg:px-44">
+                  <h2 className="text-3xl pb-3">Recent Surveys</h2>
+                  {allRecentSurveys?.map((recentSurv) => (
+                    <RecentSurveys
+                      key={recentSurv._id}
+                      recentSurv={recentSurv}
+                      loading={loading}
+                      handleSurveyDelete={handleSurveyDelete}
+                    />
+                  ))}
+                </div>
+              ) : (
+                ""
+              )}
+            </>
           )}
           {/* <DeletePermissionModal handleSurveyDelete={handleSurveyDelete} /> */}
           {/* Recent surveys ends here */}

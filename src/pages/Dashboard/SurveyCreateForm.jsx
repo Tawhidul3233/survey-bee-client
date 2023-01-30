@@ -1,9 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+// import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import Breadcrums from "../../components/Dashboard/Breadcrums";
 import UserCreateSurveyQuestions from "../../components/Dashboard/UserCreateSurveyQuestions";
 import Loading from "../../components/Shared/Loading";
 import { user } from "../../features/userSlice";
@@ -11,13 +16,48 @@ import { user } from "../../features/userSlice";
 const questionsType = ["Textbox", "Comment Box"];
 
 const SurveyCreateForm = () => {
+  // const [isLoaderLoading, setIsLoaderLoading] = useState(false);
+  const [editSurveyLoaderData, setEditSurveyLoaderData] = useState({});
   const activeUser = useSelector(user);
   const { user: existingUser } = activeUser;
   const { email } = existingUser;
   const { register, handleSubmit, reset } = useForm();
+  // const editSurveyLoaderData = useLoaderData();
+  // console.log(editSurveyLoaderData);
+
+  const location = useLocation();
+  // console.log(location.pathname.split("/").slice(-1));
+  const id = location.pathname.split("/").slice(-1);
+  const [isAdded, setIsAdded] = useState(false);
+  // console.log(id)
+  const getID = id[0];
+
+  useEffect(() => {
+    try {
+      if (getID.length === 24) {
+        getDataById(getID)
+          .then((data) => {
+            // console.log(data);
+            setEditSurveyLoaderData(data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }, [getID, isAdded]);
+
+  // get edit data
+  const getDataById = async (survId) => {
+    const response = await axios.get(
+      `https://survey-bee-server.vercel.app/editsurvey/${survId}`
+    );
+    return response?.data;
+  };
 
   // get user created questions
-  // get user from db
   const {
     data: userCreatedQuestion,
     isLoading,
@@ -41,6 +81,7 @@ const SurveyCreateForm = () => {
   // send backend for save user questions
   const handleCreateSurveyQuestions = async (data) => {
     // console.log(data);
+    // setIsLoaderLoading(true);
     const questions = data?.questions;
     const questionType = data?.questionsType;
     const surveyModifiedTime = new Date().toLocaleDateString();
@@ -48,7 +89,7 @@ const SurveyCreateForm = () => {
       const response = await axios.put(
         "https://survey-bee-server.vercel.app/userCreatedSurveyQuestions",
         {
-          id: userCreatedQuestion?.[0]?._id,
+          id: editSurveyLoaderData?._id || userCreatedQuestion[0]?._id,
           questions,
           questionType,
           surveyModifiedTime,
@@ -58,6 +99,8 @@ const SurveyCreateForm = () => {
       if (response?.data?.acknowledged) {
         refetch();
         reset();
+        // setIsLoaderLoading(false);
+        setIsAdded(true);
       }
     } catch (error) {
       console.log(error);
@@ -84,6 +127,7 @@ const SurveyCreateForm = () => {
     targetQType
   ) => {
     // console.log("deleted target", targetId, targetQuestion, targetQType);
+
     try {
       const response = await axios.patch(
         "https://survey-bee-server.vercel.app/surveyQdelete",
@@ -95,25 +139,55 @@ const SurveyCreateForm = () => {
       );
       // console.log(response?.data);
       if (response?.data?.modifiedCount) {
+        toast.success("Deleted");
+        // setIsLoaderLoading(false);
+        setIsAdded(true);
         refetch();
-        // toast.success("Deleted")
       }
     } catch (error) {
       console.log(error);
     }
   };
 
+  // let nextQuestionsNumber;
+  // if (
+  //   !editSurveyLoaderData?.questionsAndTypes?.length ||
+  //   !userCreatedQuestion[0]?.questionsAndTypes?.length
+  // ) {
+  //   nextQuestionsNumber = `Q${1}`;
+  // } else if (editSurveyLoaderData?.questionsAndTypes?.length) {
+  //   nextQuestionsNumber = `Q${editSurveyLoaderData?.questionsAndTypes?.length}`;
+  // } else {
+  //   nextQuestionsNumber = `Q${
+  //     userCreatedQuestion[0]?.questionsAndTypes?.length + 1
+  //   }`;
+  // }
+
+  // console.log(editSurveyLoaderData, userCreatedQuestion[0]);
+
   return (
     <div className="min-h-screen">
+      <div className="pl-20 mt-8">
+        <h2 className="text-2xl text-primary font-extrabold">
+          {editSurveyLoaderData?.surveyTitle ||
+            userCreatedQuestion[0]?.surveyTitle}
+        </h2>
+        <Breadcrums />
+      </div>
       <div className="px-20 pt-24">
-        <UserCreateSurveyQuestions
-          userCreatedQuestion={userCreatedQuestion}
-          handleDeleteSurveyQuestion={handleDeleteSurveyQuestion}
-        />
+        {(editSurveyLoaderData || userCreatedQuestion[0]) && (
+          <UserCreateSurveyQuestions
+            userCreatedQuestion={userCreatedQuestion}
+            editSurveyLoaderData={editSurveyLoaderData}
+            handleDeleteSurveyQuestion={handleDeleteSurveyQuestion}
+            // isLoaderLoading={isLoaderLoading}
+          />
+        )}
       </div>
       <div className="px-20 pt-10 pb-28">
         <h2 className="text-2xl text-primary font-extrabold">
-          {userCreatedQuestion[0]?.surveyTitle}
+          {editSurveyLoaderData?.surveyTitle ||
+            userCreatedQuestion[0]?.surveyTitle}
         </h2>
         <form
           // className="border border-black w-full h-auto mt-10"
@@ -124,11 +198,24 @@ const SurveyCreateForm = () => {
               type="text"
               readOnly
               className="text-3xl w-12 outline-none border-none font-extrabold"
-              value={`Q${
-                userCreatedQuestion[0]?.questionsAndTypes?.length
-                  ? userCreatedQuestion[0]?.questionsAndTypes?.length + 1
-                  : 1
-              }`}
+              value={
+                // `Q${
+                //   editSurveyLoaderData?.questionsAndTypes?.length
+                //     ? editSurveyLoaderData?.questionsAndTypes?.length + 1
+                //     : 1
+                // }` ||
+                // `Q${
+                //   userCreatedQuestion[0]?.questionsAndTypes?.length
+                //     ? userCreatedQuestion[0]?.questionsAndTypes?.length + 1
+                //     : 1
+                // }`
+                // nextQuestionsNumber
+                `Q${
+                  editSurveyLoaderData?.questionsAndTypes?.length + 1 ||
+                  userCreatedQuestion[0]?.questionsAndTypes?.length + 1 ||
+                  1
+                }`
+              }
             />
             <div className="flex">
               <input
