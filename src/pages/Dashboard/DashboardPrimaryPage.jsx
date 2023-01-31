@@ -12,6 +12,8 @@ import RecentSurveys from "../../components/Dashboard/RecentSurveys";
 // import DeletePermissionModal from "../../components/Dashboard/DeletePermissionModal";
 import { useEffect } from "react";
 import getUserAllSurveys from "../../api/getUserAllSurveys";
+import useAdmin from "../../hooks/useAdmin";
+import AdminPrimaryPage from "../../components/Dashboard/AdminContents/AdminPrimaryPage";
 
 const DashboardPrimaryPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -21,6 +23,7 @@ const DashboardPrimaryPage = () => {
   const { user: currentUser } = activeUser;
   // console.log(currentUser.email);
   const [loading, setLoading] = useState(false);
+  const [isAdmin, isAdminLoading] = useAdmin(currentUser?.email);
 
   const {
     register,
@@ -127,75 +130,87 @@ const DashboardPrimaryPage = () => {
     }
   };
 
+  if (isAdminLoading) {
+    <Loading />;
+  }
+  // console.log("isAdmin", isAdmin);
+
   return (
     <div className="min-h-screen">
-      {error ? (
-        <p className="text-center text-2xl pt-28">
-          Please check your internet!!!
-        </p>
-      ) : (
-        <>
-          {/* user greet and modal starts */}
-          <div className="md:px-2 lg:px-10 py-3 text-2xl">
-            Welcome back,
-            <label
-              htmlFor="displayNameModal"
-              className="hover:underline cursor-pointer"
-            >
-              <span
-                className="text-secondary"
-                onClick={() => setFirstName(false)}
-              >
-                {dbUser?.firstName || dbUser?.email}!
-              </span>
-            </label>
-            {/* Put this part before </body> tag */}
-            <input
-              type="checkbox"
-              id="displayNameModal"
-              className="modal-toggle"
-            />
-            {!firstName && (
-              <UserProfileUpgradeModal
-                register={register}
-                errors={errors}
-                handleSubmit={handleSubmit}
-                handleUpdateProfile={handleUpdateProfile}
-              />
-            )}
-          </div>
-          {/* user greet and modal ends */}
-
-          {/* Recent surveys starts here */}
-          {loading ? (
-            <Loading />
-          ) : (
-            <>
-              {allRecentSurveys?.length ? (
-                <div className="mt-16 mb-4 lg:px-44">
-                  <h2 className="text-3xl pb-3">Recent Surveys</h2>
-                  {allRecentSurveys?.map((recentSurv) => (
-                    <RecentSurveys
-                      key={recentSurv._id}
-                      recentSurv={recentSurv}
-                      loading={loading}
-                      handleSurveyDelete={handleSurveyDelete}
+      <>{isAdmin && <AdminPrimaryPage />}</>
+      <>
+        {!isAdmin && (
+          <>
+            {error ? (
+              <p className="text-center text-2xl pt-28">
+                Please check your internet!!!
+              </p>
+            ) : (
+              <>
+                {/* user greet and modal starts */}
+                <div className="md:px-2 lg:px-10 py-3 text-2xl">
+                  Welcome back,
+                  <label
+                    htmlFor="displayNameModal"
+                    className="hover:underline cursor-pointer"
+                  >
+                    <span
+                      className="text-secondary"
+                      onClick={() => setFirstName(false)}
+                    >
+                      {dbUser?.firstName || dbUser?.email}!
+                    </span>
+                  </label>
+                  {/* Put this part before </body> tag */}
+                  <input
+                    type="checkbox"
+                    id="displayNameModal"
+                    className="modal-toggle"
+                  />
+                  {!firstName && (
+                    <UserProfileUpgradeModal
+                      register={register}
+                      errors={errors}
+                      handleSubmit={handleSubmit}
+                      handleUpdateProfile={handleUpdateProfile}
                     />
-                  ))}
+                  )}
                 </div>
-              ) : (
-                ""
-              )}
-            </>
-          )}
-          {/* <DeletePermissionModal handleSurveyDelete={handleSurveyDelete} /> */}
-          {/* Recent surveys ends here */}
+                {/* user greet and modal ends */}
 
-          {/* survey buttons starts */}
-          <SurveyCreateButton />
-          {/* survey buttons ends */}
-        </>
-      )}
+                {/* Recent surveys starts here */}
+                {loading ? (
+                  <Loading />
+                ) : (
+                  <>
+                    {allRecentSurveys?.length ? (
+                      <div className="mt-16 mb-4 lg:px-44">
+                        <h2 className="text-3xl pb-3">Recent Surveys</h2>
+                        {allRecentSurveys?.map((recentSurv) => (
+                          <RecentSurveys
+                            key={recentSurv._id}
+                            recentSurv={recentSurv}
+                            loading={loading}
+                            handleSurveyDelete={handleSurveyDelete}
+                          />
+                        ))}
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </>
+                )}
+                {/* <DeletePermissionModal handleSurveyDelete={handleSurveyDelete} /> */}
+                {/* Recent surveys ends here */}
+
+                {/* survey buttons starts */}
+                <SurveyCreateButton />
+                {/* survey buttons ends */}
+              </>
+            )}
+          </>
+        )}
+      </>
     </div>
   );
 };
