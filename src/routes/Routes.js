@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../layouts/Dashboard/Dashboard";
 import Main from "../layouts/Main/Main";
 import ApplyPage from "../pages/ApplyPage/ApplyPage";
+import CustomerService from "../pages/CustomerService/CustomerService";
 import CreateASurvey from "../pages/Dashboard/CreateASurvey";
 import DashboardPrimaryPage from "../pages/Dashboard/DashboardPrimaryPage";
 import Home from "../pages/Home/Home";
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: "/apply",
         element: <ApplyPage> </ApplyPage>,
+      },
+      {
+        path:"/CustomerService",
+        element:<CustomerService/>
       },
       {
         path: "/survey-Audience/:title/:id",
