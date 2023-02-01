@@ -6,6 +6,7 @@ import Cx from "../pages/CxPage/Cx";
 import CreateASurvey from "../pages/Dashboard/CreateASurvey";
 import DashboardPrimaryPage from "../pages/Dashboard/DashboardPrimaryPage";
 import MySurveys from "../pages/Dashboard/MySurveys";
+import PreviewSurvey from "../pages/Dashboard/PreviewSurvey";
 import SurveyCreateForm from "../pages/Dashboard/SurveyCreateForm";
 import Home from "../pages/Home/Home";
 import Pricing from "../pages/Pricing/Pricing";
@@ -36,9 +37,10 @@ export const router = createBrowserRouter([
       {
         path: "/apply",
         element: <ApplyPage> </ApplyPage>,
-      },{
-        path:"/cx",
-        element: <Cx> </Cx>
+      },
+      {
+        path: "/cx",
+        element: <Cx> </Cx>,
       },
       {
         path: "/survey-Audience/:title/:id",
@@ -85,6 +87,10 @@ export const router = createBrowserRouter([
         // loader: ({ params }) =>
         //   fetch(`https://survey-bee-server.vercel.app/editsurvey/${params?.id}`),
         element: <SurveyCreateForm />,
+      },
+      {
+        path: "/dashboard/preview/:id",
+        element: <PreviewSurvey />,
       },
     ],
   },
