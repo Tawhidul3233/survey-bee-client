@@ -11,6 +11,7 @@ import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
 import Login from "../pages/shared/Login/Login";
 import Register from "../pages/shared/Register/Register";
 import SurveyAudience from "../pages/SurveyAudience/SurveyAudience";
+import SurveyTips from "../pages/SurveyTips/SurveyTips";
 import RequireRoutes from "./RequireRoutes";
 
 export const router = createBrowserRouter([
@@ -66,6 +67,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <DashboardPrimaryPage />,
+      },
+      {
+        path: "/dashboard/surveyTips",
+        element: <SurveyTips />,
       },
       {
         path: "/dashboard/createasurvey",

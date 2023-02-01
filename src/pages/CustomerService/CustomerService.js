@@ -2,12 +2,12 @@ import React from 'react';
 
 const CustomerService = () => {
     return (
-        <div className=''>
-            <div className=" bg-base-200 ">
-  <div className="px-8 flex justify-between pt-10">
+        
+            <div className="hero bg-base-200">
+  <div className="hero-content flex-col lg:flex-row">
   
     
-    <div className=''>
+    <div className='py-10'>
       <h1 className="text-5xl font-semibold">Design an excellent<br/>
       customer support<br/>
       experience
@@ -18,7 +18,7 @@ const CustomerService = () => {
     <img src="https://i.ibb.co/KsJMRG7/student-2.png" alt='person' className="lg:w-1/3 rounded-md" />
   </div>
 </div>
-        </div>
+       
     );
 };
 

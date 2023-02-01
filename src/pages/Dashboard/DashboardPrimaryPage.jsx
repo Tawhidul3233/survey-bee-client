@@ -8,6 +8,7 @@ import { toast } from "react-hot-toast";
 import UserProfileUpgradeModal from "../../components/Dashboard/UserProfileUpgradeModal";
 import SurveyCreateButton from "../../components/Dashboard/SurveyCreateButton";
 import Loading from "../../components/Shared/Loading";
+import DashboardProfile from "./DashboardProfile";
 
 const DashboardPrimaryPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -110,6 +111,11 @@ const DashboardPrimaryPage = () => {
       <SurveyCreateButton />
 
       {/* survey buttons ends */}
+      <div className="py-16">
+          <DashboardProfile
+          DashboardPrimaryPage={DashboardPrimaryPage}
+          />
+      </div>
     </div>
   );
 };
