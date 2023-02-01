@@ -163,7 +163,7 @@ const SurveyCreateForm = () => {
   //   }`;
   // }
 
-  // console.log(editSurveyLoaderData, userCreatedQuestion[0]);
+  // console.log(editSurveyLoaderData);
 
   return (
     <div className="min-h-screen">
@@ -172,7 +172,7 @@ const SurveyCreateForm = () => {
           {editSurveyLoaderData?.surveyTitle ||
             userCreatedQuestion[0]?.surveyTitle}
         </h2>
-        <Breadcrums />
+        <Breadcrums editSurveyLoaderData={editSurveyLoaderData} />
       </div>
       <div className="px-20 pt-24">
         {(editSurveyLoaderData || userCreatedQuestion[0]) && (
