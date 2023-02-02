@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CustomerService = () => {
     return (
@@ -13,7 +14,7 @@ const CustomerService = () => {
       experience
       </h1>
       <p className="py-6 text-xl">Get tools to help you pivot when the needs of your customers or <br/> your team change.</p>
-      <button className="btn bg-white btn-success text-black normal-case">Get Started</button>
+      <Link to='/dashboard/surveyTips'><button className="btn bg-white btn-success text-black normal-case">Get Started</button></Link>
     </div>
     <img src="https://i.ibb.co/KsJMRG7/student-2.png" alt='person' className="lg:w-1/3 rounded-md" />
   </div>
