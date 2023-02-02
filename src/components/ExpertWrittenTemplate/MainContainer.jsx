@@ -29,8 +29,10 @@ const MainContainer = () => {
     ],
   });
 
+
   if (surveyCategory.isLoading) return <Spinner />;
   if (surveyTemplate.isLoading) return <Spinner />;
+
   if (surveyCategory.error)
     return "error has occurd" + surveyCategory.error.message;
 
