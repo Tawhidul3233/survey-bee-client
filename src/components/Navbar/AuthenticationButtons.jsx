@@ -50,14 +50,14 @@ const AuthenticationButtons = ({
             <ul
               className={`w-60 fixed right-3 top-20 z-50 bg-gray-900 text-white py-4 rounded-sm shadow-sm border border-secondary ${classNameHide}`}
             >
-              <div>
+              <>
                 <button
                   onClick={handleLogOut}
                   className="hover:bg-base-200 hover:text-black w-full text-left px-4 py-2"
                 >
                   Sign out
                 </button>
-              </div>
+              </>
             </ul>
           )}
         </>
