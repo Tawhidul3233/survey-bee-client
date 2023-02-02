@@ -40,7 +40,7 @@ const DashboardProfile = ({register,errors,handleSubmit,handleUpdateProfile,setF
 <div>
 <h2 className='text-2xl font-semibold mb-5 text-center'>Survey Tips</h2>
 <div className="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-  <figure><img src="https://cdn.smassets.net/assets/dashweb/dashweb/17.0.0/assets/quick_poll_comments_graphic.png" alt="Shoes" /></figure>
+  <figure><img src="https://i.ibb.co/G08XMWz/quick-poll-comments-graphic.png" alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">Flow chart: Which question type is right for you?</h2>
     <p>Don't know which question types to use on your first survey? This handy flow chart will guide you to the best choice.</p>

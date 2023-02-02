@@ -17,7 +17,7 @@ const SurveyTips = () => {
     
       
     </div>
-    <img src="https://cdn.smassets.net/assets/dashweb/dashweb/17.0.0/assets/content/question_type_right_for_you.png" alt='person' className="lg:w-1/3 rounded-md" />
+    <img src="https://i.ibb.co/8zvtqpQ/question-type-right-for-you.png" alt='person' className="lg:w-1/3 rounded-md" />
   </div>
   
 </div>
