@@ -14,7 +14,7 @@ const Contact = () => {
     const handleSendEmail = (event) => {
        event.preventDefault()
        
-       emailjs.sendForm('service_b23f4pf', 'template_h6dcqro', form.current, 'M_ZpfpVp-QjxlUJBz')
+       emailjs.sendForm('service_oy1i7u8', 'template_8cpnwll', form.current, 'B7VsHGVADS5nXFBtY')
        .then((result) => {
           console.log(result.text);
           toast.success('Message send')
@@ -33,19 +33,19 @@ const Contact = () => {
               <div className="flex flex-col items-start lg:gap-x-40 lg:flex-row-reverse">
                <form ref={form} onSubmit={handleSendEmail} className="card-body justify-items-center p-0">
                 <div className="form-control"> 
-                  <input name='name' type="text" placeholder="Name" className="input input-bordered lg:w-96 w-full border-2" />
+                  <input name='name' type="text" placeholder="Name" className="input input-bordered lg:w-96 w-full border-2" required/>
                 </div>
                 <div className="form-control"> 
-                  <input name='email' type="email" placeholder="Email" className="input input-bordered  border-2" /> 
+                  <input name='email' type="email" placeholder="Email" className="input input-bordered  border-2" required/> 
                 </div> 
                 <div className='form-control'>
-                 <textarea name='message' className="textarea textarea-bordered border-2" placeholder="Message"></textarea>
+                 <textarea name='message' className="textarea textarea-bordered border-2" placeholder="Message" required></textarea>
                 </div>
                 <div className="form-control mt-6">
                  <button type='submit' className="btn border-none btn-success text-white"><FaTelegramPlane className='mr-2' /><span>Send Message</span></button>
                 </div>
                </form>
-               <div className='flex flex-col pt-4'>
+               <div className='flex flex-col pt-4 text-white'>
                  
                  <h1 className='text-3xl flex items-center my-3'><GoMailRead className='mr-3' /> <span className='text-xl font-medium'>codewithhope606@gmail.com</span></h1>
                  <h1 className='text-3xl flex items-center my-3'><BsFillTelephoneForwardFill className='mr-3'/> <span className='text-xl font-medium'>+880199999999</span></h1>

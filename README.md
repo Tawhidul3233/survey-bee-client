@@ -26,7 +26,7 @@ Firebase Live Link: https://surveybee-8c91a.web.app/
 
 ### Oliullah - react icon is installed, navbar, firebase installed
 
-### Tonmoy - error page,ImageSeaction,Testimonial,Feedback sections
+### Tonmoy - error page,ImageSeaction,Testimonial,Feedback sections,contact us section with email js.
 
 ### website live link
 

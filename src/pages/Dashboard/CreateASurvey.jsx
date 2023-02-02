@@ -1,11 +1,19 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import CreateASurveyModal from "../../components/Dashboard/CreateASurveyModal";
+import { user } from "../../features/userSlice";
 
 const CreateASurvey = () => {
   const [userSurveyTitle, setUserSurveyTitle] = useState("");
   const navigate = useNavigate();
+  const activeUser = useSelector(user);
+  // console.log(activeUser);
+  const email = activeUser?.user?.email;
+
   const {
     register,
     formState: { errors },
@@ -13,12 +21,41 @@ const CreateASurvey = () => {
   } = useForm();
 
   // create a survey in createASurveyModal
-  const handleCreateASurvey = (data) => {
-    console.log(data);
+  const handleCreateASurvey = async (data) => {
+    // console.log(data);
     setUserSurveyTitle(data?.surveyTitle);
-    if (data?.surveyTitle) {
-      return navigate("/dashboard/createsurveyquestions");
+
+    // survey Create and modified time
+    const surveyCreateTime = new Date().toLocaleDateString();
+    const surveyModifiedTime = new Date().toLocaleDateString();
+    const surveyCreateTimeMl = new Date().getTime();
+
+    // console.log(data);
+    const surveyTitle = data?.surveyTitle;
+    const surveyCategory = data?.surveyCategory;
+    try {
+      const response = await axios.post(
+        "https://survey-bee-server.vercel.app/userCreatedSurveyQuestions",
+        {
+          email,
+          surveyTitle,
+          surveyCategory,
+          surveyCreateTime,
+          surveyModifiedTime,
+          surveyCreateTimeMl,
+        }
+      );
+      // console.log(response.data);
+      if (response?.data?.insertedId) {
+        return navigate("/dashboard/createsurveyquestions");
+      }
+    } catch (error) {
+      // console.log(error);
+      toast.warn(error?.message);
     }
+    // if (data?.surveyTitle) {
+    //   return navigate("/dashboard/createsurveyquestions");
+    // }
   };
 
   return (
