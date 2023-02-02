@@ -1,6 +1,7 @@
 import { useQueries } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
+import Spinner from "../Spinner/Spinner";
 import Sidebar from "./Leftbar";
 import TemplatesCard from "./TemplatesCard";
 const MainContainer = () => {
@@ -28,8 +29,8 @@ const MainContainer = () => {
     ],
   });
 
-  if (surveyCategory.isLoading) return "category data is loading";
-  if (surveyTemplate.isLoading) return "template data is loading";
+  if (surveyCategory.isLoading) return <Spinner />;
+  if (surveyTemplate.isLoading) return <Spinner />;
   if (surveyCategory.error)
     return "error has occurd" + surveyCategory.error.message;
 
