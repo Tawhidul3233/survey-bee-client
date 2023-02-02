@@ -20,7 +20,7 @@ Firebase Live Link: https://surveybee-8c91a.web.app/
 
 ### Tawhid - banner, Register and login page.
 
-### tuhin - footer,who is our suvey audience,installed tanstackquery
+### tuhin - footer,who is our suvey audience,installed tanstackquery, template
 
 - h1=>text-3xl
 
