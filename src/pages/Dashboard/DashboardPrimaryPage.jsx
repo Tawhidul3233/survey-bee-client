@@ -8,7 +8,7 @@ import { toast } from "react-hot-toast";
 import UserProfileUpgradeModal from "../../components/Dashboard/UserProfileUpgradeModal";
 import SurveyCreateButton from "../../components/Dashboard/SurveyCreateButton";
 import Loading from "../../components/Shared/Loading";
-
+import DashboardProfile from "./DashboardProfile";
 import RecentSurveys from "../../components/Dashboard/RecentSurveys";
 // import DeletePermissionModal from "../../components/Dashboard/DeletePermissionModal";
 import { useEffect } from "react";
@@ -203,6 +203,14 @@ const DashboardPrimaryPage = () => {
                 )}
                 {/* <DeletePermissionModal handleSurveyDelete={handleSurveyDelete} /> */}
                 {/* Recent surveys ends here */}
+
+
+      {/* survey buttons ends */}
+      <div className="py-16">
+          <DashboardProfile
+          DashboardPrimaryPage={DashboardPrimaryPage}
+          />
+      </div>
 
                 {/* survey buttons starts */}
                 <SurveyCreateButton />

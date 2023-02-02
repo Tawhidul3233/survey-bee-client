@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../layouts/Dashboard/Dashboard";
 import Main from "../layouts/Main/Main";
 import ApplyPage from "../pages/ApplyPage/ApplyPage";
+import CustomerService from "../pages/CustomerService/CustomerService";
 import Cx from "../pages/CxPage/Cx";
 import CreateASurvey from "../pages/Dashboard/CreateASurvey";
 import DashboardPrimaryPage from "../pages/Dashboard/DashboardPrimaryPage";
@@ -14,6 +15,7 @@ import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
 import Login from "../pages/shared/Login/Login";
 import Register from "../pages/shared/Register/Register";
 import SurveyAudience from "../pages/SurveyAudience/SurveyAudience";
+import SurveyTips from "../pages/SurveyTips/SurveyTips";
 import RequireRoutes from "./RequireRoutes";
 
 export const router = createBrowserRouter([
@@ -39,8 +41,14 @@ export const router = createBrowserRouter([
         element: <ApplyPage> </ApplyPage>,
       },
       {
+
+        path:"/CustomerService",
+        element:<CustomerService/>
+      },
+        {
         path: "/cx",
         element: <Cx> </Cx>,
+
       },
       {
         path: "/survey-Audience/:title/:id",
@@ -69,6 +77,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <DashboardPrimaryPage />,
+      },
+      {
+        path: "/dashboard/surveyTips",
+        element: <SurveyTips />,
       },
       {
         path: "/dashboard/createasurvey",
