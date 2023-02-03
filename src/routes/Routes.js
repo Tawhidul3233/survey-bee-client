@@ -15,6 +15,7 @@ import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
 import Login from "../pages/shared/Login/Login";
 import Register from "../pages/shared/Register/Register";
 import SurveyAudience from "../pages/SurveyAudience/SurveyAudience";
+import SurveyTemplate from "../pages/SurveyTemplate/SurveyTemplate";
 import SurveyTips from "../pages/SurveyTips/SurveyTips";
 import RequireRoutes from "./RequireRoutes";
 
@@ -41,14 +42,12 @@ export const router = createBrowserRouter([
         element: <ApplyPage> </ApplyPage>,
       },
       {
-
-        path:"/CustomerService",
-        element:<CustomerService/>
+        path: "/CustomerService",
+        element: <CustomerService />,
       },
-        {
+      {
         path: "/cx",
         element: <Cx> </Cx>,
-
       },
       {
         path: "/survey-Audience/:title/:id",
@@ -58,6 +57,12 @@ export const router = createBrowserRouter([
           ),
 
         element: <SurveyAudience />,
+      },
+      {
+        path: "/surveyTemplate/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/surveyTemplate/${params.id}`),
+        element: <SurveyTemplate />,
       },
       {
         path: "/plans-pricing",
