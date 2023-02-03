@@ -66,7 +66,7 @@ export const router = createBrowserRouter([
       {
         path: "/surveyTemplate/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/surveyTemplate/${params.id}`),
+          fetch(`https://survey-bee-server.vercel.app/surveyTemplate/${params.id}`),
         element: <SurveyTemplate />,
       },
       {

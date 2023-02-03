@@ -15,7 +15,7 @@ const MainContainer = () => {
         queryKey: ["category"],
         queryFn: () =>
           axios
-            .get("http://localhost:5000/surveyCategory")
+            .get("https://survey-bee-server.vercel.app/surveyCategory")
             .then((res) => res.data),
       },
 
@@ -23,7 +23,7 @@ const MainContainer = () => {
         queryKey: ["template"],
         queryFn: () =>
           axios
-            .get("http://localhost:5000/surveyTemplate")
+            .get("https://survey-bee-server.vercel.app/surveyTemplate")
             .then((res) => res.data),
       },
     ],
