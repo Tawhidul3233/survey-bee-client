@@ -1,4 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
+import AdminPrimaryPage from "../components/Dashboard/AdminContents/AdminPrimaryPage";
+import AdminHome from "../components/Dashboard/AdminContents/ManageUser/AdminHome/AdminHome";
+import ManageUser from "../components/Dashboard/AdminContents/ManageUser/ManageUser";
 import Dashboard from "../layouts/Dashboard/Dashboard";
 import Main from "../layouts/Main/Main";
 import ApplyPage from "../pages/ApplyPage/ApplyPage";
@@ -94,4 +97,20 @@ export const router = createBrowserRouter([
       },
     ],
   },
+
+  
+  {
+    path:'/admin/dashboard',
+    element: <AdminPrimaryPage></AdminPrimaryPage>,
+    children:[
+      {
+        path:'/admin/dashboard',
+        element: <AdminHome></AdminHome>
+      },
+      {
+        path:'/admin/dashboard/manageusers',
+        element:<ManageUser> </ManageUser>
+      }
+    ]
+  }
 ]);

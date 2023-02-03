@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AdminMenu = () => {
   return (
@@ -29,7 +30,7 @@ const AdminMenu = () => {
           </div>
           <nav aria-label="Main Nav" className="flex flex-col mt-6 space-y-1">
             <a
-              href=" "
+              href="/admin/dashboard"
               className="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-lg"
             >
               <span className="ml-3 text-sm font-medium"> Overview </span>
@@ -39,7 +40,7 @@ const AdminMenu = () => {
               <summary
                 className="flex items-center px-4 py-2 text-gray-500 rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700"
               >
-                <span className="ml-3 text-sm font-medium"> Manage users </span>
+                <a href='/admin/dashboard/manageusers' className="ml-3 text-sm font-medium"> Manage users </a>
 
                 <span
                   className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180"

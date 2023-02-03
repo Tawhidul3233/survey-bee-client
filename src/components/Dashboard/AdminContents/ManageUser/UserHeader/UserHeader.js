@@ -1,8 +1,42 @@
 import React, { useState } from 'react';
+import UserTable from '../UserTable/UserTable';
 
 const UserHeader = () => {
 
+
+  const data = [
+    {
+      name: 'Akash',
+      role: 'manager',
+      id: '77777',
+      email: 'gmail.com',
+      user: 'free',
+      level: ''
+    },
+    {
+      name: 'Lokash',
+      role: 'entry',
+      id: '555777',
+      email: 'com.com',
+      user: 'paid',
+      level: 'paid'
+    }
+  ]
+
+  const [userData, setUserData] = useState(data)
+
+
+
   const [search, setSearch] = useState('')
+
+  const findUsers = (fildKey) => {
+    const targetedUser = data.filter(tUser => {
+      return (fildKey === tUser.user)
+    });
+    return setUserData(targetedUser)
+  }
+
+
 
   return (
     <div>
@@ -71,14 +105,38 @@ const UserHeader = () => {
                 type="button"
                 className="group flex shrink-0 items-center rounded-lg transition"
               >
-              <button className="btn btn-sm">Small</button>
-                <label htmlFor="bill-modal" className=" btn btn-xs inline-block rounded border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"> Subscriber </label>
+                <div class="inline-flex rounded-lg border border-gray-100 bg-gray-100 p-1">
+                  <button
+                    class="inline-block rounded-md px-4 py-2 text-sm text-gray-500 focus:text-white focus:bg-black"
+                    onClick={() => setUserData(data)}
+                  >
+                    All
+                  </button>
+
+                  <button
+                    class="inline-block rounded-md px-4 py-2 text-sm text-gray-500  focus:text-white focus:bg-black "
+                    onClick={() => findUsers('paid')}
+                  >
+                    Paid
+                  </button>
+
+                  <button
+                    class="inline-block rounded-md px-4 py-2 text-sm text-gray-500  focus:text-white focus:bg-black"
+                    onClick={() => findUsers('free')}
+                  >
+                    Free
+                  </button>
+                </div>
+
 
               </div>
             </div>
           </div>
         </div>
       </header>
+      <div>
+        <UserTable userData={userData} search={search.toLocaleLowerCase()}> </UserTable>
+      </div>
     </div>
   );
 };

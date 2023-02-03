@@ -2,7 +2,7 @@ import React from 'react';
 
 const UserStatstics = () => {
   return (
-    <div className=''>
+    <div className=' '>
       <section className="bg-white">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 py-24 md:py-12 lg:px-8">
           <div className=" ">
@@ -14,8 +14,8 @@ const UserStatstics = () => {
                   Total Users
                 </dt>
 
-                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">
-                  85
+                <dd className="text-xl font-extrabold text-blue-600 md:text-5xl">
+                  1150
                 </dd>
               </div>
 
@@ -23,20 +23,20 @@ const UserStatstics = () => {
                 className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center"
               >
                 <dt className="order-last text-lg font-medium text-gray-500">
-                  New Users
+                  Paid Users
                 </dt>
 
-                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">25</dd>
+                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">150</dd>
               </div>
 
               <div
                 className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center"
               >
                 <dt className="order-last text-lg font-medium text-gray-500">
-                  Total Addons
+                  Free Users
                 </dt>
 
-                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">86</dd>
+                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">1000</dd>
               </div>
             </dl>
           </div>
@@ -54,7 +54,7 @@ const UserStatstics = () => {
                 </dt>
 
                 <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">
-                  850$
+                  1400$
                 </dd>
               </div>
 
@@ -62,20 +62,20 @@ const UserStatstics = () => {
                 className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center"
               >
                 <dt className="order-last text-lg font-medium text-gray-500">
-                  24 Hours
+                  Last Month
                 </dt>
 
-                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">25$</dd>
+                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">598$</dd>
               </div>
 
               <div
                 className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center"
               >
                 <dt className="order-last text-lg font-medium text-gray-500">
-                  Total Addons
+                  Last week
                 </dt>
 
-                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">86</dd>
+                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">280$</dd>
               </div>
             </dl>
           </div>
