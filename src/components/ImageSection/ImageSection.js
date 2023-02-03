@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ImageSection.css';
 
 const ImageSection = () => {
@@ -18,7 +19,9 @@ const ImageSection = () => {
       panel of more than 175 million respondents from across the globe.
       </h5>
       </div>
-      <button className="btn bg-white btn-success text-black normal-case">Learn More</button>
+      <Link to='/plans-pricing'>
+      <button className="btn bg-white btn-success text-black normal-case text-semibold">Get Chart</button>
+      </Link>
     </div>
   </div>
 </div>

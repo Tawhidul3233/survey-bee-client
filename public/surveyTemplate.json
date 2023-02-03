@@ -1,0 +1,436 @@
+[
+  {
+    "survey_title": "Customer Satisfaction Survey",
+
+    "questions": [
+      {
+        "question_text": "How satisfied are you with the quality of our product?",
+        "question_type": "rating",
+        "options": [
+          "Very Dissatisfied",
+          "Dissatisfied",
+          "Neutral",
+          "Satisfied",
+          "Very Satisfied"
+        ]
+      },
+      {
+        "question_text": "How likely are you to recommend our product to a friend or colleague?",
+        "question_type": "rating",
+        "options": [
+          "Very Unlikely",
+          "Unlikely",
+          "Neutral",
+          "Likely",
+          "Very Likely"
+        ]
+      },
+      {
+        "question_text": "What specific feature do you like the most about our product?",
+        "question_type": "text"
+      },
+      {
+        "question_text": "What can we improve about our product?",
+        "question_type": "text"
+      }
+    ]
+  },
+  {
+    "survey_title": "Customer Satisfaction Survey",
+    "img": "https://i.ibb.co/zQ7hgVy/customer-satisfaction-survey-template-1.png",
+    "questions": [
+      {
+        "question_text": "How satisfied are you with the quality of our product?",
+        "question_type": "rating",
+        "options": [
+          "Very Dissatisfied",
+          "Dissatisfied",
+          "Neutral",
+          "Satisfied",
+          "Very Satisfied"
+        ]
+      },
+      {
+        "question_text": "How likely are you to recommend our product to a friend or colleague?",
+        "question_type": "rating",
+        "options": [
+          "Very Unlikely",
+          "Unlikely",
+          "Neutral",
+          "Likely",
+          "Very Likely"
+        ]
+      },
+      {
+        "question_text": "What specific feature do you like the most about our product?",
+        "question_type": "text"
+      },
+      {
+        "question_text": "What can we improve about our product?",
+        "question_type": "text"
+      }
+    ]
+  },
+
+  {
+    "survey_title": "Education Survey",
+    "img": "https://i.ibb.co/WWgmzpM/university-student-satisfaction-survey-template.png",
+
+    "questions": [
+      {
+        "question_text": "How would you rate your overall experience with the organization?",
+        "question_type": "rating",
+        "options": ["Poor", "Below average", "Average", "Good", "Excellent"]
+      },
+      {
+        "question_text": "What subjects did you study in this organization?",
+        "question_type": "checkbox",
+        "options": [
+          "Mathematics",
+          "Science",
+          "English",
+          "History",
+          "Geography",
+          "Others"
+        ]
+      },
+      {
+        "question_text": "What do you think about the quality of teaching in this organization?",
+        "question_type": "text"
+      },
+      {
+        "question_text": "How often did you receive the necessary support from your teachers?",
+        "question_type": "rating",
+        "options": ["Never", "Seldom", "Sometimes", "Often", "Always"]
+      },
+      {
+        "question_text": "Would you recommend this organization to your friends or family?",
+        "question_type": "rating",
+        "options": ["No", "Maybe", "Yes"]
+      }
+    ]
+  },
+  {
+    "survey_title": "Employee Survey",
+    "img": "https://i.ibb.co/6nXBm68/360-Degree-Employee-Evaluation.png",
+    "questions": [
+      {
+        "question_text": "How satisfied are you with your current role in the company?",
+        "question_type": "rating",
+        "options": [
+          "Not satisfied",
+          "Somewhat satisfied",
+          "Satisfied",
+          "Very satisfied",
+          "Extremely satisfied"
+        ]
+      },
+      {
+        "question_text": "How satisfied are you with the company culture?",
+        "question_type": "rating",
+        "options": [
+          "Not satisfied",
+          "Somewhat satisfied",
+          "Satisfied",
+          "Very satisfied",
+          "Extremely satisfied"
+        ]
+      },
+      {
+        "question_text": "How well do you feel you are supported by your manager or supervisor?",
+        "question_type": "rating",
+        "options": [
+          "Not supported",
+          "Somewhat supported",
+          "Supported",
+          "Very supported",
+          "Extremely supported"
+        ]
+      },
+      {
+        "question_text": "How would you rate the company's policies and procedures?",
+        "question_type": "rating",
+        "options": ["Poor", "Below average", "Average", "Good", "Excellent"]
+      },
+      {
+        "question_text": "Would you recommend this company as a great place to work?",
+        "question_type": "rating",
+        "options": ["No", "Maybe", "Yes"]
+      },
+      {
+        "question_text": "What suggestions do you have for improving the company?",
+        "question_type": "text",
+        "options": []
+      }
+    ]
+  },
+  {
+    "survey_title": "Event Survey",
+    "img": "https://i.ibb.co/YyDWF0N/employee-engagement-survey-template.png",
+    "questions": [
+      {
+        "question_text": "How would you rate the overall event experience?",
+        "question_type": "rating",
+        "options": ["Poor", "Below average", "Average", "Good", "Excellent"]
+      },
+      {
+        "question_text": "How was the event organized?",
+        "question_type": "rating",
+        "options": ["Poor", "Below average", "Average", "Good", "Excellent"]
+      },
+      {
+        "question_text": "How satisfied are you with the venue?",
+        "question_type": "rating",
+        "options": [
+          "Not satisfied",
+          "Somewhat satisfied",
+          "Satisfied",
+          "Very satisfied",
+          "Extremely satisfied"
+        ]
+      },
+      {
+        "question_text": "Did you find the event content informative and engaging?",
+        "question_type": "rating",
+        "options": [
+          "Not informative or engaging",
+          "Somewhat informative or engaging",
+          "Informative and engaging",
+          "Very informative and engaging",
+          "Extremely informative and engaging"
+        ]
+      },
+      {
+        "question_text": "Would you attend another event organized by us in the future?",
+        "question_type": "rating",
+        "options": ["No", "Maybe", "Yes"]
+      },
+      {
+        "question_text": "What suggestions do you have for improving future events?",
+        "question_type": "text",
+        "options": []
+      }
+    ]
+  },
+  {
+    "survey_title": "Healthcare Survey",
+    "img": "https://i.ibb.co/YcbBSdG/management-performance-survey-template.png",
+    "questions": [
+      {
+        "question_text": "How satisfied are you with the quality of care you received at our facility?",
+        "question_type": "rating",
+        "options": [
+          "Not satisfied",
+          "Somewhat satisfied",
+          "Satisfied",
+          "Very satisfied",
+          "Extremely satisfied"
+        ]
+      },
+      {
+        "question_text": "How would you rate the availability and responsiveness of the staff?",
+        "question_type": "rating",
+        "options": ["Poor", "Below average", "Average", "Good", "Excellent"]
+      },
+      {
+        "question_text": "Did you experience a wait time during your visit?",
+        "question_type": "multiple_choice",
+        "options": [
+          "No",
+          "Less than 15 minutes",
+          "15-30 minutes",
+          "30-45 minutes",
+          "Over 45 minutes"
+        ]
+      },
+      {
+        "question_text": "Did the facility meet your expectations for cleanliness and safety?",
+        "question_type": "rating",
+        "options": [
+          "Not met",
+          "Somewhat met",
+          "Met",
+          "Very well met",
+          "Extremely well met"
+        ]
+      },
+      {
+        "question_text": "Would you recommend our facility to others?",
+        "question_type": "rating",
+        "options": ["No", "Maybe", "Yes"]
+      },
+      {
+        "question_text": "Do you have any suggestions for improvement?",
+        "question_type": "text",
+        "options": []
+      }
+    ]
+  },
+  {
+    "survey_title": "Market Research Survey",
+    "img": "https://i.ibb.co/zQ7hgVy/customer-satisfaction-survey-template-1.png",
+    "questions": [
+      {
+        "question_text": "What is your age group?",
+        "question_type": "multiple_choice",
+        "options": ["18-24", "25-34", "35-44", "45-54", "55+"]
+      },
+      {
+        "question_text": "What is your gender?",
+        "question_type": "multiple_choice",
+        "options": ["Male", "Female", "Other"]
+      },
+      {
+        "question_text": "What is your occupation?",
+        "question_type": "multiple_choice",
+        "options": [
+          "Student",
+          "Employed full-time",
+          "Employed part-time",
+          "Self-employed",
+          "Retired",
+          "Not employed"
+        ]
+      },
+      {
+        "question_text": "What is your household income?",
+        "question_type": "multiple_choice",
+        "options": [
+          "$0-24,999",
+          "$25,000-49,999",
+          "$50,000-74,999",
+          "$75,000-99,999",
+          "$100,000 or more"
+        ]
+      },
+      {
+        "question_text": "On a scale of 1-5, how likely are you to recommend our product to a friend or colleague?",
+        "question_type": "rating",
+        "options": [
+          "1 - Not at all likely",
+          "2",
+          "3",
+          "4",
+          "5 - Extremely likely"
+        ]
+      },
+      {
+        "question_text": "What features do you value most in a product like ours?",
+        "question_type": "multiple_choice",
+        "options": [
+          "Quality",
+          "Price",
+          "Design",
+          "Usability",
+          "Brand reputation",
+          "Other"
+        ]
+      },
+      {
+        "question_text": "Do you have any suggestions for improvement?",
+        "question_type": "text",
+        "options": []
+      }
+    ]
+  },
+  {
+    "survey_title": "Nonprofit Survey",
+    "img": "https://i.ibb.co/zQ7hgVy/customer-satisfaction-survey-template-1.png",
+    "questions": [
+      {
+        "question_text": "How did you first hear about our organization?",
+        "question_type": "multiple_choice",
+        "options": [
+          "Social media",
+          "Website",
+          "Friend or family member",
+          "Community event",
+          "Other"
+        ]
+      },
+      {
+        "question_text": "On a scale of 1-5, how satisfied are you with the information you received about our organization before making a donation?",
+        "question_type": "rating",
+        "options": [
+          "1 - Not at all satisfied",
+          "2",
+          "3",
+          "4",
+          "5 - Extremely satisfied"
+        ]
+      },
+      {
+        "question_text": "What inspired you to make a donation to our organization?",
+        "question_type": "multiple_choice",
+        "options": [
+          "Personal connection to cause",
+          "Belief in mission",
+          "Positive impact on community",
+          "Request from friend or family member",
+          "Other"
+        ]
+      },
+      {
+        "question_text": "How likely are you to recommend our organization to others?",
+        "question_type": "multiple_choice",
+        "options": [
+          "Very likely",
+          "Somewhat likely",
+          "Not very likely",
+          "Not at all likely"
+        ]
+      },
+      {
+        "question_text": "Do you have any suggestions for improvement?",
+        "question_type": "text"
+      }
+    ]
+  },
+  {
+    "survey_title": "Mobile Survey",
+    "img": "https://i.ibb.co/zQ7hgVy/customer-satisfaction-survey-template-1.png",
+    "questions": [
+      {
+        "question_text": "What brand of smartphone do you currently own?",
+        "question_type": "multiple_choice",
+        "options": ["Apple", "Samsung", "Google", "OnePlus", "Other"]
+      },
+      {
+        "question_text": "On a scale of 1-5, how satisfied are you with the performance of your current smartphone?",
+        "question_type": "rating",
+        "options": [
+          "1 - Not at all satisfied",
+          "2",
+          "3",
+          "4",
+          "5 - Extremely satisfied"
+        ]
+      },
+      {
+        "question_text": "What features are most important to you when choosing a smartphone?",
+        "question_type": "multiple_choice",
+        "options": [
+          "Camera quality",
+          "Battery life",
+          "Display quality",
+          "Performance",
+          "Other"
+        ]
+      },
+      {
+        "question_text": "How often do you upgrade your smartphone?",
+        "question_type": "multiple_choice",
+        "options": [
+          "Every year",
+          "Every 2 years",
+          "Every 3 years or more",
+          "I never upgrade"
+        ]
+      },
+      {
+        "question_text": "Do you have any additional comments or feedback?",
+        "question_type": "text"
+      }
+    ]
+  }
+]

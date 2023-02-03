@@ -1,44 +1,47 @@
+import { useQueries } from "@tanstack/react-query";
+import axios from "axios";
 import React from "react";
+import Spinner from "../Spinner/Spinner";
 import Sidebar from "./Leftbar";
 import TemplatesCard from "./TemplatesCard";
-const templateCategories = [
-  {
-    id: 1,
-    name: "Customers",
-  },
-  {
-    id: 2,
-    name: "Education",
-  },
-  {
-    id: 3,
-    name: "Employees",
-  },
-  {
-    id: 4,
-    name: "Events",
-  },
-  {
-    id: 5,
-    name: "Healthcare",
-  },
-  {
-    id: 6,
-    name: "Market Research",
-  },
-  {
-    id: 7,
-    name: "Nonprofit",
-  },
-  {
-    id: 8,
-    name: "Other",
-  },
-];
 const MainContainer = () => {
   const hadleSearch = (e) => {
     e.preventDefault();
   };
+
+  const [surveyCategory, surveyTemplate] = useQueries({
+    queries: [
+      {
+        queryKey: ["category"],
+        queryFn: () =>
+          axios
+            .get("http://localhost:5000/surveyCategory")
+            .then((res) => res.data),
+      },
+
+      {
+        queryKey: ["template"],
+        queryFn: () =>
+          axios
+            .get("http://localhost:5000/surveyTemplate")
+            .then((res) => res.data),
+      },
+    ],
+  });
+
+
+  if (surveyCategory.isLoading) return <Spinner />;
+  if (surveyTemplate.isLoading) return <Spinner />;
+
+  if (surveyCategory.error)
+    return "error has occurd" + surveyCategory.error.message;
+
+  if (surveyTemplate.error)
+    return "error has occurd" + surveyTemplate.error.message;
+
+  const surveyCategoryData = surveyCategory.data;
+  const surveyTemplateData = surveyTemplate.data;
+
   return (
     <div className="">
       <h1 className="text-2xl text-center capitalize font-semibold">
@@ -54,12 +57,12 @@ const MainContainer = () => {
         <div className="basis-1/4 mx-5">
           <Sidebar
             hadleSearch={hadleSearch}
-            templateCategories={templateCategories}
+            surveyCategoryData={surveyCategoryData}
           />
         </div>
         <div className="basis-3/4 mx-5 ">
           <div className="grid justify-center">
-            <TemplatesCard />
+            <TemplatesCard surveyTemplateData={surveyTemplateData} />
           </div>
         </div>
       </div>
