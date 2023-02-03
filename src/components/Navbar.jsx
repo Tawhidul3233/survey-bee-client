@@ -564,7 +564,7 @@ const Navbar = () => {
             className="normal-case text-2xl font-semibold hidden md:hidden lg:flex items-center gap-x-1 text-primary"
           >
             <img
-              src="https://i.ibb.co/1X6nFpH/survey-bee-removebg-preview.png"
+              src="https://i.postimg.cc/g0B4m5Yx/328398592-722462319318557-3877861333829960200-n.png"
               alt="logo"
               className="w-9 h-9"
             />
@@ -578,7 +578,7 @@ const Navbar = () => {
             className="normal-case text-3xl font-semibold flex items-center gap-x-1 text-primary"
           >
             <img
-              src="https://i.ibb.co/1X6nFpH/survey-bee-removebg-preview.png"
+              src="https://i.postimg.cc/g0B4m5Yx/328398592-722462319318557-3877861333829960200-n.png"
               alt="logo"
               className="w-9 h-9"
             />

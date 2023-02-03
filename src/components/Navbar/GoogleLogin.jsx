@@ -29,12 +29,13 @@ const GoogleLogin = () => {
   };
 
   return (
-    <button
-      onClick={handleUserGoogleLogin}
-      className="btn btn-primary text-white"
-    >
-      Continue With google
-    </button>
+    <div>
+      <div className="mt-5 w-5/6 md:w-3/4">
+        <button onClick={handleUserGoogleLogin} className=" bg-yellow-500 w-full py-5 rounded-lg text-white ">
+        Continue With google
+        </button>
+      </div>
+    </div>
   );
 };
 
