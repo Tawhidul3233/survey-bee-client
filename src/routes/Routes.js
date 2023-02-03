@@ -13,6 +13,7 @@ import MySurveys from "../pages/Dashboard/MySurveys";
 import PreviewSurvey from "../pages/Dashboard/PreviewSurvey";
 import SurveyCreateForm from "../pages/Dashboard/SurveyCreateForm";
 import Home from "../pages/Home/Home";
+import BuyNow from "../pages/Pricing/BuyNow";
 import Pricing from "../pages/Pricing/Pricing";
 import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
 import Login from "../pages/shared/Login/Login";
@@ -72,6 +73,10 @@ export const router = createBrowserRouter([
         path: "/plans-pricing",
         element: <Pricing></Pricing>,
       },
+      {
+        path: "/buyNow",
+        element: <BuyNow />,
+      },
     ],
   },
   {
@@ -114,16 +119,17 @@ export const router = createBrowserRouter([
         element: <PreviewSurvey />,
       },
       {
-        path:'/dashboard',
+        path: '/dashboard',
         element: <AdminHome></AdminHome>
       },
       {
-        path:'/dashboard/manageusers',
-        element:<ManageUser> </ManageUser>
+        path: '/dashboard/manageusers',
+        element: <ManageUser> </ManageUser>
       }
+
     ],
   },
 
-  
-  
+
+
 ]);

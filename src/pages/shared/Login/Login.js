@@ -13,7 +13,7 @@ const Login = () => {
   const handleUserLogin = (data) => {
     signInWithEmailAndPassword(auth, data?.email, data?.password)
       .then(() => {
-        toast.success("loggedin successful!");
+        toast.success("log in successful!");
         return navigate("/dashboard");
       })
       .catch((err) => {
