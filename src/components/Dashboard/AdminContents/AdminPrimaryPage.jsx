@@ -6,21 +6,22 @@ import IncameChart from "./AdminComponents/IncameChart";
 import UserChart from "./AdminComponents/UserChart";
 import UserStatstics from "./AdminComponents/UserStatstics";
 import AdminMenu from "./AdminMenu/AdminMenu";
+import AdminHome from "./ManageUser/AdminHome/AdminHome";
 import ManageUser from "./ManageUser/ManageUser";
 
 const AdminPrimaryPage = () => {
   return (
     <div>
-      <Navbar></Navbar>
-      <div className=" flex  ">
-        <div className=" w-2/5 sm:w-1/4   ">
+
+      <div className=" flex ">
+        <div className=" w-2/5 sm:w-1/4 ">
           <AdminMenu> </AdminMenu>
         </div>
-        <div className=" w-3/5 sm:w-3/4 right-0  ">
-          <Outlet> </Outlet>
+        <div className=" w-3/5 sm:w-3/4 right-0 ">
+          <AdminHome> </AdminHome>
         </div>
       </div>
-      <Footer></Footer>
+
     </div>
   );
 };

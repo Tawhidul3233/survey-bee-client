@@ -5,7 +5,7 @@ import UserStatstics from '../../AdminComponents/UserStatstics';
 
 const AdminHome = () => {
   return (
-    <div>
+    <div className='  '>
       <UserStatstics></UserStatstics>
       <IncameChart></IncameChart>
       <UserChart></UserChart>

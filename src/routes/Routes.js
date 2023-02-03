@@ -20,6 +20,7 @@ import Register from "../pages/shared/Register/Register";
 import SurveyAudience from "../pages/SurveyAudience/SurveyAudience";
 import SurveyTemplate from "../pages/SurveyTemplate/SurveyTemplate";
 import SurveyTips from "../pages/SurveyTips/SurveyTips";
+import AdminRoutes from "./AdminRoutes";
 import RequireRoutes from "./RequireRoutes";
 
 export const router = createBrowserRouter([
@@ -112,22 +113,17 @@ export const router = createBrowserRouter([
         path: "/dashboard/preview/:id",
         element: <PreviewSurvey />,
       },
+      {
+        path:'/dashboard',
+        element: <AdminHome></AdminHome>
+      },
+      {
+        path:'/dashboard/manageusers',
+        element:<ManageUser> </ManageUser>
+      }
     ],
   },
 
   
-  {
-    path:'/admin/dashboard',
-    element: <AdminPrimaryPage></AdminPrimaryPage>,
-    children:[
-      {
-        path:'/admin/dashboard',
-        element: <AdminHome></AdminHome>
-      },
-      {
-        path:'/admin/dashboard/manageusers',
-        element:<ManageUser> </ManageUser>
-      }
-    ]
-  }
+  
 ]);

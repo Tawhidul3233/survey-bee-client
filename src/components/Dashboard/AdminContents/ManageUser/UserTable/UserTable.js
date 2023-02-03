@@ -8,27 +8,6 @@ const UserTable = ({userData , search}) => {
 
 
 
-// const data = [
-//   {
-//     name:'Akash',
-//     role:'manager',
-//     id:'77777',
-//     email:'gmail.com',
-//     user:'free'
-//   },
-//   {
-//     name:'Lokash',
-//     role:'entry',
-//     id:'555777',
-//     email:'com.com',
-//     user:'paid'
-//   }
-// ]
-
-
-// const [userData, setUserData] = useState(data)
-
-
   return (
     <div>
       {/* <UserHeader userData={userData} setUserData={setUserData} data={data} search={search}  ></UserHeader> */}
