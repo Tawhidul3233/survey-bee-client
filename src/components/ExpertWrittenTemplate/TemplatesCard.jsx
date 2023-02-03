@@ -10,7 +10,7 @@ const TemplatesCard = ({ surveyTemplateData }) => {
             backgroundImage: `url(${card.img})`,
             backgroundRepeat: "no-repeat",
           }}
-          to={`/surveyTemplate/${card.survey_title}/${card._id}`}
+          to={`/surveyTemplate/${card._id}`}
           key={card._id}
           className="w-62 h-56 "
         >
