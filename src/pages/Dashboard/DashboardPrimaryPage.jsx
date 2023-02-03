@@ -203,7 +203,10 @@ const DashboardPrimaryPage = () => {
                 )}
                 {/* <DeletePermissionModal handleSurveyDelete={handleSurveyDelete} /> */}
                 {/* Recent surveys ends here */}
-
+                    
+                    {/* survey buttons starts */}
+                <SurveyCreateButton />
+                {/* survey buttons ends */}
 
       {/* survey buttons ends */}
       <div className="py-16">
@@ -215,9 +218,7 @@ const DashboardPrimaryPage = () => {
           setFirstName={setFirstName}/>
       </div>
 
-                {/* survey buttons starts */}
-                <SurveyCreateButton />
-                {/* survey buttons ends */}
+              
               </>
             )}
           </>
