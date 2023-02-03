@@ -208,8 +208,11 @@ const DashboardPrimaryPage = () => {
       {/* survey buttons ends */}
       <div className="py-16">
           <DashboardProfile
-          DashboardPrimaryPage={DashboardPrimaryPage}
-          />
+          register={register}
+          errors={errors}
+          handleSubmit={handleSubmit}
+          handleUpdateProfile={handleUpdateProfile}
+          setFirstName={setFirstName}/>
       </div>
 
                 {/* survey buttons starts */}
