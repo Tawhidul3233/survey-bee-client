@@ -8,13 +8,13 @@ import { toast } from "react-hot-toast";
 import UserProfileUpgradeModal from "../../components/Dashboard/UserProfileUpgradeModal";
 import SurveyCreateButton from "../../components/Dashboard/SurveyCreateButton";
 import Loading from "../../components/Shared/Loading";
+import DashboardProfile from "./DashboardProfile";
 import RecentSurveys from "../../components/Dashboard/RecentSurveys";
-// import DeletePermissionModal from "../../components/Dashboard/DeletePermissionModal";
 import { useEffect } from "react";
 import getUserAllSurveys from "../../api/getUserAllSurveys";
 import useAdmin from "../../hooks/useAdmin";
 import AdminPrimaryPage from "../../components/Dashboard/AdminContents/AdminPrimaryPage";
-
+import AdminHome from "../../components/Dashboard/AdminContents/ManageUser/AdminHome/AdminHome";
 const DashboardPrimaryPage = () => {
   const [firstName, setFirstName] = useState("");
   const [isSurveyDeleted, setIsSurveyDeleted] = useState(false);
@@ -137,7 +137,9 @@ const DashboardPrimaryPage = () => {
 
   return (
     <div className="min-h-screen">
-      <>{isAdmin && <AdminPrimaryPage />}</>
+      
+      <>{ isAdmin && <AdminPrimaryPage /> }</>
+
       <>
         {!isAdmin && (
           <>
@@ -202,6 +204,17 @@ const DashboardPrimaryPage = () => {
                 )}
                 {/* <DeletePermissionModal handleSurveyDelete={handleSurveyDelete} /> */}
                 {/* Recent surveys ends here */}
+
+
+      {/* survey buttons ends */}
+      <div className="py-16">
+          <DashboardProfile
+          register={register}
+          errors={errors}
+          handleSubmit={handleSubmit}
+          handleUpdateProfile={handleUpdateProfile}
+          setFirstName={setFirstName}/>
+      </div>
 
                 {/* survey buttons starts */}
                 <SurveyCreateButton />

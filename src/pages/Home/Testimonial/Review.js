@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Review = ({review}) => {
             const {img,designation,des}=review;
@@ -16,7 +17,8 @@ const Review = ({review}) => {
     <p className=''>{des}</p>
     <div className="card-actions justify-center">
 
-    <button className="btn btn-link normal-case">Learn More</button>
+      <Link to='/CustomerService'><button className="btn btn-link normal-case">Learn More</button></Link>
+    
     </div>
   </div>
 </div>

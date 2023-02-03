@@ -28,7 +28,7 @@ const Login = () => {
           <div className="">
             <img
               className="mt-5 mx-5  w-16 md:w-40 "
-              src="https://i.ibb.co/1X6nFpH/survey-bee-removebg-preview.png"
+              src="https://i.postimg.cc/g0B4m5Yx/328398592-722462319318557-3877861333829960200-n.png"
               alt=""
             />
             <p className=" font-semibold text-2xl my-2 md:my-5 mx-5 text-white ">
