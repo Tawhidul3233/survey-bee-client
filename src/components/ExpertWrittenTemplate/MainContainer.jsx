@@ -1,6 +1,7 @@
 import { useQueries } from "@tanstack/react-query";
+import { computeHeadingLevel } from "@testing-library/react";
 import axios from "axios";
-import React from "react";
+import { useEffect, useMemo, useState } from "react";
 import Spinner from "../Spinner/Spinner";
 import Sidebar from "./Leftbar";
 import TemplatesCard from "./TemplatesCard";
@@ -29,19 +30,40 @@ const MainContainer = () => {
     ],
   });
 
+  const surveyCategoryData = surveyCategory.data;
+  const surveyTemplateData = surveyTemplate.data;
 
-  if (surveyCategory.isLoading) return <Spinner />;
-  if (surveyTemplate.isLoading) return <Spinner />;
+  const [checkList, setCheckList] = useState([]);
+  useEffect(() => {
+    console.log("survey category", surveyCategoryData);
+    if (surveyCategoryData) {
+      setCheckList(surveyCategoryData.map((item) => ""));
+    }
+    // setCheckList(surveyCategoryData.map((item) => item.survey_title));
+  }, [surveyCategoryData]);
+
+  const filteredData = useMemo(() => {
+    if (surveyTemplateData) {
+      return surveyTemplateData.filter((item, index) => {
+        console.log("expensive computation");
+        const condition = item.survey_title === checkList[index];
+
+        return condition;
+      });
+    } else {
+      return [];
+    }
+  }, [surveyTemplateData, checkList]);
+
+  console.log("filter data", filteredData);
+
+  if (surveyCategory.isLoading || surveyTemplate.isLoading) return <Spinner />;
 
   if (surveyCategory.error)
     return "error has occurd" + surveyCategory.error.message;
 
   if (surveyTemplate.error)
     return "error has occurd" + surveyTemplate.error.message;
-
-  const surveyCategoryData = surveyCategory.data;
-  const surveyTemplateData = surveyTemplate.data;
-
   return (
     <div className="">
       <h1 className="text-2xl text-center capitalize font-semibold">
@@ -58,11 +80,15 @@ const MainContainer = () => {
           <Sidebar
             hadleSearch={hadleSearch}
             surveyCategoryData={surveyCategoryData}
+            setCheckList={setCheckList}
           />
         </div>
         <div className="basis-3/4 mx-5 ">
           <div className="grid justify-center">
-            <TemplatesCard surveyTemplateData={surveyTemplateData} />
+            <TemplatesCard
+              surveyTemplateData={surveyTemplateData}
+              filteredData={filteredData}
+            />
           </div>
         </div>
       </div>

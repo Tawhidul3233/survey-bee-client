@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { CheckboxGroup } from "../CustomCheckbox/CheckboxGroup";
 
-const Sidebar = ({ surveyCategoryData, hadleSearch }) => {
+const Sidebar = ({ surveyCategoryData, hadleSearch, setCheckList }) => {
   return (
     <div className="grid justify-center">
       <h1 className=" my-4  text-lg">{surveyCategoryData.length} Categorys</h1>
@@ -56,19 +57,27 @@ const Sidebar = ({ surveyCategoryData, hadleSearch }) => {
       </form>
       <h1 className="my-4 font-semibold">Filter by survey type </h1>
       <div className="my-6">
-        {surveyCategoryData.map((category) => (
-          <div key={category._id} class="flex items-center mb-4">
+        <CheckboxGroup
+          list={surveyCategoryData.map((item) => item.survey_title)}
+          setCheckList={setCheckList}
+        />
+        {/* {surveyCategoryData.map((category, index) => (
+          <div key={index} class="flex items-center mb-4">
             <input
-              id="default-checkbox"
+              id={`default-checkbox ${index}`}
+              onChange={(event) => handleCheckbox(event, index)}
               type="checkbox"
-              value=""
+              value={category.survey_title}
               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
-            <label for="default-checkbox" class="ml-2 text-sm font-medium  ">
+            <label
+              for={`default-checkbox ${index}`}
+              class="ml-2 text-sm font-medium  "
+            >
               {category.survey_title}
             </label>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );
