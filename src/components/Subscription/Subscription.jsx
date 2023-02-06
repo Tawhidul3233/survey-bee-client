@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Subscription = () => {
     return (
         <div className='my-20'>
-            
+
             <div>
                 <section className="py-6  ">
                     <div className="container p-4 mx-auto sm:p-10">
@@ -14,10 +14,10 @@ const Subscription = () => {
                         </div>
                         <div className="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:grid-cols-3 lg:max-w-full ">
                             <div className="flex flex-col overflow-hidden rounded-md drop-shadow-lg">
-                                <div className="flex flex-col items-center justify-center px-2 py-8 space-y-4 dark:bg-green-400 dark:text-gray-100">
+                                <div className="flex flex-col items-center justify-center px-2 py-8 space-y-4 bg-green-400 text-gray-100">
                                     <p className="text-2xl font-medium">Basic</p>
                                 </div>
-                                <div className="flex flex-col items-center justify-center px-2 py-8 dark:bg-gray-200">
+                                <div className="flex flex-col items-center justify-center px-2 py-8 bg-gray-200">
                                     <p className="text-5xl font-bold">$0</p>
                                     <span className="text-xl mt-2"> /month</span>
                                     <ul className="self-stretch flex-1 space-y-2 mt-5">
@@ -25,9 +25,9 @@ const Subscription = () => {
                                             <span>Always free</span>
                                         </li>
                                     </ul>
-                                    <button className="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12 dark:bg-green-400 dark:text-gray-100">
+                                    <button className="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12 bg-green-400 text-gray-100">
                                         <Link to="/login">Sign up</Link>
-                                        </button>
+                                    </button>
                                     <ul className="self-stretch flex-1 space-y-2 mt-5">
                                         <li className="flex justify-center space-x-2">
                                             <span>Send unlimited surveys with</span>
@@ -35,7 +35,7 @@ const Subscription = () => {
                                         <li className="flex justify-center space-x-2">
                                             <span>up to 10 questions.</span>
                                         </li>
-                                        <li className="flex justify-center space-x-2">   
+                                        <li className="flex justify-center space-x-2">
                                             <span> Response limits apply. </span>
                                         </li>
                                     </ul>
@@ -43,10 +43,10 @@ const Subscription = () => {
                             </div>
 
                             <div className="flex flex-col overflow-hidden rounded-md drop-shadow-lg">
-                                <div className="flex flex-col items-center justify-center px-2 py-8 space-y-4 dark:bg-blue-800 dark:text-gray-100">
+                                <div className="flex flex-col items-center justify-center px-2 py-8 space-y-4 bg-blue-800 text-gray-100">
                                     <p className="text-2xl font-medium">Individual Advantage</p>
                                 </div>
-                                <div className="flex flex-col items-center justify-center px-2 py-8 dark:bg-gray-200">
+                                <div className="flex flex-col items-center justify-center px-2 py-8 bg-gray-200">
                                     <p className="text-5xl font-bold">$30</p>
                                     <span className="text-xl mt-2"> /month</span>
                                     <ul className="self-stretch flex-1 space-y-2 mt-5">
@@ -54,17 +54,17 @@ const Subscription = () => {
                                             <span>Billed $350 annually</span>
                                         </li>
                                     </ul>
-                                    <button className="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12 dark:bg-blue-800 dark:text-gray-100">
+                                    <button className="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12 bg-blue-800 text-gray-100">
                                         <Link to="">See Your Plan</Link>
-                                        </button>
+                                    </button>
                                     <ul className="self-stretch flex-1 space-y-2 mt-5">
-                                        <li className="flex justify-center space-x-2"> 
+                                        <li className="flex justify-center space-x-2">
                                             <span>Get our most popular features for</span>
                                         </li>
-                                        <li className="flex justify-center space-x-2"> 
+                                        <li className="flex justify-center space-x-2">
                                             <span>creating, sending & analyzing</span>
                                         </li>
-                                        <li className="flex justify-center space-x-2">      
+                                        <li className="flex justify-center space-x-2">
                                             <span>surveys.</span>
                                         </li>
                                     </ul>
@@ -72,10 +72,10 @@ const Subscription = () => {
                             </div>
 
                             <div className="flex flex-col overflow-hidden rounded-md drop-shadow-lg">
-                                <div className="flex flex-col items-center justify-center px-2 py-8 space-y-4 dark:bg-purple-900 dark:text-gray-100">
+                                <div className="flex flex-col items-center justify-center px-2 py-8 space-y-4 bg-purple-900 text-gray-100">
                                     <p className="text-2xl font-medium">Team Advantage</p>
                                 </div>
-                                <div className="flex flex-col items-center justify-center px-2 py-8 dark:bg-gray-200">
+                                <div className="flex flex-col items-center justify-center px-2 py-8 bg-gray-200">
                                     <p className="text-5xl font-bold">$25</p>
                                     <span className="text-xl mt-2"> /month</span>
                                     <ul className="self-stretch flex-1 space-y-2 mt-5">
@@ -83,9 +83,9 @@ const Subscription = () => {
                                             <span>Starting at 3 users, billed annually </span>
                                         </li>
                                     </ul>
-                                    <button className="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12 dark:bg-purple-900 dark:text-gray-100">
+                                    <button className="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12 bg-purple-900 text-gray-100">
                                         <Link to="">See All Plans</Link>
-                                        </button>
+                                    </button>
                                     <ul className="self-stretch flex-1 space-y-2 mt-5">
                                         <li className="flex justify-center space-x-2">
                                             <span>Collaboration tools and survey</span>
@@ -93,12 +93,12 @@ const Subscription = () => {
                                         <li className="flex justify-center space-x-2">
                                             <span>features that help your </span>
                                         </li>
-                                        <li className="flex justify-center space-x-2">                                          
+                                        <li className="flex justify-center space-x-2">
                                             <span>team work more efficiently.</span>
                                         </li>
                                     </ul>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </section>
