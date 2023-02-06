@@ -10,7 +10,7 @@ const SurveyCreateButton = ({ className }) => {
         </h2>
         <Link
           to="/dashboard/createasurvey"
-          className="btn btn-primary text-white px-10"
+          className="btn btn-success normal-case text-white px-10"
         >
           <span className="mr-1">{className?.icon}</span>
           Create Survey

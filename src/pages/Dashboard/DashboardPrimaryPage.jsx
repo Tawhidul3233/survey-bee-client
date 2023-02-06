@@ -209,13 +209,15 @@ const DashboardPrimaryPage = () => {
                 {/* survey buttons ends */}
 
       {/* survey buttons ends */}
-      <div className="py-16">
+      <div className="">
           <DashboardProfile
           register={register}
           errors={errors}
           handleSubmit={handleSubmit}
           handleUpdateProfile={handleUpdateProfile}
-          setFirstName={setFirstName}/>
+          setFirstName={setFirstName}
+          dbUser={dbUser}
+          />
       </div>
 
               
