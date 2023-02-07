@@ -1,5 +1,5 @@
 import { useQueries } from "@tanstack/react-query";
-import { computeHeadingLevel } from "@testing-library/react";
+
 import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
 import Spinner from "../Spinner/Spinner";
@@ -39,7 +39,6 @@ const MainContainer = () => {
     if (surveyCategoryData) {
       setCheckList(surveyCategoryData.map((item) => ""));
     }
-    // setCheckList(surveyCategoryData.map((item) => item.survey_title));
   }, [surveyCategoryData]);
 
   const filteredData = useMemo(() => {
