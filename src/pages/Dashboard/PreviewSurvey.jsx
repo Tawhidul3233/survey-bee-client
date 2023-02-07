@@ -48,7 +48,7 @@ const PreviewSurvey = () => {
         <Loading />
       ) : (
         <>
-          <div className="min-h-screen">
+          <div className="min-h-screen bg-[#f5f6fa]">
             <div className="pl-20 mt-3">
               <>
                 <Breadcrums surveId={getID} />
