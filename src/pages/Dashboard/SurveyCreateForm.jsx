@@ -166,7 +166,7 @@ const SurveyCreateForm = () => {
   // console.log(editSurveyLoaderData);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f5f6fa]">
       <div className="pl-20 mt-8">
         <h2 className="text-2xl text-primary font-extrabold">
           {editSurveyLoaderData?.surveyTitle ||

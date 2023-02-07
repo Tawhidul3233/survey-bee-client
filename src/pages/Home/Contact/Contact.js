@@ -25,7 +25,7 @@ const Contact = () => {
     }
 
     return (
-        <div id='contact' className='my-32 '>
+        <div id='contact' className='mt-32 '>
             <h1 className='text-center text-4xl font-bold mb-16'>Contact US</h1>
             
             <div className='bg-blue-500 py-12'>
