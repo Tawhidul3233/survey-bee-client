@@ -59,24 +59,24 @@ const CreateASurvey = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="py-12 bg-[#f5f6fa]">
       <div className="flex flex-col items-center my-6">
         <small>Create a survey</small>
         <div className="w-16 mt-2 h-[2px] bg-primary"></div>
-        <h2 className="text-2xl font-bold">
+        <h2 className="text-2xl font-bold mb-8 text-center">
           How would you like to get started?
         </h2>
-        <div className="flex mt-6 gap-x-8">
+        <div className="grid lg:grid-cols-2 sm:grid-cols-1 mx-auto gap-20 pt-6">
           <label
             htmlFor="createSurveyModal"
             onClick={() => setUserSurveyTitle("")}
           >
-            <div className="card w-80 h-96 bg-base-100 shadow-xl hover:shadow-2xl cursor-pointer py-10">
-              <figure className="px-10 pt-10">
+            <div className="card card-compact w-96 bg-base-100 shadow-xl mx-auto cursor-pointer py-10">
+              <figure className="px-10 pt-10 mb-5">
                 <img
                   src="https://i.ibb.co/9scLw4z/surv-create-ic-png.png"
                   alt="create survey icon"
-                  className="w-2/4 h-autho"
+                  className="w-2/4 h-auth"
                 />
               </figure>
               <div className="card-body items-center text-center pt-6">
@@ -95,7 +95,7 @@ const CreateASurvey = () => {
               handleCreateASurvey={handleCreateASurvey}
             />
           )}
-          <div className="card w-80 h-96 bg-base-100 shadow-xl hover:shadow-2xl cursor-pointer py-10">
+          <div className="card w-96 bg-base-100 shadow-xl hover:shadow-2xl cursor-pointer py-10">
             <figure className="px-10 pt-10">
               <img
                 src="https://i.ibb.co/4pvC81S/template-surv.png"
@@ -108,8 +108,7 @@ const CreateASurvey = () => {
                 Start your survey from our quick start template
               </h2>
               <p className="pt-3 text-[.9rem]">
-                Use a template to see the question types in action. Edit the
-                survey and add questions to meet your needs.
+                Use a template to see the question types action.
               </p>
             </div>
           </div>

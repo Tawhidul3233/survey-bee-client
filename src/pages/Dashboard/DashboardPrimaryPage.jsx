@@ -136,6 +136,8 @@ const DashboardPrimaryPage = () => {
   // console.log("isAdmin", isAdmin);
 
   return (
+    <div className="min-h-screen bg-[#f5f6fa]">
+      <>{isAdmin && <AdminPrimaryPage />}</>
     <div className="min-h-screen">
       
       <>{ isAdmin && <AdminPrimaryPage /> }</>
@@ -227,6 +229,7 @@ const DashboardPrimaryPage = () => {
           </>
         )}
       </>
+    </div>
     </div>
   );
 };
