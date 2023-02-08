@@ -1,5 +1,4 @@
 import { useQueries } from "@tanstack/react-query";
-
 import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
 import Spinner from "../Spinner/Spinner";
