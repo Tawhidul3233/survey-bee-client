@@ -137,7 +137,7 @@ const DashboardPrimaryPage = () => {
   // console.log("isAdmin", isAdmin);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f5f6fa]">
       <>{isAdmin && <AdminPrimaryPage />}</>
       <>
         {!isAdmin && (

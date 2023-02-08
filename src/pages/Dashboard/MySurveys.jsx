@@ -67,11 +67,11 @@ const MySurveys = () => {
         <Loading />
       ) : (
         <>
-          <section className="min-h-screen mx-auto w-full bg-[#F4F5F5] pt-10">
+          <section className="mx-auto w-full bg-[#F4F5F5] pt-10">
             <>
               {surveysError.message && !surveysLoading ? (
                 <p className="text-center text-3xl text-neutral">
-                  Something went worng! <br /> please check your network!!!
+                  Something went wrong! <br /> please check your network!!!
                 </p>
               ) : (
                 ""
