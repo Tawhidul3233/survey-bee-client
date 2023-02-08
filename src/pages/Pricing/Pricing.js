@@ -1,26 +1,38 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { user } from '../../features/userSlice';
 
 const Pricing = () => {
+
+    const activeUser = useSelector(user);
+
     return (
         <div>
-            <section className="py-6  dark:text-gray-900">
+            <section className="py-6  text-gray-900">
                 <div className="container mx-auto p-4 sm:p-10">
                     <div className="mb-16 space-y-4 text-center">
                         <h1 className="text-5xl font-semibold leading-tight">Choose a plan that works for you</h1>
                         <p className="px-4 sm:px-8 lg:px-24">Sunt suscipit eaque qui iure unde labore numquam iusto alias explicabo, pariatur ipsam, cupiditate aliquid modi?</p>
-                        
+
                     </div>
                     <div className="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:max-w-full lg:gap-2 xl:gap-6 lg:grid-cols-3">
                         <div className="relative z-0 flex flex-col items-center p-8 border ">
 
-                            <p className="mt-2 text-3xl font-semibold dark:text-green-700">TEAM ADVANTAGE</p>
+                            <p className="mt-2 text-3xl font-semibold text-green-700">TEAM ADVANTAGE</p>
 
                             <p className="text-3xl mt-2 font-bold">$0<span className="text-xl text-gray-500 mt-2"> /user /month</span></p>
 
-                            <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 dark:bg-green-700 dark:text-gray-100">
-                                <Link to="/login">SIGN UP</Link>
-                            </button>
+                            {
+                                activeUser?.user ?
+                                    <div >
+                                        <Link to="/buyNow"><button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-green-700 text-gray-100">
+                                            Buy Now</button></Link>
+                                    </div>
+                                    :
+                                    <Link to="/login"> <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-green-700 text-gray-100">
+                                        SIGN UP</button></Link>
+                            }
 
                             <ul class="marker:text-green-600 list-disc pl-5 space-y-3 text-sm">
                                 <li>Survey sharing with fine control over who can view and edit</li>
@@ -45,13 +57,22 @@ const Pricing = () => {
                         </div>
                         <div className="relative z-0 flex flex-col items-center p-8 border ">
 
-                            <p className="mt-2 text-3xl font-semibold dark:text-purple-800">TEAM PREMIER</p>
+                            <p className="mt-2 text-3xl font-semibold text-purple-800">TEAM PREMIER</p>
 
                             <p className="text-3xl mt-2 font-bold">$75<span className="text-xl mt-2 text-gray-500"> /user /month</span></p>
 
-                            <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 dark:bg-purple-800 dark:text-gray-100">
-                                <Link to="/login">SIGN UP</Link>
-                            </button>
+                            {
+                                activeUser?.user ?
+                                    <div >
+                                        <Link to="/buyNow">  <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-purple-800 text-gray-100">
+                                            BUY NOW
+                                        </button></Link>
+                                    </div>
+                                    :
+                                    <Link to="/login"><button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-purple-800 text-gray-100">
+                                        SIGN UP
+                                    </button></Link>
+                            }
 
                             <ul class="marker:text-purple-800 list-disc pl-5 space-y-3 text-sm">
                                 <li>Survey sharing with fine control over who can view and edit</li>
@@ -83,16 +104,27 @@ const Pricing = () => {
                                 <li>Remove SurveyMonkey footer</li>
                             </ul>
                         </div>
-                           
+
                         <div className="relative z-0 flex flex-col items-center p-8 border ">
 
-                            <p className="mt-2 text-3xl font-semibold dark:text-blue-900">ENTERPRISE</p>
+                            <p className="mt-2 text-3xl font-semibold text-blue-900">ENTERPRISE</p>
 
                             <p className="text-2xl mt-2 font-bold"><span className="text-lg mt-2 text-gray-500">Powerful admin tools.</span></p>
 
-                            <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 dark:bg-blue-900 dark:text-gray-100">
-                                <Link to="/login">CONTACT SALES</Link>
-                            </button>
+
+
+                            {
+                                activeUser?.user ?
+                                    <div >
+                                        <Link to=""> <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-blue-900 text-gray-100">
+                                            CONTACT SALES
+                                        </button></Link>
+                                    </div>
+                                    :
+                                    <Link to="/login"><button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-blue-900 text-gray-100">
+                                        Sign Up
+                                    </button></Link>
+                            }
 
                             <ul class="marker:text-blue-700 list-disc pl-5 space-y-3 text-sm">
                                 <li>Survey sharing with fine control over who can view and edit</li>
@@ -135,7 +167,7 @@ const Pricing = () => {
                                 <li>Dedicated customer success manager***</li>
                             </ul>
                         </div>
-                        
+
                     </div>
                 </div>
             </section>

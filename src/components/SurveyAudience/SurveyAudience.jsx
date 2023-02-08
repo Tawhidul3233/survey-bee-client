@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
+import Spinner from "../Spinner/Spinner";
 import AudienceCategory from "./AudienceCategory/AudienceCategory";
 import CardItem from "./AudienceCategory/CardItem";
 
@@ -12,10 +13,12 @@ const SurveyAudience = () => {
   } = useQuery({
     queryKey: ["Audience"],
     queryFn: () =>
-      fetch("https://survey-bee-server.vercel.app/surveyAudience").then((res) => res.json()),
+      fetch("https://survey-bee-server.vercel.app/surveyAudience").then((res) =>
+        res.json()
+      ),
   });
 
-  if (isLoading) return "Loading...";
+  if (isLoading) return <Spinner />;
 
   if (error) return "An error has occurred: " + error.message;
 

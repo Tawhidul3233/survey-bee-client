@@ -1,4 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
+import AdminPrimaryPage from "../components/Dashboard/AdminContents/AdminPrimaryPage";
+import AdminHome from "../components/Dashboard/AdminContents/ManageUser/AdminHome/AdminHome";
+import ManageUser from "../components/Dashboard/AdminContents/ManageUser/ManageUser";
 import Dashboard from "../layouts/Dashboard/Dashboard";
 import Main from "../layouts/Main/Main";
 import ApplyPage from "../pages/ApplyPage/ApplyPage";
@@ -10,12 +13,15 @@ import MySurveys from "../pages/Dashboard/MySurveys";
 import PreviewSurvey from "../pages/Dashboard/PreviewSurvey";
 import SurveyCreateForm from "../pages/Dashboard/SurveyCreateForm";
 import Home from "../pages/Home/Home";
+import BuyNow from "../pages/Pricing/BuyNow";
 import Pricing from "../pages/Pricing/Pricing";
 import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
 import Login from "../pages/shared/Login/Login";
 import Register from "../pages/shared/Register/Register";
 import SurveyAudience from "../pages/SurveyAudience/SurveyAudience";
+import SurveyTemplate from "../pages/SurveyTemplate/SurveyTemplate";
 import SurveyTips from "../pages/SurveyTips/SurveyTips";
+import AdminRoutes from "./AdminRoutes";
 import RequireRoutes from "./RequireRoutes";
 
 export const router = createBrowserRouter([
@@ -41,14 +47,12 @@ export const router = createBrowserRouter([
         element: <ApplyPage> </ApplyPage>,
       },
       {
-
-        path:"/CustomerService",
-        element:<CustomerService/>
+        path: "/CustomerService",
+        element: <CustomerService />,
       },
-        {
+      {
         path: "/cx",
         element: <Cx> </Cx>,
-
       },
       {
         path: "/survey-Audience/:title/:id",
@@ -60,8 +64,18 @@ export const router = createBrowserRouter([
         element: <SurveyAudience />,
       },
       {
+        path: "/surveyTemplate/:id",
+        loader: ({ params }) =>
+          fetch(`https://survey-bee-server.vercel.app/surveyTemplate/${params.id}`),
+        element: <SurveyTemplate />,
+      },
+      {
         path: "/plans-pricing",
         element: <Pricing></Pricing>,
+      },
+      {
+        path: "/buyNow",
+        element: <BuyNow />,
       },
     ],
   },
@@ -104,6 +118,18 @@ export const router = createBrowserRouter([
         path: "/dashboard/preview/:id",
         element: <PreviewSurvey />,
       },
+      {
+        path: '/dashboard',
+        element: <AdminHome></AdminHome>
+      },
+      {
+        path: '/dashboard/manageusers',
+        element: <ManageUser> </ManageUser>
+      }
+
     ],
   },
+
+
+
 ]);

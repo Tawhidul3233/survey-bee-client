@@ -1,9 +1,9 @@
-import React from "react";
+import { CheckboxGroup } from "../CustomCheckbox/CheckboxGroup";
 
-const Sidebar = ({ templateCategories, hadleSearch }) => {
+const Sidebar = ({ surveyCategoryData, hadleSearch, setCheckList }) => {
   return (
     <div className="grid justify-center">
-      <h1 className=" my-4  text-lg">{templateCategories.length} Categorys</h1>
+      <h1 className=" my-4  text-lg">{surveyCategoryData.length} Categorys</h1>
 
       <form onSubmit={hadleSearch} className="flex items-center">
         <label htmlFor="templaeSearch" className="sr-only">
@@ -56,19 +56,10 @@ const Sidebar = ({ templateCategories, hadleSearch }) => {
       </form>
       <h1 className="my-4 font-semibold">Filter by survey type </h1>
       <div className="my-6">
-        {templateCategories.map((category) => (
-          <div key={category.id} class="flex items-center mb-4">
-            <input
-              id="default-checkbox"
-              type="checkbox"
-              value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            />
-            <label for="default-checkbox" class="ml-2 text-sm font-medium  ">
-              {category.name}
-            </label>
-          </div>
-        ))}
+        <CheckboxGroup
+          list={surveyCategoryData.map((item) => item.survey_title)}
+          setCheckList={setCheckList}
+        />
       </div>
     </div>
   );
