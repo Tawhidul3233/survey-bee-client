@@ -4,33 +4,131 @@
     "card": [
       {
         "id": 1,
-        "img": "https://i.ibb.co/ssq240R/card1.jpg",
+        "img": "https://i.ibb.co/58qB5sj/Employee-Feedback-L-v2.png",
         "title": "Employee Feedback",
-        "desc": "Build a better workplace by hearing from your employes"
+        "desc": "Build a better workplace by hearing from your employes",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "Employee Feedback Survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "What do you think is the company's strongest attribute?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 4,
+                "question_text": "What changes would you suggest to improve the company culture?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 2,
-        "img": "https://i.ibb.co/ncWK77P/card2.jpg",
+        "img": "https://i.ibb.co/Ch3NTwL/Employee-Eng-S.png",
         "title": "Template",
-        "desc": "Learn How employees feel with Employee engagement serveys"
+        "desc": "Learn How employees feel with Employee engagement serveys",
+        "survey": [
+          {
+            "survey_title": "2023 Employee Engagement Survey",
+            "questions": [
+              {
+                "question_text": "On a scale of 1-5, how satisfied are you with your job?",
+                "question_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_text": "Do you feel valued by your manager and colleagues?",
+                "question_type": "yes_no",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_text": "How often do you receive clear and timely feedback on your work?",
+                "question_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_text": "Do you have the resources and support you need to do your job effectively?",
+                "question_type": "yes_no",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_text": "What can the company do to improve your overall job satisfaction?",
+                "question_type": "open_ended",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 3,
-        "img": "https://i.ibb.co/hRq73pr/card3.jpg",
+        "img": "https://i.ibb.co/zWM2pwY/Employee360-S.png",
         "title": "Template",
-        "desc": "set up employee review with 360 degree evaluation survey"
+        "desc": "set up employee review with 360 degree evaluation survey",
+        "survey": [
+          {
+            "survey_title": "2023 Employee Evaluation Survey",
+            "questions": [
+              {
+                "question_text": "On a scale of 1-5, how would you rate this employee's job performance?",
+                "question_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_text": "Does this employee consistently meet or exceed job expectations?",
+                "question_type": "yes_no",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_text": "How effective is this employee at working with others on a team?",
+                "question_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_text": "Does this employee take initiative and display a strong work ethic?",
+                "question_type": "yes_no",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_text": "What areas does this employee need to improve in order to be more successful in their role?",
+                "question_type": "open_ended",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 4,
-        "img": "https://i.ibb.co/xJHtSCR/card4.jpg",
+        "img": "https://i.ibb.co/z87LCSZ/Survey-Builder-S.png",
         "title": "Survey Builder",
-        "desc": "use survey monkey genius to build employee surveys quickley"
+        "desc": "use survey monkey genius to build employee surveys quickley",
+        "survey": []
       },
       {
         "id": 5,
-        "img": "https://i.ibb.co/Njpkc2J/card5.jpg",
+        "img": "https://i.ibb.co/87FPnvm/Success-Story.png",
         "title": "Success Story",
-        "desc": "Service credit union build a covid safe workplace"
+        "desc": "Service credit union build a covid safe workplace",
+        "survey": []
       }
     ]
   },
@@ -39,33 +137,99 @@
     "card": [
       {
         "id": 1,
-        "img": "https://i.ibb.co/ssq240R/card1.jpg",
-        "title": "Employee Feedback",
-        "desc": "Build a better workplace by hearing from your employes"
+        "img": "https://i.ibb.co/4ZTkkhd/Customer-Feedback-L-v2.png",
+        "title": "Customer Satisfaction",
+        "desc": "Build a better workplace by hearing from your employes",
+        "survey": [
+          {
+            "survey_title": "2023 Customer Satisfaction Survey",
+            "questions": [
+              {
+                "question_text": "On a scale of 1-5, how satisfied are you with the products or services you received?",
+                "question_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_text": "Did you receive the product or service in a timely manner?",
+                "question_type": "yes_no",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_text": "How likely are you to recommend our products or services to others?",
+                "question_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_text": "Did our customer service meet your expectations?",
+                "question_type": "yes_no",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_text": "What can we do to improve your overall experience with our products or services?",
+                "question_type": "open_ended",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 2,
-        "img": "https://i.ibb.co/ncWK77P/card2.jpg",
-        "title": "Template",
-        "desc": "Learn How employees feel with Employee engagement serveys"
+        "img": "https://i.ibb.co/nkFHS5B/CSat-Template-S.png",
+        "title": "Customer Feedback",
+        "desc": "Learn How Customers feel with Customers engagement serveys",
+        "survey": [
+          {
+            "survey_title": "2023 Customer Feedback Survey",
+            "questions": [
+              {
+                "question_text": "On a scale of 1-5, how would you rate your overall experience with our company?",
+                "question_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_text": "Did you find what you were looking for on our website?",
+                "question_type": "yes_no",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_text": "How likely are you to recommend our company to a friend or colleague?",
+                "question_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_text": "What did you like most about your experience with our company?",
+                "question_type": "open_ended",
+                "options": []
+              },
+              {
+                "question_text": "What can we improve upon to better serve you in the future?",
+                "question_type": "open_ended",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 3,
-        "img": "https://i.ibb.co/hRq73pr/card3.jpg",
+        "img": "https://i.ibb.co/NSjvn4h/Customer-Service-S.png",
         "title": "Template",
         "desc": "set up employee review with 360 degree evaluation survey"
       },
       {
         "id": 4,
-        "img": "https://i.ibb.co/xJHtSCR/card4.jpg",
+        "img": "https://i.ibb.co/z87LCSZ/Survey-Builder-S.png",
         "title": "Survey Builder",
-        "desc": "use survey monkey genius to build employee surveys quickley"
+        "desc": "use survey monkey genius to build employee surveys quickley",
+        "survey": []
       },
       {
         "id": 5,
-        "img": "https://i.ibb.co/Njpkc2J/card5.jpg",
+        "img": "https://i.ibb.co/rscTWvd/GSW-Story-S.png",
         "title": "Success Story",
-        "desc": "Service credit union build a covid safe workplace"
+        "desc": "Service credit union build a covid safe workplace",
+        "survey": []
       }
     ]
   },
@@ -74,32 +238,32 @@
     "card": [
       {
         "id": 1,
-        "img": "https://i.ibb.co/ssq240R/card1.jpg",
-        "title": "Employee Feedback",
+        "img": "https://i.ibb.co/8zJXt3f/Target-Markets-L.png",
+        "title": "Solution",
         "desc": "Build a better workplace by hearing from your employes"
       },
       {
         "id": 2,
-        "img": "https://i.ibb.co/ncWK77P/card2.jpg",
-        "title": "Template",
+        "img": "https://i.ibb.co/br19mzL/Concept-Testing-S.png",
+        "title": "Solution",
         "desc": "Learn How employees feel with Employee engagement serveys"
       },
       {
         "id": 3,
-        "img": "https://i.ibb.co/hRq73pr/card3.jpg",
-        "title": "Template",
+        "img": "https://i.ibb.co/FV0W8ch/Brand-Tracking-S.png",
+        "title": "Solution",
         "desc": "set up employee review with 360 degree evaluation survey"
       },
       {
         "id": 4,
-        "img": "https://i.ibb.co/xJHtSCR/card4.jpg",
-        "title": "Survey Builder",
+        "img": "https://i.ibb.co/dGpwNKX/Purchase-Drivers-S.png",
+        "title": "Solution",
         "desc": "use survey monkey genius to build employee surveys quickley"
       },
       {
         "id": 5,
-        "img": "https://i.ibb.co/Njpkc2J/card5.jpg",
-        "title": "Success Story",
+        "img": "https://i.ibb.co/Y8whyJ2/Target-Consumers-S.png",
+        "title": "Solution",
         "desc": "Service credit union build a covid safe workplace"
       }
     ]
@@ -109,32 +273,32 @@
     "card": [
       {
         "id": 1,
-        "img": "https://i.ibb.co/ssq240R/card1.jpg",
-        "title": "Employee Feedback",
+        "img": "https://i.ibb.co/YPtCSzd/Event-Planning-L-v2.png",
+        "title": "Event Planing",
         "desc": "Build a better workplace by hearing from your employes"
       },
       {
         "id": 2,
-        "img": "https://i.ibb.co/ncWK77P/card2.jpg",
-        "title": "Template",
+        "img": "https://i.ibb.co/DQXbnzJ/Polling-S.png",
+        "title": "Polling",
         "desc": "Learn How employees feel with Employee engagement serveys"
       },
       {
         "id": 3,
-        "img": "https://i.ibb.co/hRq73pr/card3.jpg",
-        "title": "Template",
+        "img": "https://i.ibb.co/Dfx2rrT/Healthcare-S.png",
+        "title": "Healthcare",
         "desc": "set up employee review with 360 degree evaluation survey"
       },
       {
         "id": 4,
-        "img": "https://i.ibb.co/xJHtSCR/card4.jpg",
-        "title": "Survey Builder",
+        "img": "https://i.ibb.co/0yJNVby/Education-S.png",
+        "title": "Education",
         "desc": "use survey monkey genius to build employee surveys quickley"
       },
       {
         "id": 5,
-        "img": "https://i.ibb.co/Njpkc2J/card5.jpg",
-        "title": "Success Story",
+        "img": "https://i.ibb.co/z87LCSZ/Survey-Builder-S.png",
+        "title": "Survey Builder",
         "desc": "Service credit union build a covid safe workplace"
       }
     ]
