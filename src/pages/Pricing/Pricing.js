@@ -26,12 +26,12 @@ const Pricing = () => {
                             {
                                 activeUser?.user ?
                                     <div >
-                                        <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-green-700 text-gray-100">
-                                            <Link to="/buyNow">Buy Now</Link></button>
+                                        <Link to="/buyNow"><button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-green-700 text-gray-100">
+                                            Buy Now</button></Link>
                                     </div>
                                     :
-                                    <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-green-700 text-gray-100">
-                                        <Link to="/login">SIGN UP</Link></button>
+                                    <Link to="/login"> <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-green-700 text-gray-100">
+                                        SIGN UP</button></Link>
                             }
 
                             <ul class="marker:text-green-600 list-disc pl-5 space-y-3 text-sm">
@@ -64,14 +64,14 @@ const Pricing = () => {
                             {
                                 activeUser?.user ?
                                     <div >
-                                        <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-purple-800 text-gray-100">
-                                            <Link to="/buyNow">BUY NOW</Link>
-                                        </button>
+                                        <Link to="/buyNow">  <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-purple-800 text-gray-100">
+                                            BUY NOW
+                                        </button></Link>
                                     </div>
                                     :
-                                    <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-purple-800 text-gray-100">
-                                        <Link to="/login">SIGN UP</Link>
-                                    </button>
+                                    <Link to="/login"><button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-purple-800 text-gray-100">
+                                        SIGN UP
+                                    </button></Link>
                             }
 
                             <ul class="marker:text-purple-800 list-disc pl-5 space-y-3 text-sm">
@@ -116,14 +116,14 @@ const Pricing = () => {
                             {
                                 activeUser?.user ?
                                     <div >
-                                        <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-blue-900 text-gray-100">
-                                            <Link to="">CONTACT SALES</Link>
-                                        </button>
+                                        <Link to=""> <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-blue-900 text-gray-100">
+                                            CONTACT SALES
+                                        </button></Link>
                                     </div>
                                     :
-                                    <button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-blue-900 text-gray-100">
-                                        <Link to="/login">Sign Up</Link>
-                                    </button>
+                                    <Link to="/login"><button className="px-28 py-2 mb-5 mt-6 text-lg font-semibold rounded-sm sm:mt-5 bg-blue-900 text-gray-100">
+                                        Sign Up
+                                    </button></Link>
                             }
 
                             <ul class="marker:text-blue-700 list-disc pl-5 space-y-3 text-sm">
