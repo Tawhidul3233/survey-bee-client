@@ -189,7 +189,7 @@ const DashboardPrimaryPage = () => {
                   <>
                     {allRecentSurveys?.length ? (
                       <div className="mt-16 mb-4 lg:px-44">
-                        <h2 className="text-3xl pb-3">Recent Surveys</h2>
+                        <h2 className="text-3xl pb-3 text-center font-semibold">Recent Surveys</h2>
                         {allRecentSurveys?.map((recentSurv) => (
                           <RecentSurveys
                             key={recentSurv._id}

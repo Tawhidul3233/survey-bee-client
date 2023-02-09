@@ -50,13 +50,13 @@ const UserCreateSurveyQuestions = ({
                   {q?.questionsType === "Comment Box" ? (
                     <textarea
                       readOnly
-                      className="border border-black outline-none w-4/12 py-2 px-4 resize-none cursor-pointer"
+                      className="border border-black outline-none w-1/12 py-2 px-4 resize-none cursor-pointer"
                     ></textarea>
                   ) : undefined || q?.questionsType === "Textbox" ? (
                     <input
                       type="text"
                       readOnly
-                      className="border border-black outline-none w-3/12 py-2 px-4 cursor-pointer"
+                      className="border border-black outline-none lg:w-1/12 py-2 lg:px-4  cursor-pointer"
                     />
                   ) : undefined}
                 </div>
