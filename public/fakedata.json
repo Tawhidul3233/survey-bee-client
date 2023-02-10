@@ -402,14 +402,42 @@
         "img": "https://i.ibb.co/z87LCSZ/Survey-Builder-S.png",
         "title": "Survey Builder",
         "desc": "use survey monkey genius to build employee surveys quickley",
-        "survey": []
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "How to build a survey",
+            "blog_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam lorem, eget aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam lorem, eget aliquam nisl nunc vel mauris.",
+            "blog_img": "https://i.ibb.co/7bXZ5Zr/How-to-build-a-survey.png"
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "How to build a survey",
+            "blog_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam lorem, eget aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam lorem, eget aliquam nisl nunc vel mauris.",
+            "blog_img": "https://i.ibb.co/7bXZ5Zr/How-to-build-a-survey.png"
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "How to build a survey",
+            "blog_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam lorem, eget aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam lorem, eget aliquam nisl nunc vel mauris.",
+            "blog_img": "https://i.ibb.co/7bXZ5Zr/How-to-build-a-survey.png"
+          }
+        ]
       },
       {
         "id": 5,
         "img": "https://i.ibb.co/rscTWvd/GSW-Story-S.png",
         "title": "Success Story",
         "desc": "Service credit union build a covid safe workplace",
-        "survey": []
+        "survey": [],
+        "blo": [
+          {
+            "blog_id": 12345,
+            "blog_title": "success story of acme compnay",
+            "blog_desc": "Acme's success story shows how customer surveys can be a powerful tool for companies to improve their business and customer experience. By listening to their customers and using the feedback they received, Acme was able to make meaningful changes that had a significant impact on their customer satisfaction and overall success.",
+            "blog_img": "https://i.ibb.co/7bXZ5Zr/How-to-build-a-survey.png"
+          }
+        ]
       }
     ]
   },
