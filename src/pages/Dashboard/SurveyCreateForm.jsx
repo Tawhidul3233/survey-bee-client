@@ -9,11 +9,12 @@ import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import Breadcrums from "../../components/Dashboard/Breadcrums";
+import MultiQuestionModal from "../../components/Dashboard/MultiQuestionModal";
 import UserCreateSurveyQuestions from "../../components/Dashboard/UserCreateSurveyQuestions";
 import Loading from "../../components/Shared/Loading";
 import { user } from "../../features/userSlice";
 
-const questionsType = ["Textbox", "Comment Box"];
+const questionsType = ["Textbox", "Comment Box", "Multiple choice"];
 
 const SurveyCreateForm = () => {
   // const [isLoaderLoading, setIsLoaderLoading] = useState(false);
@@ -78,10 +79,16 @@ const SurveyCreateForm = () => {
     },
   });
 
+  const multipleQuestionSetup = () => {
+    <MultiQuestionModal></MultiQuestionModal>
+  }
+
   // send backend for save user questions
   const handleCreateSurveyQuestions = async (data) => {
-    // console.log(data);
-    // setIsLoaderLoading(true);
+    if (data?.questionsType === "Multiple choice") {
+      return multipleQuestionSetup()
+    }
+
     const questions = data?.questions;
     const questionType = data?.questionsType;
     const surveyModifiedTime = new Date().toLocaleDateString();
@@ -95,11 +102,10 @@ const SurveyCreateForm = () => {
           surveyModifiedTime,
         }
       );
-      // console.log(response.data);
+
       if (response?.data?.acknowledged) {
         refetch();
         reset();
-        // setIsLoaderLoading(false);
         setIsAdded(true);
       }
     } catch (error) {
@@ -116,17 +122,11 @@ const SurveyCreateForm = () => {
     console.log(error);
   }
 
-  // console.log(userCreatedQuestion);
-  // const lastSurveyTitle = userCreatedQuestion.pop();
-  // console.log(lastSurveyTitle);
-
-  // handel delete user survey question
   const handleDeleteSurveyQuestion = async (
     targetId,
     targetQuestion,
     targetQType
   ) => {
-    // console.log("deleted target", targetId, targetQuestion, targetQType);
 
     try {
       const response = await axios.patch(
@@ -149,21 +149,6 @@ const SurveyCreateForm = () => {
     }
   };
 
-  // let nextQuestionsNumber;
-  // if (
-  //   !editSurveyLoaderData?.questionsAndTypes?.length ||
-  //   !userCreatedQuestion[0]?.questionsAndTypes?.length
-  // ) {
-  //   nextQuestionsNumber = `Q${1}`;
-  // } else if (editSurveyLoaderData?.questionsAndTypes?.length) {
-  //   nextQuestionsNumber = `Q${editSurveyLoaderData?.questionsAndTypes?.length}`;
-  // } else {
-  //   nextQuestionsNumber = `Q${
-  //     userCreatedQuestion[0]?.questionsAndTypes?.length + 1
-  //   }`;
-  // }
-
-  // console.log(editSurveyLoaderData);
 
   return (
     <div className="min-h-screen bg-[#f5f6fa]">
@@ -180,53 +165,40 @@ const SurveyCreateForm = () => {
             userCreatedQuestion={userCreatedQuestion}
             editSurveyLoaderData={editSurveyLoaderData}
             handleDeleteSurveyQuestion={handleDeleteSurveyQuestion}
-            // isLoaderLoading={isLoaderLoading}
+
           />
         )}
       </div>
-      <div className="px-20 pt-10 pb-28">
-        <h2 className="text-2xl text-primary font-extrabold">
+      <div className="px-2 pt-10 pb-28">
+        <h2 className="text-xl text-primary font-extrabold">
           {editSurveyLoaderData?.surveyTitle ||
             userCreatedQuestion[0]?.surveyTitle}
         </h2>
         <form
-          // className="border border-black w-full h-auto mt-10"
           onSubmit={handleSubmit(handleCreateSurveyQuestions)}
         >
-          <div className="flex w-full items-center h-full px-10 py-8 gap-x-1 border border-black mt-10">
+          <div className="flex w-full items-center h-full  py-8 gap-x-1 border border-black mt-10">
             <input
               type="text"
               readOnly
-              className="text-3xl w-12 outline-none border-none font-extrabold"
+              className="text-xl w-8 ml-2 outline-none border-none font-extrabold"
               value={
-                // `Q${
-                //   editSurveyLoaderData?.questionsAndTypes?.length
-                //     ? editSurveyLoaderData?.questionsAndTypes?.length + 1
-                //     : 1
-                // }` ||
-                // `Q${
-                //   userCreatedQuestion[0]?.questionsAndTypes?.length
-                //     ? userCreatedQuestion[0]?.questionsAndTypes?.length + 1
-                //     : 1
-                // }`
-                // nextQuestionsNumber
-                `Q${
-                  editSurveyLoaderData?.questionsAndTypes?.length + 1 ||
-                  userCreatedQuestion[0]?.questionsAndTypes?.length + 1 ||
-                  1
+                `Q${editSurveyLoaderData?.questionsAndTypes?.length + 1 ||
+                userCreatedQuestion[0]?.questionsAndTypes?.length + 1 ||
+                1
                 }`
               }
             />
-            <div className="flex">
+            <div className="md:flex">
               <input
                 {...register("questions", { required: true })}
                 type="text"
                 placeholder="Enter your question"
-                className="w-[60vw] px-4 py-2 border border-gray-500 outline-primary"
+                className="w-[60vw] px-4 py-2 my-2 border border-gray-500 outline-primary"
               />
               <select
                 {...register("questionsType", { required: true })}
-                className="w-60 ml-1 px-4 py-2 border border-gray-500 outline-primary inline"
+                className="w-[30vw] ml-1 px-4 py-2 my-2 border border-gray-500 outline-primary inline "
               >
                 {questionsType.map((qtype, i) => (
                   <option value={qtype} key={i}>
@@ -251,6 +223,7 @@ const SurveyCreateForm = () => {
           </div>
         </form>
       </div>
+      <MultiQuestionModal></MultiQuestionModal>
     </div>
   );
 };
