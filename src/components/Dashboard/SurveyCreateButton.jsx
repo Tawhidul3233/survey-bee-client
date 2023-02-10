@@ -5,7 +5,7 @@ const SurveyCreateButton = ({ className }) => {
   return (
     <div className={`mb-10 mt-20 mx-auto ${className?.mt}`}>
       <div className={`flex flex-col items-center ${className?.flexStart}`}>
-        <h2 className={`text-2xl py-10 ${className?.hidden}`}>
+        <h2 className={`text-2xl py-10 text-center ${className?.hidden}`}>
           Let's get started & create your first survey!
         </h2>
         <Link

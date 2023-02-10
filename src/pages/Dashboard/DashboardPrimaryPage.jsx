@@ -19,6 +19,7 @@ const DashboardPrimaryPage = () => {
   const [firstName, setFirstName] = useState("");
   const [isSurveyDeleted, setIsSurveyDeleted] = useState(false);
   const [allRecentSurveys, setAllRecentSurveys] = useState([]);
+  const twoRecentSurvey = allRecentSurveys.slice(0, 2)
   const activeUser = useSelector(user);
   const { user: currentUser } = activeUser;
   // console.log(currentUser.email);
@@ -75,10 +76,7 @@ const DashboardPrimaryPage = () => {
     return <Loading />;
   }
 
-  // if (errors) {
-  //   return "Please check your internet!!!";
-  // }
-  // console.log(dbUser);
+
 
   // update user profile
   const handleUpdateProfile = async (data) => {
@@ -139,8 +137,8 @@ const DashboardPrimaryPage = () => {
     <div className="min-h-screen bg-[#f5f6fa]">
       <>{isAdmin && <AdminPrimaryPage />}</>
     <div className="min-h-screen">
-      
-      <>{ isAdmin && <AdminPrimaryPage /> }</>
+
+      <>{isAdmin && <AdminPrimaryPage />}</>
 
       <>
         {!isAdmin && (
@@ -187,10 +185,10 @@ const DashboardPrimaryPage = () => {
                   <Loading />
                 ) : (
                   <>
-                    {allRecentSurveys?.length ? (
+                    {twoRecentSurvey?.length ? (
                       <div className="mt-16 mb-4 lg:px-44">
                         <h2 className="text-3xl pb-3">Recent Surveys</h2>
-                        {allRecentSurveys?.map((recentSurv) => (
+                        {twoRecentSurvey?.map((recentSurv) => (
                           <RecentSurveys
                             key={recentSurv._id}
                             recentSurv={recentSurv}
@@ -206,24 +204,24 @@ const DashboardPrimaryPage = () => {
                 )}
                 {/* <DeletePermissionModal handleSurveyDelete={handleSurveyDelete} /> */}
                 {/* Recent surveys ends here */}
-                    
-                    {/* survey buttons starts */}
+
+                {/* survey buttons starts */}
                 <SurveyCreateButton />
                 {/* survey buttons ends */}
 
-      {/* survey buttons ends */}
-      <div className="">
-          <DashboardProfile
-          register={register}
-          errors={errors}
-          handleSubmit={handleSubmit}
-          handleUpdateProfile={handleUpdateProfile}
-          setFirstName={setFirstName}
-          dbUser={dbUser}
-          />
-      </div>
+                {/* survey buttons ends */}
+                <div className="">
+                  <DashboardProfile
+                    register={register}
+                    errors={errors}
+                    handleSubmit={handleSubmit}
+                    handleUpdateProfile={handleUpdateProfile}
+                    setFirstName={setFirstName}
+                    dbUser={dbUser}
+                  />
+                </div>
 
-              
+
               </>
             )}
           </>
