@@ -124,8 +124,8 @@ export const router = createBrowserRouter([
         element: <PreviewSurvey />,
       },
       {
-        path: '/dashboard',
-        element: <AdminHome></AdminHome>
+        path: "/dashboard/overview",
+        element: < AdminHome />,
       },
       {
         path: '/dashboard/manageusers',

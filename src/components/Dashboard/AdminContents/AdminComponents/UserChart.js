@@ -18,19 +18,21 @@ const UserChart = () => {
   ]
 
   return (
-    <div>
+    <div className=''>
       <div>
-        <h2 className='text-center mx-auto my-5 font-semibold text-lg bg-green-500 w-2/5 text-white'>User Analysis</h2>
+        <h2 className='text-center mx-auto my-5 font-semibold text-lg bg-green-500 w-3/5 text-white'>User Analysis</h2>
+      </div >
+      <div className=' flex justify-center'>
+        <BarChart width={330} height={150} data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          {/* <Bar dataKey="pv" fill="#8884d8" /> */}
+          <Bar dataKey="Users" fill="#82ca9d" />
+        </BarChart>
       </div>
-      <BarChart width={730} height={250} data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        {/* <Bar dataKey="pv" fill="#8884d8" /> */}
-        <Bar dataKey="Users" fill="#82ca9d" />
-      </BarChart>
     </div>
   );
 };

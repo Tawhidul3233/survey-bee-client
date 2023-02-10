@@ -10,18 +10,10 @@ import AdminHome from "./ManageUser/AdminHome/AdminHome";
 import ManageUser from "./ManageUser/ManageUser";
 
 const AdminPrimaryPage = () => {
+
   return (
-    <div>
-
-      <div className=" flex ">
-        <div className=" w-2/5 sm:w-1/4 ">
-          <AdminMenu> </AdminMenu>
-        </div>
-        <div className=" w-3/5 sm:w-3/4 right-0 ">
-          <AdminHome> </AdminHome>
-        </div>
-      </div>
-
+    <div className=" ">
+      <AdminHome> </AdminHome>
     </div>
   );
 };
