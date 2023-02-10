@@ -87,7 +87,7 @@ const MySurveys = () => {
               {surveys?.map((survey) => {
                 return (
                   <div key={survey._id} className="overflow-x-auto pb-2">
-                    <table className="table w-full">
+                    <table className="table w-full text-center">
                       <thead>
                         <tr>
                           {mySurveyText.map((t, i) => (
@@ -96,7 +96,7 @@ const MySurveys = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="text-xl">
+                        <tr className="text-xl w-full">
                           <td className="flex flex-col text-[1rem]">
                             <span className="font-semibold text-secondary">
                               {survey?.surveyTitle}
@@ -106,21 +106,21 @@ const MySurveys = () => {
                           <td className="text-1">
                             {survey?.surveyModifiedTime}
                           </td>
-                          <td className="pl-8">0</td>
-                          <td className="pl-8" title="design your survey">
+                          <td className="lg:pl-8 p-0 w-3/12">0</td>
+                          <td className="lg:pl-8 p-0 w-3/12" title="design your survey">
                             <button
                               onClick={() => handleSurveyEdit(survey._id)}
                             >
                               <BiEdit className="text-secondary" />
                             </button>
                           </td>
-                          <td className="pl-8">
+                          <td className="lg:pl-8 p-0 w-3/12">
                             <BsCollection className="text-secondary" />
                           </td>
-                          <td className="pl-8">
+                          <td className="lg:pl-8 p-0 w-3/12">
                             <TbBrandGoogleAnalytics className="text-secondary" />
                           </td>
-                          <td className="pl-8 hover:bg-yellow-200 cursor-pointer">
+                          <td className="pl-8 p-0 w-3/12 hover:bg-yellow-200 cursor-pointer">
                             <FiShare2 className="text-secondary" />
                           </td>
                           <td
