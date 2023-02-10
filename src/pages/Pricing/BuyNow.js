@@ -26,7 +26,7 @@ const BuyNow = () => {
                             <span className="label-text font-semibold">First name</span>
                         </label>
                         <label className="input-group w-72 input-group-vertical">
-                            <input type="text" placeholder="First name" className="input input-bordered" />
+                            <input required type="text" placeholder="First name" className="input input-bordered" />
                         </label>
                     </div>
                     <div className="form-control md:mx-16">
@@ -78,7 +78,7 @@ const BuyNow = () => {
             </form>
 
             <div className='mt-10 md:ml-80 mx-8'>
-                <Link to=""> <button className="px-28 bg-green-600 hover:bg-green-800 py-2 mb-5 mt-6 text-lg font-semibold  rounded-xl sm:mt- text-gray-100">
+                <Link to="/paynow"> <button className="px-28 bg-green-600 hover:bg-green-800 py-2 mb-5 mt-6 text-lg font-semibold  rounded-xl sm:mt- text-gray-100">
                     Pay now
                 </button></Link>
             </div>

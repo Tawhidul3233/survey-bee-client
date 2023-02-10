@@ -134,6 +134,8 @@ const DashboardPrimaryPage = () => {
   // console.log("isAdmin", isAdmin);
 
   return (
+    <div className="min-h-screen bg-[#f5f6fa]">
+      <>{isAdmin && <AdminPrimaryPage />}</>
     <div className="min-h-screen">
 
       <>{isAdmin && <AdminPrimaryPage />}</>
@@ -185,8 +187,13 @@ const DashboardPrimaryPage = () => {
                   <>
                     {twoRecentSurvey?.length ? (
                       <div className="mt-16 mb-4 lg:px-44">
+<<<<<<< HEAD
                         <h2 className="text-3xl pb-3">Recent Surveys</h2>
                         {twoRecentSurvey?.map((recentSurv) => (
+=======
+                        <h2 className="text-3xl pb-3 text-center font-semibold">Recent Surveys</h2>
+                        {allRecentSurveys?.map((recentSurv) => (
+>>>>>>> 9e283ff10185f185cd79e89fae340b5eebbf609a
                           <RecentSurveys
                             key={recentSurv._id}
                             recentSurv={recentSurv}
@@ -225,6 +232,7 @@ const DashboardPrimaryPage = () => {
           </>
         )}
       </>
+    </div>
     </div>
   );
 };
