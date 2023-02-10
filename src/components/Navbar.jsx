@@ -13,18 +13,24 @@ import { signOut } from "firebase/auth";
 import { setUserLogOutState } from "../features/userSlice";
 import { toast } from "react-hot-toast";
 import AuthenticationButtons from "./Navbar/AuthenticationButtons";
+import useAdmin from "../hooks/useAdmin";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isDashboardOpen, setIsDashboardOpen] = useState(false);
   const [isSolutionOpen, setIsSolutionOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const [isEmailOpen, setEmailOpen] = useState(false);
   const dispatch = useDispatch();
 
+  // const { user: existingUser, userLoading } = activeUser;
+
   const activeUser = useSelector(user);
   // console.log(activeUser);
   const { user: existingUser } = activeUser;
+  const [isAdmin, isAdminLoading] = useAdmin(existingUser?.email);
+
 
   const handleLogOut = () => {
     signOut(auth)
@@ -78,6 +84,111 @@ const Navbar = () => {
                       }`}
                   >
                     <div className="flex flex-col">
+                      <li className="rounded-sm w-full mx-0 px-0">
+                        <div className="flex flex-col">
+                          <p
+                            onClick={() =>
+                              setIsDashboardOpen(
+                                !isDashboardOpen,
+                                setIsSolutionOpen(false),
+                                setIsResourcesOpen(false),
+                                setIsProductsOpen(false)
+                              )
+                            }
+                            className={`flex justify-between px-4 py-5 mb-0 hover:text-base-100 rounded-b-none w-full ${isOpen ? " hover:bg-[#808B91]" : undefined
+                              }`}
+                          >
+                            <span className="font-semibold text-xl">
+                              Dashboard
+                            </span>
+                            <span>
+                              {isDashboardOpen ? (
+                                <MdKeyboardArrowUp className="text-3xl" />
+                              ) : (
+                                <MdKeyboardArrowDown className="text-3xl" />
+                              )}
+                            </span>
+                          </p>
+                          {isDashboardOpen && isAdmin ?
+                            <ul className="w-full z-50 bg-[#808B91] rounded-none text-base-100 mt-[-11px]">
+                              <div
+                                className=" flex justify-between flex-col
+                            border-0 rounded-none
+                            "
+                              >
+                                <div className="flex flex-col w-full px-4 py-2">
+                                  <Link
+                                    to="/dashboard/overview"
+                                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                                  >
+                                    <span className="font-semibold text-xl text-secondary block">
+                                      Overview
+                                    </span>
+                                  </Link>
+                                </div>
+                                <div className="flex flex-col w-full px-4 py-2">
+                                  <Link
+                                    to="/dashboard/manageusers"
+                                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                                  >
+                                    <span className="font-semibold text-xl text-secondary block">
+                                      Manage Users
+                                    </span>
+                                  </Link>
+                                </div>
+                                <div className="flex flex-col w-full px-4 py-2">
+                                  <Link
+                                    to="/setting"
+                                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                                  >
+                                    <span className="font-semibold text-xl text-secondary block">
+                                      Settings
+                                    </span>
+                                  </Link>
+                                </div>
+                              </div>
+                            </ul> : isDashboardOpen &&
+                            <ul className="w-full z-50 bg-[#808B91] rounded-none text-base-100 mt-[-11px]">
+                              <div
+                                className=" flex justify-between flex-col
+                           border-0 rounded-none
+                           "
+                              >
+                                <div className="flex flex-col w-full px-4 py-2">
+                                  <Link
+                                    to="/dashboard"
+                                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                                  >
+                                    <span className="font-semibold text-xl text-secondary block">
+                                      Dashboard
+                                    </span>
+                                  </Link>
+                                </div>
+                                <div className="flex flex-col w-full px-4 py-2">
+                                  <Link
+                                    to="/dashboard/mysurveys"
+                                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                                  >
+                                    <span className="font-semibold text-xl text-secondary block">
+                                      My survey
+                                    </span>
+                                  </Link>
+                                </div>
+                                <div className="flex flex-col w-full px-4 py-2">
+                                  <Link
+                                    to="/setting"
+                                    className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                                  >
+                                    <span className="font-semibold text-xl text-secondary block">
+                                      Setting
+                                    </span>
+                                  </Link>
+                                </div>
+                              </div>
+                            </ul>
+                          }
+                        </div>
+                      </li>
                       <li className="rounded-sm w-full mx-0 px-0">
                         <div className="flex flex-col">
                           <p
@@ -526,12 +637,20 @@ const Navbar = () => {
                       </li>
                       <li className="rounded-sm w-full mx-0 px-0">
                         <div className="flex flex-col">
+                          { isAdmin ? <Link
+                            to="/setting"
+                            className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
+                          >
+                            <span className="font-semibold text-xl text-secondary block">
+                              Settings
+                            </span>
+                          </Link>:
                           <Link
                             to="/plans-pricing"
                             className=" px-4 py-5 mb-0 hover:text-base-100 rounded-b-none w-full font-semibold text-xl"
                           >
                             Plans & Pricing
-                          </Link>
+                          </Link>}
                         </div>
                       </li>
                       <li className="rounded-sm w-full mx-0 px-0">
@@ -587,22 +706,38 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">
             {/* for dashboard */}
             <li>
-              <Link
+              {isAdmin ? <Link
                 to="/dashboard"
-                className={`${!activeUser?.user?.email ? "hidden" : "text-white"
-                  }`}
+                className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
               >
-                Dashboard
-              </Link>
+                <span className="font-semibold text-xl text-secondary block">
+                  Dashboard
+                </span>
+              </Link> :
+                <Link
+                  to="/dashboard"
+                  className={`${!activeUser?.user?.email ? "hidden" : "text-white"
+                    }`}
+                >
+                  Dashboard
+                </Link>}
             </li>
             <li className="">
-              <Link
-                to="/dashboard/mysurveys"
-                className={`${!activeUser?.user?.email ? "hidden" : "text-white"
-                  }`}
+              {isAdmin ? <Link
+                to="/dashboard/manageusers"
+                className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
               >
-                My Surveys
-              </Link>
+                <span className="font-semibold text-xl text-secondary block">
+                  Manage Users
+                </span>
+              </Link> :
+                <Link
+                  to="/dashboard/mysurveys"
+                  className={`${!activeUser?.user?.email ? "hidden" : "text-white"
+                    }`}
+                >
+                  My Surveys
+                </Link>}
             </li>
             {/* for dashboard */}
             <li
@@ -1044,13 +1179,22 @@ const Navbar = () => {
               )}
             </li>
             <li>
-              <Link
-                to="/plans-pricing"
-                className={`${activeUser?.user?.email ? "text-white" : "text-black"
-                  }`}
+
+              {isAdmin ? <Link
+                to="/setting"
+                className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
               >
-                Plans & Pricing
-              </Link>
+                <span className="font-semibold text-xl text-secondary block">
+                  Settings
+                </span>
+              </Link> :
+                <Link
+                  to="/plans-pricing"
+                  className={`${activeUser?.user?.email ? "text-white" : "text-black"
+                    }`}
+                >
+                  Plans & Pricing
+                </Link>}
             </li>
           </ul>
         </div>

@@ -9,7 +9,7 @@ const UserTable = ({userData , search}) => {
 
 
   return (
-    <div>
+    <div className='mx-2'>
       {/* <UserHeader userData={userData} setUserData={setUserData} data={data} search={search}  ></UserHeader> */}
       <div className="overflow-x-auto">
         <table className="table table-compact w-full">
