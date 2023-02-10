@@ -43,35 +43,59 @@
       {
         "id": 2,
         "img": "https://i.ibb.co/Ch3NTwL/Employee-Eng-S.png",
-        "title": "Template",
+        "title": "Employee engagement serveys",
         "desc": "Learn How employees feel with Employee engagement serveys",
         "survey": [
           {
-            "survey_title": "2023 Employee Engagement Survey",
+            "survey_id": 12345,
+            "survey_title": "Employee engagement servey",
             "questions": [
               {
-                "question_text": "On a scale of 1-5, how satisfied are you with your job?",
-                "question_type": "rating",
+                "question_id": 1,
+                "question_text": "On a scale from 1 to 5, how satisfied are you with your current role and responsibilities?",
+                "answer_type": "rating",
                 "options": [1, 2, 3, 4, 5]
               },
               {
-                "question_text": "Do you feel valued by your manager and colleagues?",
-                "question_type": "yes_no",
+                "question_id": 2,
+                "question_text": "How satisfied are you with the level of support you receive from your manager and team?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "How satisfied are you with the company's work-life balance policies",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 4,
+                "question_text": "How satisfied are you with the company's culture and values?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 5,
+                "question_text": "How satisfied are you with your compensation and benefits package?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 6,
+                "question_text": "Is there anything specific that the company could do to improve your overall job satisfaction?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 7,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
                 "options": ["Yes", "No"]
               },
               {
-                "question_text": "How often do you receive clear and timely feedback on your work?",
-                "question_type": "rating",
-                "options": [1, 2, 3, 4, 5]
-              },
-              {
-                "question_text": "Do you have the resources and support you need to do your job effectively?",
-                "question_type": "yes_no",
-                "options": ["Yes", "No"]
-              },
-              {
-                "question_text": "What can the company do to improve your overall job satisfaction?",
-                "question_type": "open_ended",
+                "question_id": 8,
+                "question_text": "What changes would you suggest to improve the company culture?",
+                "answer_type": "text",
                 "options": []
               }
             ]
@@ -85,31 +109,73 @@
         "desc": "set up employee review with 360 degree evaluation survey",
         "survey": [
           {
-            "survey_title": "2023 Employee Evaluation Survey",
+            "survey_id": 12345,
+            "survey_title": " 360 degree evaluation survey",
             "questions": [
               {
-                "question_text": "On a scale of 1-5, how would you rate this employee's job performance?",
-                "question_type": "rating",
+                "question_id": 1,
+                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "answer_type": "rating",
                 "options": [1, 2, 3, 4, 5]
               },
               {
-                "question_text": "Does this employee consistently meet or exceed job expectations?",
-                "question_type": "yes_no",
+                "question_id": 2,
+                "question_text": "How well does the individual work with others in a team environment?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "How effectively does the individual communicate with others, both verbally and in writing?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 4,
+                "question_text": "How well does the individual handle stress and meet deadlines?",
+                "answer_type": "rating",
+                "options": [
+                  "very well",
+                  "well",
+                  "bad",
+                  "very Bad",
+                  "somewhat Bad"
+                ]
+              },
+              {
+                "question_id": 5,
+                "question_text": "How effectively does the individual make decisions and solve problems?",
+                "answer_type": "rating",
+                "options": [
+                  "very effective",
+                  "well",
+                  "no effective",
+                  "very Bad",
+                  "somewhat Bad"
+                ]
+              },
+              {
+                "question_id": 6,
+                "question_text": "How well does the individual prioritize and manage their time?",
+                "answer_type": "rating",
+                "options": [
+                  "very wll",
+                  "well",
+                  "not effectively",
+                  "very Bad",
+                  "somewhat Bad"
+                ]
+              },
+              {
+                "question_id": 7,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
                 "options": ["Yes", "No"]
               },
               {
-                "question_text": "How effective is this employee at working with others on a team?",
-                "question_type": "rating",
-                "options": [1, 2, 3, 4, 5]
-              },
-              {
-                "question_text": "Does this employee take initiative and display a strong work ethic?",
-                "question_type": "yes_no",
-                "options": ["Yes", "No"]
-              },
-              {
-                "question_text": "What areas does this employee need to improve in order to be more successful in their role?",
-                "question_type": "open_ended",
+                "question_id": 8,
+                "question_text": "How well does the individual handle conflicts and manage relationships with coworkers?",
+                "answer_type": "text",
                 "options": []
               }
             ]
@@ -121,14 +187,42 @@
         "img": "https://i.ibb.co/z87LCSZ/Survey-Builder-S.png",
         "title": "Survey Builder",
         "desc": "use survey monkey genius to build employee surveys quickley",
-        "survey": []
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "How to build a survey",
+            "blog_desc": "Building a survey involves several steps, including defining the survey's goals, selecting the right type of survey, designing the questions, selecting the target audience, and administering the survey.",
+            "blog_img": "https://i.ibb.co/4ZTkkhd/Customer-Feedback-L-v2.png"
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "How to work with survey",
+            "blog_desc": "Working with a survey involves several steps, including designing the survey, selecting the target audience, administering the survey, analyzing the data, and communicating the results. ",
+            "blog_img": "https://i.ibb.co/nkFHS5B/CSat-Template-S.png"
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "How take input from survey",
+            "blog_desc": "Taking input from a survey depends on the method of administration you choose for the survey. No matter what method of administration you choose, it's important to ensure that the data is accurate and complete. You can use various techniques, such as data validation and error checking, to ensure the quality of the data.",
+            "blog_img": "https://i.ibb.co/4ZTkkhd/Customer-Feedback-L-v2.png"
+          }
+        ]
       },
       {
         "id": 5,
         "img": "https://i.ibb.co/87FPnvm/Success-Story.png",
         "title": "Success Story",
         "desc": "Service credit union build a covid safe workplace",
-        "survey": []
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "How to build a survey",
+            "blog_desc": "A mid-sized company was facing challenges with employee morale and wanted to find out why. The company decided to conduct an employee engagement survey to gather data and insights about the employees' experience and perceptions of the company. The survey was designed to measure employees' satisfaction with various aspects of their jobs, such as the work environment, the company's mission and values, and the opportunities for growth and development.",
+            "blog_img": "https://i.ibb.co/4ZTkkhd/Customer-Feedback-L-v2.png"
+          }
+        ]
       }
     ]
   },
@@ -142,31 +236,55 @@
         "desc": "Build a better workplace by hearing from your employes",
         "survey": [
           {
-            "survey_title": "2023 Customer Satisfaction Survey",
+            "survey_id": 12345,
+            "survey_title": "Customer Satisfaction",
             "questions": [
               {
-                "question_text": "On a scale of 1-5, how satisfied are you with the products or services you received?",
-                "question_type": "rating",
+                "question_id": 1,
+                "question_text": "On a scale of 1-5, how satisfied are you with the product/service you received?",
+                "answer_type": "rating",
                 "options": [1, 2, 3, 4, 5]
               },
               {
-                "question_text": "Did you receive the product or service in a timely manner?",
-                "question_type": "yes_no",
+                "question_id": 2,
+                "question_text": "Was the product/service you received able to meet your expectations?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "How likely are you to recommend our product/service to a friend or colleague?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 4,
+                "question_text": "Was the customer service you received helpful and efficient?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 5,
+                "question_text": "How was the overall quality of the product/service you received?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 6,
+                "question_text": "Were there any issues or problems with the product/service, and if so, how were they resolved?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 7,
+                "question_text": "Were there any issues or problems with the product/service, and if so, how were they resolved?",
+                "answer_type": "yesno",
                 "options": ["Yes", "No"]
               },
               {
-                "question_text": "How likely are you to recommend our products or services to others?",
-                "question_type": "rating",
-                "options": [1, 2, 3, 4, 5]
-              },
-              {
-                "question_text": "Did our customer service meet your expectations?",
-                "question_type": "yes_no",
-                "options": ["Yes", "No"]
-              },
-              {
-                "question_text": "What can we do to improve your overall experience with our products or services?",
-                "question_type": "open_ended",
+                "question_id": 8,
+                "question_text": "Are there any areas where you think we can improve our product/service?",
+                "answer_type": "text",
                 "options": []
               }
             ]
@@ -180,31 +298,55 @@
         "desc": "Learn How Customers feel with Customers engagement serveys",
         "survey": [
           {
-            "survey_title": "2023 Customer Feedback Survey",
+            "survey_id": 12345,
+            "survey_title": "Employee Feedback Survey",
             "questions": [
               {
-                "question_text": "On a scale of 1-5, how would you rate your overall experience with our company?",
-                "question_type": "rating",
+                "question_id": 1,
+                "question_text": "How would you rate the quality of the product/service you received?",
+                "answer_type": "rating",
                 "options": [1, 2, 3, 4, 5]
               },
               {
-                "question_text": "Did you find what you were looking for on our website?",
-                "question_type": "yes_no",
-                "options": ["Yes", "No"]
-              },
-              {
-                "question_text": "How likely are you to recommend our company to a friend or colleague?",
-                "question_type": "rating",
-                "options": [1, 2, 3, 4, 5]
-              },
-              {
-                "question_text": "What did you like most about your experience with our company?",
-                "question_type": "open_ended",
+                "question_id": 2,
+                "question_text": "What was the reason for choosing our product/service?",
+                "answer_type": "text",
                 "options": []
               },
               {
-                "question_text": "What can we improve upon to better serve you in the future?",
-                "question_type": "open_ended",
+                "question_id": 3,
+                "question_text": "How was the overall experience with our product/service?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 4,
+                "question_text": "Was the product/service able to meet your needs and requirements?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 5,
+                "question_text": "How satisfied were you with the customer service you received?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 6,
+                "question_text": "Was the purchasing process easy and efficient?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 7,
+                "question_text": "Were there any challenges or difficulties you faced while using our product/service?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 8,
+                "question_text": "Were all your questions and concerns addressed to your satisfaction?",
+                "answer_type": "text",
                 "options": []
               }
             ]
@@ -214,8 +356,46 @@
       {
         "id": 3,
         "img": "https://i.ibb.co/NSjvn4h/Customer-Service-S.png",
-        "title": "Template",
-        "desc": "set up employee review with 360 degree evaluation survey"
+        "title": "360 degree customer evaluation survey",
+        "desc": "set up employee review with 360 degree evaluation survey",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "360 degree customer evaluation survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "How would you rate the quality of the product/service you received?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "Was the customer service you received efficient and helpful?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "Was the purchasing process smooth and easy to understand?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 4,
+                "question_text": "How satisfied were you with the overall experience with our company?",
+                "answer_type": "yesno",
+                "options": ["satisfied", "dissatisfied"]
+              },
+              {
+                "question_id": 5,
+                "question_text": "Were there any issues or problems with the product/service, and if so, how were they resolved?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 4,
@@ -240,31 +420,191 @@
         "id": 1,
         "img": "https://i.ibb.co/8zJXt3f/Target-Markets-L.png",
         "title": "Solution",
-        "desc": "Build a better workplace by hearing from your employes"
+        "desc": "Build a better workplace by hearing from your employes",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "Employee Feedback Survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "What do you think is the company's strongest attribute?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 4,
+                "question_text": "What changes would you suggest to improve the company culture?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 2,
         "img": "https://i.ibb.co/br19mzL/Concept-Testing-S.png",
         "title": "Solution",
-        "desc": "Learn How employees feel with Employee engagement serveys"
+        "desc": "Learn How employees feel with Employee engagement serveys",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "Employee Feedback Survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "What do you think is the company's strongest attribute?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 4,
+                "question_text": "What changes would you suggest to improve the company culture?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 3,
         "img": "https://i.ibb.co/FV0W8ch/Brand-Tracking-S.png",
         "title": "Solution",
-        "desc": "set up employee review with 360 degree evaluation survey"
+        "desc": "set up employee review with 360 degree evaluation survey",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "Employee Feedback Survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "What do you think is the company's strongest attribute?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 4,
+                "question_text": "What changes would you suggest to improve the company culture?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 4,
         "img": "https://i.ibb.co/dGpwNKX/Purchase-Drivers-S.png",
         "title": "Solution",
-        "desc": "use survey monkey genius to build employee surveys quickley"
+        "desc": "use survey monkey genius to build employee surveys quickley",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "Employee Feedback Survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "What do you think is the company's strongest attribute?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 4,
+                "question_text": "What changes would you suggest to improve the company culture?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 5,
         "img": "https://i.ibb.co/Y8whyJ2/Target-Consumers-S.png",
         "title": "Solution",
-        "desc": "Service credit union build a covid safe workplace"
+        "desc": "Service credit union build a covid safe workplace",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "Employee Feedback Survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "What do you think is the company's strongest attribute?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 4,
+                "question_text": "What changes would you suggest to improve the company culture?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -275,25 +615,153 @@
         "id": 1,
         "img": "https://i.ibb.co/YPtCSzd/Event-Planning-L-v2.png",
         "title": "Event Planing",
-        "desc": "Build a better workplace by hearing from your employes"
+        "desc": "Build a better workplace by hearing from your employes",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "Employee Feedback Survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "What do you think is the company's strongest attribute?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 4,
+                "question_text": "What changes would you suggest to improve the company culture?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 2,
         "img": "https://i.ibb.co/DQXbnzJ/Polling-S.png",
         "title": "Polling",
-        "desc": "Learn How employees feel with Employee engagement serveys"
+        "desc": "Learn How employees feel with Employee engagement serveys",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "Employee Feedback Survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "What do you think is the company's strongest attribute?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 4,
+                "question_text": "What changes would you suggest to improve the company culture?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 3,
         "img": "https://i.ibb.co/Dfx2rrT/Healthcare-S.png",
         "title": "Healthcare",
-        "desc": "set up employee review with 360 degree evaluation survey"
+        "desc": "set up employee review with 360 degree evaluation survey",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "Employee Feedback Survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "What do you think is the company's strongest attribute?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 4,
+                "question_text": "What changes would you suggest to improve the company culture?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 4,
         "img": "https://i.ibb.co/0yJNVby/Education-S.png",
         "title": "Education",
-        "desc": "use survey monkey genius to build employee surveys quickley"
+        "desc": "use survey monkey genius to build employee surveys quickley",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "Employee Feedback Survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "What do you think is the company's strongest attribute?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 4,
+                "question_text": "What changes would you suggest to improve the company culture?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 5,
