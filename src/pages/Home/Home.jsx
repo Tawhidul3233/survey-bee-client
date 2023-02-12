@@ -3,6 +3,7 @@ import Banner from "../../components/Banner";
 import MainContainer from "../../components/ExpertWrittenTemplate/MainContainer";
 import Faq from "../../components/Faq";
 import ImageSection from "../../components/ImageSection/ImageSection";
+import Chatbot from "../../components/LiveSupport/Chatbot";
 import Subscription from "../../components/Subscription/Subscription";
 import SurveyAudience from "../../components/SurveyAudience/SurveyAudience";
 import Contact from "./Contact/Contact";
@@ -20,8 +21,8 @@ const Home = () => {
       <Testimonial />
       <Feedback />
       <Faq />
-      <Contact/>
-      
+      <Contact />
+      <Chatbot />
     </div>
   );
 };
