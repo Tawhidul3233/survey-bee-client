@@ -448,37 +448,21 @@
         "id": 1,
         "img": "https://i.ibb.co/8zJXt3f/Target-Markets-L.png",
         "title": "Solution",
-        "desc": "Build a better workplace by hearing from your employes",
-        "survey": [
+        "desc": "Market Reasearch solution",
+        "survey": [],
+        "blog": [
           {
-            "survey_id": 12345,
-            "survey_title": "Employee Feedback Survey",
-            "questions": [
-              {
-                "question_id": 1,
-                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
-                "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
-              },
-              {
-                "question_id": 2,
-                "question_text": "What do you think is the company's strongest attribute?",
-                "answer_type": "text",
-                "options": []
-              },
-              {
-                "question_id": 3,
-                "question_text": "Do you feel valued as an employee?",
-                "answer_type": "yesno",
-                "options": ["Yes", "No"]
-              },
-              {
-                "question_id": 4,
-                "question_text": "What changes would you suggest to improve the company culture?",
-                "answer_type": "text",
-                "options": []
-              }
-            ]
+            "blog_id": 12345,
+            "blog_title": "Test your early-stage ideas in minutes",
+            "blog_desc": "Use advanced analytics to quickly prioritize and validate which products, messages, ad creative, and more will succeed with your target audience.",
+            "blog_img": "https://i.ibb.co/NmCr5FW/hero-main-final-market-research-idea-screening.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "Launch products and campaigns 2x faster",
+            "blog_desc": "Screening ideas early means wasting less time and resources to develop concepts that won’t perform well in-market.Simply upload your ideas and use our guided setup and get feedback from your target audience on-demand.",
+            "blog_img": "https://i.ibb.co/hXmfZd0/product-lifestyle-graphic-final-market-reserach-idea-screening.png"
           }
         ]
       },
@@ -487,36 +471,20 @@
         "img": "https://i.ibb.co/br19mzL/Concept-Testing-S.png",
         "title": "Solution",
         "desc": "Learn How employees feel with Employee engagement serveys",
-        "survey": [
+        "survey": [],
+        "blog": [
           {
-            "survey_id": 12345,
-            "survey_title": "Employee Feedback Survey",
-            "questions": [
-              {
-                "question_id": 1,
-                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
-                "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
-              },
-              {
-                "question_id": 2,
-                "question_text": "What do you think is the company's strongest attribute?",
-                "answer_type": "text",
-                "options": []
-              },
-              {
-                "question_id": 3,
-                "question_text": "Do you feel valued as an employee?",
-                "answer_type": "yesno",
-                "options": ["Yes", "No"]
-              },
-              {
-                "question_id": 4,
-                "question_text": "What changes would you suggest to improve the company culture?",
-                "answer_type": "text",
-                "options": []
-              }
-            ]
+            "blog_id": 12345,
+            "blog_title": "Concept Testing",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
           }
         ]
       },
@@ -525,36 +493,20 @@
         "img": "https://i.ibb.co/FV0W8ch/Brand-Tracking-S.png",
         "title": "Solution",
         "desc": "set up employee review with 360 degree evaluation survey",
-        "survey": [
+        "survey": [],
+        "blog": [
           {
-            "survey_id": 12345,
-            "survey_title": "Employee Feedback Survey",
-            "questions": [
-              {
-                "question_id": 1,
-                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
-                "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
-              },
-              {
-                "question_id": 2,
-                "question_text": "What do you think is the company's strongest attribute?",
-                "answer_type": "text",
-                "options": []
-              },
-              {
-                "question_id": 3,
-                "question_text": "Do you feel valued as an employee?",
-                "answer_type": "yesno",
-                "options": ["Yes", "No"]
-              },
-              {
-                "question_id": 4,
-                "question_text": "What changes would you suggest to improve the company culture?",
-                "answer_type": "text",
-                "options": []
-              }
-            ]
+            "blog_id": 12345,
+            "blog_title": "Brand Tracking",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
           }
         ]
       },
@@ -563,36 +515,20 @@
         "img": "https://i.ibb.co/dGpwNKX/Purchase-Drivers-S.png",
         "title": "Solution",
         "desc": "use survey monkey genius to build employee surveys quickley",
-        "survey": [
+        "survey": [],
+        "blog": [
           {
-            "survey_id": 12345,
-            "survey_title": "Employee Feedback Survey",
-            "questions": [
-              {
-                "question_id": 1,
-                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
-                "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
-              },
-              {
-                "question_id": 2,
-                "question_text": "What do you think is the company's strongest attribute?",
-                "answer_type": "text",
-                "options": []
-              },
-              {
-                "question_id": 3,
-                "question_text": "Do you feel valued as an employee?",
-                "answer_type": "yesno",
-                "options": ["Yes", "No"]
-              },
-              {
-                "question_id": 4,
-                "question_text": "What changes would you suggest to improve the company culture?",
-                "answer_type": "text",
-                "options": []
-              }
-            ]
+            "blog_id": 12345,
+            "blog_title": "Purchase Drivers",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
           }
         ]
       },
@@ -601,36 +537,20 @@
         "img": "https://i.ibb.co/Y8whyJ2/Target-Consumers-S.png",
         "title": "Solution",
         "desc": "Service credit union build a covid safe workplace",
-        "survey": [
+        "survey": [],
+        "blog": [
           {
-            "survey_id": 12345,
-            "survey_title": "Employee Feedback Survey",
-            "questions": [
-              {
-                "question_id": 1,
-                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
-                "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
-              },
-              {
-                "question_id": 2,
-                "question_text": "What do you think is the company's strongest attribute?",
-                "answer_type": "text",
-                "options": []
-              },
-              {
-                "question_id": 3,
-                "question_text": "Do you feel valued as an employee?",
-                "answer_type": "yesno",
-                "options": ["Yes", "No"]
-              },
-              {
-                "question_id": 4,
-                "question_text": "What changes would you suggest to improve the company culture?",
-                "answer_type": "text",
-                "options": []
-              }
-            ]
+            "blog_id": 12345,
+            "blog_title": "Target Consumers",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
           }
         ]
       }
@@ -644,36 +564,20 @@
         "img": "https://i.ibb.co/YPtCSzd/Event-Planning-L-v2.png",
         "title": "Event Planing",
         "desc": "Build a better workplace by hearing from your employes",
-        "survey": [
+        "survey": [],
+        "blog": [
           {
-            "survey_id": 12345,
-            "survey_title": "Employee Feedback Survey",
-            "questions": [
-              {
-                "question_id": 1,
-                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
-                "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
-              },
-              {
-                "question_id": 2,
-                "question_text": "What do you think is the company's strongest attribute?",
-                "answer_type": "text",
-                "options": []
-              },
-              {
-                "question_id": 3,
-                "question_text": "Do you feel valued as an employee?",
-                "answer_type": "yesno",
-                "options": ["Yes", "No"]
-              },
-              {
-                "question_id": 4,
-                "question_text": "What changes would you suggest to improve the company culture?",
-                "answer_type": "text",
-                "options": []
-              }
-            ]
+            "blog_id": 12345,
+            "blog_title": "Event Planning",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
           }
         ]
       },
@@ -682,36 +586,20 @@
         "img": "https://i.ibb.co/DQXbnzJ/Polling-S.png",
         "title": "Polling",
         "desc": "Learn How employees feel with Employee engagement serveys",
-        "survey": [
+        "survey": [],
+        "blog": [
           {
-            "survey_id": 12345,
-            "survey_title": "Employee Feedback Survey",
-            "questions": [
-              {
-                "question_id": 1,
-                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
-                "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
-              },
-              {
-                "question_id": 2,
-                "question_text": "What do you think is the company's strongest attribute?",
-                "answer_type": "text",
-                "options": []
-              },
-              {
-                "question_id": 3,
-                "question_text": "Do you feel valued as an employee?",
-                "answer_type": "yesno",
-                "options": ["Yes", "No"]
-              },
-              {
-                "question_id": 4,
-                "question_text": "What changes would you suggest to improve the company culture?",
-                "answer_type": "text",
-                "options": []
-              }
-            ]
+            "blog_id": 12345,
+            "blog_title": "Event Planning",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
           }
         ]
       },
@@ -720,36 +608,20 @@
         "img": "https://i.ibb.co/Dfx2rrT/Healthcare-S.png",
         "title": "Healthcare",
         "desc": "set up employee review with 360 degree evaluation survey",
-        "survey": [
+        "survey": [],
+        "blog": [
           {
-            "survey_id": 12345,
-            "survey_title": "Employee Feedback Survey",
-            "questions": [
-              {
-                "question_id": 1,
-                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
-                "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
-              },
-              {
-                "question_id": 2,
-                "question_text": "What do you think is the company's strongest attribute?",
-                "answer_type": "text",
-                "options": []
-              },
-              {
-                "question_id": 3,
-                "question_text": "Do you feel valued as an employee?",
-                "answer_type": "yesno",
-                "options": ["Yes", "No"]
-              },
-              {
-                "question_id": 4,
-                "question_text": "What changes would you suggest to improve the company culture?",
-                "answer_type": "text",
-                "options": []
-              }
-            ]
+            "blog_id": 12345,
+            "blog_title": "Event Planning",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
           }
         ]
       },
@@ -758,36 +630,20 @@
         "img": "https://i.ibb.co/0yJNVby/Education-S.png",
         "title": "Education",
         "desc": "use survey monkey genius to build employee surveys quickley",
-        "survey": [
+        "survey": [],
+        "blog": [
           {
-            "survey_id": 12345,
-            "survey_title": "Employee Feedback Survey",
-            "questions": [
-              {
-                "question_id": 1,
-                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
-                "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
-              },
-              {
-                "question_id": 2,
-                "question_text": "What do you think is the company's strongest attribute?",
-                "answer_type": "text",
-                "options": []
-              },
-              {
-                "question_id": 3,
-                "question_text": "Do you feel valued as an employee?",
-                "answer_type": "yesno",
-                "options": ["Yes", "No"]
-              },
-              {
-                "question_id": 4,
-                "question_text": "What changes would you suggest to improve the company culture?",
-                "answer_type": "text",
-                "options": []
-              }
-            ]
+            "blog_id": 12345,
+            "blog_title": "Event Planning",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
           }
         ]
       },
@@ -795,7 +651,23 @@
         "id": 5,
         "img": "https://i.ibb.co/z87LCSZ/Survey-Builder-S.png",
         "title": "Survey Builder",
-        "desc": "Service credit union build a covid safe workplace"
+        "desc": "Service credit union build a covid safe workplace",
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "Event Planning",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
+          }
+        ]
       }
     ]
   }
