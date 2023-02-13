@@ -2,14 +2,64 @@ import { useLoaderData } from "react-router";
 
 const SurveyAudience = () => {
   const cards = useLoaderData();
-  const { survey } = cards[0];
-  console.log(survey.length);
+  const { survey, blog } = cards[0];
+  console.log(blog);
 
   return (
     <div className="p-6 bg-white rounded-lg shadow-lg">
       {survey.length === 0 ? (
         <>
-          <h1>hello</h1>
+          {blog.map((blog, index) => {
+            return (
+              <>
+                {index === 0 ? (
+                  <>
+                    <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+                      <div className="w-full h-full md:w-1/2 md:h-1/2 ">
+                        <img
+                          src={blog.blog_img}
+                          alt="blog"
+                          className="rounded-lg w-full h-full md:w-4/5 md:h-1/2 "
+                        />
+                      </div>
+                      <div className=" w-full h-full md:w-1/2 md:h-1/2">
+                        <h2 className="text-xl md:text-6xl font-medium mb-4">
+                          {blog.blog_title}
+                        </h2>
+                        <p className="text-lg font-medium mb-2">
+                          {blog.blog_desc}
+                        </p>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    {index === 1 ? (
+                      <>
+                        <h2 className="text-4xl font-medium mb-4 text-center">
+                          {blog.blog_title}
+                        </h2>
+                        <div className="flex flex-col ">
+                          <div className="w-full md:w-1/3 mx-auto">
+                            <img
+                              src={blog.blog_img}
+                              alt=""
+                              className="shadow-xl "
+                            />
+                          </div>
+                          <div className=" w-full md:w-1/2 mx-auto">
+                            <p>{blog.blog_desc}</p>
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                )}
+              </>
+            );
+          })}
         </>
       ) : (
         <>
