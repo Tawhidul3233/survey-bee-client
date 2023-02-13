@@ -41,7 +41,7 @@ const SurveyAudience = () => {
         categorys={categorys}
       />
       <section>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 grid-template-rows">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 grid-template-rows mt-8">
           {selectedCards.map((card, index) => (
             <CardItem
               key={card.id}
