@@ -7,6 +7,7 @@ import Subscription from "../../components/Subscription/Subscription";
 import SurveyAudience from "../../components/SurveyAudience/SurveyAudience";
 import Contact from "./Contact/Contact";
 import Feedback from "./Feedback/Feedback";
+import OnlineChat from "./OnlineChat/OnlineChat";
 import Testimonial from "./Testimonial/Testimonial";
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
       <Feedback />
       <Faq />
       <Contact/>
+      <OnlineChat/>
       
     </div>
   );
