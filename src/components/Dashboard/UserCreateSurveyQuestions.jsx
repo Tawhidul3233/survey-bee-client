@@ -1,21 +1,12 @@
 import React from "react";
 import Loading from "../Shared/Loading";
 
-const UserCreateSurveyQuestions = ({
-  userCreatedQuestion,
-  handleDeleteSurveyQuestion,
-  editSurveyLoaderData,
-  // isLoaderLoading,
-}) => {
-  // if(!editSurveyLoaderData)
-  // let surveyInfo;
-  // editSurveyLoaderData?.length
-  //   ? (surveyInfo = editSurveyLoaderData)
-  //   : (surveyInfo = userCreatedQuestion[0]);
+const UserCreateSurveyQuestions = ({userCreatedQuestion,handleDeleteSurveyQuestion,
+      editSurveyLoaderData}) => {
   const surveyInfo = editSurveyLoaderData || userCreatedQuestion[0];
-
   console.log(editSurveyLoaderData, "----------", userCreatedQuestion[0]);
-
+  console.log(surveyInfo?.questionsAndTypes?.questionsType)
+  console.log(surveyInfo.optinoValue)
   return (
     <>
       <div className="flex flex-col items-start gap-y-10">
@@ -47,18 +38,26 @@ const UserCreateSurveyQuestions = ({
                       </button>
                     </>
                   </div>
-                  {q?.questionsType === "Comment Box" ? (
+                  {q?.questionsType === "Comment Box" && (
                     <textarea
                       readOnly
                       className="border border-black outline-none w-1/12 py-2 px-4 resize-none cursor-pointer"
                     ></textarea>
-                  ) : undefined || q?.questionsType === "Textbox" ? (
+                  ) || undefined || q?.questionsType === "Textbox" && (
                     <input
                       type="text"
                       readOnly
                       className="border border-black outline-none lg:w-1/12 py-2 lg:px-4  cursor-pointer"
                     />
-                  ) : undefined}
+                  ) || undefined || q?.questionsType === "Multiple choice" && (
+                    <p>Multiple choice</p>
+                    // {
+                    //   surveyInfo?.optinoValue?.map()
+                      
+                    // }
+                  )
+                  
+                  || undefined}
                 </div>
               ) : null}
             </>

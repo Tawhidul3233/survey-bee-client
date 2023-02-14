@@ -4,33 +4,225 @@
     "card": [
       {
         "id": 1,
-        "img": "https://i.ibb.co/ssq240R/card1.jpg",
+        "img": "https://i.ibb.co/58qB5sj/Employee-Feedback-L-v2.png",
         "title": "Employee Feedback",
-        "desc": "Build a better workplace by hearing from your employes"
+        "desc": "Build a better workplace by hearing from your employes",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "Employee Feedback Survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "What do you think is the company's strongest attribute?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 4,
+                "question_text": "What changes would you suggest to improve the company culture?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 2,
-        "img": "https://i.ibb.co/ncWK77P/card2.jpg",
-        "title": "Template",
-        "desc": "Learn How employees feel with Employee engagement serveys"
+        "img": "https://i.ibb.co/Ch3NTwL/Employee-Eng-S.png",
+        "title": "Employee engagement serveys",
+        "desc": "Learn How employees feel with Employee engagement serveys",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "Employee engagement servey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "On a scale from 1 to 5, how satisfied are you with your current role and responsibilities?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "How satisfied are you with the level of support you receive from your manager and team?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "How satisfied are you with the company's work-life balance policies",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 4,
+                "question_text": "How satisfied are you with the company's culture and values?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 5,
+                "question_text": "How satisfied are you with your compensation and benefits package?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 6,
+                "question_text": "Is there anything specific that the company could do to improve your overall job satisfaction?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 7,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 8,
+                "question_text": "What changes would you suggest to improve the company culture?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 3,
-        "img": "https://i.ibb.co/hRq73pr/card3.jpg",
+        "img": "https://i.ibb.co/zWM2pwY/Employee360-S.png",
         "title": "Template",
-        "desc": "set up employee review with 360 degree evaluation survey"
+        "desc": "set up employee review with 360 degree evaluation survey",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": " 360 degree evaluation survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "How well does the individual work with others in a team environment?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "How effectively does the individual communicate with others, both verbally and in writing?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 4,
+                "question_text": "How well does the individual handle stress and meet deadlines?",
+                "answer_type": "rating",
+                "options": [
+                  "very well",
+                  "well",
+                  "bad",
+                  "very Bad",
+                  "somewhat Bad"
+                ]
+              },
+              {
+                "question_id": 5,
+                "question_text": "How effectively does the individual make decisions and solve problems?",
+                "answer_type": "rating",
+                "options": [
+                  "very effective",
+                  "well",
+                  "no effective",
+                  "very Bad",
+                  "somewhat Bad"
+                ]
+              },
+              {
+                "question_id": 6,
+                "question_text": "How well does the individual prioritize and manage their time?",
+                "answer_type": "rating",
+                "options": [
+                  "very wll",
+                  "well",
+                  "not effectively",
+                  "very Bad",
+                  "somewhat Bad"
+                ]
+              },
+              {
+                "question_id": 7,
+                "question_text": "Do you feel valued as an employee?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 8,
+                "question_text": "How well does the individual handle conflicts and manage relationships with coworkers?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 4,
-        "img": "https://i.ibb.co/xJHtSCR/card4.jpg",
+        "img": "https://i.ibb.co/z87LCSZ/Survey-Builder-S.png",
         "title": "Survey Builder",
-        "desc": "use survey monkey genius to build employee surveys quickley"
+        "desc": "use survey monkey genius to build employee surveys quickley",
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "How to build a survey",
+            "blog_desc": "Building a survey involves several steps, including defining the survey's goals, selecting the right type of survey, designing the questions, selecting the target audience, and administering the survey.",
+            "blog_img": "https://i.ibb.co/4ZTkkhd/Customer-Feedback-L-v2.png"
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "How to work with survey",
+            "blog_desc": "Working with a survey involves several steps, including designing the survey, selecting the target audience, administering the survey, analyzing the data, and communicating the results. ",
+            "blog_img": "https://i.ibb.co/nkFHS5B/CSat-Template-S.png"
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "How take input from survey",
+            "blog_desc": "Taking input from a survey depends on the method of administration you choose for the survey. No matter what method of administration you choose, it's important to ensure that the data is accurate and complete. You can use various techniques, such as data validation and error checking, to ensure the quality of the data.",
+            "blog_img": "https://i.ibb.co/4ZTkkhd/Customer-Feedback-L-v2.png"
+          }
+        ]
       },
       {
         "id": 5,
-        "img": "https://i.ibb.co/Njpkc2J/card5.jpg",
+        "img": "https://i.ibb.co/87FPnvm/Success-Story.png",
         "title": "Success Story",
-        "desc": "Service credit union build a covid safe workplace"
+        "desc": "Service credit union build a covid safe workplace",
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "How to build a survey",
+            "blog_desc": "A mid-sized company was facing challenges with employee morale and wanted to find out why. The company decided to conduct an employee engagement survey to gather data and insights about the employees' experience and perceptions of the company. The survey was designed to measure employees' satisfaction with various aspects of their jobs, such as the work environment, the company's mission and values, and the opportunities for growth and development.",
+            "blog_img": "https://i.ibb.co/4ZTkkhd/Customer-Feedback-L-v2.png"
+          }
+        ]
       }
     ]
   },
@@ -39,33 +231,213 @@
     "card": [
       {
         "id": 1,
-        "img": "https://i.ibb.co/ssq240R/card1.jpg",
-        "title": "Employee Feedback",
-        "desc": "Build a better workplace by hearing from your employes"
+        "img": "https://i.ibb.co/4ZTkkhd/Customer-Feedback-L-v2.png",
+        "title": "Customer Satisfaction",
+        "desc": "Build a better workplace by hearing from your employes",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "Customer Satisfaction",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "On a scale of 1-5, how satisfied are you with the product/service you received?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "Was the product/service you received able to meet your expectations?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "How likely are you to recommend our product/service to a friend or colleague?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 4,
+                "question_text": "Was the customer service you received helpful and efficient?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 5,
+                "question_text": "How was the overall quality of the product/service you received?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 6,
+                "question_text": "Were there any issues or problems with the product/service, and if so, how were they resolved?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 7,
+                "question_text": "Were there any issues or problems with the product/service, and if so, how were they resolved?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 8,
+                "question_text": "Are there any areas where you think we can improve our product/service?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 2,
-        "img": "https://i.ibb.co/ncWK77P/card2.jpg",
-        "title": "Template",
-        "desc": "Learn How employees feel with Employee engagement serveys"
+        "img": "https://i.ibb.co/nkFHS5B/CSat-Template-S.png",
+        "title": "Customer Feedback",
+        "desc": "Learn How Customers feel with Customers engagement serveys",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "Employee Feedback Survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "How would you rate the quality of the product/service you received?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "What was the reason for choosing our product/service?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "How was the overall experience with our product/service?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 4,
+                "question_text": "Was the product/service able to meet your needs and requirements?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 5,
+                "question_text": "How satisfied were you with the customer service you received?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 6,
+                "question_text": "Was the purchasing process easy and efficient?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 7,
+                "question_text": "Were there any challenges or difficulties you faced while using our product/service?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 8,
+                "question_text": "Were all your questions and concerns addressed to your satisfaction?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 3,
-        "img": "https://i.ibb.co/hRq73pr/card3.jpg",
-        "title": "Template",
-        "desc": "set up employee review with 360 degree evaluation survey"
+        "img": "https://i.ibb.co/NSjvn4h/Customer-Service-S.png",
+        "title": "360 degree customer evaluation survey",
+        "desc": "set up employee review with 360 degree evaluation survey",
+        "survey": [
+          {
+            "survey_id": 12345,
+            "survey_title": "360 degree customer evaluation survey",
+            "questions": [
+              {
+                "question_id": 1,
+                "question_text": "How would you rate the quality of the product/service you received?",
+                "answer_type": "rating",
+                "options": [1, 2, 3, 4, 5]
+              },
+              {
+                "question_id": 2,
+                "question_text": "Was the customer service you received efficient and helpful?",
+                "answer_type": "text",
+                "options": []
+              },
+              {
+                "question_id": 3,
+                "question_text": "Was the purchasing process smooth and easy to understand?",
+                "answer_type": "yesno",
+                "options": ["Yes", "No"]
+              },
+              {
+                "question_id": 4,
+                "question_text": "How satisfied were you with the overall experience with our company?",
+                "answer_type": "yesno",
+                "options": ["satisfied", "dissatisfied"]
+              },
+              {
+                "question_id": 5,
+                "question_text": "Were there any issues or problems with the product/service, and if so, how were they resolved?",
+                "answer_type": "text",
+                "options": []
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 4,
-        "img": "https://i.ibb.co/xJHtSCR/card4.jpg",
+        "img": "https://i.ibb.co/z87LCSZ/Survey-Builder-S.png",
         "title": "Survey Builder",
-        "desc": "use survey monkey genius to build employee surveys quickley"
+        "desc": "use survey monkey genius to build employee surveys quickley",
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "How to build a survey",
+            "blog_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam lorem, eget aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam lorem, eget aliquam nisl nunc vel mauris.",
+            "blog_img": "https://i.ibb.co/7bXZ5Zr/How-to-build-a-survey.png"
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "How to build a survey",
+            "blog_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam lorem, eget aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam lorem, eget aliquam nisl nunc vel mauris.",
+            "blog_img": "https://i.ibb.co/7bXZ5Zr/How-to-build-a-survey.png"
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "How to build a survey",
+            "blog_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam lorem, eget aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam lorem, eget aliquam nisl nunc vel mauris.",
+            "blog_img": "https://i.ibb.co/7bXZ5Zr/How-to-build-a-survey.png"
+          }
+        ]
       },
       {
         "id": 5,
-        "img": "https://i.ibb.co/Njpkc2J/card5.jpg",
+        "img": "https://i.ibb.co/rscTWvd/GSW-Story-S.png",
         "title": "Success Story",
-        "desc": "Service credit union build a covid safe workplace"
+        "desc": "Service credit union build a covid safe workplace",
+        "survey": [],
+        "blo": [
+          {
+            "blog_id": 12345,
+            "blog_title": "success story of acme compnay",
+            "blog_desc": "Acme's success story shows how customer surveys can be a powerful tool for companies to improve their business and customer experience. By listening to their customers and using the feedback they received, Acme was able to make meaningful changes that had a significant impact on their customer satisfaction and overall success.",
+            "blog_img": "https://i.ibb.co/7bXZ5Zr/How-to-build-a-survey.png"
+          }
+        ]
       }
     ]
   },
@@ -74,33 +446,113 @@
     "card": [
       {
         "id": 1,
-        "img": "https://i.ibb.co/ssq240R/card1.jpg",
-        "title": "Employee Feedback",
-        "desc": "Build a better workplace by hearing from your employes"
+        "img": "https://i.ibb.co/8zJXt3f/Target-Markets-L.png",
+        "title": "Solution",
+        "desc": "Market Reasearch solution",
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "Test your early-stage ideas in minutes",
+            "blog_desc": "Use advanced analytics to quickly prioritize and validate which products, messages, ad creative, and more will succeed with your target audience.",
+            "blog_img": "https://i.ibb.co/NmCr5FW/hero-main-final-market-research-idea-screening.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "Launch products and campaigns 2x faster",
+            "blog_desc": "Screening ideas early means wasting less time and resources to develop concepts that won’t perform well in-market.Simply upload your ideas and use our guided setup and get feedback from your target audience on-demand.",
+            "blog_img": "https://i.ibb.co/hXmfZd0/product-lifestyle-graphic-final-market-reserach-idea-screening.png"
+          }
+        ]
       },
       {
         "id": 2,
-        "img": "https://i.ibb.co/ncWK77P/card2.jpg",
-        "title": "Template",
-        "desc": "Learn How employees feel with Employee engagement serveys"
+        "img": "https://i.ibb.co/br19mzL/Concept-Testing-S.png",
+        "title": "Solution",
+        "desc": "Learn How employees feel with Employee engagement serveys",
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "Concept Testing",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
+          }
+        ]
       },
       {
         "id": 3,
-        "img": "https://i.ibb.co/hRq73pr/card3.jpg",
-        "title": "Template",
-        "desc": "set up employee review with 360 degree evaluation survey"
+        "img": "https://i.ibb.co/FV0W8ch/Brand-Tracking-S.png",
+        "title": "Solution",
+        "desc": "set up employee review with 360 degree evaluation survey",
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "Brand Tracking",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
+          }
+        ]
       },
       {
         "id": 4,
-        "img": "https://i.ibb.co/xJHtSCR/card4.jpg",
-        "title": "Survey Builder",
-        "desc": "use survey monkey genius to build employee surveys quickley"
+        "img": "https://i.ibb.co/dGpwNKX/Purchase-Drivers-S.png",
+        "title": "Solution",
+        "desc": "use survey monkey genius to build employee surveys quickley",
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "Purchase Drivers",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
+          }
+        ]
       },
       {
         "id": 5,
-        "img": "https://i.ibb.co/Njpkc2J/card5.jpg",
-        "title": "Success Story",
-        "desc": "Service credit union build a covid safe workplace"
+        "img": "https://i.ibb.co/Y8whyJ2/Target-Consumers-S.png",
+        "title": "Solution",
+        "desc": "Service credit union build a covid safe workplace",
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "Target Consumers",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
+          }
+        ]
       }
     ]
   },
@@ -109,33 +561,113 @@
     "card": [
       {
         "id": 1,
-        "img": "https://i.ibb.co/ssq240R/card1.jpg",
-        "title": "Employee Feedback",
-        "desc": "Build a better workplace by hearing from your employes"
+        "img": "https://i.ibb.co/YPtCSzd/Event-Planning-L-v2.png",
+        "title": "Event Planing",
+        "desc": "Build a better workplace by hearing from your employes",
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "Event Planning",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
+          }
+        ]
       },
       {
         "id": 2,
-        "img": "https://i.ibb.co/ncWK77P/card2.jpg",
-        "title": "Template",
-        "desc": "Learn How employees feel with Employee engagement serveys"
+        "img": "https://i.ibb.co/DQXbnzJ/Polling-S.png",
+        "title": "Polling",
+        "desc": "Learn How employees feel with Employee engagement serveys",
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "Event Planning",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
+          }
+        ]
       },
       {
         "id": 3,
-        "img": "https://i.ibb.co/hRq73pr/card3.jpg",
-        "title": "Template",
-        "desc": "set up employee review with 360 degree evaluation survey"
+        "img": "https://i.ibb.co/Dfx2rrT/Healthcare-S.png",
+        "title": "Healthcare",
+        "desc": "set up employee review with 360 degree evaluation survey",
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "Event Planning",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
+          }
+        ]
       },
       {
         "id": 4,
-        "img": "https://i.ibb.co/xJHtSCR/card4.jpg",
-        "title": "Survey Builder",
-        "desc": "use survey monkey genius to build employee surveys quickley"
+        "img": "https://i.ibb.co/0yJNVby/Education-S.png",
+        "title": "Education",
+        "desc": "use survey monkey genius to build employee surveys quickley",
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "Event Planning",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
+          }
+        ]
       },
       {
         "id": 5,
-        "img": "https://i.ibb.co/Njpkc2J/card5.jpg",
-        "title": "Success Story",
-        "desc": "Service credit union build a covid safe workplace"
+        "img": "https://i.ibb.co/z87LCSZ/Survey-Builder-S.png",
+        "title": "Survey Builder",
+        "desc": "Service credit union build a covid safe workplace",
+        "survey": [],
+        "blog": [
+          {
+            "blog_id": 12345,
+            "blog_title": "Event Planning",
+            "blog_desc": "Starting at $2,300 USD per product concept tested Get your product concepts, feature optimizations, and ideas validated by a trusted audience—in less than an hour.",
+            "blog_img": "https://i.ibb.co/S6j1Hfk/Hero-image-product-concept-analysis.png",
+            "btn": ["talk to us", "try it now"]
+          },
+          {
+            "blog_id": 12345,
+            "blog_title": "See SurveyMonkey expert solutions in action",
+            "blog_desc": "",
+            "blog_img": "https://i.ibb.co/3vD246X/mrx-cta-getademo.jpg"
+          }
+        ]
       }
     ]
   }

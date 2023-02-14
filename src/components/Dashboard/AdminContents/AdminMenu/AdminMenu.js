@@ -1,10 +1,72 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { FcViewDetails, FcPortraitMode, FcSettings } from "react-icons/fc";;
 
 const AdminMenu = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState("Overview");
   return (
-    <div  className='  '>
-      <div className="flex flex-col justify-between h-screen bg-white border-r">
+    <div className='  '>
+
+      <div className="flex flex-col md:flex-row ">
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="text-gray-700 focus:outline-none md:hidden flex"
+        >
+          <svg
+            className="w-6 h-6 fill-current "
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+          Dashboard
+        </button>
+        <nav
+          className={`${menuOpen ? "block" : "hidden"
+            } md:block bg-gray-200 p-4 md:p-6 md:w-64 rounded-br-box`}
+        >
+          <ul className="md:flex md:flex-col">
+            <li
+              className={`md:mt-4 ${activeItem === "Overview" ? "bg-green-500" : ""
+                }`}
+              onClick={() => {
+                setActiveItem("Overview");
+                setMenuOpen(false);
+              }}
+            >
+              <a href="/dashboard" className="text-gray-800 hover:bg-gray-400 hover:text-white p-2 block rounded-sm">
+                <FcViewDetails className=' inline-block mb-1'></FcViewDetails> Overview
+              </a>
+            </li>
+            <li
+              className={`md:mt-4 ${activeItem === "Users" ? "bg-green-500" : ""
+                }`}
+              onClick={() => {
+                setActiveItem("Users");
+                setMenuOpen(false);
+              }}
+            >
+              <a href="/dashboard/manageusers" className="text-gray-800 hover:bg-gray-400 hover:text-white p-2 block rounded-sm">
+                <FcPortraitMode className=' inline-block mb-1'> </FcPortraitMode> Manage user
+              </a>
+            </li>
+            <li
+              className={`md:mt-4 ${activeItem === "Settings" ? "bg-green-500" : ""
+                }`}
+              onClick={() => {
+                setActiveItem("Settings");
+                setMenuOpen(false);
+              }}
+            >
+              <a href="#" className="text-gray-800 hover:bg-gray-400 hover:text-white p-2 block rounded-sm">
+                <FcSettings className=' inline-block mb-1'> </FcSettings> Settings
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      {/* <div className="flex flex-col justify-between h-screen bg-white border-r">
         <div className="px-1 py-6">
           <div>
             <div className="sticky inset-x-0 bottom-0 border-t border-gray-100">
@@ -114,7 +176,7 @@ const AdminMenu = () => {
             </details>
           </nav>
         </div>
-      </div>
+      </div> */}
 
     </div>
   );

@@ -7,8 +7,11 @@ const AdminHome = () => {
   return (
     <div className='  '>
       <UserStatstics></UserStatstics>
-      <IncameChart></IncameChart>
-      <UserChart></UserChart>
+      <div className=" md:flex mx-auto justify-center my-10 justify-evenly ">
+        <IncameChart></IncameChart>
+        <UserChart></UserChart>
+      </div>
+
     </div>
   );
 };
