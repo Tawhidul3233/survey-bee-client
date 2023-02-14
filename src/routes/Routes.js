@@ -4,6 +4,7 @@ import AdminHome from "../components/Dashboard/AdminContents/ManageUser/AdminHom
 import ManageUser from "../components/Dashboard/AdminContents/ManageUser/ManageUser";
 import Dashboard from "../layouts/Dashboard/Dashboard";
 import Main from "../layouts/Main/Main";
+import Survey from "../layouts/Survey/Survey";
 import ApplyPage from "../pages/ApplyPage/ApplyPage";
 import CustomerService from "../pages/CustomerService/CustomerService";
 import Cx from "../pages/CxPage/Cx";
@@ -67,7 +68,9 @@ export const router = createBrowserRouter([
       {
         path: "/surveyTemplate/:id",
         loader: ({ params }) =>
-          fetch(`https://survey-bee-server.vercel.app/surveyTemplate/${params.id}`),
+          fetch(
+            `https://survey-bee-server.vercel.app/surveyTemplate/${params.id}`
+          ),
         element: <SurveyTemplate />,
       },
       {
@@ -80,8 +83,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/paynow",
-        element: <PayNow></PayNow>
-      }
+        element: <PayNow></PayNow>,
+      },
     ],
   },
   {
@@ -125,16 +128,18 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/overview",
-        element: < AdminHome />,
+        element: <AdminHome />,
       },
       {
-        path: '/dashboard/manageusers',
-        element: <ManageUser> </ManageUser>
-      }
-
+        path: "/dashboard/manageusers",
+        element: <ManageUser> </ManageUser>,
+      },
     ],
   },
-
-
-
+  {
+    path: "/PublicSurvey/:id",
+    loader: ({ params }) =>
+      fetch(`http://localhost:5000/PublicSurvey/${params.id}`),
+    element: <Survey />,
+  },
 ]);

@@ -1,10 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
-const Survey = () => {
+const PublicSurvey = () => {
   const surveyTemplate = useLoaderData();
   const { survey_title, questions } = surveyTemplate;
+  const [isCopied, setIsCopied] = useState(false);
 
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
+  };
   const [formData, setFormData] = useState({});
 
   const handleForm = (e) => {
@@ -52,10 +58,15 @@ const Survey = () => {
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4">
           Submit
         </button>
-        <Link to={`/PublicSurvey/${surveyTemplate._id}`}> share</Link>
+        <button
+          className="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded"
+          onClick={handleCopyLink}
+        >
+          {isCopied ? "Link copied!" : "Copy link"}
+        </button>
       </form>
     </div>
   );
 };
 
-export default Survey;
+export default PublicSurvey;
