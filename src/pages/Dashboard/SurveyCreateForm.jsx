@@ -4,7 +4,6 @@ import React, { startTransition } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 // import { useState } from "react";
-import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
@@ -13,13 +12,20 @@ import MultiQuestionModal from "../../components/Dashboard/MultiQuestionModal";
 import UserCreateSurveyQuestions from "../../components/Dashboard/UserCreateSurveyQuestions";
 import Loading from "../../components/Shared/Loading";
 import { user } from "../../features/userSlice";
+import { useForm, useFieldArray, Controller } from "react-hook-form";
 
 const questionsType = ["Textbox", "Comment Box", "Multiple choice"];
 
 const SurveyCreateForm = () => {
 
 
-  const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, control, trigger, reset, watch, formState: { errors } } = useForm();
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "answers"
+  });
+
+
   const [editSurveyLoaderData, setEditSurveyLoaderData] = useState({});
   const activeUser = useSelector(user);
   const { user: existingUser } = activeUser;
@@ -30,6 +36,7 @@ const SurveyCreateForm = () => {
   const id = location.pathname.split("/").slice(-1);
   const [isAdded, setIsAdded] = useState(false);
   const getID = id[0];
+
 
   useEffect(() => {
     try {
@@ -78,27 +85,27 @@ const SurveyCreateForm = () => {
 
   const [selectedOption, setSelectedOption] = useState('');
   const [showOption, setShowOption] = useState(false)
-  const [count, setCount] = useState(1);
-  const [optinoValue, setOptionValue] = useState([])
+  // const [count, setCount] = useState(1);
+  // const [optinoValue, setOptionValue] = useState([])
 
-  const handleAdd = () => {
-    if (count <= 3) {
-      setCount(count + 1)
-    }
-  };
-  const handleRemove = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    }
-  };
+  // const handleAdd = () => {
+  //   if (count <= 3) {
+  //     setCount(count + 1)
+  //   }
+  // };
+  // const handleRemove = () => {
+  //   if (count > 1) {
+  //     setCount(count - 1);
+  //   }
+  // };
 
-  const collectOptionValue = (index, event) => {
+  // const collectOptionValue = (index, event) => {
 
-    const newValues = [...optinoValue];
-    newValues[index] = event.target.value;
-    setOptionValue(newValues);
-    console.log(optinoValue)
-  }
+  //   const newValues = [...optinoValue];
+  //   newValues[index] = event.target.value;
+  //   setOptionValue(newValues);
+  //   console.log(optinoValue)
+  // }
 
 
 
@@ -183,19 +190,22 @@ const SurveyCreateForm = () => {
   const handleCreateSurveyQuestions = async (data) => {
 
     setShowOption(false)
+    const optionValue = data?.answers;
+    console.log(optionValue)
     const questions = data?.questions;
     const questionType = data?.questionsType;
     const surveyModifiedTime = new Date().toLocaleDateString();
+    // https://survey-bee-server.vercel.app/userCreatedSurveyQuestions
     try {
       const response = await axios.put(
-        "https://survey-bee-server.vercel.app/userCreatedSurveyQuestions",
+        "http://localhost:5000/userCreatedSurveyQuestions",
         {
           id: editSurveyLoaderData?._id || userCreatedQuestion[0]?._id,
           questions,
           questionType,
-          optinoValue,
+          optionValue,
           surveyModifiedTime
-          
+
         }
       );
 
@@ -310,18 +320,42 @@ const SurveyCreateForm = () => {
           </div>
           <div className=" text-center my-5 ">
             {showOption && (
+
               <div className="" >
                 <p className="text-xl font-semibold mb-2">Add Option</p>
-                {[...Array(count)].map((value, index) => (
-                  <div key={index}>
-                    <input onChange={(event) => collectOptionValue(index, event)} value={value} className="my-1 p-1 border" type="text" placeholder="Answer" />
-                  </div>
-                ))}
-                <div className=" my-2 ">
-                  <input type='button' className="p-1 bg-blue-700 mr-5 text-white text-xs" onClick={handleAdd} value='+ Add' />
-                  <input type='button' className="p-1 bg-red-700 text-white text-xs" onClick={handleRemove} value='- Remove' />
-                </div>
+                <ul>
+                  {fields.map((item, index) => (
+                    <li key={item.id}>
+                      <input {...register(`answers.${index}.answer`)} className="my-1 p-1 border" />
+                      {/* <Controller
+                        render={({ field }) => <input {...field} />}
+                        name={`test.${index}.lastName`}
+                        control={control}
+                      /> */}
+                      <button type="button" onClick={() => remove(index)} className="p-1 bg-red-700 text-white text-xs ml-2" >Delete</button>
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  type="button"
+                  onClick={() => append()}
+                  className="p-1 bg-blue-700 mr-5 text-white text-xs"
+                >
+                  Add+
+                </button>
               </div>
+              // <div className="" >
+              //   <p className="text-xl font-semibold mb-2">Add Option</p>
+              //   {[...Array(count)].map((value, index) => (
+              //     <div key={index}>
+              //       <input  {...register("ans", { required: true })} onChange={(event) => collectOptionValue(index, event)} value={value} className="my-1 p-1 border" type="text" placeholder="Answer" />
+              //     </div>
+              //   ))}
+              //   <div className=" my-2 ">
+              //     <input type='button' className="p-1 bg-blue-700 mr-5 text-white text-xs" onClick={handleAdd} value='+ Add' />
+              //     <input type='button' className="p-1 bg-red-700 text-white text-xs" onClick={handleRemove} value='- Remove' />
+              //   </div>
+              // </div>
             )}
           </div>
           <div className="flex justify-center my-10">

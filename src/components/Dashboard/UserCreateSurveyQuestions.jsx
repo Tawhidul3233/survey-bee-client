@@ -4,9 +4,9 @@ import Loading from "../Shared/Loading";
 const UserCreateSurveyQuestions = ({userCreatedQuestion,handleDeleteSurveyQuestion,
       editSurveyLoaderData}) => {
   const surveyInfo = editSurveyLoaderData || userCreatedQuestion[0];
-  console.log(editSurveyLoaderData, "----------", userCreatedQuestion[0]);
-  console.log(surveyInfo?.questionsAndTypes?.questionsType)
-  console.log(surveyInfo.optinoValue)
+  // console.log(editSurveyLoaderData, "----------", userCreatedQuestion[0]);
+  // console.log(surveyInfo?.questionsAndTypes?.questionsType)
+  // console.log(surveyInfo.optinoValue)
   return (
     <>
       <div className="flex flex-col items-start gap-y-10">
