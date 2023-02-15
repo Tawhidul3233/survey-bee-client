@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const FeedbackDetails = ({ feedback }) => {
   const { img, des, title, btn } = feedback;
@@ -11,9 +12,12 @@ const FeedbackDetails = ({ feedback }) => {
         <h2 className="text-center mt-2 text-xl font-semibold">{title}</h2>
         <p className="text-center">{des}</p>
         <div className="card-actions justify-center mt-5">
+          <Link to='/CustomerService'>
           <button className="btn bg-white btn-success text-black text-xs normal-case">
             {btn}
           </button>
+          </Link>
+          
         </div>
       </div>
     </div>
