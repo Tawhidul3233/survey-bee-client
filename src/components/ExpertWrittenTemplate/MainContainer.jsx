@@ -34,7 +34,7 @@ const MainContainer = () => {
 
   const [checkList, setCheckList] = useState([]);
   useEffect(() => {
-    console.log("survey category", surveyCategoryData);
+    // console.log("survey category", surveyCategoryData);
     if (surveyCategoryData) {
       setCheckList(surveyCategoryData.map((item) => ""));
     }
@@ -43,7 +43,7 @@ const MainContainer = () => {
   const filteredData = useMemo(() => {
     if (surveyTemplateData) {
       return surveyTemplateData.filter((item, index) => {
-        console.log("expensive computation");
+        // console.log("expensive computation");
         const condition = item.survey_title === checkList[index];
 
         return condition;
@@ -53,7 +53,7 @@ const MainContainer = () => {
     }
   }, [surveyTemplateData, checkList]);
 
-  console.log("filter data", filteredData);
+  // console.log("filter data", filteredData);
 
   if (surveyCategory.isLoading || surveyTemplate.isLoading) return <Spinner />;
 
