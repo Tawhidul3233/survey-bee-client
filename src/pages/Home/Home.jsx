@@ -22,10 +22,6 @@ const Home = () => {
       <Testimonial />
       <Feedback />
       <Faq />
-
-      
-      
-
       <Contact />
       <Chatbot />
 
