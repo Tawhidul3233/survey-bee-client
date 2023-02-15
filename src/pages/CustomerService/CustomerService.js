@@ -46,28 +46,28 @@ const CustomerService = () => {
 
       <div className='py-10 '>
 
-        <h1 className='text-xl font-semibold text-center mb-5'>Please take a moment to share your thoughts and opinions with us. Your feedback is important <br/>in helping us improve our services and better meet your needs.</h1>
-        <div id='contact'>
-            <h1 className='text-center text-3xl font-bold mb-16'>Please write your Feedback here</h1>
+        <h1 className='text-xl font-semibold text-center py-8'>Please take a moment to share your thoughts and opinions with us. Your feedback is important <br/>in helping us improve our services and better meet your needs.</h1>
+        <div className='text-white banner' id='contact' style={{ backgroundImage: `url("https://i.ibb.co/3CBf0fM/contact.jpg")`}}>
+            <h1 className='text-center text-3xl font-bold py-10'>Please write your Feedback here</h1>
             
-            <div className='bg-[#55efc4] py-12'>
+            <div className='py-12'>
              <div className="hero lg:w-4/5 w-full mx-auto">
               <div className="flex flex-col items-start lg:gap-x-40 lg:flex-row-reverse">
                <form ref={form} onSubmit={handleSendEmail} className="card-body justify-items-center p-0">
-                <div className="form-control"> 
-                  <input name='name' type="text" placeholder="Name" className="input input-bordered  lg:w-96 w-full border-2" required/>
+                <div className="form-control mb-2"> 
+                  <input name='name' type="text" placeholder="Name" className="input input-bordered bg-transparent border-white lg:w-96 w-full border" required/>
                 </div>
-                <div className="form-control"> 
-                  <input name='email' type="email" placeholder="Email" className="input input-bordered  border-2" required/> 
+                <div className="form-control mb-2"> 
+                  <input name='email' type="email" placeholder="Email" className="input input-bordered bg-transparent border-white border" required/> 
                 </div> 
-                <div className='form-control'>
-                 <textarea name='message' className="textarea textarea-bordered border-2" placeholder="Your Feedback" required></textarea>
+                <div className='form-control mb-2'>
+                 <textarea name='message' className="textarea textarea-bordered bg-transparent border-white border" placeholder="Your Feedback" required></textarea>
                 </div>
                 <div className="form-control mt-6">
                  <button type='submit' className="btn border-none bg-[#00b894] text-white"><FaTelegramPlane className='mr-2' /><span>Send Feedback</span></button>
                 </div>
                </form>
-               <div className='flex flex-col pt-4 text-[#00b894]'>
+               <div className='flex flex-col pt-4 text-white'>
                  
                  <h1 className='text-3xl flex items-center my-3'><GoMailRead className='mr-3' /> <span className='text-xl font-medium'>codewithhope606@gmail.com</span></h1>
                  <h1 className='text-3xl flex items-center my-3'><BsFillTelephoneForwardFill className='mr-3'/> <span className='text-xl font-medium'>+880199999999</span></h1>
