@@ -5,10 +5,12 @@ import { toast } from "react-hot-toast";
 import { saveUserToDB } from "../../../api/saveUserToDB";
 import GoogleLogin from "../../../components/Navbar/GoogleLogin";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const navigate = useNavigate();
+  const loaction = useLocation();
+  const from = loaction.state?.from?.pathname || "/";
   const { register, handleSubmit } = useForm();
 
   // create user with email and password
@@ -32,7 +34,7 @@ const Register = () => {
           .catch((err) => {
             console.log(err);
           });
-        return navigate("/dashboard");
+        return navigate(from, { replace: true });
       })
       .catch((err) => {
         console.log(err);
@@ -131,7 +133,7 @@ const Register = () => {
                 Already have an accoutn?{" "}
                 <span className="text-[#00C38B] text[14px] font-semibold underline">
                   {" "}
-                  <a href=" "> Log in</a>{" "}
+                  <a href="/login"> Log in</a>{" "}
                 </span>{" "}
               </p>
             </div>
