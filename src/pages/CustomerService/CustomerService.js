@@ -1,7 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {GoMailRead} from "react-icons/go";
+import {BsFillTelephoneForwardFill} from "react-icons/bs";
+import {MdLocationOn} from "react-icons/md";
+import {FaTelegramPlane} from "react-icons/fa";
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-hot-toast';
 
 const CustomerService = () => {
+
+  const form = useRef();
+
+    const handleSendEmail = (event) => {
+       event.preventDefault()
+       
+       emailjs.sendForm('service_oy1i7u8', 'template_8cpnwll', form.current, 'B7VsHGVADS5nXFBtY')
+       .then((result) => {
+          console.log(result.text);
+          toast.success('Thank you for taking the time to provide us with your valuable feedback.')
+        },(error) => {
+          console.log(error.text);
+       });
+       form.current.reset();
+    }
+
     return (
         
             <div className='bg-base-200'>
@@ -20,6 +43,43 @@ const CustomerService = () => {
     <img src="https://i.ibb.co/KsJMRG7/student-2.png" alt='person' className="lg:w-1/3 rounded-md" />
   </div>
 </div>
+
+      <div className='py-10 '>
+
+        <h1 className='text-xl font-semibold text-center mb-5'>Please take a moment to share your thoughts and opinions with us. Your feedback is important <br/>in helping us improve our services and better meet your needs.</h1>
+        <div id='contact'>
+            <h1 className='text-center text-3xl font-bold mb-16'>Please write your Feedback here</h1>
+            
+            <div className='bg-[#55efc4] py-12'>
+             <div className="hero lg:w-4/5 w-full mx-auto">
+              <div className="flex flex-col items-start lg:gap-x-40 lg:flex-row-reverse">
+               <form ref={form} onSubmit={handleSendEmail} className="card-body justify-items-center p-0">
+                <div className="form-control"> 
+                  <input name='name' type="text" placeholder="Name" className="input input-bordered  lg:w-96 w-full border-2" required/>
+                </div>
+                <div className="form-control"> 
+                  <input name='email' type="email" placeholder="Email" className="input input-bordered  border-2" required/> 
+                </div> 
+                <div className='form-control'>
+                 <textarea name='message' className="textarea textarea-bordered border-2" placeholder="Your Feedback" required></textarea>
+                </div>
+                <div className="form-control mt-6">
+                 <button type='submit' className="btn border-none bg-[#00b894] text-white"><FaTelegramPlane className='mr-2' /><span>Send Feedback</span></button>
+                </div>
+               </form>
+               <div className='flex flex-col pt-4 text-[#00b894]'>
+                 
+                 <h1 className='text-3xl flex items-center my-3'><GoMailRead className='mr-3' /> <span className='text-xl font-medium'>codewithhope606@gmail.com</span></h1>
+                 <h1 className='text-3xl flex items-center my-3'><BsFillTelephoneForwardFill className='mr-3'/> <span className='text-xl font-medium'>+880199999999</span></h1>
+                 <h1 className='text-3xl flex items-center my-3'><MdLocationOn className='mr-3'/> <span className='text-xl font-medium'>Dhaka, Bangladesh</span></h1>
+               </div>
+              </div>
+             </div>
+            </div> 
+        </div>
+      </div>
+
+
        <div className='py-8'>
         <h2 className='text-lg font-semibold text-center'>It's not easy to always meet the expectations of your customers. Feedback not only helps you support your customers, it can also ensure your entire team is equipped to do so. The resources within this Customer Support Toolkit will help you answer your burning questions.</h2>
        </div>
