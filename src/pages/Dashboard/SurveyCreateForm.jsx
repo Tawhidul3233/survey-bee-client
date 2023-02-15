@@ -257,15 +257,15 @@ const SurveyCreateForm = () => {
 
 
   return (
-    <div className="min-h-screen bg-[#f5f6fa]">
-      <div className="pl-20 mt-8">
-        <h2 className="text-2xl text-primary font-extrabold">
+    <div className="min-h-screen bg-[#eef0f4]">
+      <div className="mx-5 sm:mx-10 sm:mt-3 sm:mb-3">
+        <Breadcrums editSurveyLoaderData={editSurveyLoaderData} />
+        <h2 className="text-2xl text-primary font-extrabold text-center mt-10 ">
           {editSurveyLoaderData?.surveyTitle ||
             userCreatedQuestion[0]?.surveyTitle}
         </h2>
-        <Breadcrums editSurveyLoaderData={editSurveyLoaderData} />
       </div>
-      <div className="px-20 pt-24">
+      <div className="px-5 md:px-20 my-5">
         {(editSurveyLoaderData || userCreatedQuestion[0]) && (
           <UserCreateSurveyQuestions
             userCreatedQuestion={userCreatedQuestion}
@@ -275,15 +275,15 @@ const SurveyCreateForm = () => {
           />
         )}
       </div>
-      <div className="px-2 pt-10 pb-28">
-        <h2 className="text-xl text-primary font-extrabold">
+      <div className="px-2 pt-10 pb-28 mx-10">
+        <h2 className="text-xl text-center text-primary font-extrabold">
           {editSurveyLoaderData?.surveyTitle ||
             userCreatedQuestion[0]?.surveyTitle}
         </h2>
         <form
           onSubmit={handleSubmit(handleCreateSurveyQuestions)}
         >
-          <div className="flex w-full items-center h-full  py-8 gap-x-1 border border-black mt-10">
+          <div className="flex mx-auto w-full md:w-3/4 lg:w-2/4 items-center h-full  py-8 gap-x-1 border border-black mt-10">
             <input
               type="text"
               readOnly
@@ -295,16 +295,17 @@ const SurveyCreateForm = () => {
                 }`
               }
             />
-            <div className="md:flex">
+            <div className="md:flex ">
               <input
                 {...register("questions", { required: true })}
                 type="text"
                 placeholder="Enter your question"
-                className="w-[60vw] px-4 py-2 my-2 border border-gray-500 outline-primary"
+                className=" px-4 py-2 my-2 border border-gray-500 outline-primary"
               />
+              {/* w-[60vw] */}
               <select
                 {...register("questionsType", { required: true })}
-                className="w-[30vw] ml-1 px-4 py-2 my-2 border border-gray-500 outline-primary inline "
+                className=" ml-1 px-4 py-2 my-2 border border-gray-500 outline-primary inline "
                 onChange={multiQuestion} value={selectedOption}
               >
                 <option >Textbox</option>
