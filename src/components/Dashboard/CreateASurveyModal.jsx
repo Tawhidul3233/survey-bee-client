@@ -86,6 +86,25 @@ const CreateASurveyModal = ({
                       </p>
                     )}
                   </div>
+                  <div className="form-control w-full">
+                    <label className="label">
+                      <span className="label-text text-white text-xl">
+                        Survey Description
+                      </span>
+                    </label>
+                    <textarea
+                      className="border border-info rounded-sm px-3 py-1 text-[1rem]"
+                      placeholder="Enter your survey Description"
+                      {...register("surveyDescription", { required: true })}
+                      aria-invalid={errors.surveyDescription ? "true" : "false"}
+                      type="text"
+                    />
+                    {errors.surveyDescription?.type === "required" && (
+                      <p role="alert" className="text-red-600 text-[.9rem]">
+                        Survey Description is required
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
