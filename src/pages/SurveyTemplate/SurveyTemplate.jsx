@@ -1,12 +1,29 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { user } from "../../features/userSlice";
+import axios from "axios";
+
 const Survey = () => {
   const activeUser = useSelector(user);
   const surveyTemplate = useLoaderData();
   const { survey_title, questions } = surveyTemplate;
 
+  const userCreateSurvey = {
+    survey_title,
+    questions,
+  };
   const surveyHandler = () => {
+    axios
+      .post(
+        "http://localhost:5000/userCreatedSurveyQuestions",
+        userCreateSurvey
+      )
+      .then((respose) => {
+        console.log(respose.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     console.log("the survey data", survey_title, questions);
   };
   return (
