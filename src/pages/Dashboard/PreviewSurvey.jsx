@@ -49,7 +49,7 @@ const PreviewSurvey = () => {
       ) : (
         <>
           <div className="min-h-screen  rounded-md w-full sm:w-8/12 bg-[#eef0f4] mx-auto">
-            <div className=" mx-5 sm:mx-10 sm:mt-3 sm:mb-3">
+            <div className=" mx-5 sm:mx-15 sm:mx-10 sm:mt-3 sm:mb-3">
               <>
                 <Breadcrums surveId={getID} />
               </>
@@ -59,6 +59,9 @@ const PreviewSurvey = () => {
                   <h2 className="text-2xl text-center text-primary font-extrabold pt-10">
                     {preveiwSurveyData?.surveyTitle}
                   </h2>
+                  <p className="text-center my-5">
+                    {preveiwSurveyData?.surveyDescription}
+                  </p>
                   {preveiwSurveyData?.questionsAndTypes?.map((qt, i) => (
                     <div key={i} className="mt-4 ">
                       <div>
@@ -69,28 +72,28 @@ const PreviewSurvey = () => {
                           </div>
                           <div>
                             {qt?.questionsType === "Comment Box" ? (
-                              <textarea className=" w-full sm:w-10/12  border  h-16 px-2" placeholder="Write your opinion:.."></textarea>
+                              <textarea className=" w-full  border  h-16 px-2" placeholder="Write your opinion:.."></textarea>
                             ) : undefined || qt?.questionsType === "Textbox" ? (
-                              <input className="w-full sm:w-10/12  border  h-8 px-2 " placeholder="Answer:.." />
+                              <input className="w-full   border  h-8 px-2 " placeholder="Answer:.." />
                             ) : undefined || qt?.questionsType === "Multiple choice" ?
 
                               <>
-                                <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1  w-full sm:w-10/12 ">
+                                <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1  w-full  ">
                                   {
-                                  qt?.optionAnswers?.map((option, index) => (
-                                  <div key={index} className="mb-4 bg-success text-white rounded-sm ">
-                                      <input
-                                        type="radio"
-                                        id={option}
-                                        name={option.answer}
-                                        value={option}
-                                      />
-                                      <label htmlFor={option} className="ml-2">
-                                        {option.answer}
-                                      </label>
-                                  </div>
-                                  ))
-}
+                                    qt?.optionAnswers?.map((option, index) => (
+                                      <div key={index} className="mb-4 bg-success text-white rounded-sm ">
+                                        <input
+                                          type="radio"
+                                          id={option}
+                                          name={option.answer}
+                                          value={option}
+                                        />
+                                        <label htmlFor={option} className="ml-2">
+                                          {option.answer}
+                                        </label>
+                                      </div>
+                                    ))
+                                  }
                                 </div>
                               </>
                               // (
@@ -120,7 +123,7 @@ const PreviewSurvey = () => {
                       </div>
                     </div>
                   ))}
-                  <div className="flex pb-20 mt-8 w-full sm:w-10/12 ">
+                  <div className="flex pb-20 mt-8 w-full ">
                     <button className="btn btn-success px-4 py-2 text-center mx-auto">
                       Done
                     </button>

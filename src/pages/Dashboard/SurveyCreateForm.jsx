@@ -8,7 +8,7 @@ import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import Breadcrums from "../../components/Dashboard/Breadcrums";
-import MultiQuestionModal from "../../components/Dashboard/MultiQuestionModal";
+// import MultiQuestionModal from "../../components/Dashboard/MultiQuestionModal";
 import UserCreateSurveyQuestions from "../../components/Dashboard/UserCreateSurveyQuestions";
 import Loading from "../../components/Shared/Loading";
 import { user } from "../../features/userSlice";
@@ -196,9 +196,9 @@ const SurveyCreateForm = () => {
     const questionType = data?.questionsType;
     const surveyModifiedTime = new Date().toLocaleDateString();
     // https://survey-bee-server.vercel.app/userCreatedSurveyQuestions
+    // http://localhost:5000/userCreatedSurveyQuestions
     try {
-      const response = await axios.put(
-        "http://localhost:5000/userCreatedSurveyQuestions",
+      const response = await axios.put("https://survey-bee-server.vercel.app/userCreatedSurveyQuestions",
         {
           id: editSurveyLoaderData?._id || userCreatedQuestion[0]?._id,
           questions,
@@ -264,6 +264,11 @@ const SurveyCreateForm = () => {
           {editSurveyLoaderData?.surveyTitle ||
             userCreatedQuestion[0]?.surveyTitle}
         </h2>
+        <p className="text-center my-5">
+          { editSurveyLoaderData?.surveyDescription ||
+            userCreatedQuestion[0]?.surveyDescription
+            }
+        </p>
       </div>
       <div className="px-5 md:px-20 my-5">
         {(editSurveyLoaderData || userCreatedQuestion[0]) && (

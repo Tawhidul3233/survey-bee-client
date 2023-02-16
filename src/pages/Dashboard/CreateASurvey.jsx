@@ -33,6 +33,7 @@ const CreateASurvey = () => {
     // console.log(data);
     const surveyTitle = data?.surveyTitle;
     const surveyCategory = data?.surveyCategory;
+    const surveyDescription = data?.surveyDescription;
     try {
       const response = await axios.post(
         "https://survey-bee-server.vercel.app/userCreatedSurveyQuestions",
@@ -40,6 +41,7 @@ const CreateASurvey = () => {
           email,
           surveyTitle,
           surveyCategory,
+          surveyDescription,
           surveyCreateTime,
           surveyModifiedTime,
           surveyCreateTimeMl,
