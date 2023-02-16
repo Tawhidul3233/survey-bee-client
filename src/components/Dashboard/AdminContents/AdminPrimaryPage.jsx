@@ -15,7 +15,6 @@ const AdminPrimaryPage = () => {
   return (
     <div className=" ">
       <AdminHome> </AdminHome>
-      <MenuTest></MenuTest>
     </div>
   );
 };

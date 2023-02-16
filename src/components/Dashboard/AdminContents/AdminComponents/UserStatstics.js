@@ -1,42 +1,58 @@
 import React from 'react';
+import { FcManager, FcVip, FcConferenceCall, FcLibrary, FcCurrencyExchange, FcMoneyTransfer } from "react-icons/fc";
 
 const UserStatstics = () => {
   return (
     <div className=' '>
       <section className="bg-white">
-        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 py-24 md:py-12 lg:px-8">
+        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 py-4 mt-5 lg:px-8">
           <div className=" ">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 ">
               <div
-                className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center bg-[#CCCCFF] text-white"
+                className=" grid grid-cols-3 justify-evenly rounded-lg border border-gray-100 px-4 py-8 text-center bg-[#9595f9] text-white"
               >
-                <td className="order-last text-lg font-medium  text-white">
-                  Total Users
-                </td>
+                <div className=' col-span-1'>
+                  <FcConferenceCall className='w-[70px] h-[70px] bg-white rounded-full'> </FcConferenceCall>
+                </div>
+                <div className="flex flex-col text-center  col-span-2  ">
+                  <td className="order-last text-lg font-medium  text-white">
+                    Total Users
+                  </td>
 
-                <dd className=" text-4xl font-extrabold text-white  md:text-5xl">
-                  1150
-                </dd>
+                  <dd className=" text-4xl font-extrabold text-white  md:text-5xl">
+                    1150
+                  </dd>
+                </div>
               </div>
 
               <div
-                className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center bg-[#7FB3D5]"
+                className=" grid grid-cols-3 justify-items-center rounded-lg border border-gray-100 px-4 py-8 text-center bg-[#037d71]"
               >
-                <td className="order-last text-lg font-medium text-gray-500">
-                  Paid Users
-                </td>
+                <div className=' col-span-1'>
+                  <FcVip className='w-[70px] h-[70px] bg-white rounded-full'> </FcVip>
+                </div>
+                <div className="flex flex-col text-center  col-span-2  ">
+                  <td className="order-last text-lg font-medium text-white">
+                    Paid Users
+                  </td>
 
-                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">150</dd>
+                  <dd className="text-4xl font-extrabold text-white md:text-5xl">150</dd>
+                </div>
               </div>
 
               <div
-                className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center bg-[#5D6D7E]"
+                className="grid grid-cols-3 justify-evenly rounded-lg border border-gray-100 px-4 py-8 text-center bg-[#34495E]"
               >
-                <td className="order-last text-lg font-medium text-gray-500">
-                  Free Users
-                </td>
+                <div className=' col-span-1'>
+                  <FcManager className='w-[70px] h-[70px] bg-white rounded-full '> </FcManager>
+                </div>
+                <div className="flex flex-col text-center col-span-2  ">
+                  <td className="order-last text-lg font-medium text-white ">
+                    Free Users
+                  </td>
 
-                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">1000</dd>
+                  <dd className="text-4xl font-extrabold text-white md:text-5xl">1000</dd>
+                </div>
               </div>
             </div>
           </div>
@@ -47,35 +63,46 @@ const UserStatstics = () => {
           <div className="">
             <dl className="grid grid-cols-1 gap-4 sm:grid-cols-3">
               <div
-                className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center"
+                className="grid grid-cols-3 justify-evenly rounded-lg border border-gray-100 px-4 py-8 text-center bg-[#9595f9]"
               >
-                <td className="order-last text-lg font-medium text-gray-500">
-                  Total incame
-                </td>
+                <div className=' col-span-1'>
+                  <FcLibrary className='w-[70px] h-[70px] bg-white rounded-full '> </FcLibrary>
+                </div>
+                <div className="flex flex-col text-center col-span-2  ">
+                  <td className="order-last text-lg font-medium text-white">
+                    Total incame
+                  </td>
+                  <dd className="text-4xl font-extrabold text-white md:text-5xl">
+                    5823$
+                  </dd>
+                </div>
 
-                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">
-                  1400$
-                </dd>
               </div>
-
               <div
-                className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center"
+                className="grid grid-cols-3 justify-evenly rounded-lg border border-gray-100 px-4 py-8 text-center bg-[#037d71]"
               >
-                <td className="order-last text-lg font-medium text-gray-500">
-                  Last Month
-                </td>
-
-                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">598$</dd>
+                <div className=' col-span-1'>
+                  <FcCurrencyExchange className='w-[70px] h-[70px] bg-white rounded-full '> </FcCurrencyExchange>
+                </div>
+                <div className="flex flex-col text-center col-span-2  ">
+                  <td className="order-last text-lg font-medium text-white">
+                    Last Month
+                  </td>
+                  <dd className="text-4xl font-extrabold text-white md:text-5xl">598$</dd>
+                </div>
               </div>
-
               <div
-                className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center"
+                className="grid grid-cols-3 justify-evenly rounded-lg border border-gray-100 px-4 py-8 text-center bg-[#037d71]"
               >
-                <td className="order-last text-lg font-medium text-gray-500">
-                  Last week
-                </td>
-
-                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">280$</dd>
+                <div className=' col-span-1'>
+                  <FcMoneyTransfer className='w-[70px] h-[70px] bg-white rounded-full '> </FcMoneyTransfer>
+                </div>
+                <div className="flex flex-col text-center col-span-2  ">
+                  <td className="order-last text-lg font-medium text-white">
+                    Last week
+                  </td>
+                  <dd className="text-4xl font-extrabold text-white md:text-5xl">280$</dd>
+                </div>
               </div>
             </dl>
           </div>
