@@ -121,6 +121,7 @@ const Register = () => {
               <div className="mt-5 w-5/6 md:w-3/4">
                 <button className=" bg-[#00C38B] w-full py-5 rounded-lg text-white ">
                   Sing up
+                  {/* {isLoading? <SmallSpinner/>: "Sign in"} */}
                 </button>
               </div>
             </form>
