@@ -3,8 +3,9 @@ import { Outlet } from "react-router-dom";
 import AdminMenu from "../../components/Dashboard/AdminContents/AdminMenu/AdminMenu";
 import AdminPrimaryPage from "../../components/Dashboard/AdminContents/AdminPrimaryPage";
 import ManageUser from "../../components/Dashboard/AdminContents/ManageUser/ManageUser";
-import Footer from "../../components/Footer";
+
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Shared/Footer";
 import { setActiveUser } from "../../features/userSlice";
 import useAdmin from "../../hooks/useAdmin";
 import ScrollToTop from "../../utils/ScrollToTop/ScrollToTop";

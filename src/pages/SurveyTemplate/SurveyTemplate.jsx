@@ -1,19 +1,13 @@
-import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
-
+import { useSelector } from "react-redux";
+import { user } from "../../features/userSlice";
 const Survey = () => {
+  const activeUser = useSelector(user);
   const surveyTemplate = useLoaderData();
   const { survey_title, questions } = surveyTemplate;
 
-  const [formData, setFormData] = useState({});
-
-  const handleForm = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const srveyDataHandler = (e) => {
-    e.preventDefault();
-    console.log(formData);
+  const surveyHandler = () => {
+    console.log("the survey data", survey_title, questions);
   };
   return (
     <div className="bg-white p-8 rounded-lg">
@@ -21,7 +15,7 @@ const Survey = () => {
         <h2 className="text-2xl font-bold mb-4 text-center text-green-600">
           {survey_title}
         </h2>
-        <form className="mt-4" onSubmit={srveyDataHandler}>
+        <form className="mt-4">
           {questions.map((question) => (
             <div key={question.question_text}>
               <p className="text-lg font-bold mb-4">{question.question_text}</p>
@@ -34,7 +28,6 @@ const Survey = () => {
                         id={option}
                         name={question.question_text}
                         value={option}
-                        onChange={handleForm}
                       />
                       <label htmlFor={option} className="ml-2">
                         {option}
@@ -47,18 +40,24 @@ const Survey = () => {
                   name={question.question_text}
                   rows="4"
                   className="p-2 border border-gray-400 w-full"
-                  onChange={handleForm}
                 ></textarea>
               )}
             </div>
           ))}
           <div className="text-center mt-6">
-            <Link
-              className="capitalize px-6 py-2 rounded-lg bg-blue-700 text-white"
-              to={`/PublicSurvey/${surveyTemplate._id}`}
-            >
-              share
-            </Link>
+            {activeUser?.user ? (
+              <>
+                <Link
+                  onClick={surveyHandler}
+                  className="capitalize px-6 py-2 rounded-lg bg-blue-700 text-white"
+                  to={`/PublicSurvey/${surveyTemplate._id}`}
+                >
+                  share
+                </Link>
+              </>
+            ) : (
+              <></>
+            )}
           </div>
         </form>
       </div>
