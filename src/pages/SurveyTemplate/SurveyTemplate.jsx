@@ -9,6 +9,7 @@ const Survey = () => {
   const { survey_title, questions } = surveyTemplate;
 
   const userCreateSurvey = {
+    email: activeUser?.user?.email,
     survey_title,
     questions,
   };
