@@ -350,18 +350,6 @@ const SurveyCreateForm = () => {
                   Add+
                 </button>
               </div>
-              // <div className="" >
-              //   <p className="text-xl font-semibold mb-2">Add Option</p>
-              //   {[...Array(count)].map((value, index) => (
-              //     <div key={index}>
-              //       <input  {...register("ans", { required: true })} onChange={(event) => collectOptionValue(index, event)} value={value} className="my-1 p-1 border" type="text" placeholder="Answer" />
-              //     </div>
-              //   ))}
-              //   <div className=" my-2 ">
-              //     <input type='button' className="p-1 bg-blue-700 mr-5 text-white text-xs" onClick={handleAdd} value='+ Add' />
-              //     <input type='button' className="p-1 bg-red-700 text-white text-xs" onClick={handleRemove} value='- Remove' />
-              //   </div>
-              // </div>
             )}
           </div>
           <div className="flex justify-center my-10">
