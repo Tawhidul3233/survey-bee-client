@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Footer from "../../Shared/Footer";
+import Footer from "../../Footer";
 import Navbar from "../../Navbar";
 import MenuTest from "../MenuTest";
 import IncameChart from "./AdminComponents/IncameChart";
