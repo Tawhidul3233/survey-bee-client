@@ -8,6 +8,7 @@ import Survey from "../layouts/Survey/Survey";
 import ApplyPage from "../pages/ApplyPage/ApplyPage";
 import CustomerService from "../pages/CustomerService/CustomerService";
 import Cx from "../pages/CxPage/Cx";
+import BuySurvey from "../pages/Dashboard/BuySurvey";
 import CreateASurvey from "../pages/Dashboard/CreateASurvey";
 import DashboardPrimaryPage from "../pages/Dashboard/DashboardPrimaryPage";
 import MySurveys from "../pages/Dashboard/MySurveys";
@@ -85,6 +86,13 @@ export const router = createBrowserRouter([
         path: "/paynow",
         element: <PayNow></PayNow>,
       },
+      {
+        path:"/buysurvey/:id",
+        loader:({params}) => 
+          fetch(`http://localhost:5000/buysurvey/${params.id}`)
+        ,
+        element: <BuySurvey> </BuySurvey>,
+      }
     ],
   },
   {
