@@ -7,10 +7,11 @@ const Survey = () => {
   const activeUser = useSelector(user);
   const surveyTemplate = useLoaderData();
   const { survey_title, questions } = surveyTemplate;
+  // console.log("the survey template", surveyTemplate);
 
   const userCreateSurvey = {
     email: activeUser?.user?.email,
-    survey_title,
+    surveyTitle: survey_title,
     questions,
   };
   const surveyHandler = () => {
@@ -25,7 +26,7 @@ const Survey = () => {
       .catch((error) => {
         console.log(error);
       });
-    console.log("the survey data", survey_title, questions);
+    // console.log("the survey data", survey_title, questions);
   };
   return (
     <div className="bg-white p-8 rounded-lg">
@@ -35,16 +36,16 @@ const Survey = () => {
         </h2>
         <form className="mt-4">
           {questions.map((question) => (
-            <div key={question.question_text}>
-              <p className="text-lg font-bold mb-4">{question.question_text}</p>
-              {question.question_type === "rating" ? (
+            <div key={question.questions}>
+              <p className="text-lg font-bold mb-4">{question.questions}</p>
+              {question.questionsType === "rating" ? (
                 <div>
-                  {question.options.map((option, index) => (
+                  {question?.optionAnswers.map((option, index) => (
                     <div key={option} className="mb-4">
                       <input
                         type="radio"
                         id={option}
-                        name={question.question_text}
+                        name={question.questions}
                         value={option}
                       />
                       <label htmlFor={option} className="ml-2">
@@ -55,7 +56,7 @@ const Survey = () => {
                 </div>
               ) : (
                 <textarea
-                  name={question.question_text}
+                  name={question.questions}
                   rows="4"
                   className="p-2 border border-gray-400 w-full"
                 ></textarea>

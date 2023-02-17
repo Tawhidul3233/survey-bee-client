@@ -1,7 +1,7 @@
 // import React from 'react';
 // import { Bar, BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis } from 'recharts';
-import React from 'react';
-import CanvasJSReact from './canvasjs.react';
+import React from "react";
+import CanvasJSReact from "./canvasjs.react";
 // var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
@@ -34,7 +34,7 @@ const UserChart = () => {
   //     </div>
   const options = {
     title: {
-      text: "Users Analysis"
+      text: "Users Analysis",
     },
     data: [
       {
@@ -43,14 +43,14 @@ const UserChart = () => {
           { label: "Total Users", y: 1150 },
           { label: "Free Users", y: 1000 },
           { label: "Paid Users", y: 150 },
-        ]
-      }
-    ]
-  }
+        ],
+      },
+    ],
+  };
 
   return (
-    <div className='max-w-screen-xl mx-auto'>
-      <div className='sm:mx-5 mx-2 text-center  '>
+    <div className="max-w-screen-xl mx-auto">
+      <div className="sm:mx-5 mx-2 text-center  ">
         {/* <div>
         <h2 className='text-center mx-auto my-5 font-semibold text-lg bg-green-500 w-3/5 text-white'>User Analysis</h2>
       </div > */}
