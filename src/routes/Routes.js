@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import AdminPrimaryPage from "../components/Dashboard/AdminContents/AdminPrimaryPage";
 import AdminHome from "../components/Dashboard/AdminContents/ManageUser/AdminHome/AdminHome";
 import ManageUser from "../components/Dashboard/AdminContents/ManageUser/ManageUser";
+import OrderHistory from "../components/Dashboard/AdminContents/OrderHistory/OrderHistory";
 import Dashboard from "../layouts/Dashboard/Dashboard";
 import Main from "../layouts/Main/Main";
 import Survey from "../layouts/Survey/Survey";
@@ -89,7 +90,7 @@ export const router = createBrowserRouter([
       {
         path:"/buysurvey/:id",
         loader:({params}) => 
-          fetch(`http://localhost:5000/buysurvey/${params.id}`)
+          fetch(`https://survey-bee-server.vercel.app/buysurvey/${params.id}`)
         ,
         element: <BuySurvey> </BuySurvey>,
       }
@@ -142,12 +143,16 @@ export const router = createBrowserRouter([
         path: "/dashboard/manageusers",
         element: <ManageUser> </ManageUser>,
       },
+      {
+        path: "/dashboard/orderhistory",
+        element: <OrderHistory> </OrderHistory>,
+      },
     ],
   },
   {
     path: "/PublicSurvey/:id",
     loader: ({ params }) =>
-      fetch(`http://localhost:5000/PublicSurvey/${params.id}`),
+      fetch(`https://survey-bee-server.vercel.app/PublicSurvey/${params.id}`),
     element: <Survey />,
   },
 ]);

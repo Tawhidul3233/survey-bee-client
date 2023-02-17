@@ -138,11 +138,11 @@ const Navbar = () => {
                                 </div>
                                 <div className="flex flex-col w-full px-4 py-2">
                                   <Link
-                                    to="/setting"
+                                    to="/dashboard/orderhistory"
                                     className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
                                   >
                                     <span className="font-semibold text-xl text-secondary block">
-                                      Settings
+                                      Order History
                                     </span>
                                   </Link>
                                 </div>
@@ -638,11 +638,11 @@ const Navbar = () => {
                       <li className="rounded-sm w-full mx-0 px-0">
                         <div className="flex flex-col">
                           { isAdmin ? <Link
-                            to="/setting"
+                            to="/dashboard/orderhistory"
                             className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
                           >
                             <span className="font-semibold text-xl text-secondary block">
-                              Settings
+                              Order History
                             </span>
                           </Link>:
                           <Link
@@ -1181,11 +1181,11 @@ const Navbar = () => {
             <li>
 
               {isAdmin ? <Link
-                to="/setting"
+                to="/dashboard/orderhistory"
                 className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
               >
                 <span className="font-semibold text-xl text-secondary block">
-                  Settings
+                  Order History
                 </span>
               </Link> :
                 <Link
