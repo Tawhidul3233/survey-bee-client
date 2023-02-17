@@ -41,7 +41,7 @@ const PreviewSurvey = () => {
     );
     return response?.data;
   };
-  console.log(preveiwSurveyData);
+  // console.log(preveiwSurveyData);
   return (
     <>
       {isPreviewLoading ? (

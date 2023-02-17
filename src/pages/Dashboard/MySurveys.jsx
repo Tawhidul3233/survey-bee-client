@@ -10,7 +10,7 @@ import getUserAllSurveys from "../../api/getUserAllSurveys";
 import { useState } from "react";
 import Loading from "../../components/Shared/Loading";
 import SurveyCreateButton from "../../components/Dashboard/SurveyCreateButton";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const mySurveyText = [
   "TITLE",
@@ -31,6 +31,7 @@ const MySurveys = () => {
   const [isThreedotOpen, setIsThreedotOpen] = useState(false);
   const navigate = useNavigate();
 
+  // console.log(surveys)
   // get all surveys
   useEffect(() => {
     setSurveysLoading(true);
@@ -115,7 +116,8 @@ const MySurveys = () => {
                             </button>
                           </td>
                           <td className="lg:pl-8 p-0 w-3/12">
-                            <BsCollection className="text-secondary" />
+                            <Link to={`/buysurvey/${survey._id}`}> <BsCollection className="text-secondary" /> </Link>
+
                           </td>
                           <td className="lg:pl-8 p-0 w-3/12">
                             <TbBrandGoogleAnalytics className="text-secondary" />
@@ -129,9 +131,6 @@ const MySurveys = () => {
                           >
                             <div className="flex flex-col">
                               <BsThreeDots className="text-secondary absolute top-20" />
-                              {/* <div className="bg-gray-300 border border-gray-100 absolute top-24">
-                                
-                              </div> */}
                             </div>
                           </td>
                         </tr>
