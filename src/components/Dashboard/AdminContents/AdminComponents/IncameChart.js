@@ -43,7 +43,7 @@ const IncameChart = () => {
   //         {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
   //       </LineChart>
   //     </div>
-  const optionAnswers = {
+  const options = {
     animationEnabled: true,
     title: {
       text: "Incame Analysis",
@@ -79,16 +79,18 @@ const IncameChart = () => {
   };
 
   return (
-    <div className=" my-16 sm:mx-5 mx-2">
-      {/* <div className=''>
+    <div className="max-w-screen-xl mx-auto">
+      <div className=" my-16 sm:mx-5 mx-2  ">
+        {/* <div className=''>
         <h2 className='text-center mx-auto font-semibold text-lg my-5 bg-blue-700 w-3/5 text-white' >Incame Analysis</h2>
       </div> */}
 
-      <CanvasJSChart
-        optionAnswers={optionAnswers}
-        /* onRef={ref => this.chart = ref} */
-      />
-      {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+        <CanvasJSChart
+          options={options}
+          /* onRef={ref => this.chart = ref} */
+        />
+        {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+      </div>
     </div>
   );
 };

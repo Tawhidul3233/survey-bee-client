@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import UserTable from '../UserTable/UserTable';
 
 const UserHeader = () => {
+
+
+  // useEffect(()=>{
+  //   fetch('https://survey-bee-server.vercel.app/users')
+  //   .then(res => res.json())
+  //   .then(data => console.log(data))
+  // },[])
 
 
   const data = [

@@ -113,7 +113,7 @@ const Register = () => {
                 </label>
                 <input
                   {...register("password")}
-                  type="text"
+                  type="password"
                   className="input w-full "
                 />{" "}
                 <hr />

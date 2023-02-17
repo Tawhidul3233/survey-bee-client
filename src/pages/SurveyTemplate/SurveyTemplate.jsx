@@ -17,7 +17,7 @@ const Survey = () => {
   const surveyHandler = () => {
     axios
       .post(
-        "http://localhost:5000/userCreatedSurveyQuestions",
+        "https://survey-bee-server.vercel.app/userCreatedSurveyQuestions",
         userCreateSurvey
       )
       .then((respose) => {

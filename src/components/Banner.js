@@ -10,7 +10,7 @@ const Banner = () => {
         className="relative bg-[url(https://i.postimg.cc/Gp51zW7K/istockphoto-1133382677-170667a.jpg)] bg-cover bg-center bg-no-repeat"
       >
         <div
-          className="absolute inset-0 bg-black/25 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/25 sm:to-black/75"
+          className="absolute inset-0 bg-black/25 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/25 sm:to-black/50"
         ></div>
 
         <div

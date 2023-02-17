@@ -41,7 +41,7 @@ const PreviewSurvey = () => {
     );
     return response?.data;
   };
-  console.log(preveiwSurveyData);
+  // console.log(preveiwSurveyData);
   return (
     <>
       {isPreviewLoading ? (
@@ -57,7 +57,7 @@ const PreviewSurvey = () => {
               <div className="mx-auto ">
                 <div className="">
                   <h2 className="text-2xl text-center text-primary font-extrabold pt-10">
-                    {preveiwSurveyData?.surveyTitle}
+                    {preveiwSurveyData?.surveyTitle} 
                   </h2>
                   <p className="text-center my-5">
                     {preveiwSurveyData?.surveyDescription}
@@ -68,7 +68,7 @@ const PreviewSurvey = () => {
                         <div className="">
                           <div className="my-3">
                             <span className="text-xl ">{i + 1}.</span>
-                            <span className="text-xl "> {qt?.questions}</span>
+                            <span className="text-xl "> {qt?.questions} ?</span>
                           </div>
                           <div>
                             {qt?.questionsType === "Comment Box" ? (
