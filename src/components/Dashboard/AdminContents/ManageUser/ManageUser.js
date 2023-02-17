@@ -1,12 +1,11 @@
-import React from 'react';
-import AdminMenu from '../AdminMenu/AdminMenu';
-import UserHeader from './UserHeader/UserHeader';
-import UserTable from './UserTable/UserTable';
+import React from "react";
+
+import UserHeader from "./UserHeader/UserHeader";
 
 const ManageUser = () => {
   return (
-    <div className=' '>
-        <UserHeader> </UserHeader>
+    <div className=" ">
+      <UserHeader> </UserHeader>
     </div>
   );
 };

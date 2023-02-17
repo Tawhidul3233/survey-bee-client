@@ -8,11 +8,11 @@ const DashboardProfile = ({ register, errors, handleSubmit, handleUpdateProfile,
   // console.log(dbUser);
 
   return (
-    <div className='grid lg:grid-cols-2 sm:grid-cols-1 mx-auto bg-[#f5f6fa] py-10'>
+    <div className='grid lg:grid-cols-2 sm:grid-cols-1 mx-auto bg-[#f5f6fa] py-10 lg:w-8/12'>
 
       <div className='mb-5'>
         <h2 className='text-2xl font-semibold mb-5 text-center'>Your Profile</h2>
-        <div className="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
+        <div className="card card-compact w-96 hover:bg-base-100 border border-1 mx-auto h-[500px] hover:shadow-2xl duration-300">
           <div className="radial-progress text-3xl text-success mx-auto my-6" style={{ "--value": 70, "--size": "12rem", "--thickness": "5px" }}>70%</div>
           <div className="card-body">
             <h2 className="text-xl font-semibold text-center">{dbUser?.firstName ? `${dbUser?.firstName + ' ' + dbUser?.lastName}` : activeUser?.user?.displayName}</h2>
@@ -40,7 +40,7 @@ const DashboardProfile = ({ register, errors, handleSubmit, handleUpdateProfile,
 
       <div>
         <h2 className='text-2xl font-semibold mb-5 text-center'>Survey Tips</h2>
-        <div className="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
+        <div className="card card-compact mx-auto w-96 hover:bg-base-100 hover:shadow-2xl border border-1 duration-300 h-[500px]">
           <figure><img src="https://i.ibb.co/G08XMWz/quick-poll-comments-graphic.png" alt="Shoes" /></figure>
           <div className="card-body">
             <h2 className="card-title py-2">Flow chart: Which question type is right for you?</h2>
