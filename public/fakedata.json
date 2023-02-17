@@ -14,27 +14,27 @@
             "questions": [
               {
                 "question_id": 1,
-                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "questions": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
                 "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
+                "optionAnswers": [1, 2, 3, 4, 5]
               },
               {
                 "question_id": 2,
-                "question_text": "What do you think is the company's strongest attribute?",
+                "questions": "What do you think is the company's strongest attribute?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 3,
-                "question_text": "Do you feel valued as an employee?",
+                "questions": "Do you feel valued as an employee?",
                 "answer_type": "yesno",
-                "options": ["Yes", "No"]
+                "optionAnswers": ["Yes", "No"]
               },
               {
                 "question_id": 4,
-                "question_text": "What changes would you suggest to improve the company culture?",
+                "questions": "What changes would you suggest to improve the company culture?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               }
             ]
           }
@@ -52,51 +52,51 @@
             "questions": [
               {
                 "question_id": 1,
-                "question_text": "On a scale from 1 to 5, how satisfied are you with your current role and responsibilities?",
+                "questions": "On a scale from 1 to 5, how satisfied are you with your current role and responsibilities?",
                 "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
+                "optionAnswers": [1, 2, 3, 4, 5]
               },
               {
                 "question_id": 2,
-                "question_text": "How satisfied are you with the level of support you receive from your manager and team?",
+                "questions": "How satisfied are you with the level of support you receive from your manager and team?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 3,
-                "question_text": "How satisfied are you with the company's work-life balance policies",
+                "questions": "How satisfied are you with the company's work-life balance policies",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 4,
-                "question_text": "How satisfied are you with the company's culture and values?",
+                "questions": "How satisfied are you with the company's culture and values?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 5,
-                "question_text": "How satisfied are you with your compensation and benefits package?",
+                "questions": "How satisfied are you with your compensation and benefits package?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 6,
-                "question_text": "Is there anything specific that the company could do to improve your overall job satisfaction?",
+                "questions": "Is there anything specific that the company could do to improve your overall job satisfaction?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 7,
-                "question_text": "Do you feel valued as an employee?",
+                "questions": "Do you feel valued as an employee?",
                 "answer_type": "yesno",
-                "options": ["Yes", "No"]
+                "optionAnswers": ["Yes", "No"]
               },
               {
                 "question_id": 8,
-                "question_text": "What changes would you suggest to improve the company culture?",
+                "questions": "What changes would you suggest to improve the company culture?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               }
             ]
           }
@@ -114,27 +114,27 @@
             "questions": [
               {
                 "question_id": 1,
-                "question_text": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
+                "questions": "On a scale of 1 to 5, how satisfied are you with your work-life balance?",
                 "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
+                "optionAnswers": [1, 2, 3, 4, 5]
               },
               {
                 "question_id": 2,
-                "question_text": "How well does the individual work with others in a team environment?",
+                "questions": "How well does the individual work with others in a team environment?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 3,
-                "question_text": "How effectively does the individual communicate with others, both verbally and in writing?",
+                "questions": "How effectively does the individual communicate with others, both verbally and in writing?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 4,
-                "question_text": "How well does the individual handle stress and meet deadlines?",
+                "questions": "How well does the individual handle stress and meet deadlines?",
                 "answer_type": "rating",
-                "options": [
+                "optionAnswers": [
                   "very well",
                   "well",
                   "bad",
@@ -144,9 +144,9 @@
               },
               {
                 "question_id": 5,
-                "question_text": "How effectively does the individual make decisions and solve problems?",
+                "questions": "How effectively does the individual make decisions and solve problems?",
                 "answer_type": "rating",
-                "options": [
+                "optionAnswers": [
                   "very effective",
                   "well",
                   "no effective",
@@ -156,9 +156,9 @@
               },
               {
                 "question_id": 6,
-                "question_text": "How well does the individual prioritize and manage their time?",
+                "questions": "How well does the individual prioritize and manage their time?",
                 "answer_type": "rating",
-                "options": [
+                "optionAnswers": [
                   "very wll",
                   "well",
                   "not effectively",
@@ -168,15 +168,15 @@
               },
               {
                 "question_id": 7,
-                "question_text": "Do you feel valued as an employee?",
+                "questions": "Do you feel valued as an employee?",
                 "answer_type": "yesno",
-                "options": ["Yes", "No"]
+                "optionAnswers": ["Yes", "No"]
               },
               {
                 "question_id": 8,
-                "question_text": "How well does the individual handle conflicts and manage relationships with coworkers?",
+                "questions": "How well does the individual handle conflicts and manage relationships with coworkers?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               }
             ]
           }
@@ -241,51 +241,51 @@
             "questions": [
               {
                 "question_id": 1,
-                "question_text": "On a scale of 1-5, how satisfied are you with the product/service you received?",
+                "questions": "On a scale of 1-5, how satisfied are you with the product/service you received?",
                 "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
+                "optionAnswers": [1, 2, 3, 4, 5]
               },
               {
                 "question_id": 2,
-                "question_text": "Was the product/service you received able to meet your expectations?",
+                "questions": "Was the product/service you received able to meet your expectations?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 3,
-                "question_text": "How likely are you to recommend our product/service to a friend or colleague?",
+                "questions": "How likely are you to recommend our product/service to a friend or colleague?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 4,
-                "question_text": "Was the customer service you received helpful and efficient?",
+                "questions": "Was the customer service you received helpful and efficient?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 5,
-                "question_text": "How was the overall quality of the product/service you received?",
+                "questions": "How was the overall quality of the product/service you received?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 6,
-                "question_text": "Were there any issues or problems with the product/service, and if so, how were they resolved?",
+                "questions": "Were there any issues or problems with the product/service, and if so, how were they resolved?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 7,
-                "question_text": "Were there any issues or problems with the product/service, and if so, how were they resolved?",
+                "questions": "Were there any issues or problems with the product/service, and if so, how were they resolved?",
                 "answer_type": "yesno",
-                "options": ["Yes", "No"]
+                "optionAnswers": ["Yes", "No"]
               },
               {
                 "question_id": 8,
-                "question_text": "Are there any areas where you think we can improve our product/service?",
+                "questions": "Are there any areas where you think we can improve our product/service?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               }
             ]
           }
@@ -303,51 +303,51 @@
             "questions": [
               {
                 "question_id": 1,
-                "question_text": "How would you rate the quality of the product/service you received?",
+                "questions": "How would you rate the quality of the product/service you received?",
                 "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
+                "optionAnswers": [1, 2, 3, 4, 5]
               },
               {
                 "question_id": 2,
-                "question_text": "What was the reason for choosing our product/service?",
+                "questions": "What was the reason for choosing our product/service?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 3,
-                "question_text": "How was the overall experience with our product/service?",
+                "questions": "How was the overall experience with our product/service?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 4,
-                "question_text": "Was the product/service able to meet your needs and requirements?",
+                "questions": "Was the product/service able to meet your needs and requirements?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 5,
-                "question_text": "How satisfied were you with the customer service you received?",
+                "questions": "How satisfied were you with the customer service you received?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 6,
-                "question_text": "Was the purchasing process easy and efficient?",
+                "questions": "Was the purchasing process easy and efficient?",
                 "answer_type": "yesno",
-                "options": ["Yes", "No"]
+                "optionAnswers": ["Yes", "No"]
               },
               {
                 "question_id": 7,
-                "question_text": "Were there any challenges or difficulties you faced while using our product/service?",
+                "questions": "Were there any challenges or difficulties you faced while using our product/service?",
                 "answer_type": "yesno",
-                "options": ["Yes", "No"]
+                "optionAnswers": ["Yes", "No"]
               },
               {
                 "question_id": 8,
-                "question_text": "Were all your questions and concerns addressed to your satisfaction?",
+                "questions": "Were all your questions and concerns addressed to your satisfaction?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               }
             ]
           }
@@ -365,33 +365,33 @@
             "questions": [
               {
                 "question_id": 1,
-                "question_text": "How would you rate the quality of the product/service you received?",
+                "questions": "How would you rate the quality of the product/service you received?",
                 "answer_type": "rating",
-                "options": [1, 2, 3, 4, 5]
+                "optionAnswers": [1, 2, 3, 4, 5]
               },
               {
                 "question_id": 2,
-                "question_text": "Was the customer service you received efficient and helpful?",
+                "questions": "Was the customer service you received efficient and helpful?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               },
               {
                 "question_id": 3,
-                "question_text": "Was the purchasing process smooth and easy to understand?",
+                "questions": "Was the purchasing process smooth and easy to understand?",
                 "answer_type": "yesno",
-                "options": ["Yes", "No"]
+                "optionAnswers": ["Yes", "No"]
               },
               {
                 "question_id": 4,
-                "question_text": "How satisfied were you with the overall experience with our company?",
+                "questions": "How satisfied were you with the overall experience with our company?",
                 "answer_type": "yesno",
-                "options": ["satisfied", "dissatisfied"]
+                "optionAnswers": ["satisfied", "dissatisfied"]
               },
               {
                 "question_id": 5,
-                "question_text": "Were there any issues or problems with the product/service, and if so, how were they resolved?",
+                "questions": "Were there any issues or problems with the product/service, and if so, how were they resolved?",
                 "answer_type": "text",
-                "options": []
+                "optionAnswers": []
               }
             ]
           }

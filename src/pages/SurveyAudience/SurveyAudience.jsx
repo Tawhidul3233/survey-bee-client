@@ -69,12 +69,10 @@ const SurveyAudience = () => {
           <form>
             {survey[0]?.questions?.map((question) => (
               <div key={question.question_id} className="mb-6">
-                <p className="text-lg font-medium mb-2">
-                  {question.question_text}
-                </p>
+                <p className="text-lg font-medium mb-2">{question.questions}</p>
                 {question.answer_type === "rating" && (
                   <div className="flex items-center">
-                    {question.options.map((option) => (
+                    {question.optionAnswers.map((option) => (
                       <label key={option} className="flex items-center mr-4">
                         <input
                           type="radio"
@@ -88,7 +86,7 @@ const SurveyAudience = () => {
                 )}
                 {question.answer_type === "yesno" && (
                   <div className="flex items-center">
-                    {question.options.map((option) => (
+                    {question.optionAnswers.map((option) => (
                       <label key={option} className="flex items-center mr-4">
                         <input
                           type="radio"
