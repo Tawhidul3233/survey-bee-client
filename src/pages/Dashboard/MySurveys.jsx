@@ -11,6 +11,7 @@ import { useState } from "react";
 import Loading from "../../components/Shared/Loading";
 import SurveyCreateButton from "../../components/Dashboard/SurveyCreateButton";
 import { Link, useNavigate } from "react-router-dom";
+import ShareModal from "../../components/Dashboard/ShareModal";
 
 const mySurveyText = [
   "TITLE",
@@ -69,6 +70,7 @@ const MySurveys = () => {
       ) : (
         <>
           <section className="mx-auto w-full bg-[#F4F5F5] pt-10">
+            <ShareModal />
             <>
               {surveysError.message && !surveysLoading ? (
                 <p className="text-center text-3xl text-neutral">
@@ -122,9 +124,15 @@ const MySurveys = () => {
                           <td className="lg:pl-8 p-0 w-3/12">
                             <TbBrandGoogleAnalytics className="text-secondary" />
                           </td>
-                          <td className="pl-8 p-0 w-3/12 hover:bg-yellow-200 cursor-pointer">
-                            <FiShare2 className="text-secondary" />
+
+                          <td className="pl-8 ">
+                            <label htmlFor="Share-modal" >
+                              <span className="w-3/12 cursor-pointer ">
+                                <FiShare2 className="text-secondary" />
+                              </span>
+                            </label>
                           </td>
+
                           <td
                             className="text-secondary pl-6"
                             onClick={() => setIsThreedotOpen(!isThreedotOpen)}
