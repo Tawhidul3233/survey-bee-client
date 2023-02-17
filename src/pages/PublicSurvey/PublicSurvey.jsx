@@ -106,7 +106,6 @@ const PublicSurvey = () => {
   return (
     <div className="flex justify-center items-center">
       <h1 className="text-2xl font-bold p-64">Thank you for your response</h1>
-      <p>stay with us</p>
     </div>
   );
 };
