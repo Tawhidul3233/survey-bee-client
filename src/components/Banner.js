@@ -1,8 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
+import { user } from "../features/userSlice";
 // add and check now
 const Banner = () => {
+
+  const activeUser = useSelector(user);
+  console.log("I am from banner", activeUser);
+
   return (
 
     <div className=" text-center ">
@@ -39,13 +45,13 @@ const Banner = () => {
             <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
               A global leader in survey software. 20 million questions answered daily. Join more than 17 million active users worldwide
             </p>
-              <div>
-                <Link to="/login">
-                  <button className="btn btn:md btn-success rounded-none my-5 ">
-                    Get Started
-                  </button>
-                </Link>
-              </div>
+            <div>
+              <Link to={`${activeUser?.user ? "/plans-pricing" : "/login"}`}>
+                <button className="btn btn:md btn-success rounded my-5">
+                  Get Started
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
