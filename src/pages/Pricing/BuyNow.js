@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { user } from '../../features/userSlice';
 
 
 const BuyNow = () => {
 
+    const activeUser = useSelector(user);
+    console.log(activeUser);
     const [countries, setCountries] = useState([])
 
     useEffect(() => {
@@ -26,7 +30,8 @@ const BuyNow = () => {
                             <span className="label-text font-semibold">First name</span>
                         </label>
                         <label className="input-group w-72 input-group-vertical">
-                            <input required type="text" placeholder="First name" className="input input-bordered" />
+                            <input required type="text" defaultValue={activeUser?.user?.displayName.slice(0, 6)} placeholder="First name" className="input input-bordered" />
+
                         </label>
                     </div>
                     <div className="form-control md:mx-16">
@@ -34,7 +39,7 @@ const BuyNow = () => {
                             <span className="label-text font-semibold">Last name</span>
                         </label>
                         <label className="input-group w-72 input-group-vertical">
-                            <input type="text" placeholder="Last name" className="input input-bordered" />
+                            <input type="text" defaultValue={activeUser?.user?.displayName.slice(6,)} placeholder="Last name" className="input input-bordered" />
                         </label>
                     </div>
                 </div>
@@ -44,7 +49,7 @@ const BuyNow = () => {
                             <span className="label-text font-semibold">Billing Email</span>
                         </label>
                         <label className="input-group w-72 input-group-vertical">
-                            <input type="text" placeholder="Email" className="input input-bordered" />
+                            <input type="text" defaultValue={activeUser?.user?.email} disabled placeholder="Email" className="input input-bordered" />
                         </label>
                     </div>
                     {/* Select country starts here */}
