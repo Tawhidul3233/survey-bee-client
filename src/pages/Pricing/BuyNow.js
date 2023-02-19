@@ -17,6 +17,18 @@ const BuyNow = () => {
 
     }, [])
 
+
+    const [selectedOption, setSelectedOption] = useState('');
+
+    const handleSelectChange = (event) => {
+        setSelectedOption(event.target.value);
+    };
+
+    const handleButtonClick = () => {
+        // Handle button click here
+    };
+
+
     return (
         <div className='sm:h-screen mb-8'>
             <div className='md:mx-80 mx-8  mt-16'>
@@ -30,7 +42,7 @@ const BuyNow = () => {
                             <span className="label-text font-semibold">First name</span>
                         </label>
                         <label className="input-group w-72 input-group-vertical">
-                            <input required type="text" defaultValue={activeUser?.user?.displayName.slice(0, 6)} placeholder="First name" className="input input-bordered" />
+                            <input required type="text" disabled defaultValue={activeUser?.user?.displayName.split(" ")[0]} placeholder="First name" className="input input-bordered" />
 
                         </label>
                     </div>
@@ -39,7 +51,7 @@ const BuyNow = () => {
                             <span className="label-text font-semibold">Last name</span>
                         </label>
                         <label className="input-group w-72 input-group-vertical">
-                            <input type="text" defaultValue={activeUser?.user?.displayName.slice(6,)} placeholder="Last name" className="input input-bordered" />
+                            <input type="text" disabled defaultValue={activeUser?.user?.displayName.split(" ")[1]} placeholder="Last name" className="input input-bordered" />
                         </label>
                     </div>
                 </div>
@@ -62,6 +74,8 @@ const BuyNow = () => {
                                 <div>
                                     <select
                                         className={' border  w-72 h-12'}
+                                        value={selectedOption} onChange={handleSelectChange}
+
                                     >
                                         <option value="">Select a country</option>
                                         {
@@ -78,12 +92,16 @@ const BuyNow = () => {
                                 </div>
                             </div>
                         </label>
+                        {!selectedOption && <p className="text-red-500 mt-2">Please select a country.</p>}
                     </div>
                 </div>
             </form>
 
             <div className='mt-10 md:ml-80 mx-8'>
-                <Link to="/paynow"> <button className="px-28 bg-green-600 hover:bg-green-800 py-2 mb-5 mt-6 text-lg font-semibold  rounded-xl sm:mt- text-gray-100">
+                <Link to="/paynow"> <button
+                    onClick={handleButtonClick} disabled={!selectedOption}
+                    className={`px-28 py-2 mb-5 mt-6 text-lg font-semibold  rounded-xl ${!selectedOption ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-800 text-gray-100'}`}
+                >
                     Pay now
                 </button></Link>
             </div>
