@@ -1,7 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { user } from '../../features/userSlice';
 
 const Subscription = () => {
+
+    const activeUser = useSelector(user)
+
     return (
         <div className='my-20'>
 
@@ -26,7 +31,7 @@ const Subscription = () => {
                                         </li>
                                     </ul>
                                     <button className="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12 bg-green-400 text-gray-100">
-                                        <Link to="/login">Sign up</Link>
+                                        <Link to={`${activeUser?.user ? "/dashboard/createasurvey" : "/login"}`}>{activeUser?.user ? "CREATE SURVEY" : "Sign Up"}</Link>
                                     </button>
                                     <ul className="self-stretch flex-1 space-y-2 mt-5">
                                         <li className="flex justify-center space-x-2">
@@ -55,7 +60,7 @@ const Subscription = () => {
                                         </li>
                                     </ul>
                                     <button className="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12 bg-blue-800 text-gray-100">
-                                        <Link to="">See Your Plan</Link>
+                                        <Link to={`${activeUser?.user ? "/plans-pricing" : "/login"}`}>{activeUser?.user ? "SEE YOUR PLAN" : "Sign Up"}</Link>
                                     </button>
                                     <ul className="self-stretch flex-1 space-y-2 mt-5">
                                         <li className="flex justify-center space-x-2">
@@ -84,7 +89,7 @@ const Subscription = () => {
                                         </li>
                                     </ul>
                                     <button className="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12 bg-purple-900 text-gray-100">
-                                        <Link to="">See All Plans</Link>
+                                        <Link to={`${activeUser?.user ? "/plans-pricing" : "/login"}`}>{activeUser?.user ? "SEE ALL PLANS" : "Sign Up"}</Link>
                                     </button>
                                     <ul className="self-stretch flex-1 space-y-2 mt-5">
                                         <li className="flex justify-center space-x-2">
