@@ -34,11 +34,11 @@ const MainContainer = () => {
 
   const [checkList, setCheckList] = useState([]);
   useEffect(() => {
-    // console.log("survey category", surveyCategoryData);
     if (surveyCategoryData) {
       setCheckList(surveyCategoryData.map((item) => ""));
     }
   }, [surveyCategoryData]);
+  console.log("checklist", checkList);
 
   const filteredData = useMemo(() => {
     if (surveyTemplateData) {
@@ -53,7 +53,7 @@ const MainContainer = () => {
     }
   }, [surveyTemplateData, checkList]);
 
-  // console.log("filter data", filteredData);
+  console.log("filter data", filteredData);
 
   if (surveyCategory.isLoading || surveyTemplate.isLoading) return <Spinner />;
 

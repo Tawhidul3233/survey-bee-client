@@ -30,7 +30,7 @@ const SurveyAudience = () => {
   const selectedCards = selectedCategory
     ? selectedCategory.card
     : categorys[0].card;
-  console.log("selectedCards", categorys);
+  // console.log("selectedCards", categorys);
   return (
     <div className="my-4 bg-slate-100 rounded-md w-full mx-auto md:w-3/4 md:mx-auto p-5">
       <h1 className="font-semibold text-center text-3xl">
