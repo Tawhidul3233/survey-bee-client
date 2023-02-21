@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const FeedbackDetails = ({ feedback }) => {
   const { img, des, title, btn } = feedback;
   return (
-    <div className="card text-primary-content">
-      <div className="card-body lg:w-2/3 mx-auto">
+    <div className="card text-primary-content mx-auto mb-4">
+      <div className="card card-body mx-auto w-96  hover:bg-base-100 hover:shadow-2xl border border-1 duration-300 h-[450px] rounded">
         <div>
           <img src={img} alt="people" className="mx-auto" />
         </div>

@@ -21,14 +21,14 @@ const Feedback = () => {
     ]
 
     return (
-        <div className='py-12'>
+        <div className='py-12 bg-[#f5f6fa]'>
             <div>
                 <h2 className='text-center text-2xl font-bold'>Go beyond collecting feedback—deliver better <br/>
                 experiences that drive your business
                 </h2>
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1
-            mt-10'>
+            <div className='grid  grid-cols-1 lg:grid-cols-2 md:grid-cols-1
+            mt-10 pb-5 mx-auto lg:px-24 lg:gap-2 sm:gap-6'>
                 {
                     feedbacks.map(feedback=><FeedbackDetails feedback={feedback} key={feedback._id}>
 
