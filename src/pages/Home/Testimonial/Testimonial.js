@@ -9,7 +9,7 @@ const Testimonial = () => {
             designation:'Customer support',
             img:'https://i.ibb.co/KsJMRG7/student-2.png',
             
-            des:'Provide better customer experiences while keeping your teams engaged.'
+            des:'Provide better customer support while keeping your teams engaged.'
         },
         {
             _id:2,
@@ -23,19 +23,19 @@ const Testimonial = () => {
             designation:'Product management',
             
             img:'https://i.ibb.co/R7D3DPK/people1.png',
-            des:'Build products that drive impact and offer a strong product-market fit.'
+            des:'Build products that impact and offer a strong product-market fit.'
         },
         
 
 
 ]
     return (
-        <div className='py-16'>
+        <div className='py-16 bg-[#f5f6fa]'>
             <div className='text-center'>
                 <h2 className='text-2xl font-bold mb-3'>Tools that spark business breakthroughs</h2>
                 <p>Discover specialized tool kits designed for your role and industry.</p>
             </div>
-            <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-12'>
+            <div className='grid gap-2 sm:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-12 lg:px-20 justify-center items-center'>
                 {
                     reviews.map(review=><Review review={review} key={review._id}>
 

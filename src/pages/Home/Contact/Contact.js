@@ -27,7 +27,7 @@ const Contact = () => {
 
     return (
         <div id='contact' className='mt-32 banner' style={{ backgroundImage: `url("https://i.ibb.co/3CBf0fM/contact.jpg")` }} >
-            <h1 className='text-center text-3xl font-semibold mb-10 pt-10 text-white'>Contact US</h1>
+            <h1 className='text-center md:text-3xl text-xl  font-semibold mb-10 pt-10 text-white'>Contact US</h1>
             
             <div className='py-12'>
              <div className="hero lg:w-4/5 w-full mx-auto">

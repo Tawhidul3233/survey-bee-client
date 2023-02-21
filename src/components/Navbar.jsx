@@ -53,7 +53,7 @@ const Navbar = () => {
     <>
       <div
         className={`navbar ${activeUser?.user?.email ? "bg-gray-800" : "bg-base-100 text-black"
-          } lg:px-16 shadow-md sticky top-0 z-50 lg:pt-4`}
+          } lg:px-16 shadow-sm sticky top-0 z-50 lg:pt-4`}
       >
         <div className="navbar-start">
           {/* mobile view starts here*/}
@@ -66,12 +66,12 @@ const Navbar = () => {
               {isOpen ? (
                 <RxCross2
                   className={`${activeUser?.user?.email ? "text-base-100" : "text-black"
-                    } text-5xl`}
+                    } text-2xl`}
                 />
               ) : (
                 <GiHamburgerMenu
                   className={`${activeUser?.user?.email ? "text-base-100" : "text-black"
-                    } text-5xl`}
+                    } text-2xl`}
                 />
               )}
             </label>
@@ -687,7 +687,7 @@ const Navbar = () => {
         <div className="navbar-center lg:hidden">
           <Link
             to="/"
-            className="normal-case text-3xl font-semibold flex items-center gap-x-1 text-primary"
+            className="normal-case md:text-3xl text-xl font-semibold flex items-center gap-x-1 text-primary"
           >
             <img
               src="https://i.postimg.cc/g0B4m5Yx/328398592-722462319318557-3877861333829960200-n.png"
