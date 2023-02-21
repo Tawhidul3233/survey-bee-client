@@ -72,7 +72,7 @@ const SurveyAudience = () => {
                 <p className="text-lg font-medium mb-2">{question.questions}</p>
                 {question.answer_type === "rating" && (
                   <div className="flex items-center">
-                    {question.optionAnswers.map((option) => (
+                    {question.options.map((option) => (
                       <label key={option} className="flex items-center mr-4">
                         <input
                           type="radio"
@@ -86,7 +86,7 @@ const SurveyAudience = () => {
                 )}
                 {question.answer_type === "yesno" && (
                   <div className="flex items-center">
-                    {question.optionAnswers.map((option) => (
+                    {question.options.map((option) => (
                       <label key={option} className="flex items-center mr-4">
                         <input
                           type="radio"
