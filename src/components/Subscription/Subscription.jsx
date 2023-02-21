@@ -14,7 +14,7 @@ const Subscription = () => {
                 <section className="py-6  ">
                     <div className="container p-4 mx-auto sm:p-10">
                         <div className="mb-12 space-y-4 text-center">
-                            <h1 className="text-4xl font-semibold leading-tight">Choose Subscription for Better Experience</h1>
+                            <h1 className="md:text-3xl text-xl font-semibold leading-tight">Choose Subscription for Better Experience</h1>
                             <p className="px-4 sm:px-8 lg:px-24 text-lg">Get an individual plan with features that you need, or create a team instead!</p>
                         </div>
                         <div className="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:grid-cols-3 lg:max-w-full ">

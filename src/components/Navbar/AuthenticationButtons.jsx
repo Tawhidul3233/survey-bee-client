@@ -19,15 +19,15 @@ const AuthenticationButtons = ({
         <>
           <Link
             to="/login"
-            className={`text-xl text-black font-semibold ${className}`}
+            className={` btn btn-success  normal-case text-white font-semibold ${className}`}
           >
             Log in
           </Link>
           <Link
             to="/register"
-            className={`btn btn-success normal-case lg:text-xl font-semibold ${className}`}
+            className={`btn btn-success normal-case bg-gray-200 border-none hover:text-white text-success font-semibold ${className}`}
           >
-            Sign up free
+            Sign up
           </Link>
         </>
       ) : (
