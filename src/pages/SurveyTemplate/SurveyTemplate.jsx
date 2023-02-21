@@ -30,7 +30,7 @@ const Survey = () => {
   };
   return (
     <div className="bg-white p-8 rounded-lg">
-      <div className="w-1/2 bg-slate-300 mx-auto p-8 rounded">
+      <div className="w-1/2 bg-slate-200 mx-auto p-8 rounded">
         <h2 className="text-2xl font-bold mb-4 text-center text-green-600">
           {survey_title}
         </h2>

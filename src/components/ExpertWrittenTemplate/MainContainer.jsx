@@ -82,7 +82,7 @@ const MainContainer = () => {
           />
         </div>
         <div className="basis-3/4 mx-5 ">
-          <div className="grid justify-center">
+          <div className="flex justify-center items-center ml-14 ">
             <TemplatesCard
               surveyTemplateData={surveyTemplateData}
               filteredData={filteredData}
