@@ -25,11 +25,12 @@ const SurveyAudience = () => {
   const handleClick = (id) => {
     setSelectedCategoryId(id);
   };
+
   const selectedCategory = categorys.find((c) => c._id === selectedCategoryId);
   const selectedCards = selectedCategory
     ? selectedCategory.card
     : categorys[0].card;
-
+  // console.log("selectedCards", categorys);
   return (
     <div className="bg-slate-100">
       <div className="my-4 rounded-md w-full md:w-10/12 mx-auto md:mx-auto p-5">

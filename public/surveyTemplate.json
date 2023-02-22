@@ -1,42 +1,6 @@
 [
   {
     "survey_title": "Customer Satisfaction Survey",
-
-    "questions": [
-      {
-        "questions": "How satisfied are you with the quality of our product?",
-        "questionsType": "rating",
-        "optionAnswers": [
-          "Very Dissatisfied",
-          "Dissatisfied",
-          "Neutral",
-          "Satisfied",
-          "Very Satisfied"
-        ]
-      },
-      {
-        "questions": "How likely are you to recommend our product to a friend or colleague?",
-        "questionsType": "rating",
-        "optionAnswers": [
-          "Very Unlikely",
-          "Unlikely",
-          "Neutral",
-          "Likely",
-          "Very Likely"
-        ]
-      },
-      {
-        "questions": "What specific feature do you like the most about our product?",
-        "questionsType": "text"
-      },
-      {
-        "questions": "What can we improve about our product?",
-        "questionsType": "text"
-      }
-    ]
-  },
-  {
-    "survey_title": "Customer Satisfaction Survey",
     "img": "https://i.ibb.co/zQ7hgVy/customer-satisfaction-survey-template-1.png",
     "questions": [
       {

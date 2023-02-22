@@ -30,7 +30,7 @@ const Survey = () => {
   };
   return (
     <div className="bg-white p-8 rounded-lg">
-      <div className="w-1/2 bg-slate-300 mx-auto p-8 rounded">
+      <div className="w-1/2 bg-slate-200 mx-auto p-8 rounded">
         <h2 className="text-2xl font-bold mb-4 text-center text-green-600">
           {survey_title}
         </h2>
@@ -68,7 +68,7 @@ const Survey = () => {
               <>
                 <Link
                   onClick={surveyHandler}
-                  className="capitalize px-6 py-2 rounded-lg bg-blue-700 text-white"
+                  className="capitalize px-6 py-2 rounded-lg bg-gradient-to-r from-lime-500 to-cyan-400 hover:bg-gradient-to-r hover:from-pink-600 hover:to-violet-600 text-white"
                   to={`/PublicSurvey/${surveyTemplate._id}`}
                 >
                   share
