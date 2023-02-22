@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { user } from "../../features/userSlice";
 import axios from "axios";
@@ -105,11 +105,17 @@ const PublicSurvey = () => {
                   <>
                     <div className="text-center mt-4">
                       <button
-                        className="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded"
+                        className="py-2 px-4 bg-gradient-to-r from-lime-500 to-cyan-400 hover:bg-gradient-to-r hover:from-pink-600 hover:to-violet-600 text-white font-bold rounded"
                         onClick={handleCopyLink}
                       >
                         {isCopied ? "Link copied!" : "Copy link"}
                       </button>
+                      <Link
+                        to={"/"}
+                        className=" ml-6 rounded py-2 px-4 bg-gradient-to-r from-blue-800 to-indigo-900 text-white hover:bg-gradient-to-r hover:from-violet-600 hover:to-indigo-600"
+                      >
+                        Back To Home
+                      </Link>
                     </div>
                   </>
                 ) : (
