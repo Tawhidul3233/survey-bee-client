@@ -32,8 +32,13 @@ const PublicSurvey = () => {
     e.preventDefault();
 
     const cookieName = `form_submitted_${formData?.survey_id}`;
+    const surveyData = {
+      surveyTitle: survey_title,
+      survey_data: formData,
+    };
+
     axios
-      .post("http://localhost:5000/surveyData", formData)
+      .post("http://localhost:5000/surveyData", surveyData)
       .then((Response) => {
         console.log();
         if (Response?.data?.acknowledged) {
