@@ -79,13 +79,15 @@ const IncameChart = () => {
     ],
   };
 
-  
+
 
   return (
-    <div className="max-w-screen-xl mx-auto">
-      <div>
-        <CanvasJSChart options={options}
-        />
+    <div className="max-w-screen-xl mx-auto my-16 ">
+      <div className="sm:mx-5 mx-2 text-center  ">
+        <div>
+          <CanvasJSChart options={options}
+          />
+        </div>
       </div>
     </div>
   );
