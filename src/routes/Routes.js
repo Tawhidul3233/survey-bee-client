@@ -15,6 +15,7 @@ import DashboardPrimaryPage from "../pages/Dashboard/DashboardPrimaryPage";
 import MySurveys from "../pages/Dashboard/MySurveys";
 import PreviewSurvey from "../pages/Dashboard/PreviewSurvey";
 import SurveyCreateForm from "../pages/Dashboard/SurveyCreateForm";
+import SurveyShare from "../pages/Dashboard/SurveyShare";
 import Home from "../pages/Home/Home";
 import BuyNow from "../pages/Pricing/BuyNow";
 import PayNow from "../pages/Pricing/PayNow";
@@ -58,6 +59,7 @@ export const router = createBrowserRouter([
         path: "/cx",
         element: <Cx> </Cx>,
       },
+
       {
         path: "/survey-Audience/:title/:id",
         loader: ({ params }) =>
@@ -88,8 +90,8 @@ export const router = createBrowserRouter([
         element: <PayNow></PayNow>,
       },
       {
-        path:"/buysurvey/:id",
-        loader:({params}) => 
+        path: "/buysurvey/:id",
+        loader: ({ params }) =>
           fetch(`https://survey-bee-server.vercel.app/buysurvey/${params.id}`)
         ,
         element: <BuySurvey> </BuySurvey>,
@@ -127,14 +129,15 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/editsurvey/:id",
-        // loader: ({ params }) =>
-        //   fetch(`https://survey-bee-server.vercel.app/editsurvey/${params?.id}`),
+        loader: ({ params }) =>
+          fetch(`https://survey-bee-server.vercel.app/editsurvey/${params?.id}`),
         element: <SurveyCreateForm />,
       },
       {
         path: "/dashboard/preview/:id",
         element: <PreviewSurvey />,
       },
+
       {
         path: "/dashboard/overview",
         element: <AdminHome />,
@@ -154,5 +157,9 @@ export const router = createBrowserRouter([
     loader: ({ params }) =>
       fetch(`https://survey-bee-server.vercel.app/PublicSurvey/${params.id}`),
     element: <Survey />,
+  },
+  {
+    path: "/surveyshare/:id",
+    element: <SurveyShare />,
   },
 ]);

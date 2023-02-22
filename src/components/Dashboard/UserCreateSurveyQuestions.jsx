@@ -6,7 +6,7 @@ const UserCreateSurveyQuestions = ({ userCreatedQuestion, handleDeleteSurveyQues
   const surveyInfo = editSurveyLoaderData || userCreatedQuestion[0];
   // console.log(editSurveyLoaderData, "----------", userCreatedQuestion[0]);
   // console.log(surveyInfo?.questionsAndTypes?.questionsType)
-  console.log(surveyInfo?.questionsAndTypes?.optionAnswers)
+  // console.log(surveyInfo?.questionsAndTypes?.optionAnswers)
   return (
     <>
       <div className="flex flex-col items-start gap-y-10">

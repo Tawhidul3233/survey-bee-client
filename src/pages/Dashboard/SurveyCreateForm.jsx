@@ -6,7 +6,7 @@ import { useState } from "react";
 // import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Breadcrums from "../../components/Dashboard/Breadcrums";
 // import MultiQuestionModal from "../../components/Dashboard/MultiQuestionModal";
 import UserCreateSurveyQuestions from "../../components/Dashboard/UserCreateSurveyQuestions";
@@ -52,7 +52,7 @@ const SurveyCreateForm = () => {
     } catch (error) {
       console.log(error);
     }
-  }, [getID, isAdded]);
+  }, [getID, isAdded, editSurveyLoaderData]);
 
   const getDataById = async (survId) => {
     const response = await axios.get(
@@ -85,27 +85,6 @@ const SurveyCreateForm = () => {
 
   const [selectedOption, setSelectedOption] = useState('');
   const [showOption, setShowOption] = useState(false)
-  // const [count, setCount] = useState(1);
-  // const [optinoValue, setOptionValue] = useState([])
-
-  // const handleAdd = () => {
-  //   if (count <= 3) {
-  //     setCount(count + 1)
-  //   }
-  // };
-  // const handleRemove = () => {
-  //   if (count > 1) {
-  //     setCount(count - 1);
-  //   }
-  // };
-
-  // const collectOptionValue = (index, event) => {
-
-  //   const newValues = [...optinoValue];
-  //   newValues[index] = event.target.value;
-  //   setOptionValue(newValues);
-  //   console.log(optinoValue)
-  // }
 
 
 
@@ -117,73 +96,6 @@ const SurveyCreateForm = () => {
     return setShowOption(false)
   }
 
-  // const OptionModal = () => {
-  //   return (
-  //     <div>
-  //       <input type="checkbox" id="multiQuestionModal" className="modal-toggle" />
-  //       <div className="modal">
-  //         <div className="modal-box relative">
-  //           <label
-  //             htmlFor="multiQuestionModal"
-  //             className="btn btn-sm btn-circle absolute right-2 top-2"
-  //           >
-  //             ✕
-  //           </label>
-  //           <h3 className="text-lg font-bold">New Survey</h3>
-  //           <form onSubmit={handleSubmit}>
-  //             <div className="pt-0 pb-4 bg-gray-900 flex px-4 mt-2">
-  //               <div className="w-full">
-  //                 <div className="w-full flex flex-col gap-y-2 my-4">
-  //                   <div className="form-control w-full">
-  //                     <label className="label">
-  //                       <span className="label-text text-white text-xl">
-  //                         Survey Title
-  //                       </span>
-  //                     </label>
-  //                     <input
-  //                       className="border border-info rounded-sm px-3 py-1 text-[1rem]"
-  //                       placeholder="Enter your survey title"
-  //                       {...register("surveyTitle", { required: true })}
-  //                       aria-invalid={errors.surveyTitle ? "true" : "false"}
-  //                       type="text"
-  //                     />
-  //                     {errors.surveyTitle?.type === "required" && (
-  //                       <p role="alert" className="text-red-600 text-[.9rem]">
-  //                         Survey title is required
-  //                       </p>
-  //                     )}
-  //                   </div>
-  //                   <div className="form-control w-full">
-  //                     <label className="label">
-  //                       <span className="label-text text-white text-xl">
-  //                         Survey category
-  //                       </span>
-  //                     </label>
-  //                     {errors.surveyCategory?.type === "required" && (
-  //                       <p role="alert" className="text-red-600 text-[.9rem]">
-  //                         survey categorys is required
-  //                       </p>
-  //                     )}
-  //                   </div>
-  //                 </div>
-  //               </div>
-  //             </div>
-  //             <div className="modal-action">
-  //               <label htmlFor="createSurveyModal" className={`w-full lg:w-1/3`}>
-  //                 <input
-  //                   type="submit"
-  //                   className="btn btn-secondary w-full normal-case text-white"
-  //                   value="Create Survey"
-  //                 />
-  //               </label>
-  //             </div>
-  //           </form>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
 
 
 
@@ -191,7 +103,7 @@ const SurveyCreateForm = () => {
 
     setShowOption(false)
     const optionValue = data?.answers;
-    console.log(optionValue)
+    // console.log(optionValue)
     const questions = data?.questions;
     const questionType = data?.questionsType;
     const surveyModifiedTime = new Date().toLocaleDateString();
@@ -253,21 +165,35 @@ const SurveyCreateForm = () => {
     }
   };
 
+  {/* <Link
+          to={`/surveyshare/${editSurveyLoaderData?._id ? editSurveyLoaderData?._id : surveId
+            }`}
+          className="text-xl text-secondary font-semibold"
+        >
+          Share
+        </Link> */}
 
-
-
+  console.log(editSurveyLoaderData?._id)
   return (
     <div className="min-h-screen bg-[#eef0f4]">
       <div className="mx-5 sm:mx-10 sm:mt-3 sm:mb-3">
         <Breadcrums editSurveyLoaderData={editSurveyLoaderData} />
+        <div className=" flex justify-end ">
+          <Link
+            to={`/surveyshare/${editSurveyLoaderData?._id}`}
+            className="text-xl text-secondary font-semibold "
+          >
+            Share
+          </Link>
+        </div>
         <h2 className="text-2xl text-primary font-extrabold text-center mt-10 ">
           {editSurveyLoaderData?.surveyTitle ||
             userCreatedQuestion[0]?.surveyTitle}
         </h2>
         <p className="text-center my-5">
-          { editSurveyLoaderData?.surveyDescription ||
+          {editSurveyLoaderData?.surveyDescription ||
             userCreatedQuestion[0]?.surveyDescription
-            }
+          }
         </p>
       </div>
       <div className="px-5 md:px-20 my-5">
@@ -316,11 +242,6 @@ const SurveyCreateForm = () => {
                 <option >Textbox</option>
                 <option >Comment Box  </option>
                 <option >Multiple choice </option>
-                {/* {questionsType.map((qtype, i) => (
-                  <option value={qtype} key={i}>
-                    {qtype}
-                  </option>
-                ))} */}
               </select>
             </div>
           </div>
@@ -333,11 +254,6 @@ const SurveyCreateForm = () => {
                   {fields.map((item, index) => (
                     <li key={item.id}>
                       <input {...register(`answers.${index}.answer`)} className="my-1 p-1 border" />
-                      {/* <Controller
-                        render={({ field }) => <input {...field} />}
-                        name={`test.${index}.lastName`}
-                        control={control}
-                      /> */}
                       <button type="button" onClick={() => remove(index)} className="p-1 bg-red-700 text-white text-xs ml-2" >Delete</button>
                     </li>
                   ))}

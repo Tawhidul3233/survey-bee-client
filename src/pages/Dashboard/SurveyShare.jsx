@@ -1,10 +1,23 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import Breadcrums from "../../components/Dashboard/Breadcrums";
 import Loading from "../../components/Shared/Loading";
+import { setActiveUser } from "../../features/userSlice";
+import { user } from "../../features/userSlice";
 
-const PreviewSurvey = () => {
+const SurveyShare = () => {
+
+  const activeUser = useSelector(user);
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
+  };
+
   const [preveiwSurveyData, setPreviewSurveyData] = useState({});
   const [isPreviewLoading, setIsPreviewLoading] = useState(false);
   const location = useLocation();
@@ -50,13 +63,13 @@ const PreviewSurvey = () => {
         <>
           <div className="min-h-screen  rounded-md w-full sm:w-8/12 bg-[#eef0f4] mx-auto">
             <div className=" mx-5 sm:mx-15 sm:mx-10 sm:mt-3 sm:mb-3">
-              <>
+              {/* <>
                 <Breadcrums surveId={getID} />
-              </>
+              </> */}
               <div className="mx-auto ">
                 <div className="">
                   <h2 className="text-2xl text-center text-primary font-extrabold pt-10">
-                    {preveiwSurveyData?.surveyTitle} 
+                    {preveiwSurveyData?.surveyTitle}
                   </h2>
                   <p className="text-center my-5">
                     {preveiwSurveyData?.surveyDescription}
@@ -105,9 +118,16 @@ const PreviewSurvey = () => {
                     </div>
                   ))}
                   <div className="flex pb-20 mt-8 w-full ">
-                    <button className="btn btn-success px-4 py-2 text-center mx-auto">
-                      Done
-                    </button>
+                    {activeUser?.user ?
+                      <button className="btn btn-success px-4 py-2 text-center mx-auto" onClick={handleCopyLink}>
+                        {
+                           isCopied? "Link copied!": "Copy link" 
+                        }
+                      </button> :
+                      <button className="btn btn-success px-4 py-2 text-center mx-auto">
+                        Submit You Opinion
+                      </button>
+                    }
                   </div>
                 </div>
               </div>
@@ -119,4 +139,4 @@ const PreviewSurvey = () => {
   );
 };
 
-export default PreviewSurvey;
+export default SurveyShare;
