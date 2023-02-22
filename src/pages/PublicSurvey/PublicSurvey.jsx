@@ -4,53 +4,48 @@ import { useSelector } from "react-redux";
 import { user } from "../../features/userSlice";
 import axios from "axios";
 import { useEffect } from "react";
+import Cookies from "js-cookie";
 
 const PublicSurvey = () => {
   const surveyTemplate = useLoaderData();
   const { survey_title, questions } = surveyTemplate;
-
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   const activeUser = useSelector(user);
 
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  // handle copy
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href);
     setIsCopied(true);
     setTimeout(() => setIsCopied(false), 2000);
   };
-  const [formData, setFormData] = useState({});
 
+  // handle form data
+  const [formData, setFormData] = useState({});
   const handleForm = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // survey data handler
   const srveyDataHandler = (e) => {
     e.preventDefault();
+
+    const cookieName = `form_submitted_${formData?.survey_id}`;
     axios
       .post("http://localhost:5000/surveyData", formData)
       .then((Response) => {
         console.log();
         if (Response?.data?.acknowledged) {
-          // console.log(Response.data.success);
           setFormSubmitted(true);
+          Cookies.set(cookieName, "true", { expires: 1 });
         }
       })
       .catch((err) => {
         console.log(err);
       });
   };
-  useEffect(() => {
-    const isFormSubmitted = localStorage.getItem("formSubmitted");
-    if (isFormSubmitted) {
-      setFormSubmitted(true);
-    }
-  }, []);
 
-  useEffect(() => {
-    if (formSubmitted) {
-      localStorage.setItem("formSubmitted", "true");
-    }
-  }, [formSubmitted]);
   return (
     <>
       {formSubmitted ? (
