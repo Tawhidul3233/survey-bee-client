@@ -51,9 +51,6 @@ const UserChart = () => {
   return (
     <div className="max-w-screen-xl mx-auto">
       <div className="sm:mx-5 mx-2 text-center  ">
-        {/* <div>
-        <h2 className='text-center mx-auto my-5 font-semibold text-lg bg-green-500 w-3/5 text-white'>User Analysis</h2>
-      </div > */}
         <div>
           <CanvasJSChart options={options} />
         </div>
