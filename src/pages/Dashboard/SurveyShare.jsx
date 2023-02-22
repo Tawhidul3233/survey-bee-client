@@ -25,12 +25,6 @@ const SurveyShare = () => {
     setSubmitSurvey(true)
   }
 
-
-
-
-
-
-
   const [preveiwSurveyData, setPreviewSurveyData] = useState({});
   const [isPreviewLoading, setIsPreviewLoading] = useState(false);
   const location = useLocation();
