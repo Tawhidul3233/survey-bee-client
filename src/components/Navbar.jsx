@@ -174,16 +174,16 @@ const Navbar = () => {
                                     </span>
                                   </Link>
                                 </div>
-                                <div className="flex flex-col w-full px-4 py-2">
+                                {/* <div className="flex flex-col w-full px-4 py-2">
                                   <Link
-                                    to="/setting"
+                                    to="/myhistory"
                                     className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
                                   >
                                     <span className="font-semibold text-xl text-secondary block">
-                                      Setting
+                                      My History
                                     </span>
                                   </Link>
-                                </div>
+                                </div> */}
                               </div>
                             </ul>
                           }

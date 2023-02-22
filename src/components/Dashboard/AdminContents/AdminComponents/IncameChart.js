@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import CanvasJSReact from "./canvasjs.react";
+import React from 'react';
+import CanvasJSReact from './canvasjs.react';
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
@@ -29,20 +29,21 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 //   }
 // ]
+// <div className=' flex justify-center'>
+//       <LineChart width={330} height={150} data={data}
+//         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+//         <CartesianGrid strokeDasharray="3 3" />
+//         <XAxis dataKey="name" />
+//         <YAxis />
+//         <Tooltip />
+//         <Legend />
+//         <Line type="monotone" dataKey="Dollers" stroke="#8884d8" />
+//         {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
+//       </LineChart>
+//     </div>
 
 const IncameChart = () => {
-  // <div className=' flex justify-center'>
-  //       <LineChart width={330} height={150} data={data}
-  //         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-  //         <CartesianGrid strokeDasharray="3 3" />
-  //         <XAxis dataKey="name" />
-  //         <YAxis />
-  //         <Tooltip />
-  //         <Legend />
-  //         <Line type="monotone" dataKey="Dollers" stroke="#8884d8" />
-  //         {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
-  //       </LineChart>
-  //     </div>
+
   const options = {
     animationEnabled: true,
     title: {
@@ -78,18 +79,13 @@ const IncameChart = () => {
     ],
   };
 
+  
+
   return (
     <div className="max-w-screen-xl mx-auto">
-      <div className=" my-16 sm:mx-5 mx-2  ">
-        {/* <div className=''>
-        <h2 className='text-center mx-auto font-semibold text-lg my-5 bg-blue-700 w-3/5 text-white' >Incame Analysis</h2>
-      </div> */}
-
-        <CanvasJSChart
-          options={options}
-          /* onRef={ref => this.chart = ref} */
+      <div>
+        <CanvasJSChart options={options}
         />
-        {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
       </div>
     </div>
   );

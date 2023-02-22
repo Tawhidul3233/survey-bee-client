@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const getUserAllSurveys = async (email) => {
+  // http://localhost:5000/userCreatedSurveyQuestions?email=try@try.com
   try {
     if (email) {
       const response = await axios.get(
