@@ -38,7 +38,7 @@ const PublicSurvey = () => {
     };
 
     axios
-      .post("http://localhost:5000/surveyData", surveyData)
+      .post("https://survey-bee-server.vercel.app/surveyData", surveyData)
       .then((Response) => {
         console.log();
         if (Response?.data?.acknowledged) {
