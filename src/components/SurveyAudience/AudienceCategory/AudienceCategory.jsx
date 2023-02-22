@@ -12,7 +12,7 @@ const AudienceCategory = ({ categorys, handleClick, selectedCategoryId }) => {
             onClick={() => handleClick(category._id)}
             className={`bg-white px-5 py-2 text-sm md:text-lg md:px-5 md:py-2 rounded ${
               selectedCategoryId === category._id
-                ? "bg-blue-400 text-white"
+                ? "bg-gradient-to-r from-lime-500 to-cyan-400 hover:bg-gradient-to-r hover:from-pink-600 hover:to-violet-600 text-white"
                 : ""
             }`}
           >
