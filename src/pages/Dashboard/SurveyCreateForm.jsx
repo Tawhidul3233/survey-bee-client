@@ -13,6 +13,7 @@ import UserCreateSurveyQuestions from "../../components/Dashboard/UserCreateSurv
 import Loading from "../../components/Shared/Loading";
 import { user } from "../../features/userSlice";
 import { useForm, useFieldArray, Controller } from "react-hook-form";
+import { FcShare, FcFullTrash, FcPlus } from "react-icons/fc";
 
 const questionsType = ["Textbox", "Comment Box", "Multiple choice"];
 
@@ -181,9 +182,9 @@ const SurveyCreateForm = () => {
         <div className=" flex justify-end ">
           <Link
             to={`/surveyshare/${editSurveyLoaderData?._id}`}
-            className="text-xl text-secondary font-semibold "
+            className="text-xl text-secondary font-semibold flex items-center "
           >
-            Share
+            <FcShare className="mr-2 w-5 h-5 sm:w-8 sm:h-8" > </FcShare> Share
           </Link>
         </div>
         <h2 className="text-2xl text-primary font-extrabold text-center mt-10 ">
@@ -249,21 +250,21 @@ const SurveyCreateForm = () => {
             {showOption && (
 
               <div className="" >
-                <p className="text-xl font-semibold mb-2">Add Option</p>
+                <p className="text-xl font-semibold mb-2">Add Answers</p>
                 <ul>
                   {fields.map((item, index) => (
                     <li key={item.id}>
                       <input {...register(`answers.${index}.answer`)} className="my-1 p-1 border" />
-                      <button type="button" onClick={() => remove(index)} className="p-1 bg-red-700 text-white text-xs ml-2" >Delete</button>
+                      <button type="button" onClick={() => remove(index)} className="p-1 bg-red-700 text-white text-xs ml-2" > Remove </button>
                     </li>
                   ))}
                 </ul>
                 <button
                   type="button"
                   onClick={() => append()}
-                  className="p-1 bg-blue-700 mr-5 text-white text-xs"
+                  className="p-1 bg-blue-700 mr-5 text-white text-xs "
                 >
-                  Add+
+                  <span className=" flex items-center">Add <FcPlus></FcPlus></span>
                 </button>
               </div>
             )}

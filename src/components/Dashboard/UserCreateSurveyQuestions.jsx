@@ -1,5 +1,7 @@
 import React from "react";
 import Loading from "../Shared/Loading";
+import { AiFillDelete } from "react-icons/ai";
+
 
 const UserCreateSurveyQuestions = ({
   userCreatedQuestion,
@@ -36,7 +38,7 @@ const UserCreateSurveyQuestions = ({
                     </span>
                     <>
                       <button
-                        className="btn btn-warning btn-xs px-2 text-xs"
+                        className=" bg-red-500 hover:bg-white p-2 rounded-full text-xs"
                         onClick={() =>
                           handleDeleteSurveyQuestion(
                             surveyInfo?._id,
@@ -45,7 +47,7 @@ const UserCreateSurveyQuestions = ({
                           )
                         }
                       >
-                        Delete
+                        <AiFillDelete className=" text-white w-4 h-4 sm:w-6 sm:h-6 hover:text-red-500"> </AiFillDelete>
                       </button>
                     </>
                   </div>
