@@ -1,6 +1,7 @@
 import React from 'react';
-
+import Lottie from 'lottie-react';
 import Review from './Review';
+import contact from './contact.json';
 const Testimonial = () => {
 
     const reviews=[
@@ -30,12 +31,24 @@ const Testimonial = () => {
 
 ]
     return (
-        <div className='py-16 bg-[#f5f6fa]'>
-            <div className='text-center'>
-                <h2 className='text-2xl font-bold mb-3'>Tools that spark business breakthroughs</h2>
-                <p>Discover specialized tool kits designed for your role and industry.</p>
+        <div className='py-16'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center justify-center mb-5 lg:px-12'>
+            
+            <div>
+                <Lottie animationData={contact} loop={true} className='lg:w-96 mx-auto'></Lottie>
+                </div>
+            
+            <div>
+                <h2 className='text-2xl font-bold mb-3 lg:text-start sm:text-center'>Tools that spark business breakthroughs</h2>
+                <p className='text-start'>Our dedicated customer support team is available 24/7 to assist you with any questions or concerns you may have.At Survey Bee, we are committed to providing exceptional customer support that goes above and beyond your expectations.</p>
+
+
             </div>
-            <div className='grid gap-2 sm:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-12 lg:px-20 justify-center items-center'>
+
+                
+            </div>
+
+            <div className='grid gap-2 sm:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-8 lg:px-20 justify-center items-center'>
                 {
                     reviews.map(review=><Review review={review} key={review._id}>
 

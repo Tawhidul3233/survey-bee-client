@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Review = ({ review }) => {
   const { img, designation, des } = review;
   return (
-    <div className="mx-auto">
+    <div className="mx-auto bg-[#f5f6fa]">
 
 
       <div className="card card-body mx-auto w-80  hover:bg-base-100 hover:shadow-2xl border border-1 duration-300 h-[350px] rounded">
