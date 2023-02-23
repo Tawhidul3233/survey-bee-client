@@ -7,6 +7,9 @@ import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-hot-toast';
 import './Contact.css';
+import Lottie from 'lottie-react';
+import text from './text.json';
+
 
 const Contact = () => { 
 
@@ -26,10 +29,14 @@ const Contact = () => {
     }
 
     return (
-        <div id='contact' className='mt-32 banner' style={{ backgroundImage: `url("https://i.ibb.co/3CBf0fM/contact.jpg")` }} >
-            <h1 className='text-center text-3xl font-semibold mb-10 pt-10 text-white'>Contact US</h1>
+        <div  className='my-32 contact' style={{ backgroundImage: `url("https://i.ibb.co/3CBf0fM/contact.jpg")` }} >
+            {/* <h1 className='text-center text-3xl font-semibold mb-10 pt-10 text-white'>Contact US</h1> */}
             
-            <div className='py-12'>
+
+            <Lottie animationData={text} loop={true} className='lg:w-72 lg:h-full mx-auto'></Lottie>
+           
+            
+            <div className='py-4'>
              <div className="hero lg:w-4/5 w-full mx-auto">
               <div className="flex flex-col items-start lg:gap-x-40 lg:flex-row-reverse">
                <form ref={form} onSubmit={handleSendEmail} className="card-body justify-items-center p-0 text-white">
