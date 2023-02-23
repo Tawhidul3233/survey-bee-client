@@ -1,9 +1,24 @@
 import React from 'react';
-import { useState } from 'react';
-import UserDeleteModal from './UserDeleteModal';
+import { toast } from 'react-hot-toast';
+
 const EachUser = ({ d }) => {
-  const [deleteUser, setDeleteUser] = useState({})
-  // console.log(d)
+
+  const deleteItem = (id) => {
+    console.log(id)
+    fetch(`http://localhost:5000/deleteuser/${id}`,
+      {
+        method: 'DELETE',
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        toast.success(`User ${d?.userName} successfully Deleted ` )
+      })
+      .catch(error => {
+        console.log(error)
+        toast.error('Somthing wrong try again')
+      })
+  }
   return (
     <>
       <tr>
@@ -13,12 +28,10 @@ const EachUser = ({ d }) => {
         <td> {d?.jobRole}  </td>
         <td> {d?.userType}  </td>
         <td >
-          {/* <button onClick={() => setDeleteUser(d)} className='btn btn-xs bg-red-600 text-white border-none text-[10px]'> Remove </button> */}
-          <label htmlFor="delete-modal" className='ml-2 btn btn-xs btn-outline bg-red-500 text-white' onClick={() => setDeleteUser(d)}>Remove
-            {/* onClick={() => deleteItem(bill._id)} */}
+          <label onClick={() => deleteItem(d?._id)} className='ml-2 btn btn-xs btn-outline bg-red-500 text-white' >Remove
           </label>
-          <UserDeleteModal d={d}> </UserDeleteModal>
         </td>
+
       </tr>
     </>
   );
