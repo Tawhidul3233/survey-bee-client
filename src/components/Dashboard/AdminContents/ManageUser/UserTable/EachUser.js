@@ -5,20 +5,21 @@ const EachUser = ({ d }) => {
 
   const deleteItem = (id) => {
     console.log(id)
-    fetch(`http://localhost:5000/deleteuser/${id}`,
+    fetch(`https://survey-bee-server.vercel.app/deleteuser/${id}`,
       {
         method: 'DELETE',
       })
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        toast.success(`User ${d?.userName} successfully Deleted ` )
+        toast.success(`User ${d?.userName} successfully Deleted `)
       })
       .catch(error => {
         console.log(error)
         toast.error('Somthing wrong try again')
       })
   }
+
   return (
     <>
       <tr>

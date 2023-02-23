@@ -14,7 +14,7 @@ const UserHeader = () => {
         setUserData(data)
         setOriginalData(data)
       })
-  }, [])
+  }, [originalData])
 
   // const [userData, setUserData] = useState(data)
   const [search, setSearch] = useState('')
