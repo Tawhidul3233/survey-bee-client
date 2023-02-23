@@ -11,7 +11,12 @@ const Cx = () => {
      return (
           <div>
                <CxBanner> </CxBanner>
-               
+               <CreateGreat> </CreateGreat>
+               <BuildCx> </BuildCx>
+               <CxResarch> </CxResarch>
+               <CxListen> </CxListen>
+               <RequestCx></RequestCx>
+               <FeedbackCx> </FeedbackCx>
           </div>
      );
 };
