@@ -5,10 +5,12 @@ import { toast } from "react-hot-toast";
 import { saveUserToDB } from "../../../api/saveUserToDB";
 import GoogleLogin from "../../../components/Navbar/GoogleLogin";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const navigate = useNavigate();
+  const loaction = useLocation();
+  const from = loaction.state?.from?.pathname || "/";
   const { register, handleSubmit } = useForm();
 
   // create user with email and password
@@ -32,7 +34,7 @@ const Register = () => {
           .catch((err) => {
             console.log(err);
           });
-        return navigate("/dashboard");
+        return navigate(from, { replace: true });
       })
       .catch((err) => {
         console.log(err);
@@ -111,7 +113,7 @@ const Register = () => {
                 </label>
                 <input
                   {...register("password")}
-                  type="text"
+                  type="password"
                   className="input w-full "
                 />{" "}
                 <hr />
@@ -119,6 +121,7 @@ const Register = () => {
               <div className="mt-5 w-5/6 md:w-3/4">
                 <button className=" bg-[#00C38B] w-full py-5 rounded-lg text-white ">
                   Sing up
+                  {/* {isLoading? <SmallSpinner/>: "Sign in"} */}
                 </button>
               </div>
             </form>
@@ -131,7 +134,7 @@ const Register = () => {
                 Already have an accoutn?{" "}
                 <span className="text-[#00C38B] text[14px] font-semibold underline">
                   {" "}
-                  <a href=" "> Log in</a>{" "}
+                  <a href="/login"> Log in</a>{" "}
                 </span>{" "}
               </p>
             </div>

@@ -3,18 +3,21 @@ import { auth } from "../../../firebase/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../../../components/Navbar/GoogleLogin";
+import SmallSpinner from "../../../components/Spinner/SmallSpinner";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
+  const loaction = useLocation();
+  const from = loaction.state?.from?.pathname || "/";
 
   const handleUserLogin = (data) => {
     signInWithEmailAndPassword(auth, data?.email, data?.password)
       .then(() => {
         toast.success("log in successful!");
-        return navigate("/dashboard");
+        return navigate(from, { replace: true });
       })
       .catch((err) => {
         toast.warn(err.message);
@@ -91,6 +94,7 @@ const Login = () => {
                   type="submit"
                   className=" bg-[#00C38B] w-full py-5 rounded-lg text-white "
                 >
+                  {/* {isLoading? <SmallSpinner/>: "Sign in"} */}
                   Sing in
                 </button>
               </div>

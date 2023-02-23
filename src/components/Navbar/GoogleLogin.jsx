@@ -3,10 +3,12 @@ import React from "react";
 import { toast } from "react-hot-toast";
 import { saveUserToDB } from "../../api/saveUserToDB";
 import { auth, googleAuthProvider } from "../../firebase/firebase";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const GoogleLogin = () => {
   const navigate = useNavigate();
+  const loaction = useLocation();
+  const from = loaction.state?.from?.pathname || "/";
 
   // user login with google
   const handleUserGoogleLogin = () => {
@@ -17,7 +19,7 @@ const GoogleLogin = () => {
         saveUserToDB(result.user.displayName, result.user.email)
           .then((data) => {
             console.log(data);
-            return navigate("/dashboard");
+            return navigate(from, { replace: true });
           })
           .catch((err) => {
             console.log(err);
@@ -31,8 +33,11 @@ const GoogleLogin = () => {
   return (
     <div>
       <div className="mt-5 w-5/6 md:w-3/4">
-        <button onClick={handleUserGoogleLogin} className=" bg-yellow-500 w-full py-5 rounded-lg text-white ">
-        Continue With google
+        <button
+          onClick={handleUserGoogleLogin}
+          className=" bg-yellow-500 w-full py-5 rounded-lg text-white "
+        >
+          Continue With google
         </button>
       </div>
     </div>

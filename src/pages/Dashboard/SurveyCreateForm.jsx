@@ -4,22 +4,29 @@ import React, { startTransition } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 // import { useState } from "react";
-import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Breadcrums from "../../components/Dashboard/Breadcrums";
-import MultiQuestionModal from "../../components/Dashboard/MultiQuestionModal";
+// import MultiQuestionModal from "../../components/Dashboard/MultiQuestionModal";
 import UserCreateSurveyQuestions from "../../components/Dashboard/UserCreateSurveyQuestions";
 import Loading from "../../components/Shared/Loading";
 import { user } from "../../features/userSlice";
+import { useForm, useFieldArray, Controller } from "react-hook-form";
+import { FcShare, FcFullTrash, FcPlus } from "react-icons/fc";
 
 const questionsType = ["Textbox", "Comment Box", "Multiple choice"];
 
 const SurveyCreateForm = () => {
 
 
-  const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, control, trigger, reset, watch, formState: { errors } } = useForm();
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "answers"
+  });
+
+
   const [editSurveyLoaderData, setEditSurveyLoaderData] = useState({});
   const activeUser = useSelector(user);
   const { user: existingUser } = activeUser;
@@ -30,6 +37,7 @@ const SurveyCreateForm = () => {
   const id = location.pathname.split("/").slice(-1);
   const [isAdded, setIsAdded] = useState(false);
   const getID = id[0];
+
 
   useEffect(() => {
     try {
@@ -45,7 +53,7 @@ const SurveyCreateForm = () => {
     } catch (error) {
       console.log(error);
     }
-  }, [getID, isAdded]);
+  }, [getID, isAdded, editSurveyLoaderData]);
 
   const getDataById = async (survId) => {
     const response = await axios.get(
@@ -78,27 +86,6 @@ const SurveyCreateForm = () => {
 
   const [selectedOption, setSelectedOption] = useState('');
   const [showOption, setShowOption] = useState(false)
-  const [count, setCount] = useState(1);
-  const [optinoValue, setOptionValue] = useState([])
-
-  const handleAdd = () => {
-    if (count <= 3) {
-      setCount(count + 1)
-    }
-  };
-  const handleRemove = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    }
-  };
-
-  const collectOptionValue = (index, event) => {
-
-    const newValues = [...optinoValue];
-    newValues[index] = event.target.value;
-    setOptionValue(newValues);
-    console.log(optinoValue)
-  }
 
 
 
@@ -110,92 +97,28 @@ const SurveyCreateForm = () => {
     return setShowOption(false)
   }
 
-  // const OptionModal = () => {
-  //   return (
-  //     <div>
-  //       <input type="checkbox" id="multiQuestionModal" className="modal-toggle" />
-  //       <div className="modal">
-  //         <div className="modal-box relative">
-  //           <label
-  //             htmlFor="multiQuestionModal"
-  //             className="btn btn-sm btn-circle absolute right-2 top-2"
-  //           >
-  //             ✕
-  //           </label>
-  //           <h3 className="text-lg font-bold">New Survey</h3>
-  //           <form onSubmit={handleSubmit}>
-  //             <div className="pt-0 pb-4 bg-gray-900 flex px-4 mt-2">
-  //               <div className="w-full">
-  //                 <div className="w-full flex flex-col gap-y-2 my-4">
-  //                   <div className="form-control w-full">
-  //                     <label className="label">
-  //                       <span className="label-text text-white text-xl">
-  //                         Survey Title
-  //                       </span>
-  //                     </label>
-  //                     <input
-  //                       className="border border-info rounded-sm px-3 py-1 text-[1rem]"
-  //                       placeholder="Enter your survey title"
-  //                       {...register("surveyTitle", { required: true })}
-  //                       aria-invalid={errors.surveyTitle ? "true" : "false"}
-  //                       type="text"
-  //                     />
-  //                     {errors.surveyTitle?.type === "required" && (
-  //                       <p role="alert" className="text-red-600 text-[.9rem]">
-  //                         Survey title is required
-  //                       </p>
-  //                     )}
-  //                   </div>
-  //                   <div className="form-control w-full">
-  //                     <label className="label">
-  //                       <span className="label-text text-white text-xl">
-  //                         Survey category
-  //                       </span>
-  //                     </label>
-  //                     {errors.surveyCategory?.type === "required" && (
-  //                       <p role="alert" className="text-red-600 text-[.9rem]">
-  //                         survey categorys is required
-  //                       </p>
-  //                     )}
-  //                   </div>
-  //                 </div>
-  //               </div>
-  //             </div>
-  //             <div className="modal-action">
-  //               <label htmlFor="createSurveyModal" className={`w-full lg:w-1/3`}>
-  //                 <input
-  //                   type="submit"
-  //                   className="btn btn-secondary w-full normal-case text-white"
-  //                   value="Create Survey"
-  //                 />
-  //               </label>
-  //             </div>
-  //           </form>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
 
 
 
   const handleCreateSurveyQuestions = async (data) => {
 
     setShowOption(false)
+    const optionValue = data?.answers;
+    // console.log(optionValue)
     const questions = data?.questions;
     const questionType = data?.questionsType;
     const surveyModifiedTime = new Date().toLocaleDateString();
+    // https://survey-bee-server.vercel.app/userCreatedSurveyQuestions
+    // https://survey-bee-server.vercel.app/userCreatedSurveyQuestions
     try {
-      const response = await axios.put(
-        "https://survey-bee-server.vercel.app/userCreatedSurveyQuestions",
+      const response = await axios.put("https://survey-bee-server.vercel.app/userCreatedSurveyQuestions",
         {
           id: editSurveyLoaderData?._id || userCreatedQuestion[0]?._id,
           questions,
           questionType,
-          optinoValue,
+          optionValue,
           surveyModifiedTime
-          
+
         }
       );
 
@@ -243,19 +166,38 @@ const SurveyCreateForm = () => {
     }
   };
 
+  {/* <Link
+          to={`/surveyshare/${editSurveyLoaderData?._id ? editSurveyLoaderData?._id : surveId
+            }`}
+          className="text-xl text-secondary font-semibold"
+        >
+          Share
+        </Link> */}
 
-
-
+  console.log(editSurveyLoaderData?._id)
   return (
-    <div className="min-h-screen bg-[#f5f6fa]">
-      <div className="pl-20 mt-8">
-        <h2 className="text-2xl text-primary font-extrabold">
+    <div className="min-h-screen bg-[#eef0f4]">
+      <div className="mx-5 sm:mx-10 sm:mt-3 sm:mb-3">
+        <Breadcrums editSurveyLoaderData={editSurveyLoaderData} />
+        <div className=" flex justify-end ">
+          <Link
+            to={`/surveyshare/${editSurveyLoaderData?._id}`}
+            className="text-xl text-secondary font-semibold flex items-center "
+          >
+            <FcShare className="mr-2 w-5 h-5 sm:w-8 sm:h-8" > </FcShare> Share
+          </Link>
+        </div>
+        <h2 className="text-2xl text-primary font-extrabold text-center mt-10 ">
           {editSurveyLoaderData?.surveyTitle ||
             userCreatedQuestion[0]?.surveyTitle}
         </h2>
-        <Breadcrums editSurveyLoaderData={editSurveyLoaderData} />
+        <p className="text-center my-5">
+          {editSurveyLoaderData?.surveyDescription ||
+            userCreatedQuestion[0]?.surveyDescription
+          }
+        </p>
       </div>
-      <div className="px-20 pt-24">
+      <div className="px-5 md:px-20 my-5">
         {(editSurveyLoaderData || userCreatedQuestion[0]) && (
           <UserCreateSurveyQuestions
             userCreatedQuestion={userCreatedQuestion}
@@ -265,15 +207,15 @@ const SurveyCreateForm = () => {
           />
         )}
       </div>
-      <div className="px-2 pt-10 pb-28">
-        <h2 className="text-xl text-primary font-extrabold">
+      <div className="px-2 pt-10 pb-28 mx-10">
+        <h2 className="text-xl text-center text-primary font-extrabold">
           {editSurveyLoaderData?.surveyTitle ||
             userCreatedQuestion[0]?.surveyTitle}
         </h2>
         <form
           onSubmit={handleSubmit(handleCreateSurveyQuestions)}
         >
-          <div className="flex w-full items-center h-full  py-8 gap-x-1 border border-black mt-10">
+          <div className="flex mx-auto w-full md:w-3/4 lg:w-2/4 items-center h-full  py-8 gap-x-1 border border-black mt-10">
             <input
               type="text"
               readOnly
@@ -285,42 +227,45 @@ const SurveyCreateForm = () => {
                 }`
               }
             />
-            <div className="md:flex">
+            <div className="md:flex ">
               <input
                 {...register("questions", { required: true })}
                 type="text"
                 placeholder="Enter your question"
-                className="w-[60vw] px-4 py-2 my-2 border border-gray-500 outline-primary"
+                className=" px-4 py-2 my-2 border border-gray-500 outline-primary"
               />
+              {/* w-[60vw] */}
               <select
                 {...register("questionsType", { required: true })}
-                className="w-[30vw] ml-1 px-4 py-2 my-2 border border-gray-500 outline-primary inline "
+                className=" ml-1 px-4 py-2 my-2 border border-gray-500 outline-primary inline "
                 onChange={multiQuestion} value={selectedOption}
               >
                 <option >Textbox</option>
                 <option >Comment Box  </option>
                 <option >Multiple choice </option>
-                {/* {questionsType.map((qtype, i) => (
-                  <option value={qtype} key={i}>
-                    {qtype}
-                  </option>
-                ))} */}
               </select>
             </div>
           </div>
           <div className=" text-center my-5 ">
             {showOption && (
+
               <div className="" >
-                <p className="text-xl font-semibold mb-2">Add Option</p>
-                {[...Array(count)].map((value, index) => (
-                  <div key={index}>
-                    <input onChange={(event) => collectOptionValue(index, event)} value={value} className="my-1 p-1 border" type="text" placeholder="Answer" />
-                  </div>
-                ))}
-                <div className=" my-2 ">
-                  <input type='button' className="p-1 bg-blue-700 mr-5 text-white text-xs" onClick={handleAdd} value='+ Add' />
-                  <input type='button' className="p-1 bg-red-700 text-white text-xs" onClick={handleRemove} value='- Remove' />
-                </div>
+                <p className="text-xl font-semibold mb-2">Add Answers</p>
+                <ul>
+                  {fields.map((item, index) => (
+                    <li key={item.id}>
+                      <input {...register(`answers.${index}.answer`)} className="my-1 p-1 border" />
+                      <button type="button" onClick={() => remove(index)} className="p-1 bg-red-700 text-white text-xs ml-2" > Remove </button>
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  type="button"
+                  onClick={() => append()}
+                  className="p-1 bg-blue-700 mr-5 text-white text-xs "
+                >
+                  <span className=" flex items-center">Add <FcPlus></FcPlus></span>
+                </button>
               </div>
             )}
           </div>

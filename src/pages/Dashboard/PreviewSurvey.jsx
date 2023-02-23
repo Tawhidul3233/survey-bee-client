@@ -41,43 +41,71 @@ const PreviewSurvey = () => {
     );
     return response?.data;
   };
-  console.log(preveiwSurveyData);
+  // console.log(preveiwSurveyData);
   return (
     <>
       {isPreviewLoading ? (
         <Loading />
       ) : (
         <>
-          <div className="min-h-screen bg-[#f5f6fa]">
-            <div className="pl-20 mt-3">
+          <div className="min-h-screen  rounded-md w-full sm:w-8/12 bg-[#eef0f4] mx-auto">
+            <div className=" mx-5 sm:mx-15 sm:mx-10 sm:mt-3 sm:mb-3">
               <>
                 <Breadcrums surveId={getID} />
               </>
-              {/* outlets */}
-              <div className="mx-auto w-full">
-                <div>
-                  <h2 className="text-2xl text-primary font-extrabold pt-10">
-                    {preveiwSurveyData?.surveyTitle}
+              <div className="mx-auto ">
+                <div className="">
+                  <h2 className="text-2xl text-center text-primary font-extrabold pt-10">
+                    {preveiwSurveyData?.surveyTitle} 
                   </h2>
+                  <p className="text-center my-5">
+                    {preveiwSurveyData?.surveyDescription}
+                  </p>
                   {preveiwSurveyData?.questionsAndTypes?.map((qt, i) => (
-                    <div key={i} className="mt-4">
+                    <div key={i} className="mt-4 ">
                       <div>
-                        <div>
-                          <span className="text-xl">{i + 1}.</span>
-                          <span className="text-xl"> {qt?.questions}</span>
+                        <div className="">
+                          <div className="my-3">
+                            <span className="text-xl ">{i + 1}.</span>
+                            <span className="text-xl "> {qt?.questions} ?</span>
+                          </div>
                           <div>
                             {qt?.questionsType === "Comment Box" ? (
-                              <textarea className="w-1/3 border border-gray-600 h-20"></textarea>
+                              <textarea className=" w-full  border  h-16 px-2" placeholder="Write your opinion:.."></textarea>
                             ) : undefined || qt?.questionsType === "Textbox" ? (
-                              <input className="w-2/6 border border-gray-600 h-12" />
-                            ) : undefined}
+                              <input className="w-full   border  h-8 px-2 " placeholder="Answer:.." />
+                            ) : undefined || qt?.questionsType === "Multiple choice" ?
+
+                              <>
+                                <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1  w-full  ">
+                                  {
+                                    qt?.optionAnswers?.map((option, index) => (
+                                      <div key={index} className="mb-4 bg-success text-white rounded-sm ">
+                                        <input
+                                          type="radio"
+                                          id={option}
+                                          name={option.answer}
+                                          value={option}
+                                        />
+                                        <label htmlFor={option} className="ml-2">
+                                          {option.answer}
+                                        </label>
+                                      </div>
+                                    ))
+                                  }
+                                </div>
+                              </>
+
+                              : undefined
+
+                            }
                           </div>
                         </div>
                       </div>
                     </div>
                   ))}
-                  <div className="flex pb-36 mt-4">
-                    <button className="btn btn-secondary px-8 py-2">
+                  <div className="flex pb-20 mt-8 w-full ">
+                    <button className="btn btn-success px-4 py-2 text-center mx-auto">
                       Done
                     </button>
                   </div>

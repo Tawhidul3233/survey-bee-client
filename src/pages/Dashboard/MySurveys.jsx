@@ -10,7 +10,8 @@ import getUserAllSurveys from "../../api/getUserAllSurveys";
 import { useState } from "react";
 import Loading from "../../components/Shared/Loading";
 import SurveyCreateButton from "../../components/Dashboard/SurveyCreateButton";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import ShareModal from "../../components/Dashboard/ShareModal";
 
 const mySurveyText = [
   "TITLE",
@@ -31,6 +32,7 @@ const MySurveys = () => {
   const [isThreedotOpen, setIsThreedotOpen] = useState(false);
   const navigate = useNavigate();
 
+  // console.log(surveys)
   // get all surveys
   useEffect(() => {
     setSurveysLoading(true);
@@ -68,6 +70,7 @@ const MySurveys = () => {
       ) : (
         <>
           <section className="mx-auto w-full bg-[#F4F5F5] pt-10">
+            <ShareModal />
             <>
               {surveysError.message && !surveysLoading ? (
                 <p className="text-center text-3xl text-neutral">
@@ -115,23 +118,27 @@ const MySurveys = () => {
                             </button>
                           </td>
                           <td className="lg:pl-8 p-0 w-3/12">
-                            <BsCollection className="text-secondary" />
+                            <Link to={`/buysurvey/${survey._id}`}> <BsCollection className="text-secondary" /> </Link>
+
                           </td>
                           <td className="lg:pl-8 p-0 w-3/12">
                             <TbBrandGoogleAnalytics className="text-secondary" />
                           </td>
-                          <td className="pl-8 p-0 w-3/12 hover:bg-yellow-200 cursor-pointer">
-                            <FiShare2 className="text-secondary" />
+
+                          <td className="pl-8 ">
+                            <label htmlFor="Share-modal" >
+                              <span className="w-3/12 cursor-pointer ">
+                                <FiShare2 className="text-secondary" />
+                              </span>
+                            </label>
                           </td>
+
                           <td
                             className="text-secondary pl-6"
                             onClick={() => setIsThreedotOpen(!isThreedotOpen)}
                           >
                             <div className="flex flex-col">
                               <BsThreeDots className="text-secondary absolute top-20" />
-                              {/* <div className="bg-gray-300 border border-gray-100 absolute top-24">
-                                
-                              </div> */}
                             </div>
                           </td>
                         </tr>
