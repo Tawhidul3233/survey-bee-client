@@ -3,380 +3,39 @@ import UserTable from '../UserTable/UserTable';
 
 const UserHeader = () => {
 
+  const [userData, setUserData] = useState([])
+  const [originalData, setOriginalData] = useState([]);
+  // console.log(realUser)
 
-  // useEffect(()=>{
-  //   fetch('https://survey-bee-server.vercel.app/users')
-  //   .then(res => res.json())
-  //   .then(data => console.log(data))
-  // },[])
+  useEffect(() => {
+    fetch('https://survey-bee-server.vercel.app/users')
+      .then(res => res.json())
+      .then(data => {
+        setUserData(data)
+        setOriginalData(data)
+      })
+  }, [])
 
-
-  const data = [
-    {
-      name: 'Akash',
-      role: 'manager',
-      id: '13141',
-      email: 'gmail.com',
-      user: 'free',
-      level: ''
-    }
-    ,
-    {
-      name: 'Batash',
-      role: 'entry',
-      id: '46545',
-      email: 'com.com',
-      user: 'paid',
-      level: 'low'
-    }
-    ,
-    {
-      name: 'Fakash',
-      role: 'manager',
-      id: '55577',
-      email: 'Exxxcom.com',
-      user: 'paid',
-      level: 'medium'
-    }
-    ,
-    {
-      name: 'Rakib',
-      role: 'entry',
-      id: '55777',
-      email: 'Rakibcom.com',
-      user: 'free',
-      level: 'low'
-    }
-    ,
-    {
-      name: 'Tufan',
-      role: 'manager',
-      id: '55544',
-      email: 'Tufancom.com',
-      user: 'free',
-      level: 'low'
-    }
-    ,
-    {
-      name: 'Nille',
-      role: 'entry',
-      id: '65345',
-      email: 'Nilecom.com',
-      user: 'paid',
-      level: 'medium'
-    }
-    ,
-    {
-      name: 'Ami',
-      role: 'Owner',
-      id: '00000',
-      email: 'Amicom.com',
-      user: 'paid',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Thuin',
-      role: 'manager',
-      id: '87865',
-      email: 'Thuincom.com',
-      user: 'paid',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'paid',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-    ,
-    {
-      name: 'Tonmoy',
-      role: 'manager',
-      id: '22277',
-      email: 'Thuincom.com',
-      user: 'free',
-      level: 'higher'
-    }
-  ]
-
-  const [userData, setUserData] = useState(data)
-
-
-
+  // const [userData, setUserData] = useState(data)
   const [search, setSearch] = useState('')
 
   const findUsers = (fildKey) => {
-    const targetedUser = data.filter(tUser => {
-      return (fildKey === tUser.user)
-    });
-    return setUserData(targetedUser)
+    if (fildKey === 'all') {
+      setUserData(originalData)
+    }
+    else if (fildKey === 'paid') {
+      const targetedUser = originalData?.filter(tUser => {
+        return (fildKey === tUser?.userType)
+      });
+      return setUserData(targetedUser)
+    }
+    else if (fildKey === 'free') {
+      const targetedUser = originalData?.filter(tUser => {
+        return (fildKey === tUser?.userType)
+      });
+      return setUserData(targetedUser)
+    }
   }
-
 
 
   return (
@@ -447,9 +106,15 @@ const UserHeader = () => {
                 className="group flex shrink-0 items-center rounded-lg transition"
               >
                 <div class="inline-flex rounded-lg border border-gray-100 bg-gray-100 p-1">
-                  <button
+                  {/* <button
                     class="inline-block rounded-md px-4 py-2 text-sm text-gray-500 focus:text-white focus:bg-black"
                     onClick={() => setUserData(data)}
+                  >
+                    All
+                  </button> */}
+                  <button
+                    class="inline-block rounded-md px-4 py-2 text-sm text-gray-500 focus:text-white focus:bg-black"
+                    onClick={() => findUsers('all')}
                   >
                     All
                   </button>

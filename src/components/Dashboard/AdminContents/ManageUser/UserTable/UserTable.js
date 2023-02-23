@@ -6,7 +6,7 @@ import Tttt from './EachUser';
 
 const UserTable = ({userData , search}) => {
 
-
+// console.log(userData)
 
   return (
     <div className='mx-3'>
@@ -16,7 +16,7 @@ const UserTable = ({userData , search}) => {
           <thead>
             <tr className=''>
               <th>User Id</th>
-              <th>Full Name</th>
+              <th>User Name</th>
               <th>Email</th>
               <th>Job Role</th>
               <th>User</th>
@@ -26,7 +26,7 @@ const UserTable = ({userData , search}) => {
           <tbody >
             {
               userData?.filter((u) => {
-                return search === ' ' ? u : u?.name?.toLowerCase().includes(search) ||  u?.email?.toLowerCase().includes(search) || u?.role.toLowerCase().includes(search) || u?.id?.toLowerCase().includes(search) || u?.level?.toLowerCase().includes(search)
+                return search === ' ' ? u : u?.userName?.toLowerCase().includes(search) ||  u?.email?.toLowerCase().includes(search) || u?.jobRole?.toLowerCase().includes(search) || u?._id?.toLowerCase().includes(search)
               }).map((d, i) => <EachUser key={i} d={d}> 
               </EachUser>)
             }
