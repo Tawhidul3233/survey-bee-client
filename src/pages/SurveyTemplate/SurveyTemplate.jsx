@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { user } from "../../features/userSlice";
 import axios from "axios";
+import SurveyEditingModal from "./SurveyEditingModal";
 
 const Survey = () => {
   const activeUser = useSelector(user);
@@ -73,6 +74,14 @@ const Survey = () => {
                 >
                   share
                 </Link>
+                <label
+                  htmlFor="surveyEditModal"
+                  className="capitalize ml-6 rounded-lg py-2 px-6 bg-gradient-to-r from-blue-800 to-indigo-900 text-white hover:bg-gradient-to-r hover:from-violet-600 hover:to-indigo-600"
+                >
+                  Edit
+                </label>
+
+                <SurveyEditingModal surveyTemplate={surveyTemplate} />
               </>
             ) : (
               <></>
