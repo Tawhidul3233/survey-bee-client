@@ -38,7 +38,7 @@ const MainContainer = () => {
       setCheckList(surveyCategoryData.map((item) => ""));
     }
   }, [surveyCategoryData]);
-  console.log("checklist", checkList);
+  // console.log("checklist", checkList);
 
   const filteredData = useMemo(() => {
     if (surveyTemplateData) {
@@ -53,7 +53,7 @@ const MainContainer = () => {
     }
   }, [surveyTemplateData, checkList]);
 
-  console.log("filter data", filteredData);
+  // console.log("filter data", filteredData);
 
   if (surveyCategory.isLoading || surveyTemplate.isLoading) return <Spinner />;
 

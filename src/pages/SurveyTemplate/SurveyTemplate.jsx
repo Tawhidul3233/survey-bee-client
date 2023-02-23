@@ -2,12 +2,16 @@ import { Link, useLoaderData } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { user } from "../../features/userSlice";
 import axios from "axios";
+import SurveyEditingModal from "./SurveyEditingModal";
+import { useState } from "react";
 
 const Survey = () => {
   const activeUser = useSelector(user);
   const surveyTemplate = useLoaderData();
   const { survey_title, questions } = surveyTemplate;
   // console.log("the survey template", surveyTemplate);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const userCreateSurvey = {
     email: activeUser?.user?.email,
@@ -63,22 +67,30 @@ const Survey = () => {
               )}
             </div>
           ))}
-          <div className="text-center mt-6">
-            {activeUser?.user ? (
-              <>
-                <Link
-                  onClick={surveyHandler}
-                  className="capitalize px-6 py-2 rounded-lg bg-gradient-to-r from-lime-500 to-cyan-400 hover:bg-gradient-to-r hover:from-pink-600 hover:to-violet-600 text-white"
-                  to={`/PublicSurvey/${surveyTemplate._id}`}
-                >
-                  share
-                </Link>
-              </>
-            ) : (
-              <></>
-            )}
-          </div>
         </form>
+        <div className="text-center mt-6">
+          {activeUser?.user ? (
+            <>
+              <Link
+                onClick={surveyHandler}
+                className="capitalize px-6 py-2 rounded-lg bg-gradient-to-r from-lime-500 to-cyan-400 hover:bg-gradient-to-r hover:from-pink-600 hover:to-violet-600 text-white"
+                to={`/PublicSurvey/${surveyTemplate._id}`}
+              >
+                share
+              </Link>
+              <label
+                htmlFor="surveyEditModal"
+                className="capitalize ml-6 rounded-lg py-2 px-6 bg-gradient-to-r from-blue-800 to-indigo-900 text-white hover:bg-gradient-to-r hover:from-violet-600 hover:to-indigo-600"
+              >
+                Edit
+              </label>
+
+              <SurveyEditingModal surveyTemplate={surveyTemplate} />
+            </>
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
     </div>
   );
