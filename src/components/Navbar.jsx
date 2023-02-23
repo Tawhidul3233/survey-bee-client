@@ -637,20 +637,20 @@ const Navbar = () => {
                       </li>
                       <li className="rounded-sm w-full mx-0 px-0">
                         <div className="flex flex-col">
-                          { isAdmin ? <Link
+                          {isAdmin ? <Link
                             to="/dashboard/orderhistory"
                             className="hover:bg-gray-800 hover:text-base-100 px-4 py-4 rounded-sm"
                           >
                             <span className="font-semibold text-xl text-secondary block">
                               Order History
                             </span>
-                          </Link>:
-                          <Link
-                            to="/plans-pricing"
-                            className=" px-4 py-5 mb-0 hover:text-base-100 rounded-b-none w-full font-semibold text-xl"
-                          >
-                            Plans & Pricing
-                          </Link>}
+                          </Link> :
+                            <Link
+                              to="/plans-pricing"
+                              className=" px-4 py-5 mb-0 hover:text-base-100 rounded-b-none w-full font-semibold text-xl"
+                            >
+                              Plans & Pricing
+                            </Link>}
                         </div>
                       </li>
                       <li className="rounded-sm w-full mx-0 px-0">
