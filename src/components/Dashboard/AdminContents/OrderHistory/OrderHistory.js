@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-hot-toast';
 
 const OrderHistory = () => {
 
@@ -11,26 +12,53 @@ const OrderHistory = () => {
       .then(data => setOrders(data))
   }, [orders])
 
-  const [isApproved, setIsApproved] = useState(false);
-  const handleApproval = () => {
-    setIsApproved(true);
-  }
-  useEffect(() => {
-    // Load the approved state from localStorage when the component mounts
-    const isApproved = localStorage.getItem('isApproved');
-    if (isApproved) {
-      setIsApproved(true);
-    }
-  }, []);
 
-  useEffect(() => {
-    // Save the approved state to localStorage whenever it changes
-    localStorage.setItem('isApproved', isApproved);
-  }, [isApproved]);
-  const [isRejected, setIsRejected] = useState(false);
-  const handleRejected = () => {
-    setIsRejected(true);
+
+  // const [orderId, setOrderId] = useState()
+  // console.log(orderId)
+
+  const manageApproval = (id) => {
+    fetch(`https://survey-bee-server.vercel.app/buysurveyapprove/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json"
+        },
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        toast.success('Order Approved')
+
+      })
+
+      .catch(error => {
+        console.log(error)
+        toast.error(' something wrong')
+      })
+
   }
+  // const [isApproved, setIsApproved] = useState(false);
+  // const handleApproval = () => {
+  //   setIsApproved(true);
+  // }
+
+  // useEffect(() => {
+  //   // Load the approved state from localStorage when the component mounts
+  //   const isApproved = localStorage.getItem('isApproved');
+  //   if (isApproved) {
+  //     setIsApproved(true);
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   // Save the approved state to localStorage whenever it changes
+  //   localStorage.setItem('isApproved', isApproved);
+  // }, [isApproved]);
+  // const [isRejected, setIsRejected] = useState(false);
+  // const handleRejected = () => {
+  //   setIsRejected(true);
+  // }
 
 
   return (
@@ -39,7 +67,7 @@ const OrderHistory = () => {
       <div className='mx-2 sm:mx-5'>
         {
           orders.map((order, i) =>
-            <div key={order._id} order={order}
+            <div  key={order._id} order={order}
               className=" mb-4 w-[98%] sm:w-[80%] mx-auto border-2 p-5 rounded-sm"
             >
               <div>
@@ -68,10 +96,16 @@ const OrderHistory = () => {
               </div>
               <div className=' flex justify-between my-3'>
                 <p className=' font-semibold'> Total :  {order?.finalTotal.toFixed(2)}$ </p>
-                <button onClick={handleRejected} disabled={isRejected} className=' btn btn-sm btn-error'>
+                {/* <button onClick={handleRejected} disabled={isRejected} className=' btn btn-sm btn-error'>
                   {isRejected ? 'Rejected' : 'Reject'}
+                </button> */}
+
+                <button onClick={() =>manageApproval(order?._id)} className=' btn btn-sm btn-success'>
+                  {
+                    order?.approve ? 'Approve' : 'Approved'
+                  }
                 </button>
-                <button onClick={handleApproval} disabled={isApproved} className=' btn btn-sm btn-success'>{isApproved ? 'Approved' : 'Approve'}</button>
+
               </div>
             </div>
           )
