@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
-const SurveyEditingModal = ({ surveyTemplate }) => {
+const SurveyEditingModal = ({ surveyTemplate, open, close }) => {
   const { survey_title, questions } = surveyTemplate;
+  console.log(questions);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    // console.log(formData.values());
+    for (const value of formData.values()) {
+      console.log(value);
+    }
+  };
   return (
     <>
       <input type="checkbox" id="surveyEditModal" className="modal-toggle" />
@@ -14,12 +24,12 @@ const SurveyEditingModal = ({ surveyTemplate }) => {
             ✕
           </label>
           <h3 className="text-lg font-bold">{survey_title}</h3>
-          <form>
+          <form onSubmit={handleSubmit}>
             {questions.map((question) => (
               <div key={question.questions}>
                 <input
                   type="text"
-                  value={question.questions}
+                  defaultValue={question.questions}
                   placeholder="Type here"
                   className="input input-bordered input-primary w-full my-4"
                 />
@@ -27,14 +37,15 @@ const SurveyEditingModal = ({ surveyTemplate }) => {
                   <div>
                     {question?.optionAnswers.map((option, index) => (
                       <div key={option} className="mb-4">
-                        <input
-                          type="radio"
-                          id={option}
-                          name={question.questions}
-                          value={option}
-                        />
+                        <input type="radio" id={option} defaultValue={option} />
                         <label htmlFor={option} className="ml-2">
-                          {option}
+                          <input
+                            defaultValue={option}
+                            name={option}
+                            type="text"
+                            placeholder="Type here"
+                            className="input input-bordered input-accent w-full max-w-xs"
+                          />
                         </label>
                       </div>
                     ))}
@@ -49,7 +60,10 @@ const SurveyEditingModal = ({ surveyTemplate }) => {
               </div>
             ))}
             <div className="text-center mt-6">
-              <button className="capitalize px-6 py-2 rounded-lg bg-gradient-to-r from-lime-500 to-cyan-400 hover:bg-gradient-to-r hover:from-pink-600 hover:to-violet-600 text-white">
+              <button
+                type="submit"
+                className="capitalize px-6 py-2 rounded-lg bg-gradient-to-r from-lime-500 to-cyan-400 hover:bg-gradient-to-r hover:from-pink-600 hover:to-violet-600 text-white"
+              >
                 Save
               </button>
             </div>
