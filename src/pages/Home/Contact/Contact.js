@@ -27,16 +27,20 @@ const Contact = () => {
 
   return (
     <div id='contact' className='mt-32 banner' style={{ backgroundImage: `url("https://i.ibb.co/3CBf0fM/contact.jpg")` }} >
-      <h1 className='text-center md:text-3xl text-xl  font-semibold mb-10 pt-10 text-white' data-aos="fade-up"
-        data-aos-easing="linear"
-        data-aos-duration="1000">Contact Us</h1>
+      <h1 className='text-center md:text-3xl text-xl  font-semibold mb-10 pt-10 text-white'
+      //  data-aos="fade-up"
+      //   data-aos-easing="linear"
+      //   data-aos-duration="1000"
+      >Contact Us</h1>
 
       <div className='py-12'>
         <div className="hero lg:w-4/5 w-full mx-auto">
           <div className="flex flex-col items-start lg:gap-x-40 lg:flex-row-reverse">
-            <div data-aos="fade-left"
-              data-aos-easing="linear"
-              data-aos-duration="1000">
+            <div
+            // data-aos="fade-left"
+            //   data-aos-easing="linear"
+            //   data-aos-duration="1000"
+            >
               <form ref={form} onSubmit={handleSendEmail} className="card-body justify-items-center p-0 text-white" >
                 <div className="form-control mb-2">
                   <input name='name' type="text" placeholder="Name" className="input input-bordered lg:w-96 w-full bg-transparent  border border-white" required />
@@ -52,9 +56,11 @@ const Contact = () => {
                 </div>
               </form>
             </div>
-            <div className='flex flex-col pt-4 text-white ' data-aos="fade-right"
-              data-aos-easing="linear"
-              data-aos-duration="1000">
+            <div className='flex flex-col pt-4 text-white '
+            // data-aos="fade-right"
+            //   data-aos-easing="linear"
+            //   data-aos-duration="1000"
+            >
 
               <h1 className='text-3xl flex items-center my-3'><GoMailRead className='mr-3' /> <span className='text-xl font-medium'>codewithhope606@gmail.com</span></h1>
               <h1 className='text-3xl flex items-center my-3'><BsFillTelephoneForwardFill className='mr-3' /> <span className='text-xl font-medium'>+880199999999</span></h1>
