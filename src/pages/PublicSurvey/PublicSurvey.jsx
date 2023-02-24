@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { user } from "../../features/userSlice";
 import axios from "axios";
-import { useEffect } from "react";
+
 import Cookies from "js-cookie";
 
 const PublicSurvey = () => {
