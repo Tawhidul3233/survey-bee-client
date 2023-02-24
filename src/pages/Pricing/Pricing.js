@@ -34,7 +34,7 @@ const Pricing = () => {
                                         SIGN UP</button></Link>
                             }
 
-                            <ul class="marker:text-green-600 list-disc pl-5 space-y-3 text-sm">
+                            <ul className="marker:text-green-600 list-disc pl-5 space-y-3 text-sm">
                                 <li>Survey sharing with fine control over who can view and edit</li>
                                 <li>Gather comments all in one place</li>
                                 <li>Let team members analyze, filter, and export results</li>
@@ -74,7 +74,7 @@ const Pricing = () => {
                                     </button></Link>
                             }
 
-                            <ul class="marker:text-purple-800 list-disc pl-5 space-y-3 text-sm">
+                            <ul className="marker:text-purple-800 list-disc pl-5 space-y-3 text-sm">
                                 <li>Survey sharing with fine control over who can view and edit</li>
                                 <li>Gather comments all in one place</li>
                                 <li>Let team members analyze, filter, and export results</li>
@@ -126,7 +126,7 @@ const Pricing = () => {
                                     </button></Link>
                             }
 
-                            <ul class="marker:text-blue-700 list-disc pl-5 space-y-3 text-sm">
+                            <ul className="marker:text-blue-700 list-disc pl-5 space-y-3 text-sm">
                                 <li>Survey sharing with fine control over who can view and edit</li>
                                 <li>Gather comments all in one place</li>
                                 <li>Let team members analyze, filter, and export results</li>

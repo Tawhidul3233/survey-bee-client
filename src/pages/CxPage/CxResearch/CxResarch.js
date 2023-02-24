@@ -6,7 +6,7 @@ const CxResarch = () => {
 
                <article className="rounded-xl border-2 border-gray-100 bg-white">
                     <div className="sm:flex items-start p-6">
-                         <a href=" " class="block shrink-0">
+                         <a href=" " className="block shrink-0">
                               <img
                                    alt="Speaker"
                                    src="https://i.ibb.co/MDsmnH5/cx-homepage-reportcta.png"

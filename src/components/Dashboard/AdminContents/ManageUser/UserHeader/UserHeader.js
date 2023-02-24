@@ -105,29 +105,29 @@ const UserHeader = () => {
                 type="button"
                 className="group flex shrink-0 items-center rounded-lg transition"
               >
-                <div class="inline-flex rounded-lg border border-gray-100 bg-gray-100 p-1">
+                <div className="inline-flex rounded-lg border border-gray-100 bg-gray-100 p-1">
                   {/* <button
-                    class="inline-block rounded-md px-4 py-2 text-sm text-gray-500 focus:text-white focus:bg-black"
+                    className="inline-block rounded-md px-4 py-2 text-sm text-gray-500 focus:text-white focus:bg-black"
                     onClick={() => setUserData(data)}
                   >
                     All
                   </button> */}
                   <button
-                    class="inline-block rounded-md px-4 py-2 text-sm text-gray-500 focus:text-white focus:bg-black"
+                    className="inline-block rounded-md px-4 py-2 text-sm text-gray-500 focus:text-white focus:bg-black"
                     onClick={() => findUsers('all')}
                   >
                     All
                   </button>
 
                   <button
-                    class="inline-block rounded-md px-4 py-2 text-sm text-gray-500  focus:text-white focus:bg-black "
+                    className="inline-block rounded-md px-4 py-2 text-sm text-gray-500  focus:text-white focus:bg-black "
                     onClick={() => findUsers('paid')}
                   >
                     Paid
                   </button>
 
                   <button
-                    class="inline-block rounded-md px-4 py-2 text-sm text-gray-500  focus:text-white focus:bg-black"
+                    className="inline-block rounded-md px-4 py-2 text-sm text-gray-500  focus:text-white focus:bg-black"
                     onClick={() => findUsers('free')}
                   >
                     Free

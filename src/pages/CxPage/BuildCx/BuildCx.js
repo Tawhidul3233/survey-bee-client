@@ -4,19 +4,19 @@ const BuildCx = () => {
      return (
           <div>
                <section className=''>
-                    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+                    <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
 
-                         <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-                              <div class="relative h-64 overflow-hidden sm:h-80 lg:h-full">
+                         <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+                              <div className="relative h-64 overflow-hidden sm:h-80 lg:h-full">
                                    <img
                                         alt="Party"
                                         src="https://i.ibb.co/7rH9zMK/cx-homepage-split1-v3.png"
-                                        class="absolute inset-0 h-full w-full object-cover"
+                                        className="absolute inset-0 h-full w-full object-cover"
                                    />
                               </div>
 
-                              <div class="lg:py-16">
-                                   <article class="space-y-4 text-gray-600">
+                              <div className="lg:py-16">
+                                   <article className="space-y-4 text-gray-600">
                                         <h2 className=' w-full md:w-4/5  text-3xl font-bold'>
                                              Build a CX program that adapts to customer needs
                                         </h2>

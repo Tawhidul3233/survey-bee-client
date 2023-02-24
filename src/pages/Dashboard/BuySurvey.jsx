@@ -136,7 +136,7 @@ const BuySurvey = () => {
     fetch(`https://survey-bee-server.vercel.app/surveyhistory/${orderId}`)
       .then(res => res.json())
       .then(data => setOrders(data))
-  
+
   }, [orders])
 
   return (
@@ -223,7 +223,7 @@ const BuySurvey = () => {
         >
           <div >
             <div className="  ">
-              <label for="location" class="block text-xs font-medium text-gray-700">
+              <label for="location" className="block text-xs font-medium text-gray-700">
                 Targeted Location
               </label>
               <select
@@ -240,7 +240,7 @@ const BuySurvey = () => {
               </select>
             </div>
             <div className='my-2'>
-              <label for="duration" class="block text-xs font-medium text-gray-700">
+              <label for="duration" className="block text-xs font-medium text-gray-700">
                 Duration
               </label>
               <select
@@ -257,7 +257,7 @@ const BuySurvey = () => {
             </div>
             <div>
               <div className="">
-                <label for="surveyAmount" class="block text-xs font-medium text-gray-700">
+                <label for="surveyAmount" className="block text-xs font-medium text-gray-700">
                   Amount
                 </label>
                 <input {...register("surveyAmount", { required: true })}
