@@ -1,6 +1,8 @@
 import React from 'react';
-
+import Lottie from 'lottie-react';
 import FeedbackDetails from './FeedbackDetails';
+import feedback from './Feedback.json';
+
 const Feedback = () => {
 
     const feedbacks=[
@@ -27,8 +29,13 @@ const Feedback = () => {
                 experiences that drive your business
                 </h2>
             </div>
+
+            <div className='mt-8'>
+            <Lottie animationData={feedback} loop={true} className='lg:w-72 lg:h-full mx-auto'></Lottie>
+            </div>
+
             <div className='grid  grid-cols-1 lg:grid-cols-2 md:grid-cols-1
-            mt-10 pb-5 mx-auto lg:px-24 lg:gap-2 sm:gap-6'>
+            mt-8 pb-5 mx-auto lg:px-24 lg:gap-2 sm:gap-6'>
                 {
                     feedbacks.map(feedback=><FeedbackDetails feedback={feedback} key={feedback._id}>
 
