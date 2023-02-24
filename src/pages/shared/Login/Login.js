@@ -5,7 +5,6 @@ import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../../../components/Navbar/GoogleLogin";
-import SmallSpinner from "../../../components/Spinner/SmallSpinner";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
