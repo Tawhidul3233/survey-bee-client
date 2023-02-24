@@ -14,7 +14,7 @@ import { useEffect } from "react";
 import getUserAllSurveys from "../../api/getUserAllSurveys";
 import useAdmin from "../../hooks/useAdmin";
 import AdminPrimaryPage from "../../components/Dashboard/AdminContents/AdminPrimaryPage";
-import AdminHome from "../../components/Dashboard/AdminContents/ManageUser/AdminHome/AdminHome";
+
 const DashboardPrimaryPage = () => {
   const [firstName, setFirstName] = useState("");
   const [isSurveyDeleted, setIsSurveyDeleted] = useState(false);

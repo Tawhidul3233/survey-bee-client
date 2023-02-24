@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { user } from '../../features/userSlice';
+import Lottie from 'lottie-react';
+import profile from '../../Lottie/user.json'
 
 const DashboardProfile = ({ register, errors, handleSubmit, handleUpdateProfile, setFirstName, dbUser }) => {
   const activeUser = useSelector(user);
@@ -13,7 +15,11 @@ const DashboardProfile = ({ register, errors, handleSubmit, handleUpdateProfile,
       <div className='mb-5'>
         <h2 className='text-2xl font-semibold mb-5 text-center'>Your Profile</h2>
         <div className="card card-compact w-96 hover:bg-base-100 border border-1 mx-auto h-[500px] hover:shadow-2xl duration-300">
-          <div className="radial-progress text-3xl text-success mx-auto my-6" style={{ "--value": 70, "--size": "12rem", "--thickness": "5px" }}>70%</div>
+         
+
+          <Lottie animationData={profile} loop={true} className='lg:w-40 lg:h-full mx-auto sm:w-10'></Lottie>
+
+          
           <div className="card-body">
             <h2 className="text-xl font-semibold text-center">{dbUser?.firstName ? `${dbUser?.firstName + ' ' + dbUser?.lastName}` : activeUser?.user?.displayName}</h2>
             <h2 className="text-lg font-semibold text-center">{activeUser?.user?.email}</h2>
