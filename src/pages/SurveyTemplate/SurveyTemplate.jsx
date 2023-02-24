@@ -3,15 +3,12 @@ import { useSelector } from "react-redux";
 import { user } from "../../features/userSlice";
 import axios from "axios";
 import SurveyEditingModal from "./SurveyEditingModal";
-import { useState } from "react";
 
 const Survey = () => {
   const activeUser = useSelector(user);
   const surveyTemplate = useLoaderData();
   const { survey_title, questions } = surveyTemplate;
   // console.log("the survey template", surveyTemplate);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const userCreateSurvey = {
     email: activeUser?.user?.email,
