@@ -96,13 +96,9 @@ const OrderHistory = () => {
               </div>
               <div className=' flex justify-between my-3'>
                 <p className=' font-semibold'> Total :  {order?.finalTotal.toFixed(2)}$ </p>
-                {/* <button onClick={handleRejected} disabled={isRejected} className=' btn btn-sm btn-error'>
-                  {isRejected ? 'Rejected' : 'Reject'}
-                </button> */}
-
                 <button onClick={() =>manageApproval(order?._id)} className=' btn btn-sm btn-success'>
                   {
-                    order?.approve ? 'Approve' : 'Approved'
+                    order?.approve === true ? 'Approved' : 'Approve Now'
                   }
                 </button>
 
