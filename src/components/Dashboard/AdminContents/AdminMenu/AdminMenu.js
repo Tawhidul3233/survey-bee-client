@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { FcViewDetails, FcPortraitMode, FcSettings } from "react-icons/fc";
+import React, { useState } from 'react';
+import { FcViewDetails, FcPortraitMode, FcSettings } from "react-icons/fc";;
 
 const AdminMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState("Overview");
   return (
-    <div className="  ">
+    <div className='  '>
+
       <div className="flex flex-col md:flex-row ">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -16,67 +17,50 @@ const AdminMenu = () => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
+
             <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
           </svg>
           Dashboard
         </button>
         <nav
-          className={`${
-            menuOpen ? "block" : "hidden"
-          } md:block bg-gray-200 p-4 md:p-6 md:w-64 rounded-br-box`}
+          className={`${menuOpen ? "block" : "hidden"
+            } md:block bg-gray-200 p-4 md:p-6 md:w-64 rounded-br-box`}
         >
           <ul className="md:flex md:flex-col">
             <li
-              className={`md:mt-4 ${
-                activeItem === "Overview" ? "bg-green-500" : ""
-              }`}
+              className={`md:mt-4 ${activeItem === "Overview" ? "bg-green-500" : ""
+                }`}
               onClick={() => {
                 setActiveItem("Overview");
                 setMenuOpen(false);
               }}
             >
-              <a
-                href="/dashboard"
-                className="text-gray-800 hover:bg-gray-400 hover:text-white p-2 block rounded-sm"
-              >
-                <FcViewDetails className=" inline-block mb-1"></FcViewDetails>{" "}
-                Overview
+              <a href="/dashboard" className="text-gray-800 hover:bg-gray-400 hover:text-white p-2 block rounded-sm">
+                <FcViewDetails className=' inline-block mb-1'></FcViewDetails> Overview
               </a>
             </li>
             <li
-              className={`md:mt-4 ${
-                activeItem === "Users" ? "bg-green-500" : ""
-              }`}
+              className={`md:mt-4 ${activeItem === "Users" ? "bg-green-500" : ""
+                }`}
               onClick={() => {
                 setActiveItem("Users");
                 setMenuOpen(false);
               }}
             >
-              <a
-                href="/dashboard/manageusers"
-                className="text-gray-800 hover:bg-gray-400 hover:text-white p-2 block rounded-sm"
-              >
-                <FcPortraitMode className=" inline-block mb-1">
-                  {" "}
-                </FcPortraitMode>{" "}
-                Manage user
+              <a href="/dashboard/manageusers" className="text-gray-800 hover:bg-gray-400 hover:text-white p-2 block rounded-sm">
+                <FcPortraitMode className=' inline-block mb-1'> </FcPortraitMode> Manage user
               </a>
             </li>
             <li
-              className={`md:mt-4 ${
-                activeItem === "Settings" ? "bg-green-500" : ""
-              }`}
+              className={`md:mt-4 ${activeItem === "Settings" ? "bg-green-500" : ""
+                }`}
               onClick={() => {
                 setActiveItem("Settings");
                 setMenuOpen(false);
               }}
             >
-              <a
-                href="#"
-                className="text-gray-800 hover:bg-gray-400 hover:text-white p-2 block rounded-sm"
-              >
-                <FcSettings className=" inline-block mb-1"> </FcSettings>{" "}
-                Settings
+              <a href="#" className="text-gray-800 hover:bg-gray-400 hover:text-white p-2 block rounded-sm">
+                <FcSettings className=' inline-block mb-1'> </FcSettings> Settings
               </a>
             </li>
           </ul>
@@ -157,9 +141,9 @@ const AdminMenu = () => {
                     fill="currentColor"
                   >
                     <path
-                      fillRule="evenodd"
+                      fill-rule="evenodd"
                       d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clipRule="evenodd"
+                      clip-rule="evenodd"
                     />
                   </svg>
                 </span>
@@ -193,6 +177,7 @@ const AdminMenu = () => {
           </nav>
         </div>
       </div> */}
+
     </div>
   );
 };
